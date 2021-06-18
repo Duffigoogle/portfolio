@@ -34,6 +34,13 @@
   }
 ----
 
+## Install SCSS.
+    -Run the code to install sass.
+----
+    npm install sass
+----
+    - Simply change the file extensions of all CSS files
+
 
 
 
