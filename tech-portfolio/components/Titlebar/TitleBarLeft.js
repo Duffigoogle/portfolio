@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import styled from 'styled-components';
 
 const TitleBarLeftTabs = () => {
     return (
         <TitleBarLeft>
             <TitleLogo>
-                <Image src='' alt='' width='' height='' />
+                <Image src='/vscode_icon.svg' alt='vs code icon' width={20} height={20} />
             </TitleLogo>
             <TitleTabs>
                 <TitleTab>File</TitleTab>
@@ -24,9 +25,9 @@ export default TitleBarLeftTabs;
 
 
 const TitleBarLeft = styled.div`
-    flex: 1;
     display: flex;
-    margin-right: auto;
+    flex: 1;
+    background-color: red;
 `
 
 const TitleLogo = styled.div`
@@ -34,9 +35,10 @@ const TitleLogo = styled.div`
 `
 
 const TitleTabs = styled.div`
-    padding: 5px 10px;
+    display: flex;
 `
 
 const TitleTab = styled.p`
     font-size: 1rem;
+    margin-right: 10px;
 `

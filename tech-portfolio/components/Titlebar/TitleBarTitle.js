@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 const TitleBarTitle = () => {
     return (
         <TitleBarCenter>
@@ -8,11 +10,15 @@ const TitleBarTitle = () => {
 
 export default TitleBarTitle;
 
-TitleBarCenter = styled.div`
+
+//styled-components for TITLEBARTITLE
+const TitleBarCenter = styled.div`
+    /* flex: 1; */
     flex: 1;
     text-align: center;
+    background-color: green;
 `
 
-TitleBarText = styled.p`
-    font-size: xx-large;
+const TitleBarText = styled.p`
+    font-size: 1rem;
 `
