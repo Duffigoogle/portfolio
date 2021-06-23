@@ -5,13 +5,27 @@ import TitleBarWindowsButton from './TitlebarWindowsButton';
 
 const TitlebarComp = () => {
     return (
-        <div>
+        <TitleBarMenu>
             <TitleBarLeftTabs />
             <TitleBarTitle />
             <TitleBarWindowsButton/>
-            
-        </div>
+        </TitleBarMenu>
     )
 }
 
 export default TitlebarComp;
+
+
+//styled components for the SIDEBARMENU.
+const TitleBarMenu = styled.div`
+    background: red;
+    height: 30px;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #191d20;
+`

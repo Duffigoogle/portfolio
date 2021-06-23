@@ -6,4 +6,13 @@ const TitleBarTitle = () => {
     )
 }
 
-export default TitleBarTitle
+export default TitleBarTitle;
+
+TitleBarCenter = styled.div`
+    flex: 1;
+    text-align: center;
+`
+
+TitleBarText = styled.p`
+    font-size: xx-large;
+`
