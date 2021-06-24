@@ -1,7 +1,7 @@
-// import Link from 'next/link';
+import Link from 'next/link';
 import styled from 'styled-components';
 // import {useRouter} from 'next/router';
-// import Icon from '../common/icons/icons';
+import Icon from '../common/icons/icons';
 
 const SidebarBottomComp = () => {
     // const router = useRouter();
@@ -9,24 +9,16 @@ const SidebarBottomComp = () => {
     return (
 
         <SidebarBottomContainer>
-            {/* <SidebarBottomIconContainer>
-                <Link href="/about">
-                    <Icon name='AccountIcon' fill={
-                         router.pathname === "/about"
-                        ? "rgb(225, 228, 232)"
-                        : "rgb(106, 115, 125)"
-                    } />
+                <Link href="/">
+                    <SIdebarBottomIconContainer>
+                        <Icon name='AccountIcon' width={15} height={15} />
+                    </SIdebarBottomIconContainer>
                 </Link>
-            </SidebarBottomIconContainer>
-            <SidebarBottomIconContainer>
-                <Link href="/settings">
-                    <Icon name='SettingsIcon' fill={
-                        router.pathname === "/settings"
-                        ? "rgb(225, 228, 232)"
-                        : "rgb(106, 115, 125)"
-                    } />
+                <Link href="/">
+                    <SIdebarBottomIconContainer>
+                        <Icon name='SettingsIcon' width={15} height={15} />
+                    </SIdebarBottomIconContainer>
                 </Link>
-            </SidebarBottomIconContainer> */}
         </SidebarBottomContainer>
     //     <div className={styles.sidebarBottom}>
     //         <div className={styles.iconContainer}>
@@ -59,11 +51,11 @@ export default SidebarBottomComp;
 
 //styled components for the SIDEBARBOTTOMCOMPONENT
 const SidebarBottomContainer = styled.div`
-    border: 1px solid #000;
-    background-color: green;
+    border: 1px solid red;
+    margin: 0 auto;
 `
-
-// const SidebarBottomIconContainer = styled.div`
-//     cursor: pointer;
-//     width: 100%;
-// `
+const SIdebarBottomIconContainer = styled.div`
+     cursor: pointer;
+     width: 100%;
+     margin: 10px auto;
+`

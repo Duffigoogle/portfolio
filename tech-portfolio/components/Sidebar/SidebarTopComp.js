@@ -131,12 +131,14 @@ export default SidebarTopComp;
 //styled-components for SIDEBARTOPCOMP
 
 const SidebarTopContainer = styled.div`
-    border: 1px solid #fff;
+    border: 1px solid red;
+    margin: 0 auto;
 `
 
 const SIdebarTopIconsContainer = styled.div`
     cursor: pointer;
     width: 100%;
+    margin-top: 10px;
     /* border: ({ active }) => active ? #e6007e : #000;  */
     &:hover {
         background: var(--sidebar-hover-bg);
