@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import TitlebarComp from '../components/Titlebar/TitlebarComp'
+import SidebarComp from '../components/Sidebar/SideBarComp'
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
 
       <main className={styles.container}>
         <TitlebarComp />
+        <SidebarComp />
       </main>
 
       <footer className={styles.footer}>
