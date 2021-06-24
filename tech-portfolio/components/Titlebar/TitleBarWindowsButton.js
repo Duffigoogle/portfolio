@@ -8,7 +8,7 @@ const TitleBarWindowsButton = () => {
                 <TitleBarMaximiseWindow />
                 <TitleBarCloseWindow />
             </TitleBarWindowIcons>
-    
+        // </TitleBarWindowIconsContainer>
     )
 }
 
@@ -25,7 +25,8 @@ const TitleBarWindowIcons = styled.div`
      display: flex;
      flex: 1;
      align-items: center;
-     background-color: whitesmoke;
+     justify-content: flex-end;
+     /* background-color: whitesmoke; */
      height: 30px;
 
     /* & * {
@@ -43,6 +44,7 @@ const TitleBarCloseWindow = styled.div`
         width: 13px;
         border-radius: 50%;
         margin-left: 10px;
+        cursor: pointer;
     
 `
 const TitleBarMaximiseWindow = styled.div`
@@ -51,6 +53,7 @@ const TitleBarMaximiseWindow = styled.div`
         width: 13px;
         border-radius: 50%;
         margin-left: 10px;
+        cursor: pointer;
 `
 const TitleBarMinimiseWindow = styled.div`
     background-color: #f1fa8c;
@@ -58,4 +61,5 @@ const TitleBarMinimiseWindow = styled.div`
         width: 13px;
         border-radius: 50%;
         margin-left: 10px;
+        cursor: pointer;
 `

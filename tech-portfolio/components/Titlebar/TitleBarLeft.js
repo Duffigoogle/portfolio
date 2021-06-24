@@ -27,7 +27,7 @@ export default TitleBarLeftTabs;
 const TitleBarLeft = styled.div`
     display: flex;
     flex: 1;
-    background-color: red;
+    /* background-color: red; */
 `
 
 const TitleLogo = styled.div`
@@ -39,6 +39,6 @@ const TitleTabs = styled.div`
 `
 
 const TitleTab = styled.p`
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-right: 10px;
 `

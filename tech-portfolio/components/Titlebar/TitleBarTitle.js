@@ -16,9 +16,9 @@ const TitleBarCenter = styled.div`
     /* flex: 1; */
     flex: 1;
     text-align: center;
-    background-color: green;
+    /* background-color: green; */
 `
 
 const TitleBarText = styled.p`
-    font-size: 1rem;
+    font-size: 0.8rem;
 `
