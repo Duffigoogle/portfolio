@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from '../common/icons/icons';
+import styled from "styled-components";
 
 const SocialsComp = () => {
   return (
@@ -9,21 +10,21 @@ const SocialsComp = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon name='Github' size={15} color='red' />
+        <Icon name='Github' size={25} color='red' />
       </SocialsLink>
       <SocialsLink
         href="https://twitter.com/duffygoogle"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon name='Twitter' size={15} color='red' />
+        <Icon name='Twitter' size={25} color='red' />
       </SocialsLink>
       <SocialsLink
         href="https://www.linkedin.com/in/caleb-duff/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon name='Linkedin' size={15} color='red' />
+        <Icon name='Linkedin' size={25} color='red' />
       </SocialsLink>
 
     </SocialsContainer>

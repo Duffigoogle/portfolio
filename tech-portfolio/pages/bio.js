@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
+import BioComp from '../components/Bio_block/BioComp'
 
 export default function BioPage() {
   return (
@@ -12,6 +13,7 @@ export default function BioPage() {
 
       <main className={styles.container}>
         <h1>Bio Page</h1>
+        <BioComp />
       </main>
 
       
