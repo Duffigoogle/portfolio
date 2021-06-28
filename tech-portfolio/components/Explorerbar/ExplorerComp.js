@@ -2,20 +2,23 @@ import styled from 'styled-components';
 import Icon from '../common/icons/icons'
 import ExplorerPortfolioComp from '../Explorerbar/ExplorerPortfolio'
 
-const ExplorerComp = () => {
+const ExplorerComp = ({isOpen}) => {
     return (
         <ExplorerMenu>
             <ExplorerTopMenu>
                 <ExplorerTopTabTitle>EXPLORER</ExplorerTopTabTitle>
+
                 <ExplorerTopMenuSections>
+
                     <ExplorerTopSectionTab>
-                        <ExplorerSectionLabel>
+                        <ExplorerTopSectionLabel>
                             <Icon name="ChevronRight" 
                             size={20}
                             />
                                 (WORKSPACE)
-                        </ExplorerSectionLabel>
+                        </ExplorerTopSectionLabel>
                     </ExplorerTopSectionTab>
+ 
                     <ExplorerSections>
                         <ExplorerSectionsTab>
                             <ExplorerSectionLabel>
@@ -24,9 +27,13 @@ const ExplorerComp = () => {
                                 />
                                     TECH-PORTFOLIO
                             </ExplorerSectionLabel>
+
                             <ExplorerPortfolioComp />
+
                         </ExplorerSectionsTab>
+
                     </ExplorerSections>
+
                 </ExplorerTopMenuSections> 
             </ExplorerTopMenu>
             
@@ -39,17 +46,19 @@ export default ExplorerComp;
 
 //STYLING THE STYLED COMPONENTS FOR EXPLORERMENU
 const ExplorerMenu = styled.div`
-    width: 13vw;
+    min-width: 14vw;
     background-color: gray;
     height: calc(95vh - 30px);
-
+    /* display: ${({isOpen}) => (isOpen ? 'block' : 'none')}; */
 `
+
 const ExplorerTopMenu = styled.div`
     width: 100%;
     /* padding: 5px 10px; */
 `
+
 const ExplorerTopTabTitle = styled.p`
-    color: #fff;
+    color: whitesmoke;
     font-size: 0.9rem;
     margin-left: 15px;
     padding: 8px 7px;
@@ -61,8 +70,18 @@ const ExplorerTopMenuSections = styled.section`
 `
 
 const ExplorerTopSectionTab = styled.div`
-    border: 1px solid green;
+    /* border: 1px solid green; */
     padding: 1px 0;
+`
+
+const ExplorerTopSectionLabel = styled.label`
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: whitesmoke;
 `
 
 const ExplorerSections = styled.section`
@@ -70,16 +89,21 @@ const ExplorerSections = styled.section`
 `
 
 const ExplorerSectionsTab = styled.div`
-    border: 1px solid #fff;
-    padding-left: 14px;
+    /* border: 1px solid #fff; */
+    /* padding-left: 0px; */
 `
 
 const ExplorerSectionLabel = styled.label`
     display: flex;
+    height: 3.5vh;
     align-items: center;
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
-    color: #fff;
+    color: whitesmoke;
+    padding-left: 15px;
+    &:hover {
+        background-color: blue;
+    }
 `

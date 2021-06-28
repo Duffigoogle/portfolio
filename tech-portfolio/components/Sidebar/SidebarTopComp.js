@@ -4,17 +4,18 @@ import styled from 'styled-components';
 import Icon from '../common/icons/icons';
 
 
-const SidebarTopComp = () => {
+const SidebarTopComp = ({toggle}) => {
     // const router = useRouter();
+    
 
     return (
         <SidebarTopContainer>
-            <Link href="/">
+        
                 <SIdebarTopIconsContainer>
-                    <Icon name='FilesIcon' width={15} height={15} />
+                    <Icon name='FilesIcon' width={15} height={15} onClick={toggle}/>
                 </SIdebarTopIconsContainer>
-            </Link>
-            <Link href="/">
+    
+            <Link href="/contact">
                 <SIdebarTopIconsContainer>
                     <Icon name='SearchIcon' width={15} height={15}/>
                 </SIdebarTopIconsContainer>
@@ -138,12 +139,16 @@ const SidebarTopContainer = styled.div`
 const SIdebarTopIconsContainer = styled.div`
     cursor: pointer;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
+    border: 1px solid #fff;
     /* border: ({ active }) => active ? #e6007e : #000;  */
     &:hover {
-        background: var(--sidebar-hover-bg);
+        /* background: var(--sidebar-hover-bg); */
+        color: #fff;
     }
     /* &:active {
         border-left: 2px solid var(--accent-color);
     } */
 `
+// opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
+//     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};

@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import SidebarTopComp from '../Sidebar/SidebarTopComp';
 import SidebarBottomComp from '../Sidebar/SidebarBottomComp';
 
-
 //SideBar Copmponent
-const SidebarComp = () => {
+const SidebarComp = ({toggle}) => {
+
   return (
       <SideBarAside>
-          <SidebarTopComp />
+          <SidebarTopComp toggle={toggle}/>
           <SidebarBottomComp />
       </SideBarAside>
   );
@@ -25,7 +25,7 @@ const SideBarAside = styled.aside`
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    width: 4vw;
+    width: 3vw;
     min-width: 40px;
     height: calc(95vh - 30px);
 `
