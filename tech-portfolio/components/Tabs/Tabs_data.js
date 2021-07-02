@@ -2,7 +2,7 @@ const tabs = [
     {
         id: 1,
         filepath: "/home",
-        Icon_name: "",
+        Icon_name: "markdownIcon",
         file_name: "home.md",
 
     },
@@ -10,7 +10,7 @@ const tabs = [
     {
         id: 2,
         filepath: "/about",
-        Icon_name: "",
+        Icon_name: "htmlIcon",
         file_name: "about.html",
 
     },
@@ -18,7 +18,7 @@ const tabs = [
     {
         id: 3,
         filepath: "/bio",
-        Icon_name: "",
+        Icon_name: "cssIcon",
         file_name: "bio.css",
 
     },
@@ -26,7 +26,7 @@ const tabs = [
     {
         id: 4,
         filepath: "/contact",
-        Icon_name: "",
+        Icon_name: "javaScriptIcon",
         file_name: "contact.js",
 
     },
@@ -34,14 +34,14 @@ const tabs = [
     {
         id: 5,
         filepath: "/articles",
-        Icon_name: "",
-        file_name: "projects.jsx",
+        Icon_name: "sassIcon",
+        file_name: "articles.sass",
 
     },
     {
         id: 5,
         filepath: "/projects",
-        Icon_name: "",
+        Icon_name: "reactIcon",
         file_name: "projects.jsx",
 
     },
@@ -49,7 +49,7 @@ const tabs = [
     {
         id: 6,
         filepath: "/github",
-        Icon_name: "",
+        Icon_name: "jsonIcon",
         file_name: "github.json",
 
     },

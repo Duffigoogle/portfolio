@@ -21,9 +21,10 @@ export default TabsTaskbarComp;
 
 
 const TabsTaskbarContainer = styled.nav`
-    display: flex;
+    border: 1px solid red;
+    /* width: 100%; */
 `
 
 const TabShowcase = styled.label`
-
+    display: flex;
 `
