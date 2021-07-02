@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import TabsLayoutComp from '../components/Layout/TabsLayout';
+import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
+// import TabsLayoutComp from '../components/Layout/TabsLayout';
 
 export default function Home() {
   return (
@@ -11,10 +12,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HomePageContainer>
+      {/* <HomePageContainer>
         <TabsLayoutComp />
             <h1>Home Page</h1>
-      </HomePageContainer>
+      </HomePageContainer> */}
+
+      <DisplayAreaLayoutComp>
+        <PageContainer>
+          <h1>Home Page</h1>
+        </PageContainer>
+      </DisplayAreaLayoutComp>
 
       
     </div>
@@ -24,11 +31,7 @@ export default function Home() {
 
 //styled components for HomePage
 
-const HomePageContainer = styled.main`
-    max-height: 100vh;
-    padding: 0 0.5rem;
-    width: 100%;
-    margin: 20px auto;
+const PageContainer = styled.main`
     overflow: hidden;
 `
 

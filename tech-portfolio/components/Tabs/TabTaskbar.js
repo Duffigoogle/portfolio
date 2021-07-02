@@ -21,7 +21,7 @@ export default TabsTaskbarComp;
 
 
 const TabsTaskbarContainer = styled.nav`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* width: 100%; */
 `
 

@@ -19,10 +19,11 @@ export default CodeLinesComp;
 
 
 const CodeLinesContainer = styled.aside`
-    border: 1px solid red;
-    width: 50px;
-    height: 100%;
-    /* width: 100%; */
+    /* border: 2px solid purple; */
+    background-color: #757575;
+    width: 3.44rem;
+    /* height: 80.3vh; */
+    /* height: 100%; */
 `
 
 const TabShowcase = styled.label`
