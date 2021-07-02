@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
+import {useRouter} from 'next/router';
+
 
 
 const ExplorerPortfolioComp = () => {
+    const router = useRouter();
+
     return (
         <>
-            <Link href="/">
+            <Link href="/home">
                 <ExplorerPortfolioItem>
                     <ExplorerSpan/>
                     <Image
@@ -54,6 +58,18 @@ const ExplorerPortfolioComp = () => {
                     <ExplorerPortfolioP>Contact.js</ExplorerPortfolioP>
                 </ExplorerPortfolioItem>
           </Link>  
+            <Link href="/articles">
+                <ExplorerPortfolioItem>
+                    <ExplorerSpan/>
+                    <Image
+                        src="/javascript.svg"
+                        alt="Sass Icon"
+                        height={18}
+                        width={18}
+                    />{' '}
+                    <ExplorerPortfolioP>Articles.sass</ExplorerPortfolioP>
+                </ExplorerPortfolioItem>
+            </Link>  
             <Link href="/projects">
                 <ExplorerPortfolioItem>
                     <ExplorerSpan/>
@@ -95,6 +111,10 @@ const ExplorerPortfolioItem = styled.div`
     cursor: pointer;
     &:hover {
         background-color: blue;
+    }
+    &.active {
+        background-color: red;
+        /* background-color: ${router.pathname === '/' ? '#fff' : 'rgb(106, 115, 125)' }; */
     }
 `
 

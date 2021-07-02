@@ -29,5 +29,5 @@ const TitleBarMenu = styled.div`
     color: #fff;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.85rem;
-    border-bottom: 1px solid #191d20;
+    /* border-bottom: 1px solid #191d20; */
 `

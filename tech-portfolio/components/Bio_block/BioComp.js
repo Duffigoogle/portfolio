@@ -12,10 +12,10 @@ const BioComp = () => {
                 </BioStack>
                 <BioContent>
                     <BioDetails>
-                        <BioHeading1><span>Hello,</span> I'm Duff, </BioHeading1>
-                        <BioP>I build value through code. I like making fun and interactive things for the web.</BioP>
-                        <BioP> I'm an aesthetics custodian for the web's User Interface and I love building digital products.</BioP>
-                        <BioPSmall>I also Talk, Teach and Write about Codes and Tech.</BioPSmall>
+                        <BioHeading1>Hello,<span> I'm Duff.</span> </BioHeading1>
+                        <BioP>I <span>build value</span> through code. I like making <span>fun</span> and <span>interactive things</span> for the web.</BioP>
+                        <BioP> I'm an <span>aesthetics custodian</span> for the web's User Interface and I love <span>building digital products</span>.</BioP>
+                        <BioPSmall>I also <span>Talk</span>, <span>Teach</span> and <span>Write about Codes</span> and <span>Tech</span>.</BioPSmall>
                         <SocialsComp />
                     </BioDetails>
                     <BioButtonContainer>
@@ -38,16 +38,22 @@ const BioContainer = styled.div`
     width: 80vw;
     display: flex;
     justify-content: center;
+    padding-top: 50px;
     border: 1px solid red;
 `;
 
 const BioStack = styled.div`
-    width: 40px;
+    width: 35px;
     height: 300px;
-    /* padding: 5px auto; */
-    border: none;
     background-color: orange;
-    /* transform: rotate(-90deg); */
+    border: none;
+    box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.4);
+    padding-top: 10px; 
+    &:hover {
+        background-color: whitesmoke;
+        /* border: 1px solid orange; */
+        cursor: pointer;
+    }
     
 `
 
@@ -59,7 +65,6 @@ const BioStackText = styled.h3`
     writing-mode:vertical-lr;
     transform: rotate(180deg);
     
-
 `
 
 const BioContent = styled.div`
@@ -68,24 +73,36 @@ const BioContent = styled.div`
 `
 
 const BioDetails = styled.div`
-    padding-top: 1.5rem;
+    padding-top: 1rem;
+    /* border: 1px solid red; */
 `;
 
 const BioHeading1 = styled.h1`
+    margin-bottom: 10px;
     font-weight: 800;
+    font-size: 1.8rem;
+    span {
+        color: yellowgreen;
+    }
+    
 `
 
 const BioP = styled.p`
     font-size: 2rem;
+    span {
+        color: orange;
+        font-style: italic;
+    }
 `
 
 const BioPSmall = styled.p`
     font-size: 1rem;
     font-style: italic;
+    margin-top: 10px;
 `
 
 const BioButtonContainer = styled.div`
-        margin-top: 8rem;
+        margin-top: 5rem;
 `;
 
 

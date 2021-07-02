@@ -47,7 +47,7 @@ export default ExplorerComp;
 //STYLING THE STYLED COMPONENTS FOR EXPLORERMENU
 const ExplorerMenu = styled.div`
     min-width: 14vw;
-    background-color: gray;
+    background-color: #616161;
     height: calc(95vh - 30px);
     /* display: ${({isOpen}) => (isOpen ? 'block' : 'none')}; */
 `

@@ -19,8 +19,8 @@ export default SidebarComp;
 
 //styled Components for the SIDEBARCOMPONENT
 const SideBarAside = styled.aside`
-    background: gray;
-    border: 1px solid #000;
+    background: #757575;
+    /* border: 1px solid #000; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
