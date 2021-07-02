@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import WelcomeComp from '../components/Welcome/Welcome'
+import Head from 'next/head';
 import styled from 'styled-components';
+import TabsLayoutComp from '../components/Layout/TabsLayout';
 
 export default function Home() {
   return (
@@ -12,8 +12,8 @@ export default function Home() {
       </Head>
 
       <HomePageContainer>
-        {/* <HomePageHeading1>Home Page</HomePageHeading1> */}
-        <WelcomeComp />
+        <TabsLayoutComp />
+            <h1>Home Page</h1>
       </HomePageContainer>
 
       

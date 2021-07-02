@@ -26,7 +26,7 @@ const SidebarTopComp = ({toggle}) => {
                     <Icon name='SearchIcon' 
                     width={15} 
                     height={15}
-                    color={router.pathname === '/search' ? '#fff' : 'rgb(106, 115, 125)' }
+                    color={router.pathname === '/search' ? '#fff' : 'currentcolor' }
                     />
                 </SidebarTopIconsContainer>
             </Link>
@@ -35,7 +35,7 @@ const SidebarTopComp = ({toggle}) => {
                     <Icon name='CodeIcon' 
                     width={15} 
                     height={15}
-                    color={router.pathname === '/codebase' ? '#fff' : 'rgb(106, 115, 125)' }
+                    color={router.pathname === '/codebase' ? '#fff' : 'currentcolor' }
                     />
                 </SidebarTopIconsContainer>
             </Link>
@@ -44,7 +44,7 @@ const SidebarTopComp = ({toggle}) => {
                     <Icon name='GithubIcon' 
                     width={15} 
                     height={15}
-                    color={router.pathname === '/github' ? '#fff' : 'rgb(106, 115, 125)' }
+                    color={router.pathname === '/githubConnect' ? '#fff' : 'currentcolor' }
                     />
                 </SidebarTopIconsContainer>
             </Link>
@@ -53,7 +53,7 @@ const SidebarTopComp = ({toggle}) => {
                     <Icon name='MailIcon' 
                     width={15} 
                     height={15}
-                    color={router.pathname === '/contactMe' ? '#fff' : 'rgb(106, 115, 125)' }
+                    color={router.pathname === '/contactMe' ? '#fff' : 'currentcolor' }
                     />
                 </SidebarTopIconsContainer>
             </Link>
@@ -62,7 +62,7 @@ const SidebarTopComp = ({toggle}) => {
                     <Icon name='PluralsightIcon' 
                     width={15} 
                     height={15}
-                    color={router.pathname === '/pluralsight' ? '#fff' : 'rgb(106, 115, 125)' }
+                    color={router.pathname === '/pluralsight' ? '#fff' : 'yellow' }
                     />
                 </SidebarTopIconsContainer>
             </Link>
@@ -169,8 +169,8 @@ const SidebarTopIconsContainer = styled.div`
     /* border: 1px solid #fff; */
     /* border: ({ active }) => active ? #e6007e : #000;  */
     &:hover {
-        /* background: var(--sidebar-hover-bg); */
         color: #fff;
+        /* border: 1px solid #fff; */
     }
     /* &:active {
         border-left: 2px solid var(--accent-color);
