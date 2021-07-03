@@ -19,7 +19,7 @@ export default TitlebarComp;
 
 //styled components for the SIDEBARMENU.
 const TitleBarMenu = styled.div`
-    width: 1350px;
+    width: cal(100vw - 0.10rem);
     background: gray;
     height: 30px;
     padding: 0 0.5rem;

@@ -5,7 +5,7 @@ const TitleBarLeftTabs = () => {
     return (
         <TitleBarLeft>
             <TitleLogo>
-                <Image src='/vscode_icon.svg' alt='vs code icon' width={20} height={20} />
+                <Image src='/vscode_icon.svg' alt='vs code icon' width={17} height={17} />
             </TitleLogo>
             <TitleTabs>
                 <TitleTab>File</TitleTab>
@@ -27,11 +27,13 @@ export default TitleBarLeftTabs;
 const TitleBarLeft = styled.div`
     display: flex;
     flex: 1;
+    align-items: center;
     /* background-color: red; */
 `
 
 const TitleLogo = styled.div`
-    margin-right: 10px;
+    margin-right: 0.63rem;
+    
 `
 
 const TitleTabs = styled.div`

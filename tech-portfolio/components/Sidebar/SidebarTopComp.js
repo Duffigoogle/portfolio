@@ -19,6 +19,7 @@ const SidebarTopComp = ({toggle}) => {
                     onClick={toggle}
                     color={router.pathname === '/' || '/home' ? '#fff' : 'rgb(106, 115, 125)' }
                     />
+                    <ToolTipSpan>Explorer</ToolTipSpan>
                 </SidebarTopIconsContainer>
     
             <Link href="/contact">
@@ -37,6 +38,7 @@ const SidebarTopComp = ({toggle}) => {
                     height={15}
                     color={router.pathname === '/codebase' ? '#fff' : 'currentcolor' }
                     />
+                    <ToolTipSpan>Codebase</ToolTipSpan>
                 </SidebarTopIconsContainer>
             </Link>
             <Link href="/">
@@ -165,12 +167,17 @@ const SidebarTopContainer = styled.div`
 const SidebarTopIconsContainer = styled.div`
     cursor: pointer;
     width: 100%;
+    /* position: relative; */
     margin-top: 15px;
+    /* display: inline-block; */
     /* border: 1px solid #fff; */
-    /* border: ({ active }) => active ? #e6007e : #000;  */
+
     &:hover {
         color: #fff;
-        /* border: 1px solid #fff; */
+    }
+    &:hover span {
+        visibility: visible;
+        opacity: 1;
     }
     /* &:active {
         border-left: 2px solid var(--accent-color);
@@ -178,3 +185,33 @@ const SidebarTopIconsContainer = styled.div`
 `
 // opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
 //     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+
+const ToolTipSpan = styled.span`
+    visibility: hidden;
+    width: 80px;
+    background-color: black;
+    color: #fff;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 6px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 130px;
+    left: 3.5%;
+    /* Fade In tooltips (Animation) */
+    opacity: 0;
+    transition: opacity 1s;
+
+    ::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        right: 100%; /* To the left of the tooltip */
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent black transparent transparent;
+    }
+`

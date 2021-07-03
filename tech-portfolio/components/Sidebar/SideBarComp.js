@@ -27,5 +27,5 @@ const SideBarAside = styled.aside`
     align-items: stretch;
     width: 3vw;
     min-width: 40px;
-    height: calc(95vh - 30px);
+    height: calc(100vh - 30px - 30px);
 `
