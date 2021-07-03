@@ -21,8 +21,8 @@ export default TabSchema;
 const TabBox = styled.div`
     display: flex;
     align-items: center;
-    border: 1px solid purple;
-    padding: 5px 25px; 
+    border-right: 1px solid purple;
+    padding: 0.33rem 1.55rem; 
 `
 
 const TabFileName = styled.p`

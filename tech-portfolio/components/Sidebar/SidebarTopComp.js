@@ -167,7 +167,6 @@ const SidebarTopContainer = styled.div`
 const SidebarTopIconsContainer = styled.div`
     cursor: pointer;
     width: 100%;
-    /* position: relative; */
     margin-top: 15px;
     /* display: inline-block; */
     /* border: 1px solid #fff; */

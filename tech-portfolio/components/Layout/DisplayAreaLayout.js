@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import TabsTaskbarComp from '../Tabs/TabTaskbar';
-import CodeLinesComp from '../codelines/CodeLinesComp';
+// import CodeLinesComp from '../codelines/CodeLinesComp';
 
 
 const DisplayAreaLayoutComp = ({children}) => {
@@ -12,13 +12,7 @@ const DisplayAreaLayoutComp = ({children}) => {
                         <TabsTaskbarComp />
                         <FilePathLabel>File path</FilePathLabel>
                 </DisplayAreaContainerTop>
-                        
-                <DisplayAreaContainerLeft>
-                    <CodeLinesComp />
-                    {children}
-                </DisplayAreaContainerLeft>
-
-                
+                     <PageContainer>{children}</PageContainer>    
 
             </DisplayAreaContainer> 
         </>
@@ -28,10 +22,11 @@ const DisplayAreaLayoutComp = ({children}) => {
 export default DisplayAreaLayoutComp;
 
 
-const DisplayAreaContainer = styled.main`
-    border: 1px solid green;
-    /* display: flex;
-    flex-direction: column; */
+const DisplayAreaContainer = styled.div`
+    width: 100%;
+    height: calc(100vh - 30px - 30px);
+    /* border: 1px solid green; */
+    
 `
 
 const DisplayAreaContainerTop = styled.div`
@@ -40,12 +35,15 @@ const DisplayAreaContainerTop = styled.div`
 
 const FilePathLabel = styled.div`
     background-color: #616161;
-    box-shadow: 0px 2px 1px #9e9e9e;
-    /* z-index: 10; */
+    /* box-shadow: 0px 2px 1px #9e9e9e; */
+    
 `
 
-const DisplayAreaContainerLeft = styled.div`
-    margin-top: 4px;
+const PageContainer = styled.main`
     display: flex;
-    height: 90vh;
+    /* width: 80vw; */
+    height: 85vh;
+    overflow-y: auto;
+    
 `
+

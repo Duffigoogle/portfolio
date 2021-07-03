@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
+import CodeLinesComp from '../components/codelines/CodeLinesComp';
 // import TabsLayoutComp from '../components/Layout/TabsLayout';
 
 export default function Home() {
@@ -18,9 +19,10 @@ export default function Home() {
       </HomePageContainer> */}
 
       <DisplayAreaLayoutComp>
-        <PageContainer>
+        <>
+          <CodeLinesComp />
           <h1>Home Page</h1>
-        </PageContainer>
+        </>
       </DisplayAreaLayoutComp>
 
       
@@ -29,10 +31,7 @@ export default function Home() {
 };
 
 
-//styled components for HomePage
-
-const PageContainer = styled.main`
-    overflow: hidden;
+//styled components for HomePage 
 `
 
 // const HomePageHeading1 = styled.h1`

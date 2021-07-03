@@ -665,7 +665,7 @@ const Icon = ({ size, name, color, props }) => {
       <circle cx={496} cy={496} r={144.3} />
       <circle cx={847.7} cy={496} r={144.3} />
     </svg>
-    ) : name === 'PlayButton' ? (
+    ) : name === 'PlayButtonFill' ? (
       <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 17.804 17.804"
@@ -677,6 +677,19 @@ const Icon = ({ size, name, color, props }) => {
       <title>{"Run Code"}</title>
       <path d="M2.067.043a.4.4 0 01.426.042l13.312 8.503a.41.41 0 01.154.313c0 .12-.061.237-.154.314L2.492 17.717a.402.402 0 01-.25.087l-.176-.04a.399.399 0 01-.222-.361V.402c0-.152.086-.295.223-.359z" />
     </svg>
+    ) : name === 'PlayButtonOutline' ? (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 58.752 58.752"
+      width={size}
+      height={size}
+      fill={color}
+      {...props}
+    >
+      <title>{"Run Code"}</title>
+      <path d="M52.524 23.925L12.507.824c-1.907-1.1-4.376-1.097-6.276 0a6.294 6.294 0 00-3.143 5.44v46.205a6.29 6.29 0 003.131 5.435 6.263 6.263 0 006.29.005l40.017-23.103a6.3 6.3 0 003.138-5.439 6.315 6.315 0 00-3.14-5.442zm-3 5.687L9.504 52.716a.27.27 0 01-.279-.005.28.28 0 01-.137-.242V6.263a.28.28 0 01.421-.243l40.01 23.098a.29.29 0 01.145.249.283.283 0 01-.14.245z" />
+    </svg>
+
     ) : name === 'TwoColumns' ? (
       <svg
       xmlns="http://www.w3.org/2000/svg"
