@@ -47,12 +47,17 @@ export default TabsTaskbarComp;
 const TabsTaskbarContainer = styled.nav`
     /* border: 1px solid red; */
     display: flex;
-    background-color: #bdbdbd;
-
+    background-color: #999999;
+    border-bottom: 0.13rem solid #444444;
 `
 
 const TabsCollection = styled.label`
     display: flex;
+
+    :hover {
+        cursor: pointer;
+        box-shadow: 0px 3px 3px #e8e9ec;
+    }
 `
 
 const TabsTaskbarIcons = styled.div`
@@ -64,4 +69,10 @@ const TabsTaskbarIcons = styled.div`
 `
 const TabsIconBox = styled.div`
     cursor: pointer;
+    
+    /* :hover {
+        border: 1px solid #999999;
+        border-radius: 0.3rem;
+        background-color: #bfbfbf;
+    } */
 `

@@ -5,7 +5,7 @@ const CodeLinesComp = () => {
     function range(start, end) {
         return Array(end - start + 1).fill().map((_, idx) => start + idx)
     }
-    const numbers = range(1, 39);
+    const numbers = range(1, 35);
 
     return (
         <>
@@ -41,8 +41,8 @@ const CodeLinesContainer = styled.aside`
     /* border: 2px solid purple; */
     background-color: #757575;
     width: 3.44rem;
-    /* height: 80.3vh; */
-    height: 100%;
+    height: 100vh;
+    /* height: 100%; */
 `
 
 const TabShowcaseUl = styled.ul`
@@ -53,6 +53,7 @@ const TabShowcaseUl = styled.ul`
          padding: 0;
          margin: 0;
          line-height: 1.2rem;
+         font-size: 0.7rem;
     }
     
 `

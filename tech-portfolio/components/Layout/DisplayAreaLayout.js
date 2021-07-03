@@ -26,6 +26,7 @@ const DisplayAreaContainer = styled.div`
     width: 100%;
     height: calc(100vh - 30px - 30px);
     /* border: 1px solid green; */
+    overflow: hidden;
     
 `
 

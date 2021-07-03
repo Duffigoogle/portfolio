@@ -35,7 +35,7 @@ const tabs = [
         id: 5,
         filepath: "/articles",
         Icon_name: "sassIcon",
-        file_name: "articles.sass",
+        file_name: "articles.scss",
 
     },
     {

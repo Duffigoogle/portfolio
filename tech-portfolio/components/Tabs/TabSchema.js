@@ -23,6 +23,11 @@ const TabBox = styled.div`
     align-items: center;
     border-right: 1px solid purple;
     padding: 0.33rem 1.55rem; 
+
+    /* :hover {
+        background-color: #5d5d5d;
+        color: #fff;
+    } */
 `
 
 const TabFileName = styled.p`
