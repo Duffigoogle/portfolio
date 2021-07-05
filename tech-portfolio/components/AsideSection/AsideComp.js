@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-// import Icon from '../common/icons/icons';
+import Icon from '../common/icons/icons';
 import styled from 'styled-components';
 
 
@@ -16,28 +16,39 @@ const AsideComp = () => {
         <SideBarContainer>
             <SideBarTabs>
                 <div className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
-                    onClicck={() => toggleTab(1)}>Icon 1
-                    {/* <Icon name='FilesIcon' size={20} color='red'/> */}
+                    onClick={() => toggleTab(1)}>
+                    <Icon name='FilesIcon' 
+                    size={23} 
+                    color={toggleState === 1 ? '#fff' : '#bfbfbf'}/>
                 </div>
                 <div className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
-                    onClicck={() => toggleTab(2)}>Icon 2
-                    {/* <Icon name='SearchIcon' size={20} color='red'/> */}
+                    onClick={() => toggleTab(2)}>
+                    <Icon name='SearchRightIcon' size={23} 
+                    color={toggleState === 2 ? '#fff' : '#bfbfbf'} />
                 </div>
                 <div className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
-                    onClicck={() => toggleTab(3)}>Icon 3
-                    {/* <Icon name='CodeIcon' size={20} color='red'/> */}
+                    onClick={() => toggleTab(3)}>
+                    <Icon name='CodeIcon' 
+                    size={23} 
+                    color={toggleState === 3 ? '#fff' : '#bfbfbf'} />
                 </div>
                 <div className={toggleState === 4 ? 'tabs active-tabs' : 'tabs'}
-                    onClicck={() => toggleTab(4)}>Icon 4
-                    {/* <Icon name='GithubIcon' size={20} color='red'/> */}
+                    onClick={() => toggleTab(4)}>
+                    <Icon name='GithubIcon' 
+                    size={23} 
+                    color={toggleState === 4 ? '#fff' : '#bfbfbf'}/>
                 </div>
                 <div className={toggleState === 5 ? 'tabs active-tabs' : 'tabs'}
-                    onClicck={() => toggleTab(5)}>Icon 5
-                    {/* <Icon name='MailIcon' size={20} color='red'/> */}
+                    onClick={() => toggleTab(5)}>
+                    <Icon name='MailIcon' 
+                    size={23} 
+                    color={toggleState === 5 ? '#fff' : '#bfbfbf'}/>
                 </div>
                 <div className={toggleState === 6 ? 'tabs active-tabs' : 'tabs'}
-                    onClicck={() => toggleTab(6)}>Icon 6
-                    {/* <Icon name='PluralsightIcon' size={20} color='red'/> */}
+                    onClick={() => toggleTab(6)}>
+                    <Icon name='PluralsightIcon' 
+                    size={23} 
+                    color={toggleState === 6 ? '#fff' : '#bfbfbf'}/>
                 </div>
             </SideBarTabs>
             <SideBarContents>
@@ -79,7 +90,7 @@ const SideBarContainer = styled.aside`
     display: flex;
     min-width: calc(14vw + 5vw);
     max-height: calc(100vh - 30px);
-    border: 2px solid yellowgreen;
+    /* border: 2px solid y     ellowgreen; */
 `
 
 const SideBarTabs = styled.div`
@@ -89,13 +100,13 @@ const SideBarTabs = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    background-color: #000000;
+    /* background-color: #000000; */
 `
 
 const SideBarContents = styled.div`
     width: 14vw;
     min-width: 187px;
-    background-color: #9e9e9e;
+    /* background-color: #9e9e9e; */
 `
 
 // export const SideBarContentLayout = ({children, sidebarTitle}) => {

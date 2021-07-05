@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
 
-const Icon = ({ size, name, color, props }) => {
+const Icon = ({ size, name, color, props, className }) => {
     return name === 'facebook' ? (
         <svg
             width={size}
@@ -9,6 +9,8 @@ const Icon = ({ size, name, color, props }) => {
             viewBox="0 0 30 29"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className={className}
+
         >
             <path
                 d="M30 14.5C30 6.492 23.284 0 15 0 6.716 0 0 6.492 0 14.5c0 7.237 5.485 13.236 12.656 14.324V18.69H8.848V14.5h3.808v-3.194c0-3.635 2.24-5.642 5.666-5.642 1.64 0 3.358.283 3.358.283v3.569h-1.892c-1.863 0-2.444 1.117-2.444 2.265V14.5h4.16l-.665 4.191h-3.495v10.133C24.514 27.736 30 21.737 30 14.5z"
@@ -518,7 +520,7 @@ const Icon = ({ size, name, color, props }) => {
         d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z"
       />
     </svg>
-    ) : name === 'SearchIcon' ? (
+    ) : name === 'SearchLeftIcon' ? (
       <svg
       aria-labelledby="title desc"
       xmlns="http://www.w3.org/2000/svg"
@@ -536,7 +538,21 @@ const Icon = ({ size, name, color, props }) => {
         <circle cx={8} cy={8} r={7} />
       </g>
     </svg>
-    ) : name === "PluralsightIcon" ? (
+    ) : name === "SearchRightIcon" ? (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 350 350"
+      {...props}
+    >
+      <path
+        d="M3.754 314.954l88.26-88.26C49.65 170.87 53.89 90.724 104.805 39.807c26.92-26.923 62.72-41.751 100.799-41.751 38.079 0 73.878 14.828 100.801 41.75s41.752 62.723 41.752 100.802c0 38.076-14.83 73.875-41.752 100.798-27.79 27.794-64.294 41.69-100.801 41.69-30.374 0-60.731-9.656-86.086-28.9l-88.26 88.26c-3.793 3.801-8.776 5.7-13.751 5.7s-9.959-1.899-13.752-5.7c-7.597-7.593-7.597-19.908 0-27.502zm275.14-101.05c19.582-19.578 30.362-45.606 30.362-73.296 0-27.689-10.78-53.717-30.362-73.295-19.574-19.578-45.606-30.357-73.291-30.357-27.686 0-53.717 10.779-73.296 30.361-40.413 40.413-40.413 106.174 0 146.59 40.417 40.414 106.178 40.406 146.587-.003z"
+        fill={color}
+        strokeMiterlimit={10}
+      />
+    </svg>
+    ): name === "PluralsightIcon" ? (
       <svg
       xmlns="http://www.w3.org/2000/svg"
       width={size}
@@ -711,12 +727,14 @@ export default Icon;
 Icon.prototype = {
     size: PropTypes.number,
     name: PropTypes.string,
-    color: (PropTypes.string = 'danger' | 'success' | 'purple' | 'primary')
+    color: PropTypes.string,
+    className: PropTypes.string, 
 };
 
 Icon.defaultProps = {
     name: '',
     size: 25,
-    color: "currentcolor"
+    color: "currentcolor",
+    className: ''
 };
 

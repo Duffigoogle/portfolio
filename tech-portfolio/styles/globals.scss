@@ -1,4 +1,6 @@
-// import @asidebar.scss
+@import "./variables";
+@import "./helpers";
+@import "./resets";
 
 /* ./styles/globals.css */
 @tailwind base;
