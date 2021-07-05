@@ -7,19 +7,30 @@ const AsideComp = () => {
 
     // Logic for toggling between the Tabs on the SideBar
     const [toggleState, setToggleState] = useState(1);
+    const [isExpanded, setIsExpanded] = useState(+true);
 
     const toggleTab = (ind) => {
         setToggleState(ind)
+    };
+
+    // style={portfolioOpen ? { display: 'block' } : { display: 'none' }}
+
+    const toggleSideTab = () => {
+        setIsExpanded(!isExpanded);
     }
 
     return (
         <SideBarContainer>
             <SideBarTabs>
                 <div className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
-                    onClick={() => toggleTab(1)}>
+                    onClick={() => toggleTab(1)}
+                    onDoubleClick={toggleSideTab}
+                    >
                     <Icon name='FilesIcon' 
                     size={23} 
-                    color={toggleState === 1 ? '#fff' : '#bfbfbf'}/>
+                    color={toggleState === 1 ? '#fff' : '#bfbfbf'}
+                    
+                    />
                 </div>
                 <div className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
                     onClick={() => toggleTab(2)}>
@@ -51,7 +62,7 @@ const AsideComp = () => {
                     color={toggleState === 6 ? '#fff' : '#bfbfbf'}/>
                 </div>
             </SideBarTabs>
-            <SideBarContents>
+            <SideBarContents visibility={isExpanded}>
                 <div className={toggleState === 1 ? 'content active-content' : 'content'}>
                     {/* <ExplorerComp /> */}
                     ExplorerComp
@@ -106,7 +117,8 @@ const SideBarTabs = styled.div`
 const SideBarContents = styled.div`
     width: 14vw;
     min-width: 187px;
-    /* background-color: #9e9e9e; */
+    /* display: ${({ isHidden }) => isOpenSideBar ? 'block' : 'none'}; */
+    display: ${props => props.visibility ? 'block' : 'none'};
 `
 
 // export const SideBarContentLayout = ({children, sidebarTitle}) => {
