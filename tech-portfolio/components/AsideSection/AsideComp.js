@@ -13,7 +13,6 @@ const AsideComp = () => {
         setToggleState(ind)
     };
 
-    // style={portfolioOpen ? { display: 'block' } : { display: 'none' }}
 
     const toggleSideTab = () => {
         setIsExpanded(!isExpanded);
