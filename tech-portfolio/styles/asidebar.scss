@@ -1,0 +1,44 @@
+.tabs {
+    padding: 0.5rem 1.25rem;
+    background: purple;
+    color: #ececec;
+    // display: flex;
+    // align-items: center;
+    border: 1px solid red;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.active-tabs {
+    background: rgb(196, 13, 13);
+    border-right: 4px solid black;
+    // transparent
+
+    ::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateY(-50%);
+        width: calc(100% + 2px);
+        height: 10px;
+        background: rgb(88, 147, 241);
+    }
+}
+
+
+
+.content {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: none;
+} 
+
+
+.active-content {
+    display: block;
+}
