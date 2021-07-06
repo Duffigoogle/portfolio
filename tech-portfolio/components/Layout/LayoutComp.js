@@ -1,6 +1,7 @@
 import TitlebarComp from '../Titlebar/TitlebarComp';
-import SidebarComp from '../Sidebar/SideBarComp';
-import ExplorerComp from '../Explorerbar/ExplorerComp';
+import AsideComp from '../AsideMenuBars/AsideComp'
+// import SidebarComp from '../Sidebar/SideBarComp';
+// import ExplorerComp from '../Explorerbar/ExplorerComp';
 import FooterComp from '../Footer/FooterComp';
 import styles from '../../styles/Home.module.scss';
 import styled from 'styled-components';
@@ -8,22 +9,32 @@ import { useState } from 'react';
 
 const LayoutComp = ({children}) => {
 
-    const [isOpen, setIsOpen] = useState(false);
+    // Logic for toggling between the Tabs on the SideBar
+    const [toggleState, setToggleState] = useState(1);
+    const [isExpanded, setIsExpanded] = useState(+true);
 
-    const toggle = () => {
-        setIsOpen(!isOpen);
+    const toggleTab = (ind) => {
+        setToggleState(ind)
     };
+
+
+    const toggleSideTab = () => {
+        setIsExpanded(!isExpanded);
+    }
 
     return (
         <>
             <main className={styles.container}>
                 <TitlebarComp />
                 <LayoutAsideBars>
-                    <SidebarComp toggle={toggle}/>
-                    <ExplorerComp isOpen={isOpen}/>
-                    <div>
+                    {/* <SidebarComp toggle={toggle}/>
+                    <ExplorerComp isOpen={isOpen}/> */}
+                    <AsideComp toggleState={toggleState} toggleTab={toggleTab} 
+                    toggleSideTab={toggleSideTab} isExpanded={isExpanded}
+                    />
+                    <DisplayAreaContainer isExpanded={isExpanded}>
                         {children}
-                    </div>
+                    </DisplayAreaContainer>
                 </LayoutAsideBars>
                 <FooterComp />
             </main>
@@ -39,3 +50,10 @@ const LayoutAsideBars = styled.aside`
     /* display: ${({isOpen}) => (isOpen ? 'flex' : 'none')}; */
     flex-direction: row;
 `
+
+const DisplayAreaContainer = styled.div`
+    height: calc(100vh - 30px - 30px);
+    /* border: 1px solid green; */
+    overflow: hidden;
+    width: ${({isExpanded}) => (isExpanded == true ? 'calc(100vw - 17vw)' : 'calc(100vw - 3vw)')};
+` 

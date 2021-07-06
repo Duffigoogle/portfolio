@@ -47,6 +47,7 @@ export default TabsTaskbarComp;
 const TabsTaskbarContainer = styled.nav`
     /* border: 1px solid red; */
     display: flex;
+    justify-content: space-between;
     background-color: #999999;
     border-bottom: 0.13rem solid #444444;
 `

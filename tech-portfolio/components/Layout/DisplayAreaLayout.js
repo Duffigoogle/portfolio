@@ -6,7 +6,7 @@ import TabsTaskbarComp from '../Tabs/TabTaskbar';
 const DisplayAreaLayoutComp = ({children}) => {
     return (
         <>
-           <DisplayAreaContainer>
+           {/* <DisplayAreaContainer> */}
 
                 <DisplayAreaContainerTop>
                         <TabsTaskbarComp />
@@ -14,7 +14,7 @@ const DisplayAreaLayoutComp = ({children}) => {
                 </DisplayAreaContainerTop>
                      <PageContainer>{children}</PageContainer>    
 
-            </DisplayAreaContainer> 
+            {/* </DisplayAreaContainer>  */}
         </>
     )
 }
@@ -22,13 +22,13 @@ const DisplayAreaLayoutComp = ({children}) => {
 export default DisplayAreaLayoutComp;
 
 
-const DisplayAreaContainer = styled.div`
-    width: 100%;
-    height: calc(100vh - 30px - 30px);
-    /* border: 1px solid green; */
-    overflow: hidden;
+// const DisplayAreaContainer = styled.div`
+//     width: 100%;
+//     height: calc(100vh - 30px - 30px);
+//     /* border: 1px solid green; */
+//     overflow: hidden;
     
-`
+// `
 
 const DisplayAreaContainerTop = styled.div`
     /* border: 1px solid red; */

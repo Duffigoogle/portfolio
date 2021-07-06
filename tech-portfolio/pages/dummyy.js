@@ -1,4 +1,4 @@
-import AsideComp from '../components/AsideSection/AsideComp';
+import AsideComp from '../components/AsideMenuBars/AsideComp';
 
 const dummyy = () => {
     return (

@@ -1,67 +1,70 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 import Icon from '../common/icons/icons';
 import styled from 'styled-components';
 
 
-const AsideComp = () => {
-
-    // Logic for toggling between the Tabs on the SideBar
-    const [toggleState, setToggleState] = useState(1);
-    const [isExpanded, setIsExpanded] = useState(+true);
-
-    const toggleTab = (ind) => {
-        setToggleState(ind)
-    };
-
-
-    const toggleSideTab = () => {
-        setIsExpanded(!isExpanded);
-    }
+const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
 
     return (
         <SideBarContainer>
             <SideBarTabs>
-                <div className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
-                    onClick={() => toggleTab(1)}
-                    onDoubleClick={toggleSideTab}
-                    >
-                    <Icon name='FilesIcon' 
-                    size={23} 
-                    color={toggleState === 1 ? '#fff' : '#bfbfbf'}
-                    
-                    />
-                </div>
-                <div className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
-                    onClick={() => toggleTab(2)}>
-                    <Icon name='SearchRightIcon' size={23} 
-                    color={toggleState === 2 ? '#fff' : '#bfbfbf'} />
-                </div>
-                <div className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
-                    onClick={() => toggleTab(3)}>
-                    <Icon name='CodeIcon' 
-                    size={23} 
-                    color={toggleState === 3 ? '#fff' : '#bfbfbf'} />
-                </div>
-                <div className={toggleState === 4 ? 'tabs active-tabs' : 'tabs'}
-                    onClick={() => toggleTab(4)}>
-                    <Icon name='GithubIcon' 
-                    size={23} 
-                    color={toggleState === 4 ? '#fff' : '#bfbfbf'}/>
-                </div>
-                <div className={toggleState === 5 ? 'tabs active-tabs' : 'tabs'}
-                    onClick={() => toggleTab(5)}>
-                    <Icon name='MailIcon' 
-                    size={23} 
-                    color={toggleState === 5 ? '#fff' : '#bfbfbf'}/>
-                </div>
-                <div className={toggleState === 6 ? 'tabs active-tabs' : 'tabs'}
-                    onClick={() => toggleTab(6)}>
-                    <Icon name='PluralsightIcon' 
-                    size={23} 
-                    color={toggleState === 6 ? '#fff' : '#bfbfbf'}/>
-                </div>
+                <TopSideBarTabs>
+                    <div className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
+                        onClick={() => toggleTab(1)}
+                        onDoubleClick={toggleSideTab}
+                        >
+                        <Icon name='FilesIcon' 
+                        size={23} 
+                        color={toggleState === 1 ? '#fff' : '#bfbfbf'}
+                        
+                        />
+                    </div>
+                    <div className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
+                        onClick={() => toggleTab(2)}>
+                        <Icon name='SearchRightIcon' size={23} 
+                        color={toggleState === 2 ? '#fff' : '#bfbfbf'} />
+                    </div>
+                    <div className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
+                        onClick={() => toggleTab(3)}>
+                        <Icon name='CodeIcon' 
+                        size={23} 
+                        color={toggleState === 3 ? '#fff' : '#bfbfbf'} />
+                    </div>
+                    <div className={toggleState === 4 ? 'tabs active-tabs' : 'tabs'}
+                        onClick={() => toggleTab(4)}>
+                        <Icon name='GithubIcon' 
+                        size={23} 
+                        color={toggleState === 4 ? '#fff' : '#bfbfbf'}/>
+                    </div>
+                    <div className={toggleState === 5 ? 'tabs active-tabs' : 'tabs'}
+                        onClick={() => toggleTab(5)}>
+                        <Icon name='MailIcon' 
+                        size={23} 
+                        color={toggleState === 5 ? '#fff' : '#bfbfbf'}/>
+                    </div>
+                    <div className={toggleState === 6 ? 'tabs active-tabs' : 'tabs'}
+                        onClick={() => toggleTab(6)}>
+                        <Icon name='PluralsightIcon' 
+                        size={23} 
+                        color={toggleState === 6 ? '#fff' : '#bfbfbf'}/>
+                    </div>
+                </TopSideBarTabs>
+                <BottomSideBarTabs>
+                        <div className={toggleState === 7 ? 'tabs active-tabs' : 'tabs'}
+                            onClick={() => toggleTab(7)}>
+                            <Icon name='personcircle' 
+                            size={23} 
+                            color={toggleState === 7 ? '#fff' : '#bfbfbf'}/>
+                        </div>
+                        <div className={toggleState === 8 ? 'tabs active-tabs' : 'tabs'}
+                            onClick={() => toggleTab(8)}>
+                            <Icon name='SettingsIcon' 
+                            size={23} 
+                            color={toggleState === 8 ? '#fff' : '#bfbfbf'}/>
+                        </div>
+                </BottomSideBarTabs>
             </SideBarTabs>
-            <SideBarContents visibility={isExpanded}>
+            <SideBarContents visibility={isExpanded ? +true : undefined}>
                 <div className={toggleState === 1 ? 'content active-content' : 'content'}>
                     {/* <ExplorerComp /> */}
                     ExplorerComp
@@ -86,6 +89,14 @@ const AsideComp = () => {
                     {/* <Pluralsight /> */}
                     Pluralsight
                 </div>
+                <div className={toggleState === 7 ? 'content active-content' : 'content'}>
+                    {/* <Pluralsight /> */}
+                    Personal Account
+                </div>
+                <div className={toggleState === 8 ? 'content active-content' : 'content'}>
+                    {/* <Pluralsight /> */}
+                    Settings
+                </div>
             </SideBarContents>
         </SideBarContainer>
     )
@@ -95,22 +106,34 @@ export default AsideComp;
 
 
 // styled components for AsideComp;
-
 const SideBarContainer = styled.aside`
     display: flex;
-    min-width: calc(14vw + 5vw);
-    max-height: calc(100vh - 30px);
-    /* border: 2px solid y     ellowgreen; */
+    max-width: calc(14vw + 3vw);
+    min-height: calc(100vh - 30px - 30px);
+    /* overflow-y: auto; */
+    /* border: 2px solid yellowgreen; */
 `
 
 const SideBarTabs = styled.div`
-    width: 5vw;
+    width: 3vw;
     min-width: 40px;
+    height: calc(100vh - 30px - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: #000000; */
+`
+const TopSideBarTabs = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    /* background-color: #000000; */
+`
+const BottomSideBarTabs = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
 `
 
 const SideBarContents = styled.div`
