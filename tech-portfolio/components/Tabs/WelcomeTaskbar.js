@@ -1,17 +1,18 @@
-import TabSchema from './TabSchema';
-import tabs from './Tabs_data';
 import styled from 'styled-components';
 import Icon from '../common/icons/icons';
 import Link from 'next/link';
 
-const TabsTaskbarComp = () => {
+const WelcomeTaskbarComp = () => {
     return (
         <>
             <TabsTaskbarContainer>
                 <TabsCollection>
-                    {tabs.map((tab, index) => (
-                        <TabSchema key={index} {...tab} id={index} />
-                    ))}
+                    <Link href='/'>
+                        <TabBox>
+                             <Icon name='' size={15} />
+                            <TabFileName>Welcome</TabFileName>
+                        </TabBox>
+                    </Link>
                 </TabsCollection>
                 <TabsTaskbarIcons>
                         <Link href="#">
@@ -41,7 +42,7 @@ const TabsTaskbarComp = () => {
     )
 }
 
-export default TabsTaskbarComp;
+export default WelcomeTaskbarComp;
 
 
 const TabsTaskbarContainer = styled.nav`
@@ -52,8 +53,21 @@ const TabsTaskbarContainer = styled.nav`
     border-bottom: 0.13rem solid #444444;
 `
 
-const TabsCollection = styled.label`
+const TabBox = styled.div`
     display: flex;
+    align-items: center;
+    border-right: 1px solid purple;
+    padding: 0.33rem 1.55rem; 
+
+`
+
+const TabFileName = styled.p`
+    font-size: 1rem;
+    padding-left: 5px;
+`
+
+const TabsCollection = styled.label`
+    display: 
 
     :hover {
         cursor: pointer;
@@ -62,6 +76,7 @@ const TabsCollection = styled.label`
 `
 
 const TabsTaskbarIcons = styled.div`
+    /* border: 1px solid red; */
     width: 10vw;
     display: flex;
     align-items: center;
@@ -69,10 +84,4 @@ const TabsTaskbarIcons = styled.div`
 `
 const TabsIconBox = styled.div`
     cursor: pointer;
-    
-    /* :hover {
-        border: 1px solid #999999;
-        border-radius: 0.3rem;
-        background-color: #bfbfbf;
-    } */
 `

@@ -1,7 +1,5 @@
 import TitlebarComp from '../Titlebar/TitlebarComp';
-import AsideComp from '../AsideMenuBars/AsideComp'
-// import SidebarComp from '../Sidebar/SideBarComp';
-// import ExplorerComp from '../Explorerbar/ExplorerComp';
+import AsideComp from '../AsideMenuBars/AsideComp';
 import FooterComp from '../Footer/FooterComp';
 import styles from '../../styles/Home.module.scss';
 import styled from 'styled-components';
@@ -27,8 +25,6 @@ const LayoutComp = ({children}) => {
             <main className={styles.container}>
                 <TitlebarComp />
                 <LayoutAsideBars>
-                    {/* <SidebarComp toggle={toggle}/>
-                    <ExplorerComp isOpen={isOpen}/> */}
                     <AsideComp toggleState={toggleState} toggleTab={toggleTab} 
                     toggleSideTab={toggleSideTab} isExpanded={isExpanded}
                     />

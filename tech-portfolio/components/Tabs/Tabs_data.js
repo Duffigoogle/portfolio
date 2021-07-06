@@ -1,14 +1,6 @@
 const tabs = [
     {
         id: 1,
-        filepath: "/home",
-        Icon_name: "markdownIcon",
-        file_name: "home.md",
-
-    },
-
-    {
-        id: 2,
         filepath: "/about",
         Icon_name: "htmlIcon",
         file_name: "about.html",
@@ -16,7 +8,7 @@ const tabs = [
     },
 
     {
-        id: 3,
+        id: 2,
         filepath: "/bio",
         Icon_name: "cssIcon",
         file_name: "bio.css",
@@ -24,7 +16,7 @@ const tabs = [
     },
 
     {
-        id: 4,
+        id: 3,
         filepath: "/contact",
         Icon_name: "javaScriptIcon",
         file_name: "contact.js",
@@ -32,7 +24,7 @@ const tabs = [
     },
 
     {
-        id: 5,
+        id: 4,
         filepath: "/articles",
         Icon_name: "sassIcon",
         file_name: "articles.scss",
@@ -51,6 +43,13 @@ const tabs = [
         filepath: "/github",
         Icon_name: "jsonIcon",
         file_name: "github.json",
+
+    },
+    {
+        id: 7,
+        filepath: "/gist",
+        Icon_name: "markdownIcon",
+        file_name: "Gists.md",
 
     },
 ];

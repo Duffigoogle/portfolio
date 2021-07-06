@@ -1,6 +1,7 @@
-import {React} from 'react';
+import React from 'react';
 import Icon from '../common/icons/icons';
 import styled from 'styled-components';
+import ExplorerComp from '../../components/Explorerbar/ExplorerComp';
 
 
 const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
@@ -66,8 +67,8 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
             </SideBarTabs>
             <SideBarContents visibility={isExpanded ? +true : undefined}>
                 <div className={toggleState === 1 ? 'content active-content' : 'content'}>
-                    {/* <ExplorerComp /> */}
-                    ExplorerComp
+                    <ExplorerComp />
+                    {/* ExplorerComp */}
                 </div>
                 <div className={toggleState === 2 ? 'content active-content' : 'content'}>
                     {/* <SearchComp /> */}

@@ -4,101 +4,38 @@ import Image from 'next/image';
 import {useRouter} from 'next/router';
 
 
+const PortfolioFilesSchema = ({link_path, img_path, img_alt, img_size, file_name}) => {
+    return (
+            <Link href={link_path}>
+                <ExplorerPortfolioItem >
+                    <ExplorerSpan/>
+                    <Image
+                        src={img_path}
+                        alt={img_alt}
+                        height={img_size}
+                        width={img_size}
+                    />{' '}
+                    <ExplorerPortfolioP>{file_name}</ExplorerPortfolioP>
+                </ExplorerPortfolioItem>
+            </Link>
+    )
+};
+
 
 const ExplorerPortfolioComp = () => {
     const router = useRouter();
 
     return (
-        <>
-            <Link href="/home">
-                <ExplorerPortfolioItem>
-                    <ExplorerSpan/>
-                    <Image
-                        src="/markdown.svg"
-                        alt="Markdown Icon"
-                        height={18}
-                        width={18}
-                    />{' '}
-                    <ExplorerPortfolioP>Home.md</ExplorerPortfolioP>
-                </ExplorerPortfolioItem>
-            </Link>  
-            <Link href="/about">
-                <ExplorerPortfolioItem>
-                    <ExplorerSpan/>
-                    <Image
-                        src="/html.svg"
-                        alt="Html Icon"
-                        height={18}
-                        width={18}
-                    />{' '}
-                    <ExplorerPortfolioP>About.html</ExplorerPortfolioP>
-                </ExplorerPortfolioItem>
-            </Link>  
-            <Link href="/bio">
-                <ExplorerPortfolioItem>
-                    <ExplorerSpan/>
-                    <Image
-                        src="/css.svg"
-                        alt="CSS Icon"
-                        height={18}
-                        width={18}
-                    />{' '}
-                    <ExplorerPortfolioP>Bio.css</ExplorerPortfolioP>
-                </ExplorerPortfolioItem>
-            </Link>  
-            <Link href="/contact">
-                <ExplorerPortfolioItem>
-                    <ExplorerSpan/>
-                    <Image
-                        src="/javascript.svg"
-                        alt="JavaScriptt Icon"
-                        height={18}
-                        width={18}
-                    />{' '}
-                    <ExplorerPortfolioP>Contact.js</ExplorerPortfolioP>
-                </ExplorerPortfolioItem>
-          </Link>  
-            <Link href="/articles">
-                <ExplorerPortfolioItem>
-                    <ExplorerSpan/>
-                    <Image
-                        src="/javascript.svg"
-                        alt="Sass Icon"
-                        height={18}
-                        width={18}
-                    />{' '}
-                    <ExplorerPortfolioP>Articles.sass</ExplorerPortfolioP>
-                </ExplorerPortfolioItem>
-            </Link>  
-            <Link href="/projects">
-                <ExplorerPortfolioItem>
-                    <ExplorerSpan/>
-                    <Image
-                        src="/react.svg"
-                        alt="React Icon"
-                        height={18}
-                        width={18}
-                    />{' '}
-                    <ExplorerPortfolioP>Projects.jsx</ExplorerPortfolioP>
-                </ExplorerPortfolioItem>
-          </Link>  
-            <Link href="/github">
-                <ExplorerPortfolioItem>
-                    <ExplorerSpan/>
-                    <Image
-                        src="/json.svg"
-                        alt="Json Icon"
-                        height={18}
-                        width={18}
-                    />{' '}
-                    <ExplorerPortfolioP>Github.json</ExplorerPortfolioP>
-                </ExplorerPortfolioItem>
-          </Link>  
+        <>       
+             {portfolioItems.map((portfolioItem, index) => (
+                <PortfolioFilesSchema key={index} {...portfolioItem} id={index} />
+                ))}
         </>
     )
 }
 
 export default ExplorerPortfolioComp;
+
 
 const ExplorerPortfolioItem = styled.div`
     display: flex;
@@ -110,7 +47,7 @@ const ExplorerPortfolioItem = styled.div`
     padding-left: 25px;
     cursor: pointer;
     &:hover {
-        background-color: blue;
+        background-color: #bfbfbf;;
     }
     &.active {
         background-color: red;
@@ -129,3 +66,57 @@ const ExplorerPortfolioP = styled.p`
     font-size: 0.8rem;
     padding-left: 5px;
 `
+
+const portfolioItems = [
+    {
+        link_path: '/about',
+        img_path: '/html.svg',
+        img_alt: 'Html Icon',
+        img_size: 18,
+        file_name: 'about.html',
+    },
+    {
+        link_path: '/bio',
+        img_path: '/css.svg',
+        img_alt: 'Css Icon',
+        img_size: 18,
+        file_name: 'bio.css',
+    },
+    {
+        link_path: '/contact',
+        img_path: '/javascript.svg',
+        img_alt: 'JavaScript Icon',
+        img_size: 18,
+        file_name: 'contact.js',
+    },
+    {
+        link_path: '/articles',
+        img_path: '/javascript.svg',
+        img_alt: 'Scss Icon',
+        img_size: 18,
+        file_name: 'articles.scss',
+    },
+    {
+        link_path: '/projects',
+        img_path: '/react.svg',
+        img_alt: 'React Icon',
+        img_size: 18,
+        file_name: 'projects.jsx',
+    },
+    {
+        link_path: '/github',
+        img_path: '/json.svg',
+        img_alt: '',
+        img_size: 18,
+        file_name: 'github.json',
+    },
+    {
+        link_path: '/gists',
+        img_path: '/markdown.svg',
+        img_alt: 'Markdown Icon',
+        img_size: 18,
+        file_name: 'gist.md',
+    },
+
+];
+
