@@ -1,5 +1,7 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
+import Head from 'next/head';
+import styles from '../styles/Home.module.scss';
+import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
+import CodeLinesComp from '../components/codelines/CodeLinesComp';
 
 export default function ContactPage() {
   return (
@@ -10,9 +12,13 @@ export default function ContactPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.container}>
-        <h1>Contact Page</h1>
-      </main>
+       <DisplayAreaLayoutComp>
+        <>
+          <CodeLinesComp />
+          <h1>Contact Page</h1>
+        </>
+      </DisplayAreaLayoutComp>
+
 
       
     </div>

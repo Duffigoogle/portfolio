@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 import ProjectComp from '../components/Project/ProjectComp';
+import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
+import CodeLinesComp from '../components/codelines/CodeLinesComp';
 
 export default function ProjectPage() {
   return (
@@ -11,10 +13,15 @@ export default function ProjectPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.container}>
-        <h1>Projects Page</h1>
-            <ProjectComp />
-        </main>
+
+      <DisplayAreaLayoutComp>
+        <>
+          <CodeLinesComp />
+          <h1>Projects Page</h1>
+           <ProjectComp />
+        </>
+      </DisplayAreaLayoutComp>
+      
     </div>
   )
 };

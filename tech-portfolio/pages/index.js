@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
+// import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
+import HomePageLayout from '../components/Layout/HomePageLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
-// import TabsLayoutComp from '../components/Layout/TabsLayout';
+import WelcomeComp from '../components/Welcome/Welcome';
 
 export default function Home() {
   return (
@@ -13,17 +14,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <HomePageContainer>
-        <TabsLayoutComp />
-            <h1>Home Page</h1>
-      </HomePageContainer> */}
 
-      <DisplayAreaLayoutComp>
+      {/* <DisplayAreaLayoutComp>
         <>
           <CodeLinesComp />
           <h1>Home Page</h1>
         </>
-      </DisplayAreaLayoutComp>
+      </DisplayAreaLayoutComp> */}
+      <HomePageLayout>
+        <>
+          <CodeLinesComp />
+          <WelcomeComp />
+        </>
+      </HomePageLayout>
 
       
     </div>

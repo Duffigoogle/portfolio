@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
+import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
+import CodeLinesComp from '../components/codelines/CodeLinesComp';
 
 export default function GithubPage() {
   return (
@@ -10,11 +12,13 @@ export default function GithubPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.container}>
-        <h1>Github Page</h1>
-      </main>
-
-      
+      <DisplayAreaLayoutComp>
+        <>
+          <CodeLinesComp />
+          <h1>Github Page</h1>
+        </>
+      </DisplayAreaLayoutComp>
+    
     </div>
   )
 }
