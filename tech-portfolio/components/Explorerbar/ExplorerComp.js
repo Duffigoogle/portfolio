@@ -1,3 +1,4 @@
+import {useState, React} from 'react';
 import styled from 'styled-components';
 import Icon from '../common/icons/icons';
 import Link from 'next/link';
@@ -5,6 +6,22 @@ import Image from 'next/image'
 import ExplorerPortfolioComp from '../Explorerbar/ExplorerPortfolio';
 
 const ExplorerComp = () => {
+
+    const [isOpen, setIsOpen] = useState(true);
+    const [isOpenPortfolio, setIsOpenPortfolio] = useState(true);
+    const [isOpenWorkSpace, setIsOpenWorkSpace] = useState(true);
+
+    const toggleEditorLabel = () => {
+        setIsOpen(!isOpen);
+    };
+    const togglePortfolioLabel = () => {
+        setIsOpenPortfolio(!isOpenPortfolio);
+    };
+    const toggleWorkspaceLabel = () => {
+        setIsOpenWorkSpace(!isOpenWorkSpace);
+    };
+
+
     return (
         <ExplorerMenu>
             <ExplorerTopMenu>
@@ -15,14 +32,14 @@ const ExplorerComp = () => {
                 <ExplorerTopMenuSections>
 
                     <ExplorerEditorMenu>
-                        <ExplorerTopSectionLabel>
+                        <ExplorerTopSectionLabel onClick={toggleEditorLabel}>
                             <Icon name="ChevronRight" 
                             size={18}
                             />
                                 OPEN EDITORS
                         </ExplorerTopSectionLabel>
 
-                        <ExplorerEditorSection>
+                        <ExplorerEditorSection isOpen={isOpen}>
                                 <Link href="/">
                                     <ExplorerPortfolioItem>
                                         <Image
@@ -38,22 +55,25 @@ const ExplorerComp = () => {
                     </ExplorerEditorMenu>
                         
                     <ExplorerWorkspaceMenu>
-                        <ExplorerTopSectionLabel>
+                        <ExplorerTopSectionLabel onClick={toggleWorkspaceLabel}>
                             <Icon name="ChevronRight" 
                             size={18}
                             />
                                 (WORKSPACE)
                         </ExplorerTopSectionLabel>
 
-                        <ExplorerPortfolioMenu>
-                            <ExplorerPortfolioLabel>
+                        <ExplorerPortfolioMenu isOpenWorkSpace={isOpenWorkSpace}>
+                            <ExplorerPortfolioLabel onClick={togglePortfolioLabel}>
                                 <Icon name="ChevronRight" 
                                 size={18}
                                 />
                                     TECH-PORTFOLIO
                             </ExplorerPortfolioLabel>
-
-                                <ExplorerPortfolioComp />
+                            
+                            <ExplorerPortfolioContent isOpenPortfolio={isOpenPortfolio}>
+                                    <ExplorerPortfolioComp />
+                            </ExplorerPortfolioContent>
+                                
 
                         </ExplorerPortfolioMenu>
                     </ExplorerWorkspaceMenu>
@@ -89,20 +109,22 @@ const ExplorerMenuLabel = styled.p`
     padding: 0.7rem 0.44rem;
 ` 
 const ExplorerTopMenuSections = styled.section`
-     border: 1px solid red;
+     /* border: 1px solid red; */
     /* height: 30vh;  */
 `
 
 const ExplorerEditorMenu = styled.div`
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
+
 `
 const ExplorerWorkspaceMenu = styled.div`
     padding: 1px 0;
 `
 
 const ExplorerEditorSection = styled.div`
-
+    display: ${({isOpen}) => isOpen ? 'block' : 'none'};
 `
+
 const ExplorerPortfolioItem = styled.div`
     display: flex;
     align-items: center;
@@ -157,13 +179,13 @@ const ExplorerPortfolioLabel = styled.label`
 
 const ExplorerPortfolioMenu = styled.section`
     height: 30vh; 
-    /* padding-left: 0.9rem; */
-    border: 1px blue;
+    /* border: 1px solid #fff; */
+    display: ${({isOpenWorkSpace}) => isOpenWorkSpace ? 'block' : 'none'};
 `
 
-const ExplorerSectionsTab = styled.div`
-    /* border: 1px solid #fff; */
-    /* padding-left: 0px; */
+const ExplorerPortfolioContent = styled.div`
+    /* border: 1px solid purple; */
+    display: ${({isOpenPortfolio}) => isOpenPortfolio ? 'block' : 'none'};
 `
 
 const ExplorerSectionLabel = styled.label`
