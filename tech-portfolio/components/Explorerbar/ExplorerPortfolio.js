@@ -5,9 +5,15 @@ import {useRouter} from 'next/router';
 
 
 const PortfolioFilesSchema = ({link_path, img_path, img_alt, img_size, file_name}) => {
+
+
+    const router = useRouter();
+
+    const isCurrentPath = router.pathname === link_path || router.asPath === link_path;
+
     return (
             <Link href={link_path}>
-                <ExplorerPortfolioItem >
+                <ExplorerPortfolioItem isCurrentPath={isCurrentPath}>
                     <ExplorerSpan/>
                     <Image
                         src={img_path}
@@ -42,12 +48,12 @@ const ExplorerPortfolioItem = styled.div`
     align-items: center;
     height: 3.5vh;
     width: 13.9vw;
-    /* background-color: skyblue; */
     margin-top: 1px;
     padding-left: 25px;
     cursor: pointer;
+    background-color: ${({ isCurrentPath }) => (isCurrentPath ? "#bfbfbf" : "")};
     &:hover {
-        background-color: #bfbfbf;;
+        background-color: #bfbfbf;
     }
     &.active {
         background-color: red;

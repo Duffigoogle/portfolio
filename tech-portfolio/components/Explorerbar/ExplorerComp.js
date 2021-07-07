@@ -1,4 +1,5 @@
 import {useState, React} from 'react';
+import {useRouter} from 'next/router';
 import styled from 'styled-components';
 import Icon from '../common/icons/icons';
 import Link from 'next/link';
@@ -6,6 +7,10 @@ import Image from 'next/image'
 import ExplorerPortfolioComp from '../Explorerbar/ExplorerPortfolio';
 
 const ExplorerComp = () => {
+
+    const router = useRouter();
+
+    const isCurrentPath = router.pathname === '/' || router.asPath === '/';
 
     const [isOpen, setIsOpen] = useState(true);
     const [isOpenPortfolio, setIsOpenPortfolio] = useState(true);
@@ -41,7 +46,7 @@ const ExplorerComp = () => {
 
                         <ExplorerEditorSection isOpen={isOpen}>
                                 <Link href="/">
-                                    <ExplorerPortfolioItem>
+                                    <ExplorerPortfolioItem isCurrentPath={isCurrentPath}>
                                         <Image
                                             src="/vscode_icon.svg"
                                             alt="Markdown Icon"
@@ -134,12 +139,10 @@ const ExplorerPortfolioItem = styled.div`
     margin-top: 1px;
     padding-left: 25px;
     cursor: pointer;
+    background-color: ${({ isCurrentPath }) => (isCurrentPath ? "#bfbfbf" : "")};
+
     &:hover {
         background-color: blue;
-    }
-    &.active {
-        background-color: red;
-        /* background-color: ${router.pathname === '/' ? '#fff' : 'rgb(106, 115, 125)' }; */
     }
 `
 

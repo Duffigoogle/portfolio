@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 import Icon from '../common/icons/icons';
 import Link from 'next/link';
+import {useRouter} from 'next/router';
 
 const WelcomeTaskbarComp = () => {
+
+    const router = useRouter();
+
+    const isCurrentPath = router.pathname === '/' || router.asPath === '/';
+
     return (
         <>
             <TabsTaskbarContainer>
                 <TabsCollection>
                     <Link href='/'>
-                        <TabBox>
-                             <Icon name='' size={15} />
+                        <TabBox isCurrentPath={isCurrentPath}>
+                             <Icon name='VSCodeIcon' size={15} />
                             <TabFileName>Welcome</TabFileName>
                         </TabBox>
                     </Link>
@@ -58,6 +64,9 @@ const TabBox = styled.div`
     align-items: center;
     border-right: 1px solid purple;
     padding: 0.33rem 1.55rem; 
+    background-color: ${({ isCurrentPath }) => (isCurrentPath ? "#1d1d1d" : "")};
+    border-bottom: ${({ isCurrentPath }) => (isCurrentPath ? "2px solid orange" : "")};
+    color: ${({ isCurrentPath }) => (isCurrentPath ? "orange" : "#000")};
 
 `
 
@@ -67,9 +76,8 @@ const TabFileName = styled.p`
 `
 
 const TabsCollection = styled.label`
-    display: 
 
-    :hover {
+    &:hover {
         cursor: pointer;
         box-shadow: 0px 3px 3px #e8e9ec;
     }
