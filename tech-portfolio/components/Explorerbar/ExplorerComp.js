@@ -5,6 +5,7 @@ import Icon from '../common/icons/icons';
 import Link from 'next/link';
 import Image from 'next/image'
 import ExplorerPortfolioComp from '../Explorerbar/ExplorerPortfolio';
+import SideBarTitleComp from '../SidebarComps/SideBarTitle';
 
 const ExplorerComp = () => {
 
@@ -30,9 +31,8 @@ const ExplorerComp = () => {
     return (
         <ExplorerMenu>
             <ExplorerTopMenu>
-                <ExplorerMenuLabel>
-                    EXPLORER
-                </ExplorerMenuLabel>
+                
+                <SideBarTitleComp text='EXPLORER' />
 
                 <ExplorerTopMenuSections>
 
@@ -107,12 +107,6 @@ const ExplorerTopMenu = styled.div`
     /* padding: 5px 10px; */
 `
 
-const ExplorerMenuLabel = styled.p`
-    color: whitesmoke;
-    font-size: 0.7rem;
-    margin-left: 0.94rem;
-    padding: 0.7rem 0.44rem;
-` 
 const ExplorerTopMenuSections = styled.section`
      /* border: 1px solid red; */
     /* height: 30vh;  */
@@ -160,7 +154,7 @@ const ExplorerTopSectionLabel = styled.label`
     letter-spacing: 1px;
     cursor: pointer;
     color: whitesmoke;
-    padding: 5px 0;
+    padding: 3.8px 0;
     background-color: #3f3f3f;
 `
 

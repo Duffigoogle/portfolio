@@ -2,6 +2,7 @@ import React from 'react';
 import Icon from '../common/icons/icons';
 import styled from 'styled-components';
 import ExplorerComp from '../../components/Explorerbar/ExplorerComp';
+import {MailComp, CodeBaseComp, GithubComp} from '../SidebarComps/SidebarComp';
 
 
 const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
@@ -22,7 +23,8 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
                     </div>
                     <div className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
                         onClick={() => toggleTab(2)}>
-                        <Icon name='SearchRightIcon' size={23} 
+                        <Icon name='SearchRightIcon' 
+                        size={23} 
                         color={toggleState === 2 ? '#fff' : '#bfbfbf'} />
                     </div>
                     <div className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
@@ -75,16 +77,15 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
                     SearchComp
                 </div>
                 <div className={toggleState === 3 ? 'content active-content' : 'content'}>
-                    {/* <CodeBaseComp /> */}
-                    CodeBaseComp
+                    <CodeBaseComp />
                 </div>
                 <div className={toggleState === 4 ? 'content active-content' : 'content'}>
-                    {/* <GithubComp /> */}
-                    GithubComp
+                    <GithubComp />
+                    {/* GithubComp */}
                 </div>
                 <div className={toggleState === 5 ? 'content active-content' : 'content'}>
-                    {/* <MailComp /> */}
-                    MailComp
+                    <MailComp />
+            
                 </div>
                 <div className={toggleState === 6 ? 'content active-content' : 'content'}>
                     {/* <Pluralsight /> */}
