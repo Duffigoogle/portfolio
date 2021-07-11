@@ -12,7 +12,7 @@ const BioComp = () => {
                 </BioStack>
                 <BioContent>
                     <BioDetails>
-                        <BioHeading1>Hello,<span> I'm Duff.</span> </BioHeading1>
+                        <BioHeading1>Hello,<span> I'm Duffigoogle.</span> </BioHeading1>
                         <BioP>I <span>build value</span> through code. I like making <span>fun</span> and <span>interactive things</span> for the web.</BioP>
                         <BioP> I'm an <span>aesthetics custodian</span> for the web's User Interface and I love <span>building digital products</span>.</BioP>
                         <BioPSmall>I also <span>Talk</span>, <span>Teach</span> and <span>Write about Codes</span> and <span>Tech</span>.</BioPSmall>
@@ -35,10 +35,10 @@ export default BioComp;
 
 
 const BioContainer = styled.div`
-    width: 80vw;
+    width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 7rem;
     border: 1px solid red;
 `;
 
