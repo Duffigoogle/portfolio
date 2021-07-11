@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 import TabsTaskbarComp from '../Tabs/TabTaskbar';
-// import CodeLinesComp from '../codelines/CodeLinesComp';
+// import {useRouter} from 'next/router';
+import FilepathComp from '../filepath/Filepath';
 
 
-const DisplayAreaLayoutComp = ({children}) => {
-    return (
+const DisplayAreaLayoutComp = ({children, pagepath, stylepath, filename, filename_icon}) => {
+
+    return  (
         <>
-           {/* <DisplayAreaContainer> */}
-
                 <DisplayAreaContainerTop>
                         <TabsTaskbarComp />
-                        <FilePathLabel>File path</FilePathLabel>
+                        <FilepathComp rootpath='tech-portfolio' pagepath={pagepath} stylepath={stylepath} filename={filename} filename_icon={filename_icon} icon_name='ChevronRight' icon_size='15' />
                 </DisplayAreaContainerTop>
                      <PageContainer>{children}</PageContainer>    
-
-            {/* </DisplayAreaContainer>  */}
         </>
     )
 }
@@ -34,17 +32,13 @@ const DisplayAreaContainerTop = styled.div`
     /* border: 1px solid red; */
 `
 
-const FilePathLabel = styled.div`
-    background-color: #616161;
-    /* box-shadow: 0px 2px 1px #9e9e9e; */
-    
-`
+
 
 const PageContainer = styled.main`
     display: flex;
-    /* width: 80vw; */
-    height: 85vh;
+    height: 84vh;
     overflow-y: auto;
+    background-color: #616161;
 
     /* width */ //the scrollbar
     ::-webkit-scrollbar {
@@ -83,6 +77,50 @@ const PageContainer = styled.main`
     ::-webkit-scrollbar-thumb:hover {
     background: #555;
     }
-    
 `
+
+
+
+// const router = useRouter();
+
+    // const filePathStyles = '/bio.css' || '/articles.scss';
+    // const filePathPages = '/contact.js' || '/about.html' || 'projects.jsx';
+
+    // const isCurrentPages = router.pathname === filePathPages || router.asPath === filePathPages;
+    // const isCurrentStyles = router.pathname === filePathStyles || router.asPath === filePathStyles;
+
+
+    // if (router.pathname === filePathPages || router.asPath === filePathPages) {
+    //     return (
+    //         <>
+    //             <DisplayAreaContainerTop>
+    //                     <TabsTaskbarComp />
+    //             </DisplayAreaContainerTop>
+    //             <FilepathComp rootpath='tech-portfolio' pagepath='pages' filename={filename} filename_icon={fileIcon} icon_name='ChevronRight' icon_size='15' />
+
+    //                  <PageContainer>{children}</PageContainer>    
+    //         </>
+    //     )
+    // } else if (router.pathname === filePathStyles || router.asPath === filePathStyles) {
+    //     return (
+    //         <>
+    //             <DisplayAreaContainerTop>
+    //                     <TabsTaskbarComp />
+    //             </DisplayAreaContainerTop>
+    //             <FilepathComp rootpath='tech-portfolio' stylepath='styles' filename={filename} filename_icon={fileIcon} icon_name='ChevronRight'  icon_size='15' />
+
+    //                  <PageContainer>{children}</PageContainer>    
+    //         </>
+    //     )
+    // } else {
+    //     return (
+    //         <>
+    //             <DisplayAreaContainerTop>
+    //                     <TabsTaskbarComp />
+    //             </DisplayAreaContainerTop>
+    //             <FilepathComp rootpath='tech-portfolio' filename={filename} filename_icon={fileIcon} icon_name='ChevronRight'  icon_size='15' />
+    //                  <PageContainer>{children}</PageContainer>    
+    //         </>
+    //     )
+    // };
 

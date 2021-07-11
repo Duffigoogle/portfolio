@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
+import Head from 'next/head';
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
 
@@ -12,7 +11,7 @@ export default function GithubPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <DisplayAreaLayoutComp>
+      <DisplayAreaLayoutComp filename='gists.md' filename_icon='markdownIcon'>
         <>
           <CodeLinesComp />
           <h1>Gists Page</h1>

@@ -14,7 +14,7 @@ export default function BioPage() {
       </Head>
 
       
-      <DisplayAreaLayoutComp>
+      <DisplayAreaLayoutComp stylepath='styles' filename='bio.css' filename_icon='cssIcon'>
         <>
           <CodeLinesComp />
           <BioComp />

@@ -12,7 +12,7 @@ export default function ArticlePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-       <DisplayAreaLayoutComp>
+       <DisplayAreaLayoutComp stylepath='styles' filename='articles.scss' filename_icon='sassIcon'>
         <>
           <CodeLinesComp />
           <h1>Articles Page</h1>

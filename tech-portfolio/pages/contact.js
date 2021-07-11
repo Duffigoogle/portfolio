@@ -1,7 +1,9 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
+import FormComp from '../components/Form/FormComp';
+import styled from 'styled-components';
+
 
 export default function ContactPage() {
   return (
@@ -12,10 +14,14 @@ export default function ContactPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-       <DisplayAreaLayoutComp>
+       <DisplayAreaLayoutComp pagepath='pages' filename='contact.js' filename_icon='javaScriptIcon'>
         <>
-          <CodeLinesComp />
-          <h1>Contact Page</h1>
+          {/* <MainPage> */}
+              <CodeLinesComp />
+              <h1>Contact Page</h1>
+              <FormComp />
+          {/* </MainPage> */}
+        
         </>
       </DisplayAreaLayoutComp>
 
@@ -24,3 +30,4 @@ export default function ContactPage() {
     </div>
   )
 }
+

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
 
@@ -12,7 +11,7 @@ export default function GithubPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <DisplayAreaLayoutComp>
+      <DisplayAreaLayoutComp filename='github.json' filename_icon='jsonIcon'>
         <>
           <CodeLinesComp />
           <h1>Github Page</h1>
