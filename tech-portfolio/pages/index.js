@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import HomePageLayout from '../components/Layout/HomePageLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
 import WelcomeComp from '../components/Welcome/Welcome';
+// import FilepathComp from '../components/filepath/Filepath';
 
 export default function Home() {
   return (
@@ -25,9 +26,10 @@ export default function Home() {
         <>
           <CodeLinesComp />
           <WelcomeComp />
+          {/* <FilepathComp rootpath='tech-portfolio' pagepath='pages'filename='contact.js' filename_icon='javaScriptIcon' icon_name='ChevronRight' icon_size='15' />
+          <FilepathComp rootpath='tech-portfolio' stylepath='styles' filename='bio.css' filename_icon='cssIcon' icon_name='ChevronRight'  icon_size='15' /> */}
         </>
       </HomePageLayout>
-
       
     </div>
   )

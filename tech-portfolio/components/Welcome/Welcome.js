@@ -10,7 +10,7 @@ const WelcomeComp = () => {
                 <WeclomeHeading1>Welcome <br /> to my <br/><span>Tech-Portfolio</span></WeclomeHeading1>
                     <Link href="/bio">
                             <WelcomeButton>
-                                Explore with joy {" "} <Icon name='ArrowRightCircleFill' size={25} color='#fff' />
+                                Explore with joy &nbsp; {" "} <Icon name='ArrowRightCircleFill' size={25} color='#fff' />
                             </WelcomeButton>
                     </Link> 
             </WelcomeCompContainer>
@@ -24,9 +24,9 @@ export default WelcomeComp;
 // styled components for WelcomeComp
 
 const WelcomeCompContainer = styled.div`
-    width: 81vw;
-    border: 2px solid red;
-    margin-top: 80px;
+    width: 100vw;
+    /* height: 100%; */
+    margin-top: 7rem;
     /* height: 75vh; */
 
 `
@@ -34,13 +34,14 @@ const WelcomeCompContainer = styled.div`
 const WeclomeHeading1 = styled.h2`
     color: skyblue;
     font-weight: 800;
-    font-size: 3.5rem;
+    font-size: 4rem;
     text-align: center;
     span {
         color: orange;
         font-size: 5rem;
         &:hover {
             color: orangered;
+            font-size: 5.5rem;
         }
     }
 

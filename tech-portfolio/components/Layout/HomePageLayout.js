@@ -23,8 +23,7 @@ const DisplayAreaContainerTop = styled.div`
 
 const PageContainer = styled.main`
     display: flex;
-    /* width: 80vw; */
-    height: 85vh;
+    /* height: 85vh; */
     overflow-y: auto;
 
     /* width */ //the scrollbar
