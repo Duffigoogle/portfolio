@@ -58,4 +58,6 @@ const projects = [
       stack: "Sass + React + Nextjs + Tailwindcss",
       isPrivate: true,
     },
-]
+];
+
+export default projects;

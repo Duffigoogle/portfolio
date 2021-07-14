@@ -1,21 +1,21 @@
 import React from "react";
 import Icon from '../common/icons/icons';
+import styled from 'styled-components';
 
 export default function ProjectSchema({ id, title, description, github, live, stack, isPrivate }) {
   return (
-            <ProjectContainer className={`box_container ${id%2 !== 0 ? 'box_container_pad' : ''}`}>
+            <ProjectContainer>
                 <ProjectBox>
                         <ProjectDetails>
                             <ProjectTitle> {title} </ProjectTitle>
-                            <ProjectStackSmall> {stack} </ProjectStackSmall>
                             <ProjectTextDescription> {description} </ProjectTextDescription>
+                            <ProjectStackSmall> {stack} </ProjectStackSmall>
                         </ProjectDetails>
 
                         <ProjectLinks>
                             <small>
                                 <ProjectLink href={live} target="_blank" rel="noopener noreferrer">
-                                    {/* <i className="far fa-eye"></i> Live{" "} */}
-                                    <Icon name='eyeIcon' size={15} color='red' /> Live {" "}
+                                    Live {" "}<Icon name='EyeIcon' size={20} color='red' className='icon'/> 
                                 </ProjectLink>
                             </small>
 
@@ -25,8 +25,7 @@ export default function ProjectSchema({ id, title, description, github, live, st
                                 <small>
                                     <ProjectLink href={github} target="_blank" rel="noopener noreferrer">
                                         {" "}
-                                        {/* <i className="fas fa-code-branch"></i> Code{" "} */}
-                                        <Icon name='CodeIcon' size={15} color='red' /> Code {" "}
+                                        Code {" "}<Icon name='CodeIcon' size={20} color='red' className='icon'/> 
                                     </ProjectLink>
                                 </small>
                             )}
@@ -41,17 +40,18 @@ export default function ProjectSchema({ id, title, description, github, live, st
 //styled components for ProjectSchema
 
 const ProjectContainer = styled.div`
-    width: 49.3%;
+    width: 70%;
     background-color: #16161a;
-    margin: 0 0 1.4%;
+    margin: 1% auto 1.8%;
     position: relative;
     transition: all 0.2s;
+    box-shadow: 0px 2px 7px #e0e0e0;
 `
 
 const ProjectBox = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 10%;
+    padding: 6%;
     flex-grow: 1;
     justify-content: space-between;
     cursor: default;
@@ -63,7 +63,8 @@ const ProjectDetails = styled.div`
 
 const ProjectTitle = styled.h3`
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    color: #e0e0e0;
 `
 
 const ProjectStackSmall = styled.small`
@@ -80,10 +81,19 @@ const ProjectTextDescription = styled.p`
     font-weight: 500;
 `
 const ProjectLink = styled.a`
+    display: flex;
     font-size: 0.8rem;
-    line-height: 21px;
-    color: inherit;
+    line-height: 1.4rem;
+    
     text-decoration: none;
     margin-right: 0.8rem;
     color: grey;
+
+    .icon {
+        margin-left: 8px;
+    }
+`
+const ProjectLinks = styled.div`
+    display: flex;
+    
 `

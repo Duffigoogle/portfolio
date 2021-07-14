@@ -88,6 +88,7 @@ const Icon = ({ size, name, color, props, className }) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
+            <title>{"Accounts"}</title>
             <path d="M11 6a3 3 0 11-6 0 3 3 0 016 0z" 
                 fill={color}
             />
@@ -287,6 +288,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
       {...props}
     >
       <path
@@ -302,6 +304,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
       {...props}
     >
       <path d="M4.708 5.578L2.061 8.224l2.647 2.646-.708.708-3-3V7.87l3-3 .708.708zm7-.708L11 5.578l2.647 2.646L11 10.87l.708.708 3-3V7.87l-3-3zM4.908 13l.894.448 5-10L9.908 3l-5 10z" />
@@ -313,6 +316,7 @@ const Icon = ({ size, name, color, props, className }) => {
       fill={color}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
+      className={className}
       {...props}
     >
       <path d="M162.133 204.8h51.2c4.71 0 8.533-3.823 8.533-8.533s-3.823-8.533-8.533-8.533h-51.2c-4.71 0-8.533 3.823-8.533 8.533s3.823 8.533 8.533 8.533zM401.067 187.733h-153.6c-4.71 0-8.533 3.823-8.533 8.533s3.823 8.533 8.533 8.533h153.6c4.71 0 8.533-3.823 8.533-8.533s-3.823-8.533-8.533-8.533zM375.467 247.467A8.536 8.536 0 00384 256h34.133c4.71 0 8.533-3.823 8.533-8.533s-3.823-8.533-8.533-8.533H384c-4.71-.001-8.533 3.822-8.533 8.533zM162.133 256h85.333c4.71 0 8.533-3.823 8.533-8.533s-3.823-8.533-8.533-8.533h-85.333c-4.71 0-8.533 3.823-8.533 8.533s3.823 8.533 8.533 8.533z" />
@@ -327,6 +331,7 @@ const Icon = ({ size, name, color, props, className }) => {
       fill={color}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
+      className={className}
       {...props}
     >
       <path d="M162.133 204.8h51.2c4.71 0 8.533-3.823 8.533-8.533s-3.823-8.533-8.533-8.533h-51.2c-4.71 0-8.533 3.823-8.533 8.533s3.823 8.533 8.533 8.533zM401.067 187.733h-153.6c-4.71 0-8.533 3.823-8.533 8.533s3.823 8.533 8.533 8.533h153.6c4.71 0 8.533-3.823 8.533-8.533s-3.823-8.533-8.533-8.533zM375.467 247.467A8.536 8.536 0 00384 256h34.133c4.71 0 8.533-3.823 8.533-8.533s-3.823-8.533-8.533-8.533H384c-4.71-.001-8.533 3.822-8.533 8.533zM162.133 256h85.333c4.71 0 8.533-3.823 8.533-8.533s-3.823-8.533-8.533-8.533h-85.333c-4.71 0-8.533 3.823-8.533 8.533s3.823 8.533 8.533 8.533z" />
@@ -339,7 +344,9 @@ const Icon = ({ size, name, color, props, className }) => {
         width={size}
         height={size} 
         xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 512 512" {...props}>
+        viewBox="0 0 512 512" 
+        className={className}
+        {...props}>
         <g fill={color}>
           <path d="M34 256l26.2 26.2c108 108 283.7 108 391.7 0L478 256l-26.2-26.2c-108-108-283.7-108-391.7 0L34 256zm222 126.2c-75.8 0-151.6-28.9-209.3-86.6l-32.9-32.9c-3.7-3.7-3.7-9.7 0-13.5l32.9-32.9c115.4-115.4 303.2-115.4 418.6 0l32.9 32.9c3.7 3.7 3.7 9.7 0 13.5l-32.9 32.9c-57.7 57.7-133.5 86.6-209.3 86.6z" />
           <path d="M256 183.5c-40 0-72.5 32.5-72.5 72.5s32.5 72.5 72.5 72.5 72.5-32.5 72.5-72.5-32.5-72.5-72.5-72.5zm0 164c-50.5 0-91.5-41.1-91.5-91.5 0-50.5 41.1-91.5 91.5-91.5s91.5 41.1 91.5 91.5c0 50.5-41 91.5-91.5 91.5z" />
@@ -352,6 +359,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
     >
       <title>{"Explorer"}</title>
       <path d="M17.5 0h-9L7 1.5V6H2.5L1 7.5v15.07L2.5 24h12.07L16 22.57V18h4.7l1.3-1.43V4.5L17.5 0zm0 2.12l2.38 2.38H17.5V2.12zm-3 20.38h-12v-15H7v9.07L8.5 18h6v4.5zm6-6h-12v-15H16V6h4.5v10.5z" />
@@ -363,6 +371,7 @@ const Icon = ({ size, name, color, props, className }) => {
       data-view-component="true"
       height={size}
       width={size}
+      className={className}
       {...props}
     >
       <path
@@ -378,6 +387,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
       {...props}
     >
       <path
@@ -393,6 +403,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
       {...props}
     >
       <title>{"Github"}</title>
@@ -405,6 +416,7 @@ const Icon = ({ size, name, color, props, className }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 490.4 490.4"
       fill={color}
+      className={className}
       {...props}
     >
       <path d="M222.5 453.7c6.1 6.1 14.3 9.5 22.9 9.5 8.5 0 16.9-3.5 22.9-9.5L448 274c27.3-27.3 42.3-63.6 42.4-102.1 0-38.6-15-74.9-42.3-102.2S384.6 27.4 346 27.4c-37.9 0-73.6 14.5-100.7 40.9-27.2-26.5-63-41.1-101-41.1-38.5 0-74.7 15-102 42.2C15 96.7 0 133 0 171.6c0 38.5 15.1 74.8 42.4 102.1l180.1 180zM59.7 86.8c22.6-22.6 52.7-35.1 84.7-35.1s62.2 12.5 84.9 35.2l7.4 7.4c2.3 2.3 5.4 3.6 8.7 3.6 3.2 0 6.4-1.3 8.7-3.6l7.2-7.2c22.7-22.7 52.8-35.2 84.9-35.2 32 0 62.1 12.5 84.7 35.1 22.7 22.7 35.1 52.8 35.1 84.8s-12.5 62.1-35.2 84.8L251 436.4c-2.9 2.9-8.2 2.9-11.2 0l-180-180c-22.7-22.7-35.2-52.8-35.2-84.8s12.5-62.1 35.1-84.8z" />
@@ -416,6 +428,7 @@ const Icon = ({ size, name, color, props, className }) => {
         data-view-component="true"
         height={size}
         width={size}
+        className={className}
         {...props}
       >
         <path
@@ -431,6 +444,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
       {...props}
     >
       <title>{"Mail Icon"}</title>
@@ -447,6 +461,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
       {...props}
     >
       <path d="M13.23 1h-1.46L3.52 9.25l-.16.22L1 13.59 2.41 15l4.12-2.36.22-.16L15 4.23V2.77L13.23 1zM2.41 13.59l1.51-3 1.45 1.45-2.96 1.55zm3.83-2.06L4.47 9.76l8-8 1.77 1.77-8 8z" />
@@ -458,8 +473,10 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
       {...props}
     >
+      <title>{"Manage"}</title>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -473,6 +490,7 @@ const Icon = ({ size, name, color, props, className }) => {
       data-view-component="true"
       height={size}
       width={size}
+      className={className}
       {...props}
     >
       <path
@@ -487,6 +505,7 @@ const Icon = ({ size, name, color, props, className }) => {
         width={size} 
         viewBox="0 0 72 72" 
         fill={color} 
+        className={className}
         {...props}>
             <path d="M37.59.25l36.95 64H.64l36.95-64z" />
         </svg>
@@ -497,6 +516,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
+      className={className}
       {...props}
     >
       <path
@@ -512,6 +532,7 @@ const Icon = ({ size, name, color, props, className }) => {
       data-view-component="true"
       height={size}
       width={size}
+      className={className}
       {...props}
     >
       <path
@@ -527,6 +548,7 @@ const Icon = ({ size, name, color, props, className }) => {
       viewBox="0 0 19.9 19.7"
       height={size}
       width={size}
+      className={className}
       {...props}
     >
       <title>{"Search"}</title>
@@ -544,6 +566,7 @@ const Icon = ({ size, name, color, props, className }) => {
       width={size}
       height={size}
       viewBox="0 0 350 350"
+      className={className}
       {...props}
     >
       <path
@@ -559,6 +582,7 @@ const Icon = ({ size, name, color, props, className }) => {
       height={size}
       viewBox="0 0 32 32"
       fill={color}
+      className={className}
       {...props}
     >
       <title>{"Pluralsight"}</title>
@@ -569,8 +593,9 @@ const Icon = ({ size, name, color, props, className }) => {
       <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width={size}
+      height={size}
+      className={className}
       {...props}
     >
       <path
@@ -582,8 +607,9 @@ const Icon = ({ size, name, color, props, className }) => {
       <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width={size}
+      height={size}
+      className={className}
       {...props}
     >
       <path
@@ -595,8 +621,9 @@ const Icon = ({ size, name, color, props, className }) => {
       <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width={size}
+      height={size}
+      className={className}
       {...props}
     >
       <path
@@ -608,8 +635,9 @@ const Icon = ({ size, name, color, props, className }) => {
       <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width={size}
+      height={size}
+      className={className}
       {...props}
     >
       <path
@@ -621,8 +649,9 @@ const Icon = ({ size, name, color, props, className }) => {
       <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width={size}
+      height={size}
+      className={className}
       {...props}
     >
       <path
@@ -634,8 +663,9 @@ const Icon = ({ size, name, color, props, className }) => {
       <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width={size}
+      height={size}
+      className={className}
       {...props}
     >
       <path
@@ -646,9 +676,10 @@ const Icon = ({ size, name, color, props, className }) => {
     ) : name === 'sassIcon' ? (
       <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width={size}
+      height={size}
       viewBox="0 0 512 384"
+      className={className}
       {...props}
     >
       <path
@@ -658,10 +689,11 @@ const Icon = ({ size, name, color, props, className }) => {
     </svg>
     ) : name === 'styledComponentIcon' ? (
       <svg
-      width="1em"
-      height="1em"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
       {...props}
     >
       <title>{"styled-components icon"}</title>
@@ -674,6 +706,7 @@ const Icon = ({ size, name, color, props, className }) => {
       height={size}
       viewBox="0 0 992 992"
       fill={color}
+      className={className}
       {...props}
     >
       <title>{"no more"}</title>
@@ -688,6 +721,7 @@ const Icon = ({ size, name, color, props, className }) => {
       width={size}
       height={size}
       fill={color}
+      className={className}
       {...props}
     >
       <title>{"Run Code"}</title>
@@ -700,6 +734,7 @@ const Icon = ({ size, name, color, props, className }) => {
       width={size}
       height={size}
       fill={color}
+      className={className}
       {...props}
     >
       <title>{"Run Code"}</title>
@@ -713,6 +748,7 @@ const Icon = ({ size, name, color, props, className }) => {
       height={size}
       viewBox="0 0 33 33"
       fill={color}
+      className={className}
       {...props}
     >
       <title>{"Split Editor"}</title>
@@ -725,6 +761,7 @@ const Icon = ({ size, name, color, props, className }) => {
       fill="none"
       width={size}
       height={size}
+      className={className}
       {...props}
     >
       <mask

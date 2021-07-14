@@ -1,15 +1,16 @@
 import projects from './Project_data';
 import ProjectSchema from "./Project_Schema";
+import styled from 'styled-components';
 
 export default function ProjectComp() {
   return (
     <>
             <PortfolioWorksContainer>
-                <PortfolioShowcase>
-                    {projects.map((project, index) => (
+             
+                      {projects.map((project, index) => (
                     <ProjectSchema key={index} {...project} id={index} />
                     ))}
-                </PortfolioShowcase>
+               
 
                 {/* <div className="go_button_container">
                     <Link to="/">
@@ -33,13 +34,7 @@ export default function ProjectComp() {
 
 const PortfolioWorksContainer = styled.div`
     display: flex;
-  flex-direction: column;
-  width: 100%;
+    flex-direction: column;
+    width: 100%;
 `
 
-const PortfolioShowcase= styled.div`
-   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-`

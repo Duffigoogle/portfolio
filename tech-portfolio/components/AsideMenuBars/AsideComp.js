@@ -18,38 +18,48 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
                         <Icon name='FilesIcon' 
                         size={23} 
                         color={toggleState === 1 ? '#fff' : '#bfbfbf'}
-                        
+                        className='icon'
                         />
                     </div>
                     <div className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
                         onClick={() => toggleTab(2)}>
                         <Icon name='SearchRightIcon' 
                         size={23} 
-                        color={toggleState === 2 ? '#fff' : '#bfbfbf'} />
+                        color={toggleState === 2 ? '#fff' : '#bfbfbf'} 
+                        className='icon'
+                        />
                     </div>
                     <div className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
                         onClick={() => toggleTab(3)}>
                         <Icon name='CodeIcon' 
                         size={23} 
-                        color={toggleState === 3 ? '#fff' : '#bfbfbf'} />
+                        color={toggleState === 3 ? '#fff' : '#bfbfbf'} 
+                        className='icon'
+                        />
                     </div>
                     <div className={toggleState === 4 ? 'tabs active-tabs' : 'tabs'}
                         onClick={() => toggleTab(4)}>
                         <Icon name='GithubIcon' 
                         size={23} 
-                        color={toggleState === 4 ? '#fff' : '#bfbfbf'}/>
+                        color={toggleState === 4 ? '#fff' : '#bfbfbf'}
+                        className='icon'
+                        />
                     </div>
                     <div className={toggleState === 5 ? 'tabs active-tabs' : 'tabs'}
                         onClick={() => toggleTab(5)}>
                         <Icon name='MailIcon' 
                         size={23} 
-                        color={toggleState === 5 ? '#fff' : '#bfbfbf'}/>
+                        color={toggleState === 5 ? '#fff' : '#bfbfbf'}
+                        className='icon'
+                        />
                     </div>
                     <div className={toggleState === 6 ? 'tabs active-tabs' : 'tabs'}
                         onClick={() => toggleTab(6)}>
                         <Icon name='PluralsightIcon' 
                         size={23} 
-                        color={toggleState === 6 ? '#fff' : '#bfbfbf'}/>
+                        color={toggleState === 6 ? '#fff' : '#bfbfbf'}
+                        className='icon'
+                        />
                     </div>
                 </TopSideBarTabs>
                 <BottomSideBarTabs>
@@ -57,13 +67,17 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
                             onClick={() => toggleTab(7)}>
                             <Icon name='personcircle' 
                             size={23} 
-                            color={toggleState === 7 ? '#fff' : '#bfbfbf'}/>
+                            color={toggleState === 7 ? '#fff' : '#bfbfbf'}
+                            className='icon'
+                            />
                         </div>
                         <div className={toggleState === 8 ? 'tabs active-tabs' : 'tabs'}
                             onClick={() => toggleTab(8)}>
                             <Icon name='SettingsIcon' 
                             size={23} 
-                            color={toggleState === 8 ? '#fff' : '#bfbfbf'}/>
+                            color={toggleState === 8 ? '#fff' : '#bfbfbf'}
+                            className='icon'
+                            />
                         </div>
                 </BottomSideBarTabs>
             </SideBarTabs>

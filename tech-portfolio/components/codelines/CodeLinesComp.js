@@ -5,7 +5,7 @@ const CodeLinesComp = () => {
     function range(start, end) {
         return Array(end - start + 1).fill().map((_, idx) => start + idx)
     }
-    const numbers = range(1, 40);
+    const numbers = range(1, 50);
 
     return (
         <>
@@ -42,7 +42,7 @@ const CodeLinesContainer = styled.aside`
     background-color: #757575;
     width: 3.44rem;
     min-width: 3.44rem;
-    height: 100vh;
+    height: 120vh;
     /* height: 100%; */
 `
 

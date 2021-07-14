@@ -1,8 +1,9 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
 import ProjectComp from '../components/Project/ProjectComp';
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
+import {PageLayout} from '../components/Layout/PageLayout';
+import styled from 'styled-components';
 
 export default function ProjectPage() {
   return (
@@ -14,17 +15,26 @@ export default function ProjectPage() {
       </Head>
 
 
-      <DisplayAreaLayoutComp>
-        <>
-          <CodeLinesComp />
-          <h1>Projects Page</h1>
-           <ProjectComp />
-        </>
+      <DisplayAreaLayoutComp pagepath='pages' filename='projects.jsx' filename_icon='reactIcon'>  
+          <StyledMain>
+            <PageLayout>
+              <CodeLinesComp />
+              <ProjectComp />
+            </PageLayout>
+    
+            <PageLayout>
+              <CodeLinesComp />
+              <ProjectComp />
+            </PageLayout>
+          </StyledMain>
       </DisplayAreaLayoutComp>
       
     </div>
   )
 };
 
+const StyledMain = styled.main`
+    display: flex;
+`
 
 

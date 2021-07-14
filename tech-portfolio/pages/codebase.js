@@ -1,6 +1,6 @@
 import Head from 'next/head'
-// import WelcomeComp from '../components/Welcome/Welcome'
-// import styled from 'styled-components';
+import styled from 'styled-components';
+
 
 export default function CodebasePage() {
   return (

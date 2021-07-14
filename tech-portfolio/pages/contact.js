@@ -2,8 +2,7 @@ import Head from 'next/head';
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
 import FormComp from '../components/Form/FormComp';
-import styled from 'styled-components';
-
+import {PageLayout} from '../components/Layout/PageLayout';
 
 export default function ContactPage() {
   return (
@@ -16,11 +15,11 @@ export default function ContactPage() {
 
        <DisplayAreaLayoutComp pagepath='pages' filename='contact.js' filename_icon='javaScriptIcon'>
         <>
-          {/* <MainPage> */}
+          <PageLayout>
               <CodeLinesComp />
               <h1>Contact Page</h1>
               <FormComp />
-          {/* </MainPage> */}
+          </PageLayout>
         
         </>
       </DisplayAreaLayoutComp>

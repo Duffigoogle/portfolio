@@ -47,9 +47,9 @@ const tabs = [
     },
     {
         id: 7,
-        filepath: "/gist",
+        filepath: "/gists",
         Icon_name: "markdownIcon",
-        file_name: "Gists.md",
+        file_name: "gists.md",
 
     },
 ];

@@ -10,6 +10,7 @@ const TitleBarLeftTabs = () => {
             <TitleTabs>
                 <TitleTab>File</TitleTab>
                 <TitleTab>Edit</TitleTab>
+                <TitleTab>Selection</TitleTab>
                 <TitleTab>View</TitleTab>
                 <TitleTab>Go</TitleTab>
                 <TitleTab>Run</TitleTab>
@@ -28,11 +29,10 @@ const TitleBarLeft = styled.div`
     display: flex;
     flex: 1;
     align-items: center;
-    /* background-color: red; */
 `
 
 const TitleLogo = styled.div`
-    margin-right: 0.63rem;
+    margin-right: 0.85rem;
     
 `
 
@@ -41,6 +41,6 @@ const TitleTabs = styled.div`
 `
 
 const TitleTab = styled.p`
-    font-size: 0.8rem;
-    margin-right: 10px;
+    font-size: 0.82rem;
+    margin-right: 0.9rem;
 `

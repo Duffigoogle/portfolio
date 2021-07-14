@@ -3,6 +3,7 @@ import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
 import FilepathComp from '../components/filepath/Filepath';
 import styled from 'styled-components';
+import {PageLayout} from '../components/Layout/PageLayout';
 
 export default function AboutPage() {
   return (
@@ -14,12 +15,10 @@ export default function AboutPage() {
       </Head>
 
       <DisplayAreaLayoutComp pagepath='pages' filename='about.html' filename_icon='htmlIcon'>
-        <>
-          {/* <MainPage> */}
+          <PageLayout>
             <CodeLinesComp />
             <h1>About Page</h1>
-          {/* </MainPage> */}
-        </>
+          </PageLayout>
       </DisplayAreaLayoutComp>
 
       
