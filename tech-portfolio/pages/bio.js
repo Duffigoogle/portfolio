@@ -2,7 +2,6 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
-import BioComp from '../components/Bio_block/BioComp';
 import {PageLayout} from '../components/Layout/PageLayout';
 
 
@@ -19,7 +18,7 @@ export default function BioPage() {
       <DisplayAreaLayoutComp stylepath='styles' filename='bio.css' filename_icon='cssIcon'>
           <PageLayout>
             <CodeLinesComp />
-            <BioComp />
+            <h1>Bios Page</h1>
           </PageLayout>
       </DisplayAreaLayoutComp>
       
