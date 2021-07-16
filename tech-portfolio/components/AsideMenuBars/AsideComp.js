@@ -3,9 +3,10 @@ import Icon from '../common/icons/icons';
 import styled from 'styled-components';
 import ExplorerComp from '../../components/Explorerbar/ExplorerComp';
 import {MailComp, CodeBaseComp, GithubComp} from '../SidebarComps/SidebarComp';
+import ModalComp from '../Form/Modal';
 
 
-const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
+const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleModal, isModalPopUp}) => {
 
     return (
         <SideBarContainer>
@@ -63,16 +64,16 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
                     </div>
                 </TopSideBarTabs>
                 <BottomSideBarTabs>
-                        <div className={toggleState === 7 ? 'tabs active-tabs' : 'tabs'}
-                            onClick={() => toggleTab(7)}>
+                        <div className='tabs' 
+                            onClick={() => toggleModal}>
                             <Icon name='personcircle' 
                             size={23} 
                             color={toggleState === 7 ? '#fff' : '#bfbfbf'}
                             className='icon'
                             />
                         </div>
-                        <div className={toggleState === 8 ? 'tabs active-tabs' : 'tabs'}
-                            onClick={() => toggleTab(8)}>
+                        <div className='tabs'
+                            onClick={() => toggleModal}>
                             <Icon name='SettingsIcon' 
                             size={23} 
                             color={toggleState === 8 ? '#fff' : '#bfbfbf'}
@@ -105,15 +106,15 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded }) => {
                     {/* <Pluralsight /> */}
                     Pluralsight
                 </div>
-                <div className={toggleState === 7 ? 'content active-content' : 'content'}>
-                    {/* <Pluralsight /> */}
-                    Personal Account
-                </div>
+                
                 <div className={toggleState === 8 ? 'content active-content' : 'content'}>
                     {/* <Pluralsight /> */}
                     Settings
                 </div>
             </SideBarContents>
+            {/* <div> */}
+            <ModalComp isModalPopUp={isModalPopUp} />
+            {/* </div> */}
         </SideBarContainer>
     )
 };
@@ -126,6 +127,8 @@ const SideBarContainer = styled.aside`
     display: flex;
     max-width: calc(14vw + 3vw);
     min-height: calc(100vh - 30px - 30px);
+    position: relative;
+    z-index: 1;
     /* overflow-y: auto; */
     /* border: 2px solid yellowgreen; */
 `

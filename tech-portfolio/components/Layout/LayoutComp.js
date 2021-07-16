@@ -10,6 +10,7 @@ const LayoutComp = ({children}) => {
     // Logic for toggling between the Tabs on the SideBar
     const [toggleState, setToggleState] = useState(1);
     const [isExpanded, setIsExpanded] = useState(+true);
+    const [isModalPopUp, setIsModalPopUp] = useState(true);
 
     const toggleTab = (ind) => {
         setToggleState(ind)
@@ -18,15 +19,26 @@ const LayoutComp = ({children}) => {
 
     const toggleSideTab = () => {
         setIsExpanded(!isExpanded);
-    }
+    };
+
+    const toggleModal = () => {
+        setIsModalPopUp(false);
+    };
+
+
+    
 
     return (
         <>
             <main className={styles.container}>
                 <TitlebarComp />
                 <LayoutAsideBars>
-                    <AsideComp toggleState={toggleState} toggleTab={toggleTab} 
-                    toggleSideTab={toggleSideTab} isExpanded={isExpanded}
+                    <AsideComp toggleState={toggleState} 
+                    toggleTab={toggleTab} 
+                    toggleSideTab={toggleSideTab} 
+                    isExpanded={isExpanded}
+                    toggleModal={toggleModal}
+                    isModalPopUp={isModalPopUp}
                     />
                     <DisplayAreaContainer isExpanded={isExpanded}>
                         {children}
