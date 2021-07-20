@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import WelcomeComp from '../components/Welcome/Welcome'
+import Image from 'next/image';
+import Head from 'next/head';
 import styled from 'styled-components';
 
 export default function Home() {
@@ -12,11 +12,9 @@ export default function Home() {
       </Head>
 
       <HomePageContainer>
-        {/* <HomePageHeading1>Home Page</HomePageHeading1> */}
-        <WelcomeComp />
+          <GithubPage />
       </HomePageContainer>
 
-      
     </div>
   )
 };
@@ -32,6 +30,97 @@ const HomePageContainer = styled.main`
     overflow: hidden;
 `
 
-// const HomePageHeading1 = styled.h1`
-//     font-size: 1rem;
-// `
+
+
+const GithubPage = ({ repos, user }) => {
+
+  return (
+    <>
+       <div>
+            <div>
+              <Image
+                src={user.avatar_url}
+                className=''
+                alt={user.login}
+                width={50}
+                height={50}
+              />
+              <h3>{user.login}</h3>
+            </div>
+            <div>
+              <h3>{user.public_repos} repos</h3>
+            </div>
+            <div>
+              <h3>{user.followers} followers</h3>
+            </div>
+      </div>
+      
+      <h2>6 Latest Updated Repositories</h2>
+      <div>
+        {repos.map((repo) => (
+          <RepoCard key={repo.id} repo={repo} />
+        ))}
+      </div>
+      {/* <GitHubCalendar
+        username={process.env.NEXT_PUBLIC_GITHUB_USERNAME}
+        theme={contributionsTheme}
+        blockMargin={2}
+        blockSize={20}
+      /> */}
+    </>
+  );
+};
+
+export async function getStaticProps() {
+  const userRes = await fetch(
+    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`
+  );
+  const user = await userRes.json();
+
+  const repoRes = await fetch(
+    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?sort=created_at&per_page=6`
+  );
+  const repos = await repoRes.json();
+
+  return {
+    props: { title: 'GitHub', repos, user },
+    revalidate: 10,
+  };
+}
+
+
+
+
+const RepoCard = ({ repo }) => {
+  return (
+    <div>
+      <div>
+        <h3>{repo.name}</h3>
+        <p>{repo.description}</p>
+      </div>
+      <div>
+        <div>
+          <div>
+            <WatchIcon /> {repo.watchers}
+          </div>
+          <div>
+            <ForkIcon /> {repo.forks}
+          </div>
+          <div>
+            <StarIcon /> {repo.stargazers_count}
+          </div>
+        </div>
+        <div>
+          <a href={repo.html_url} target="_blank" rel="noopener">
+            <GithubIcon height={20} width={20} />
+          </a>
+          {repo.homepage && (
+            <a href={repo.homepage} target="_blank" rel="noopener">
+              <LinkIcon height={20} width={20} />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};

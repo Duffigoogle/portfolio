@@ -65,15 +65,14 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleMod
                 </TopSideBarTabs>
                 <BottomSideBarTabs>
                         <div className='tabs' 
-                            onClick={() => toggleModal}>
+                            onClick={() => toggleModal()}>
                             <Icon name='personcircle' 
                             size={23} 
                             color={toggleState === 7 ? '#fff' : '#bfbfbf'}
                             className='icon'
                             />
                         </div>
-                        <div className='tabs'
-                            onClick={() => toggleModal}>
+                        <div className='tabs'>
                             <Icon name='SettingsIcon' 
                             size={23} 
                             color={toggleState === 8 ? '#fff' : '#bfbfbf'}
@@ -107,13 +106,15 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleMod
                     Pluralsight
                 </div>
                 
+                
+                
                 <div className={toggleState === 8 ? 'content active-content' : 'content'}>
                     {/* <Pluralsight /> */}
                     Settings
                 </div>
             </SideBarContents>
             {/* <div> */}
-            <ModalComp isModalPopUp={isModalPopUp} />
+                <ModalComp isModalPopUp={isModalPopUp} />
             {/* </div> */}
         </SideBarContainer>
     )

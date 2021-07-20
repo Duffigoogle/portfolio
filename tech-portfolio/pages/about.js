@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
-import BioComp from '../components/Bio_block/BioComp';
+import AboutComp from '../components/Bio_block/AboutComp';
 import {PageLayout} from '../components/Layout/PageLayout';
 
 export default function AboutPage() {
@@ -16,7 +16,7 @@ export default function AboutPage() {
       <DisplayAreaLayoutComp pagepath='pages' filename='about.html' filename_icon='htmlIcon'>
           <PageLayout>
             <CodeLinesComp />
-            <BioComp />
+            <AboutComp />
           </PageLayout>
       </DisplayAreaLayoutComp>
 

@@ -10,7 +10,7 @@ const LayoutComp = ({children}) => {
     // Logic for toggling between the Tabs on the SideBar
     const [toggleState, setToggleState] = useState(1);
     const [isExpanded, setIsExpanded] = useState(+true);
-    const [isModalPopUp, setIsModalPopUp] = useState(true);
+    const [isModalPopUp, setIsModalPopUp] = useState(false);
 
     const toggleTab = (ind) => {
         setToggleState(ind)
@@ -22,7 +22,9 @@ const LayoutComp = ({children}) => {
     };
 
     const toggleModal = () => {
-        setIsModalPopUp(false);
+        setIsModalPopUp(!isModalPopUp);
+        // console.log("clicking");
+        // console.log(setIsModalPopUp());
     };
 
 
