@@ -62,9 +62,9 @@ const BioStackText = styled.h3`
     color: white;
     text-transform: uppercase;
     letter-spacing: 3px;
-    writing-mode:vertical-lr;
+    writing-mode: vertical-lr;
     transform: rotate(180deg);
-    
+    transition: transform 0.2s;
 `
 
 const BioContent = styled.div`
