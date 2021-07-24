@@ -3,6 +3,7 @@ import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
 import FormComp from '../components/Form/FormComp';
 import {PageLayout} from '../components/Layout/PageLayout';
+import styled from 'styled-components';
 
 export default function ContactPage() {
   return (
@@ -17,16 +18,49 @@ export default function ContactPage() {
         <>
           <PageLayout>
               <CodeLinesComp />
-              <h1>Contact Page</h1>
-              <FormComp />
+              <StyledDiv>
+                <StyledSection>
+                    <h2><pan>Get in Touch...</pan></h2>  
+                    <p>Any question, feedback or remarks?</p>
+                    <p>Feel free to drop me a message!</p>
+                </StyledSection>
+                <FormComp />
+              </StyledDiv>
           </PageLayout>
         
         </>
       </DisplayAreaLayoutComp>
 
-
-      
     </div>
   )
-}
+};
 
+
+const StyledDiv = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+`
+
+const StyledSection = styled.section`
+  margin-right: 4rem;
+  /* border: 1px solid; */
+  padding: 0.7rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d9dddc;
+    letter-spacing: 3px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    letter-spacing: 1.3px;
+    color: #eee;
+    padding-left: 5px;
+  }
+
+`

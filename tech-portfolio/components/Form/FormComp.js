@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 
 const StyledInput = styled.input`
-    border: 1px solid #5d5d5d; 
+    /* border: 1px solid #5d5d5d;  */
     padding: 0.45rem; 
-    margin-bottom: 0.5rem;
+    margin-top: 0.15rem;
+    margin-bottom: 0.85rem;
     width: 100%; 
     outline: none;
 `; 
@@ -25,12 +26,14 @@ const StyledForm = styled.form`
 
 const StyledLabel = styled.label`
     display: block;
-    color: orange;
+    color: #222021;
+    font-weight: bold;
     padding-left: 0.25rem; 
+    letter-spacing: 1px;
 `;
 
 const StyledTextArea = styled.textarea`
-    border: 1px solid #5d5d5d; 
+    /* border: 1px solid #5d5d5d;  */
     padding: 0.2rem; 
     width: 100%; 
     overflow: hidden;
@@ -41,9 +44,11 @@ const StyledTextArea = styled.textarea`
 const StyledButton = styled.button`
     background: orange;
     border: 0; 
-    color: #fff; 
+    color: #222021; 
+    font-weight: bold;
+    letter-spacing: 3px;
     padding: 0.5rem;
-    margin-top: 0.8rem; 
+    margin-top: 1.5rem; 
     text-transform: uppercase; 
     width: 100%;
     
@@ -91,7 +96,7 @@ const FormComp = () => {
                     <StyledLabel>Subject</StyledLabel>
                     <StyledTextArea placeholder='type your message' required> </StyledTextArea>
 
-                    <StyledButton type='submit'>Send!</StyledButton>
+                    <StyledButton type='submit'>Send</StyledButton>
 
                     {/* <input type="submit" value="Submit!"></input> */}
         </StyledForm>
