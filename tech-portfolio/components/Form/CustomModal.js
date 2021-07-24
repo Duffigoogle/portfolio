@@ -1,7 +1,7 @@
 import Icon from '../common/icons/icons';
 import styled from 'styled-components';
 
-const ModalComp = props => {
+const ModalComp = (title, props, topLabelText, iconName, iconSize, bottomLabelText) => {
 
     if (!props.isModalPopUp) {
         return null
@@ -9,14 +9,14 @@ const ModalComp = props => {
     
     return (
         <StyledModal onClick = {evt => evt.stopPropagation()}>
+            <span>{title}</span>
             <StyledModalContent>
-              <p> Duffigoogle (Github)</p>
+              <p>{topLabelText}</p>
               {/* ArrowRight */}
-              <Icon name='ChevronRight' size={17} color='#fff' />
+              <Icon name={iconName} size={iconSize} color='#fff' />
             </StyledModalContent>
-            <span></span>
             <StyledModalContent>
-                <p>Turn on Settings Sync...</p> 
+                <p>{bottomLabelText}</p> 
             </StyledModalContent>
         </StyledModal>
     )
@@ -39,6 +39,10 @@ const StyledModal = styled.div`
     height: 50px; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4);
+
+    span {
+        display: none;
+    }
 
 `
 

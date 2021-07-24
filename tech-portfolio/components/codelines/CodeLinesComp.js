@@ -7,6 +7,9 @@ const CodeLinesComp = () => {
     }
     const numbers = range(1, 50);
 
+    // const pageContainerHeight = calc((window.document.innerHeight) - 60px)
+    // const pageHeight = parse.int(pageContainerHeight)
+
     return (
         <>
             <CodeLinesContainer>
@@ -59,5 +62,3 @@ const TabShowcaseUl = styled.ul`
     
 `
 
-
-// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];

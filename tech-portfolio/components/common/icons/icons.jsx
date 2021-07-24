@@ -183,7 +183,7 @@ const Icon = ({ size, name, color, props, className }) => {
                 fill={color}
              />
         </svg>
-    ) : name === 'mail' ? (
+    ) : name === 'mailIcon' ? (
         <svg
             width={size}
             height={size}

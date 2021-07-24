@@ -38,9 +38,12 @@ const ExplorerComp = () => {
 
                     <ExplorerEditorMenu>
                         <ExplorerTopSectionLabel onClick={toggleEditorLabel}>
-                            <Icon name="ChevronRight" 
-                            size={18}
-                            />
+                            <StyledSpan isOpen={isOpen}>
+                                <Icon name="ChevronRight" 
+                                size={18}
+                                // className='icon_chevron_right'
+                                />
+                            </StyledSpan>
                                 OPEN EDITORS
                         </ExplorerTopSectionLabel>
 
@@ -61,17 +64,21 @@ const ExplorerComp = () => {
                         
                     <ExplorerWorkspaceMenu>
                         <ExplorerTopSectionLabel onClick={toggleWorkspaceLabel}>
-                            <Icon name="ChevronRight" 
-                            size={18}
-                            />
+                            <StyledSpan isOpenWorkSpace={isOpenWorkSpace}>
+                                <Icon name="ChevronRight" 
+                                size={18}
+                                />
+                            </StyledSpan>
                                 (WORKSPACE)
                         </ExplorerTopSectionLabel>
 
                         <ExplorerPortfolioMenu isOpenWorkSpace={isOpenWorkSpace}>
                             <ExplorerPortfolioLabel onClick={togglePortfolioLabel}>
-                                <Icon name="ChevronRight" 
-                                size={18}
-                                />
+                                <StyledSpan isOpenPortfolio={isOpenPortfolio}>
+                                    <Icon name="ChevronRight" 
+                                    size={18}
+                                    />
+                                </StyledSpan>
                                     TECH-PORTFOLIO
                             </ExplorerPortfolioLabel>
                             
@@ -122,6 +129,7 @@ const ExplorerWorkspaceMenu = styled.div`
 
 const ExplorerEditorSection = styled.div`
     display: ${({isOpen}) => isOpen ? 'block' : 'none'};
+    transition: transform 0.05s;
 `
 
 const ExplorerPortfolioItem = styled.div`
@@ -156,7 +164,24 @@ const ExplorerTopSectionLabel = styled.label`
     color: whitesmoke;
     padding: 3.8px 0;
     background-color: #3f3f3f;
+
+   .icon_chevron_right {
+       /* display: inline-block; */
+       border: 1px solid #fff;
+       /* transform: rotate(90deg); */
+       transform: ${({rotateChevron}) => !rotateChevron ? "rotate(90deg)" : ""};
+       //transform: ${({isOpen}) => (isOpen ? 'rotate(90deg)' : '')};
+       transition: transform 0.2s;
+       /* display: ${({rotateChevron}) => rotateChevron ? 'inline-block' : 'none'}; */
+    }
 `
+const StyledSpan = styled.span`
+    /* border: 1px solid #fff; */
+    transform: ${({isOpen, isOpenWorkSpace, isOpenPortfolio}) => (isOpen || isOpenWorkSpace || isOpenPortfolio) ? "rotate(90deg)" : ""};
+    transition: transform 0.01s;
+
+`
+
 
 const ExplorerPortfolioLabel = styled.label`
     display: flex;
@@ -178,11 +203,13 @@ const ExplorerPortfolioMenu = styled.section`
     height: 30vh; 
     /* border: 1px solid #fff; */
     display: ${({isOpenWorkSpace}) => isOpenWorkSpace ? 'block' : 'none'};
+    transition: transform 0.05s;
 `
 
 const ExplorerPortfolioContent = styled.div`
     /* border: 1px solid purple; */
     display: ${({isOpenPortfolio}) => isOpenPortfolio ? 'block' : 'none'};
+    transition: transform 0.05s;
 `
 
 const ExplorerSectionLabel = styled.label`

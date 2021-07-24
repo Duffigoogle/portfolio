@@ -138,24 +138,28 @@ export const MailComp = () => {
             <SideBarTitleComp text='CONTACT' />
             <StyledSection>
                 <StyledBox>
-                    <Icon name='MailIcon' size={25} color='orange' />
-                    <p>Duffdev001@gmail.com</p>
+                    <Icon name='mailIcon' size={22} color='orange' />
+                    <p>Duffdev001@gmail</p>
                 </StyledBox>
                 <StyledBox>
                     <Icon name='twitter' size={22} color='orange' />
-                    <p>Duffygoogle</p>
+                    <p>@Duffygoogle</p>
                 </StyledBox>
                 <StyledBox>
                     <Icon name='GithubIcon' size={22} color='orange' />
-                    <p>Duffigoogle</p>
+                    <p>@Duffigoogle</p>
                 </StyledBox>
                 <StyledBox>
                     <Icon name='instagram' size={22} color='orange' />
-                    <p>thelastgoodman</p>
+                    <p>@thelastgoodman</p>
                 </StyledBox>
                 <StyledBox>
-                    <Icon name='instagram' size={22} color='orange' />
+                    <Icon name='StackoverflowIcon' size={22} color='orange' />
                     <p>StackOverFlow:</p>
+                </StyledBox>
+                <StyledBox>
+                    <Icon name='StackoverflowIcon' size={22} color='orange' />
+                    <p>Hashnode</p>
                 </StyledBox>
 
             </StyledSection>

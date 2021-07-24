@@ -72,7 +72,8 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleMod
                             className='icon'
                             />
                         </div>
-                        <div className='tabs'>
+                        <div className='tabs'
+                            onClick={() => toggleModal()}>
                             <Icon name='SettingsIcon' 
                             size={23} 
                             color={toggleState === 8 ? '#fff' : '#bfbfbf'}
@@ -114,6 +115,7 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleMod
                 </div>
             </SideBarContents>
             {/* <div> */}
+                <ModalComp isModalPopUp={isModalPopUp} /> 
                 <ModalComp isModalPopUp={isModalPopUp} />
             {/* </div> */}
         </SideBarContainer>
