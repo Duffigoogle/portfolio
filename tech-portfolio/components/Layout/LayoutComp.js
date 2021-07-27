@@ -9,19 +9,24 @@ const LayoutComp = ({children}) => {
 
     // Logic for toggling between the Tabs on the SideBar
     const [toggleState, setToggleState] = useState(1);
+    const [modalState, setModalState] = useState(0);
     const [isExpanded, setIsExpanded] = useState(+true);
     const [isModalPopUp, setIsModalPopUp] = useState(false);
 
     const toggleTab = (ind) => {
         setToggleState(ind)
     };
-
-
+    
     const toggleSideTab = () => {
         setIsExpanded(!isExpanded);
     };
 
-    const toggleModal = () => {
+    // const toggleModal = () => {
+    //     setIsModalPopUp(!isModalPopUp);
+    // };
+
+    const toggleModal = (ind) => {
+        setModalState(ind)
         setIsModalPopUp(!isModalPopUp);
         // console.log("clicking");
         // console.log(setIsModalPopUp());
@@ -37,7 +42,7 @@ const LayoutComp = ({children}) => {
                 <LayoutAsideBars>
                     <AsideComp toggleState={toggleState} 
                     toggleTab={toggleTab} 
-                    toggleSideTab={toggleSideTab} 
+                    toggleSideTab={toggleSideTab}  
                     isExpanded={isExpanded}
                     toggleModal={toggleModal}
                     isModalPopUp={isModalPopUp}
@@ -65,5 +70,5 @@ const DisplayAreaContainer = styled.div`
     height: calc(100vh - 30px - 30px);
     /* border: 1px solid green; */
     overflow: hidden;
-    width: ${({isExpanded}) => (isExpanded == true ? 'calc(100vw - 17vw)' : 'calc(100vw - 3vw)')};
+    width: ${({isExpanded}) => (isExpanded == true ? 'calc(100vw - 14.514rem)' : 'calc(100vw - 11.953rem)')};
 ` 

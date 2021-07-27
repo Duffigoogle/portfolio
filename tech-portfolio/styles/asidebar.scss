@@ -21,7 +21,9 @@
 
 .content {
     background-color: #444444;
-    width: 100%;
+    // width: 100%;
+    min-width: 11.953rem;
+    width: 11.953rem;
     height: 100%;
     display: none;
     // border: 1px solid blue;
@@ -30,4 +32,6 @@
 
 .active-content {
     display: block;
+    min-width: 11.953rem;
+    width: 11.953rem;
 }

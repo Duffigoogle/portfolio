@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ExplorerComp from '../../components/Explorerbar/ExplorerComp';
 import {MailComp, CodeBaseComp, GithubComp} from '../SidebarComps/SidebarComp';
 import ModalComp from '../Form/Modal';
+import CustomModal from '../Form/CustomModal';
 
 
 const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleModal, isModalPopUp}) => {
@@ -65,7 +66,7 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleMod
                 </TopSideBarTabs>
                 <BottomSideBarTabs>
                         <div className='tabs' 
-                            onClick={() => toggleModal()}>
+                            onClick={() => toggleModal(1)}>
                             <Icon name='personcircle' 
                             size={23} 
                             color={toggleState === 7 ? '#fff' : '#bfbfbf'}
@@ -73,7 +74,7 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleMod
                             />
                         </div>
                         <div className='tabs'
-                            onClick={() => toggleModal()}>
+                            onClick={() => toggleModal(2)}>
                             <Icon name='SettingsIcon' 
                             size={23} 
                             color={toggleState === 8 ? '#fff' : '#bfbfbf'}
@@ -85,7 +86,6 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleMod
             <SideBarContents visibility={isExpanded ? +true : undefined}>
                 <div className={toggleState === 1 ? 'content active-content' : 'content'}>
                     <ExplorerComp />
-                    {/* ExplorerComp */}
                 </div>
                 <div className={toggleState === 2 ? 'content active-content' : 'content'}>
                     {/* <SearchComp /> */}
@@ -96,27 +96,29 @@ const AsideComp = ({toggleState, toggleTab, toggleSideTab, isExpanded, toggleMod
                 </div>
                 <div className={toggleState === 4 ? 'content active-content' : 'content'}>
                     <GithubComp />
-                    {/* GithubComp */}
                 </div>
                 <div className={toggleState === 5 ? 'content active-content' : 'content'}>
                     <MailComp />
             
                 </div>
                 <div className={toggleState === 6 ? 'content active-content' : 'content'}>
-                    {/* <Pluralsight /> */}
                     Pluralsight
                 </div>
                 
                 
                 
-                <div className={toggleState === 8 ? 'content active-content' : 'content'}>
-                    {/* <Pluralsight /> */}
+                {/* <div className={toggleState === 8 ? 'content active-content' : 'content'}>
                     Settings
-                </div>
+                </div> */}
             </SideBarContents>
             {/* <div> */}
                 <ModalComp isModalPopUp={isModalPopUp} /> 
-                <ModalComp isModalPopUp={isModalPopUp} />
+                <CustomModal 
+                isModalPopUp={isModalPopUp} 
+                topLabelText='Color theme' 
+                bottomLabelText='Check for updates...'
+                 />
+                {/* <ModalComp isModalPopUp={isModalPopUp} /> */}
             {/* </div> */}
         </SideBarContainer>
     )
@@ -137,8 +139,8 @@ const SideBarContainer = styled.aside`
 `
 
 const SideBarTabs = styled.div`
-    width: 3vw;
-    min-width: 40px;
+    width: 2.561rem;
+    min-width: 2.5rem;
     height: calc(100vh - 30px - 30px);
     display: flex;
     flex-direction: column;

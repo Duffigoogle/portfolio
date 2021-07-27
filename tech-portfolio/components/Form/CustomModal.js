@@ -1,7 +1,7 @@
 import Icon from '../common/icons/icons';
 import styled from 'styled-components';
 
-const ModalComp = (title, props, topLabelText, iconName, iconSize, bottomLabelText) => {
+const CustomModal = (title, props, topLabelText, iconName, iconSize, bottomLabelText) => {
 
     if (!props.isModalPopUp) {
         return null
@@ -22,7 +22,7 @@ const ModalComp = (title, props, topLabelText, iconName, iconSize, bottomLabelTe
     )
 }
 
-export default ModalComp;
+export default CustomModal;
 
 
 // styled components for AsideComp;

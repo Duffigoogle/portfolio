@@ -103,14 +103,18 @@ export default ExplorerComp;
 
 //STYLING THE STYLED COMPONENTS FOR EXPLORERMENU
 const ExplorerMenu = styled.div`
-    width: 14vw;
-    max-width: 14vw;
-    background-color: #616161;
+    /* width: 14vw; */
+    width: 11.953rem;
+    /* min-width: 14vw; */
+    min-width: 11.953rem;
+    /* background-color: #616161; */
+    background-color: red;
     height: calc(100vh - 30px - 30px);
 `
 
 const ExplorerTopMenu = styled.div`
-    width: 100%;
+    width: 11.953rem;
+    min-width: 11.953rem;
     /* padding: 5px 10px; */
 `
 
