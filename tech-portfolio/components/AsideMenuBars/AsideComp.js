@@ -161,8 +161,9 @@ const BottomSideBarTabs = styled.div`
 `
 
 const SideBarContents = styled.div`
-    width: 14vw;
-    min-width: 187px;
+    /* width: 14vw; */
+    width: 11.953rem;
+    min-width: 11.953rem;
     /* display: ${({ isHidden }) => isOpenSideBar ? 'block' : 'none'}; */
     display: ${props => props.visibility ? 'block' : 'none'};
 `

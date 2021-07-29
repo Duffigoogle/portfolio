@@ -51,6 +51,7 @@ const TabsTaskbarContainer = styled.nav`
     justify-content: space-between;
     background-color: #999999;
     border-bottom: 0.13rem solid #444444;
+    overflow-x: auto;
 `
 
 const TabsCollection = styled.label`

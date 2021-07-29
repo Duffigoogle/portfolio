@@ -46,8 +46,10 @@ export default ExplorerPortfolioComp;
 const ExplorerPortfolioItem = styled.div`
     display: flex;
     align-items: center;
-    height: 3.5vh;
-    width: 13.9vw;
+    /* height: 3.5vh; */
+    height: 1.6rem;
+    /* width: 13.9vw; */
+    width: 11.953rem;
     margin-top: 1px;
     padding-left: 25px;
     cursor: pointer;

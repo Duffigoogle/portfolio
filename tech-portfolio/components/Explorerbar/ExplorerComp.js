@@ -107,9 +107,10 @@ const ExplorerMenu = styled.div`
     width: 11.953rem;
     /* min-width: 14vw; */
     min-width: 11.953rem;
-    /* background-color: #616161; */
-    background-color: red;
+    background-color: #616161;
+    /* background-color: red; */
     height: calc(100vh - 30px - 30px);
+    min-height: calc(100vh - 30px - 30px);
 `
 
 const ExplorerTopMenu = styled.div`
@@ -140,7 +141,8 @@ const ExplorerPortfolioItem = styled.div`
     display: flex;
     align-items: center;
     height: 3.5vh;
-    width: 13.9vw;
+    /* width: 13.9vw; */
+    width: 11.953rem;
     /* background-color: skyblue; */
     margin-top: 1px;
     padding-left: 25px;

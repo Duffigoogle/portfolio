@@ -70,5 +70,8 @@ const DisplayAreaContainer = styled.div`
     height: calc(100vh - 30px - 30px);
     /* border: 1px solid green; */
     overflow: hidden;
-    width: ${({isExpanded}) => (isExpanded == true ? 'calc(100vw - 14.514rem)' : 'calc(100vw - 11.953rem)')};
-` 
+    /* width: ${({isExpanded}) => (isExpanded == true ? 'calc(100rem - 14.514rem)' : 'calc(100rem - 11.953rem)')}; */
+    width: ${({isExpanded}) => (isExpanded == true ? 'calc(100rem - 14.514rem)' : 'calc(100rem - 11.953rem)')};
+    margin-left: ${({isExpanded}) => (isExpanded == true ? '0' : '')};
+    
+`  
