@@ -8,11 +8,15 @@ const DisplayAreaLayoutComp = ({children, pagepath, stylepath, filename, filenam
 
     return  (
         <>
-                <DisplayAreaContainerTop>
+                        {/* <TabsTaskbarComp /> */}
+                {/* <DisplayAreaContainerTop> */}
                         <TabsTaskbarComp />
+                        {/* <FilepathComp rootpath='tech-portfolio' pagepath={pagepath} stylepath={stylepath} filename={filename} filename_icon={filename_icon} icon_name='ChevronRight' icon_size='15' /> */}
+                {/* </DisplayAreaContainerTop> */}
+                     <PageContainer>
                         <FilepathComp rootpath='tech-portfolio' pagepath={pagepath} stylepath={stylepath} filename={filename} filename_icon={filename_icon} icon_name='ChevronRight' icon_size='15' />
-                </DisplayAreaContainerTop>
-                     <PageContainer>{children}</PageContainer>    
+                         {children}
+                     </PageContainer>    
         </>
     )
 }
@@ -28,13 +32,16 @@ export default DisplayAreaLayoutComp;
     
 // `
 
-const DisplayAreaContainerTop = styled.div`
-    /* border: 1px solid red; */
-`
+// const DisplayAreaContainerTop = styled.div`
+
+// `
 
 
 
 const PageContainer = styled.div`
+    /* margin-left: 0px; */
+    /* position: absolute; */
+    /* left: 100px; */
 
 `
 

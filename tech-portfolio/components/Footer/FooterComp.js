@@ -1,43 +1,120 @@
-import styled from 'styled-components';
-import Image from 'next/image';
-
+import styled from "styled-components";
+import Image from "next/image";
+import Icon from "../common/icons/icons";
 
 const FooterComp = () => {
-    return (
-        <FooterContainer>
-            <FooterLink
-                href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                 Developed by{' '}
-                <FooterLogoSpan>
-                    <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-                </FooterLogoSpan>
-            </FooterLink>
-      </FooterContainer>
-    )
-}
+  return (
+    <FooterContainer>
+      <LeftContent>
+        <div>
+          <Icon name="GitCompareIcon" size={14} />
+          <p>main*</p>
+        </div>
+        <div>
+          <Icon name="ErrorIcon" size={14} />
+          <p>0</p> &nbsp;&nbsp;
+          <Icon name="WarningIcon" size={14} />
+          <p>0</p>
+        </div>
+      </LeftContent>
+      <FooterLink
+        href="https://www.github.com/duffigoogle/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Developed by
+        <FooterLogoSpan>Duffigoogle</FooterLogoSpan>
+      </FooterLink>
+      <FooterLink
+        href="https://nextjs.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Powered by{" "}
+        <FooterLogoSpan>
+          NEXTjs
+          {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={15} /> */}
+        </FooterLogoSpan>
+      </FooterLink>
+      <RightContent>
+        <div>
+          <p>UTF-8</p>&nbsp;&nbsp;&nbsp;&nbsp;
+          <p>CRLF</p>
+          {/* <Icon name="WatchIcon" size={14} /> */}
+        </div>
+        <div>
+          <Icon name="CheckIcon" size={14} />
+          <p>Prettier</p>
+        </div>
+        <div>
+          <Icon name="BellIcon" size={14} />
+        </div>
+      </RightContent>
+    </FooterContainer>
+  );
+};
 
 export default FooterComp;
 
-
 const FooterContainer = styled.footer`
-     width: 100%;
-     height: 30px;
-     border-top: 1px solid #8f2626;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-`
+  width: 100%;
+  height: 1.1rem;
+  /* border-top: 1px solid #8f2626; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const FooterLink = styled.a`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-grow: 1; */
+  font-size: 0.8rem;
+`;
+
 const FooterLogoSpan = styled.span`
-    height: 1em;
-    margin-left: 0.5rem;
-`
+  margin-left: 0.4rem;
+  color: red;
+  font-weight: bold;
+`;
+
+const LeftContent = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 0.7rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-right: 0.9rem;
+    padding: 0px 0.5rem;
+
+    :hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      padding: 0px 0.5rem;
+    }
+
+    p {
+      font-size: 0.7rem;
+      margin-left: 0.1rem;
+    }
+  }
+`;
+
+const RightContent = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 0.7rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+
+    p {
+      font-size: 0.7rem;
+    }
+  }
+`;
