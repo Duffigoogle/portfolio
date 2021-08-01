@@ -52,6 +52,23 @@ const TabsTaskbarContainer = styled.nav`
     background-color: #999999;
     border-bottom: 0.13rem solid #444444;
     overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        height: 0.18rem;
+    }
+ 
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+ 
+    &::-webkit-scrollbar-thumb {
+        background-color: none;
+        outline: 1px solid slategrey;
+
+        :hover {
+            background-color: #ccc;
+        }
+}
 `
 
 const TabsCollection = styled.label`
@@ -64,7 +81,8 @@ const TabsCollection = styled.label`
 `
 
 const TabsTaskbarIcons = styled.div`
-    width: 10vw;
+    width: 8.538rem;
+    min-width: 8.538rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
