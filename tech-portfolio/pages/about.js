@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
-import CodeLinesComp from '../components/codelines/CodeLinesComp';
-import AboutComp from '../components/Bio_block/AboutComp';
-import {PageLayout} from '../components/Layout/PageLayout';
+import Head from "next/head";
+import DisplayAreaLayoutComp from "../components/Layout/DisplayAreaLayout";
+import CodeLinesComp from "../components/codelines/CodeLinesComp";
+import AboutComp from "../components/Bio_block/AboutComp";
+import { PageLayout } from "../components/Layout/PageLayout";
 
 export default function AboutPage() {
   return (
@@ -13,19 +13,19 @@ export default function AboutPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <DisplayAreaLayoutComp pagepath='pages' filename='about.html' filename_icon='htmlIcon'>
-          <PageLayout>
-            <CodeLinesComp />
-            <AboutComp />
-          </PageLayout>
+      <DisplayAreaLayoutComp
+        pagepath="pages"
+        filename="about.html"
+        filename_icon="htmlIcon"
+      >
+        <PageLayout>
+          <CodeLinesComp />
+          <AboutComp />
+        </PageLayout>
       </DisplayAreaLayoutComp>
-
-      
     </div>
-  )
+  );
 }
-
-
 
 // const MainPage = styled.main`
 //     display: flex;
@@ -52,7 +52,7 @@ export default function AboutPage() {
 
 //     /* Track */ // the track (progress bar) NOT covered by the handle.
 //     ::-webkit-scrollbar-track-piece {
-    
+
 //     }
 
 //     // the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.

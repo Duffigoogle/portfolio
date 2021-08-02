@@ -1,20 +1,6 @@
 import styled from "styled-components";
-import React, { useState, useEffect, useRef } from "react";
 
 export const PageLayout = ({ children }) => {
-  const [height, setHeight] = useState(0);
-  const elementRef = useRef(null);
-
-  useEffect(() => {
-    if (elementRef.current.clientHeight) {
-      setTimeout(() => {
-        setHeight(elementRef.current.clientHeight);
-      }, 1000);
-    }
-    // setHeight(elementRef.current.clientHeight);
-  }, []); //empty dependency array so it only runs once at render
-
-  console.log({ height });
   //   let box = document.getElementsByClassName(".box");
   //   //   let pageHeightPx = box.innerHeight;
   //   let pageHeightPx = document.body.clientHeight;
@@ -23,11 +9,7 @@ export const PageLayout = ({ children }) => {
   //   window.innerHeight ||
   //   document.documentElement.clientHeight ||
   //   document.body.clientHeight
-  return (
-    <StyledPageLayout className="box" ref={elementRef}>
-      {children}
-    </StyledPageLayout>
-  );
+  return <StyledPageLayout className="box">{children}</StyledPageLayout>;
 };
 
 export const StyledPageLayout = styled.main.attrs((props) => ({
@@ -35,10 +17,11 @@ export const StyledPageLayout = styled.main.attrs((props) => ({
 }))`
   width: 100%;
   display: flex;
-  /* height: 84vh; */
-  /* height: 100vh; */
+  /* height: 100vh; // make the height dynamic wrt to page i.e pathname */
+  height: auto;
   overflow-y: auto;
   background-color: #616161;
+  border: 1px solid #fff;
 
   /* width */ //the scrollbar
   ::-webkit-scrollbar {

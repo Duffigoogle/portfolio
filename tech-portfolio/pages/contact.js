@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
-import CodeLinesComp from '../components/codelines/CodeLinesComp';
-import FormComp from '../components/Form/FormComp';
-import {PageLayout} from '../components/Layout/PageLayout';
-import styled from 'styled-components';
+import Head from "next/head";
+import DisplayAreaLayoutComp from "../components/Layout/DisplayAreaLayout";
+import CodeLinesComp from "../components/codelines/CodeLinesComp";
+import FormComp from "../components/Form/FormComp";
+import { PageLayout } from "../components/Layout/PageLayout";
+import styled from "styled-components";
 
 export default function ContactPage() {
   return (
@@ -14,35 +14,38 @@ export default function ContactPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-       <DisplayAreaLayoutComp pagepath='pages' filename='contact.js' filename_icon='javaScriptIcon'>
+      <DisplayAreaLayoutComp
+        pagepath="pages"
+        filename="contact.js"
+        filename_icon="javaScriptIcon"
+      >
         <>
           <PageLayout>
-              <CodeLinesComp />
-              <StyledDiv>
-                <StyledSection>
-                    <h2><pan>Get in Touch...</pan></h2>  
-                    <p>Any question, feedback or remarks?</p>
-                    <p>Feel free to drop me a message!</p>
-                </StyledSection>
-                <FormComp />
-              </StyledDiv>
+            <CodeLinesComp />
+            <StyledDiv>
+              <StyledSection>
+                <h2>
+                  <span>Get in Touch...</span>
+                </h2>
+                <p>Any question, feedback or remarks?</p>
+                <p>Feel free to drop me a message!</p>
+              </StyledSection>
+              <FormComp />
+            </StyledDiv>
           </PageLayout>
-        
         </>
       </DisplayAreaLayoutComp>
-
     </div>
-  )
-};
-
+  );
+}
 
 const StyledDiv = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-`
+  height: 80vh;
+`;
 
 const StyledSection = styled.section`
   margin-right: 4rem;
@@ -62,5 +65,4 @@ const StyledSection = styled.section`
     color: #eee;
     padding-left: 5px;
   }
-
-`
+`;

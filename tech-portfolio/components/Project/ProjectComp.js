@@ -1,18 +1,16 @@
-import projects from './Project_data';
+import projects from "./Project_data";
 import ProjectSchema from "./Project_Schema";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export default function ProjectComp() {
   return (
     <>
-            <PortfolioWorksContainer>
-             
-                      {projects.map((project, index) => (
-                    <ProjectSchema key={index} {...project} id={index} />
-                    ))}
-               
+      <PortfolioWorksContainer>
+        {projects.map((project, index) => (
+          <ProjectSchema key={index} {...project} id={index} />
+        ))}
 
-                {/* <div className="go_button_container">
+        {/* <div className="go_button_container">
                     <Link to="/">
                     <button>
                         <span class="material-icons">arrow_left</span> Home
@@ -24,17 +22,16 @@ export default function ProjectComp() {
                     </button>
                     </Link>
                 </div> */}
-            </PortfolioWorksContainer>
+      </PortfolioWorksContainer>
     </>
-  )
-};
-
+  );
+}
 
 //styled components for ProjectPageComp
 
 const PortfolioWorksContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-`
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+`;

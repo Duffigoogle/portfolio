@@ -68,8 +68,8 @@ const BioContainer = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 7rem;
-  border: 1px solid red;
-  height: 84vh;
+  /* border: 1px solid red; */
+  height: 100%;
 `;
 
 const BioStack = styled.div`
