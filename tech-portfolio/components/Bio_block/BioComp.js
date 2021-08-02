@@ -14,17 +14,12 @@ const person = {
 };
 
 const hobbies = {
-    Sport: ['Football', 'Golf', 'Tennis', 'Chess'],
+    Sport: ['Football', 'Tennis', 'Chess'],
     Lifestyle: 'Traveler',
     Creativity_Quotient: 10,
 
 };
-const profession = {
-    Sport: 'Football',
-    Lifestyle: 'Traveler',
-    Creativity_Quotient: 10,
 
-};
 
 const personal_skills = {
     i: 'Time Management',
@@ -56,7 +51,7 @@ const Bio = ({text, person, replacer = null, space = 2}) => {
             </pre>
         </StyledObjBox>
     )
-}
+};
 
 
 
@@ -69,6 +64,8 @@ const BioComp = () => {
                 <Bio text='const who_I_am' person={person} />
                 <Bio text='const personal_skills' person={personal_skills} />
                 <Bio text='const hobbies' person={hobbies} />
+                <Bio text='const who_I_am' person={person} />
+                
             </BioContainer>
            
                 
@@ -80,12 +77,13 @@ export default BioComp;
 
 
 const BioContainer = styled.div`
-    width: 100%;
+    width: 80%;
     padding-left: 1rem;
+    margin: 0.1rem auto;
     /* display: flex; */
     /* border: 1px solid red; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 0.7rem;
 `;
 
