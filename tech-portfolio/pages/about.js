@@ -3,8 +3,12 @@ import DisplayAreaLayoutComp from "../components/Layout/DisplayAreaLayout";
 import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import AboutComp from "../components/Bio_block/AboutComp";
 import { PageLayout } from "../components/Layout/PageLayout";
+// import {useContext} from 'react';
+// import { CalculateHeightContext } from "../utils/CalculateHeightContext";
 
 export default function AboutPage() {
+  // const {pageHeight, elementRef } = useContext(CalculateHeightContext)
+
   return (
     <div>
       <Head>

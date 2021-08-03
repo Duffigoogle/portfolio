@@ -2,24 +2,23 @@ import styled from "styled-components";
 import Link from "next/link";
 import SocialsComp from "../Socials/socialComp";
 import Icon from "../common/icons/icons";
-import React, { useState, useEffect, useRef } from "react";
+import { useContext } from "react";
+import { CalculateHeightContext } from "../../context/index";
 
 const AboutComp = () => {
-  const [pageHeight, setpageHeight] = useState(0);
-  const elementRef = useRef(null);
+  const { elementRef } = useContext(CalculateHeightContext);
+  // const [pageHeight, setpageHeight] = useState(0);
+  // const elementRef = useRef(null);
 
-  useEffect(() => {
-    if (elementRef.current.clientHeight) {
-      setTimeout(() => {
-        setpageHeight(elementRef.current.clientHeight);
-      }, 1000);
-    }
-  }, []); //empty dependency array so it only runs once at render
+  // useEffect(() => {
+  //   if (elementRef.current.clientHeight) {
+  //     setTimeout(() => {
+  //       setpageHeight(elementRef.current.clientHeight);
+  //     }, 1000);
+  //   }
+  // }, []); //empty dependency array so it only runs once at render
 
-  console.log({ pageHeight });
-
-  const heightInt = pageHeight / 100;
-  console.log(heightInt);
+  // console.log({ pageHeight });
 
   return (
     <>

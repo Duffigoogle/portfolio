@@ -1,12 +1,19 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { CalculateHeightContext } from "../../context/index";
 
 const CodeLinesComp = () => {
+  const pageHeight = useContext(CalculateHeightContext);
+  console.log(pageHeight);
+
   function range(start, end) {
     return Array(end - start + 1)
       .fill()
       .map((_, idx) => start + idx);
   }
-  const numbers = range(1, 40);
+
+  const b = 29;
+  const numbers = range(1, b);
 
   // const pageContainerHeight = calc((window.document.innerHeight) - 60px)
   // const pageHeight = parse.int(pageContainerHeight)
