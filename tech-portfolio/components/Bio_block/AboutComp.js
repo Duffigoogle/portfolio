@@ -56,7 +56,7 @@ const BioContainer = styled.div`
   justify-content: center;
   padding-top: 7rem;
   /* border: 1px solid red; */
-  height: 100%;
+  height: 100rem;
 `;
 
 const BioStack = styled.div`

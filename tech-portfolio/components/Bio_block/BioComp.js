@@ -71,10 +71,12 @@ const BioContainer = styled.div`
   margin: 1rem auto;
   /* display: flex; */
   /* border: 1px solid red; */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.7rem;
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.7rem; */
+  height: 100rem;
 `;
 
 const StyledObjBox = styled.div`

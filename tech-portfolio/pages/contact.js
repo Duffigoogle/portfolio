@@ -5,7 +5,7 @@ import FormComp from "../components/Form/FormComp";
 import { PageLayout } from "../components/Layout/PageLayout";
 import styled from "styled-components";
 import { useContext } from "react";
-import { CalculateHeightContext } from "../../context/index";
+import { CalculateHeightContext } from "../context/index";
 
 export default function ContactPage() {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -48,7 +48,7 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 100%;
 `;
 
 const StyledSection = styled.section`
