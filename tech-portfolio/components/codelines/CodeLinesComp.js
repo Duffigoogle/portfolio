@@ -4,7 +4,13 @@ import { CalculateHeightContext } from "../../context/index";
 
 const CodeLinesComp = () => {
   const pageHeight = useContext(CalculateHeightContext);
-  console.log(pageHeight);
+
+  const pageHeightValue = pageHeight.pageHeight;
+  console.log(pageHeightValue);
+
+  // const pageLineHeight = parseInt(pageHeightValue / 19.2, 10);
+  const pageLineHeight = Math.round(pageHeightValue / 19.2) + 2;
+  console.log(pageLineHeight);
 
   function range(start, end) {
     return Array(end - start + 1)
@@ -12,8 +18,8 @@ const CodeLinesComp = () => {
       .map((_, idx) => start + idx);
   }
 
-  const b = 29;
-  const numbers = range(1, b);
+  // const b = 29;
+  const numbers = range(1, pageLineHeight);
 
   // const pageContainerHeight = calc((window.document.innerHeight) - 60px)
   // const pageHeight = parse.int(pageContainerHeight)
@@ -47,8 +53,9 @@ const CodeLinesContainer = styled.aside`
   background-color: #757575;
   width: 3.44rem;
   min-width: 3.44rem;
-  min-height: 55rem;
-  height: 100%;
+  /* min-height: 55rem; */
+  /* height: 100%; */
+  height: ${({ pageHeightValue }) => pageHeightValue};
 `;
 
 const TabShowcaseUl = styled.ul`

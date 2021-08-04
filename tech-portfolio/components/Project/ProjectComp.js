@@ -1,11 +1,15 @@
 import projects from "./Project_data";
 import ProjectSchema from "./Project_Schema";
 import styled from "styled-components";
+import { useContext } from "react";
+import { CalculateHeightContext } from "../../context/index";
 
 export default function ProjectComp() {
+  const { elementRef } = useContext(CalculateHeightContext);
+
   return (
     <>
-      <PortfolioWorksContainer>
+      <PortfolioWorksContainer ref={elementRef}>
         {projects.map((project, index) => (
           <ProjectSchema key={index} {...project} id={index} />
         ))}

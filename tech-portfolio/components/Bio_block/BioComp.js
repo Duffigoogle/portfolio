@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { CalculateHeightContext } from "../../context/index";
 import Link from "next/link";
 import SocialsComp from "../Socials/socialComp";
 import Icon from "../common/icons/icons";
@@ -47,9 +49,11 @@ const Bio = ({ text, person, replacer = null, space = 2 }) => {
 };
 
 const BioComp = () => {
+  const { elementRef } = useContext(CalculateHeightContext);
+
   return (
     <>
-      <BioContainer>
+      <BioContainer ref={elementRef}>
         <Bio text="const who_I_am" person={person} />
         <Bio text="const personal_skills" person={personal_skills} />
         <Bio text="const hobbies" person={hobbies} />

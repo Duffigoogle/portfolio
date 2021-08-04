@@ -7,14 +7,15 @@ const HeightProvider = ({ children }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
-    if (elementRef.current.clientHeight) {
+    if (elementRef.current.scrollHeight) {
       setTimeout(() => {
-        setpageHeight(elementRef.current.clientHeight);
+        setpageHeight(elementRef.current.scrollHeight);
       }, 1000);
     }
   }, []); //empty dependency array so it only runs once at render
 
-  //   console.log({ pageHeight });
+  // console.log({ pageHeight });
+  //   console.log(pageHeight);
 
   const values = { pageHeight, elementRef };
 

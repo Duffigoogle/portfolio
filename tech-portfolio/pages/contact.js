@@ -4,8 +4,12 @@ import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import FormComp from "../components/Form/FormComp";
 import { PageLayout } from "../components/Layout/PageLayout";
 import styled from "styled-components";
+import { useContext } from "react";
+import { CalculateHeightContext } from "../../context/index";
 
 export default function ContactPage() {
+  const { elementRef } = useContext(CalculateHeightContext);
+
   return (
     <div>
       <Head>
@@ -22,7 +26,7 @@ export default function ContactPage() {
         <>
           <PageLayout>
             <CodeLinesComp />
-            <StyledDiv>
+            <StyledDiv ref={elementRef}>
               <StyledSection>
                 <h2>
                   <span>Get in Touch...</span>
