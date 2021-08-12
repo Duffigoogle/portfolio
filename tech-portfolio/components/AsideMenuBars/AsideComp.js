@@ -8,7 +8,7 @@ import {
   GithubComp,
 } from "../SidebarComps/SidebarComp";
 import ModalComp from "../Form/Modal";
-import CustomModal from "../Form/CustomModal";
+import { CustomModal, Modal } from "../Form/CustomModal";
 
 const AsideComp = ({
   toggleState,
@@ -16,6 +16,7 @@ const AsideComp = ({
   toggleSideTab,
   isExpanded,
   toggleModal,
+  modalState,
   isModalPopUp,
 }) => {
   return (
@@ -148,13 +149,13 @@ const AsideComp = ({
       </SideBarContents>
       {/* <div> */}
       <ModalComp isModalPopUp={isModalPopUp} />
-      <CustomModal
+      <Modal />
+      {/* <CustomModal
+        modalState={modalState}
         isModalPopUp={isModalPopUp}
         topLabelText="Color theme"
         bottomLabelText="Check for updates..."
-      />
-      {/* <ModalComp isModalPopUp={isModalPopUp} /> */}
-      {/* </div> */}
+      /> */}
     </SideBarContainer>
   );
 };
@@ -166,13 +167,13 @@ const SideBarContainer = styled.aside`
   display: flex;
   /* max-width: calc(14vw + 3vw); */
   /* min-width: calc(11.953rem + 2.561rem); */
-  min-height: calc(100vh - 1.875rem - 1.3rem);
+  min-height: calc(100vh - 1.875rem - 1.4rem);
 `;
 
 const SideBarTabs = styled.div`
   width: 2.561rem;
   min-width: 2.561rem;
-  height: calc(100vh - 1.875rem - 1.3rem);
+  height: calc(100vh - 1.875rem - 1.4rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -199,165 +200,3 @@ const SideBarContents = styled.div`
   /* display: ${({ isHidden }) => (isOpenSideBar ? "block" : "none")}; */
   display: ${(props) => (props.visibility ? "block" : "none")};
 `;
-
-// export const SideBarContentLayout = ({children, sidebarTitle}) => {
-//     return (
-//         <SideBarContainer>
-//             <SideBarTop sidebarTitle={sidebarTitle}/>
-//             <SideBarContent>
-//                 {children}
-//             </SideBarContent>
-//         </SideBarContainer>
-//     )
-// };
-
-// styled components for SideBarLayout
-
-// const SideBarContainer = styled.aside`
-//     min-width: 14vw;
-//     max-height: calc(100vh - 30px - 30px);
-//     background-color: #e9e9e9;
-//     border: 2px solid yellowgreen;
-// `
-
-// const SideBarContent = styled.section`
-//     margin: 5px 10px;
-// `
-
-// export const SideBarTop = ({sidebarTitle}) => {
-//     return (
-//         <SideBarTopBox>
-//             <ExplorerTopTabTitle>
-//                 {sidebarTitle}
-//             </ExplorerTopTabTitle>
-//         </SideBarTopBox>
-//     )
-// };
-
-// const SideBarTopBox = styled.label`
-
-// `
-
-// const ExplorerTopTabTitle = styled.p`
-//     color: whitesmoke;
-//     font-size: 0.9rem;
-//     margin-left: 15px;
-//     padding: 8px 7px;
-// `
-
-//
-//     .content {
-//     background: ;
-//     padding: 20px;
-//     width: 100%;
-//     height: 100%;
-//     display: none;
-// }
-
-//
-//     .active-content {
-//     display: block;
-// }
-
-//
-//     .active-tabs {
-//         background: white;
-//         border-bottom: 1px solid transparent;
-// }
-
-// const ExplorerContentComp = () => {
-//     return (
-//         <>
-//             <SideBarLayout sidebarTitle="EXPLORER">
-//                 <ExplorerTopMenuSections>
-
-//                     <ExplorerTopSectionTab>
-//                         <ExplorerTopSectionLabel>
-//                             <Icon name="ChevronRight"
-//                             size={20}
-//                             />
-//                                 (WORKSPACE)
-//                         </ExplorerTopSectionLabel>
-//                     </ExplorerTopSectionTab>
-
-//                     <ExplorerSections>
-//                         <ExplorerSectionsTab>
-//                             <ExplorerSectionLabel>
-//                                 <Icon name="ChevronRight"
-//                                 size={20}
-//                                 />
-//                                     TECH-PORTFOLIO
-//                             </ExplorerSectionLabel>
-//                             <ExplorerPortfolioComp /> // import Comp
-//                         </ExplorerSectionsTab>
-//                     </ExplorerSections>
-//                 </ExplorerTopMenuSections>
-//             </SideBarLayout>
-//         </>
-//     )
-// };
-// const SearchContentComp = () => {
-//     return (
-//         <>
-//             <SideBarLayout sidebarTitle="SEARCH">
-//                 <SearchInput>
-//                         <input type='text' placeholder='Search' />
-//                         <Icon name='FontIcon' size={20} />
-//                         <Icon name='MatchWholeWord' size={20} />
-//                         <Icon name='UseRegularExpression' size={20} />
-//                 </SearchInput>
-
-//             </SideBarLayout>
-//         </>
-//     )
-// };
-
-// const CodeBaseContentComp = () => {
-//     return (
-//         <>
-//             <SideBarLayout sidebarTitle="CODEBASE">
-
-//             </SideBarLayout>
-//         </>
-//     )
-// };
-// const GithubContentComp = () => {
-//     return (
-//         <>
-//             <SideBarLayout sidebarTitle="GITHUB">
-
-//             </SideBarLayout>
-//         </>
-//     )
-// };
-
-// const MailContentComp = () => {
-//     return (
-//         <>
-//             <SideBarLayout sidebarTitle="MAIL2CONTACT">
-//                 <div>
-//                     <form>
-//                         <label>Name</label>
-//                         <input type='text' value='' required/>
-//                         <label>Name of Organization</label>
-//                         <input type='text' value='' />
-//                         <label>Message</label>
-//                         <textarea placeholder='type your message'required />
-//                         <button type='submit'>SEND</button>
-//                     </form>
-//                 </div>
-
-//             </SideBarLayout>
-//         </>
-//     )
-// };
-
-// const PluralsightContentComp = () => {
-//     return (
-//         <>
-//             <SideBarLayout sidebarTitle="PLURALSIGHT">
-
-//             </SideBarLayout>
-//         </>
-//     )
-// };
