@@ -8,7 +8,9 @@ import {
   GithubComp,
 } from "../SidebarComps/SidebarComp";
 import ModalComp from "../Form/Modal";
+import { ColorThemeDisplay } from "../Form/CustomModal";
 import { CustomModal, Modal } from "../Form/CustomModal";
+// import ColorTheme from "../Form/ColorTheme";
 
 const AsideComp = ({
   toggleState,
@@ -20,143 +22,141 @@ const AsideComp = ({
   isModalPopUp,
 }) => {
   return (
-    <SideBarContainer>
-      <SideBarTabs>
-        <TopSideBarTabs>
+    <>
+      <SideBarContainer>
+        <SideBarTabs>
+          <TopSideBarTabs>
+            <div
+              className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(1)}
+              onDoubleClick={toggleSideTab}
+            >
+              <Icon
+                name="FilesIcon"
+                size={23}
+                color={toggleState === 1 ? "#fff" : "#bfbfbf"}
+                className="icon"
+              />
+            </div>
+            <div
+              className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(2)}
+              onDoubleClick={toggleSideTab}
+            >
+              <Icon
+                name="SearchRightIcon"
+                size={23}
+                color={toggleState === 2 ? "#fff" : "#bfbfbf"}
+                className="icon"
+              />
+            </div>
+            <div
+              className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(3)}
+              onDoubleClick={toggleSideTab}
+            >
+              <Icon
+                name="CodeIcon"
+                size={23}
+                color={toggleState === 3 ? "#fff" : "#bfbfbf"}
+                className="icon"
+              />
+            </div>
+            <div
+              className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(4)}
+              onDoubleClick={toggleSideTab}
+            >
+              <Icon
+                name="GithubIcon"
+                size={23}
+                color={toggleState === 4 ? "#fff" : "#bfbfbf"}
+                className="icon"
+              />
+            </div>
+            <div
+              className={toggleState === 5 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(5)}
+              onDoubleClick={toggleSideTab}
+            >
+              <Icon
+                name="MailIcon"
+                size={23}
+                color={toggleState === 5 ? "#fff" : "#bfbfbf"}
+                className="icon"
+              />
+            </div>
+            <div
+              className={toggleState === 6 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(6)}
+              onDoubleClick={toggleSideTab}
+            >
+              <Icon
+                name="PluralsightIcon"
+                size={23}
+                color={toggleState === 6 ? "#fff" : "#bfbfbf"}
+                className="icon"
+              />
+            </div>
+          </TopSideBarTabs>
+          <BottomSideBarTabs>
+            <div className="tabs" onClick={() => toggleModal(1)}>
+              <Icon
+                name="personcircle"
+                size={23}
+                color={toggleState === 7 ? "#fff" : "#bfbfbf"}
+                className="icon"
+              />
+            </div>
+            <div className="tabs" onClick={() => toggleModal(2)}>
+              <Icon
+                name="SettingsIcon"
+                size={23}
+                color={toggleState === 8 ? "#fff" : "#bfbfbf"}
+                className="icon"
+              />
+            </div>
+          </BottomSideBarTabs>
+        </SideBarTabs>
+        <SideBarContents visibility={isExpanded ? +true : undefined}>
           <div
-            className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(1)}
-            onDoubleClick={toggleSideTab}
+            className={toggleState === 1 ? "content active-content" : "content"}
           >
-            <Icon
-              name="FilesIcon"
-              size={23}
-              color={toggleState === 1 ? "#fff" : "#bfbfbf"}
-              className="icon"
-            />
+            <ExplorerComp />
           </div>
           <div
-            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(2)}
+            className={toggleState === 2 ? "content active-content" : "content"}
           >
-            <Icon
-              name="SearchRightIcon"
-              size={23}
-              color={toggleState === 2 ? "#fff" : "#bfbfbf"}
-              className="icon"
-            />
+            {/* <SearchComp /> */}
+            SearchComp
           </div>
           <div
-            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(3)}
+            className={toggleState === 3 ? "content active-content" : "content"}
           >
-            <Icon
-              name="CodeIcon"
-              size={23}
-              color={toggleState === 3 ? "#fff" : "#bfbfbf"}
-              className="icon"
-            />
+            <CodeBaseComp />
           </div>
           <div
-            className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(4)}
+            className={toggleState === 4 ? "content active-content" : "content"}
           >
-            <Icon
-              name="GithubIcon"
-              size={23}
-              color={toggleState === 4 ? "#fff" : "#bfbfbf"}
-              className="icon"
-            />
+            <GithubComp />
           </div>
           <div
-            className={toggleState === 5 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(5)}
+            className={toggleState === 5 ? "content active-content" : "content"}
           >
-            <Icon
-              name="MailIcon"
-              size={23}
-              color={toggleState === 5 ? "#fff" : "#bfbfbf"}
-              className="icon"
-            />
+            <MailComp />
           </div>
           <div
-            className={toggleState === 6 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(6)}
+            className={toggleState === 6 ? "content active-content" : "content"}
           >
-            <Icon
-              name="PluralsightIcon"
-              size={23}
-              color={toggleState === 6 ? "#fff" : "#bfbfbf"}
-              className="icon"
-            />
+            Pluralsight
           </div>
-        </TopSideBarTabs>
-        <BottomSideBarTabs>
-          <div className="tabs" onClick={() => toggleModal(1)}>
-            <Icon
-              name="personcircle"
-              size={23}
-              color={toggleState === 7 ? "#fff" : "#bfbfbf"}
-              className="icon"
-            />
-          </div>
-          <div className="tabs" onClick={() => toggleModal(2)}>
-            <Icon
-              name="SettingsIcon"
-              size={23}
-              color={toggleState === 8 ? "#fff" : "#bfbfbf"}
-              className="icon"
-            />
-          </div>
-        </BottomSideBarTabs>
-      </SideBarTabs>
-      <SideBarContents visibility={isExpanded ? +true : undefined}>
-        <div
-          className={toggleState === 1 ? "content active-content" : "content"}
-        >
-          <ExplorerComp />
-        </div>
-        <div
-          className={toggleState === 2 ? "content active-content" : "content"}
-        >
-          {/* <SearchComp /> */}
-          SearchComp
-        </div>
-        <div
-          className={toggleState === 3 ? "content active-content" : "content"}
-        >
-          <CodeBaseComp />
-        </div>
-        <div
-          className={toggleState === 4 ? "content active-content" : "content"}
-        >
-          <GithubComp />
-        </div>
-        <div
-          className={toggleState === 5 ? "content active-content" : "content"}
-        >
-          <MailComp />
-        </div>
-        <div
-          className={toggleState === 6 ? "content active-content" : "content"}
-        >
-          Pluralsight
-        </div>
+          <ColorThemeDisplay />
 
-        {/* <div className={toggleState === 8 ? 'content active-content' : 'content'}>
-                    Settings
-                </div> */}
-      </SideBarContents>
-      {/* <div> */}
-      <ModalComp isModalPopUp={isModalPopUp} />
-      <Modal />
-      {/* <CustomModal
-        modalState={modalState}
-        isModalPopUp={isModalPopUp}
-        topLabelText="Color theme"
-        bottomLabelText="Check for updates..."
-      /> */}
-    </SideBarContainer>
+          <Modal />
+        </SideBarContents>
+        <ModalComp isModalPopUp={isModalPopUp} />
+      </SideBarContainer>
+    </>
   );
 };
 

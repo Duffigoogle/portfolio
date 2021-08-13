@@ -47,12 +47,12 @@ const ThemeInfo = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.7rem;
-  width: 20rem;
+  padding: 0 0.9rem;
+  width: 25rem;
   /* background-color: skyblue; */
 
   :hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
   }
 
   h3 {
