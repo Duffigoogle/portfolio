@@ -1,13 +1,12 @@
 import Icon from "../common/icons/icons";
 import styled from "styled-components";
 
-const ModalComp = (props) => {
-  if (!props.isModalPopUp) {
-    return null;
-  }
-
+const ModalComp = ({ isModalPopUp, setIsModalPopUp }) => {
   return (
-    <StyledModal onClick={(evt) => evt.stopPropagation()}>
+    <StyledModal
+      isModalPopUp={isModalPopUp}
+      onClick={(evt) => evt.stopPropagation()}
+    >
       <StyledModalContent>
         <p> Duffigoogle (Github)</p>
         {/* ArrowRight */}
@@ -26,16 +25,16 @@ export default ModalComp;
 // styled components for AsideComp;
 
 const StyledModal = styled.div`
-  /* display: ${(isModalPopUp) => (isModalPopUp ? "block" : "none")}; */
-  display: ${(isModalPopUp, modalState) => {
-    modalState === 1 && isModalPopUp ? "block" : "none";
+  display: ${(isModalPopUp) => {
+    isModalPopUp ? "block" : "none";
   }};
+  /* display: ${(isModalPopUp) => {
+    isModalPopUp ? "block" : "none";
+  }}; */
   position: fixed;
   z-index: 5;
   left: 40px;
   bottom: 70px;
-  /* top: 0; */
-  /* right: 2;  */
   width: 200px;
   height: 50px;
   background-color: rgb(0, 0, 0);
