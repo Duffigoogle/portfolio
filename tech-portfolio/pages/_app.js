@@ -3,7 +3,12 @@ import LayoutComp from "../components/Layout/LayoutComp";
 import "../styles/asidebar.scss";
 import HeightProvider from "../context";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
+  // const { Component, pageProps, router } = this.props;
+
+  // if ((router.pathanme = "/settings")) {
+  //   return <Component {...pageProps}></Component>;
+  // }
   return (
     <HeightProvider>
       <LayoutComp>

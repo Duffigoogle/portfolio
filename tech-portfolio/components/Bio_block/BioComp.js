@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
-import Link from "next/link";
-import SocialsComp from "../Socials/socialComp";
-import Icon from "../common/icons/icons";
 
 const person = {
   First_Name: "Caleb Ini.",
@@ -33,9 +30,8 @@ const Bio = ({ text, person, replacer = null, space = 2 }) => {
     <StyledObjBox>
       <pre
         style={{
-          backgroundColor: "#696969",
+          backgroundColor: "#3f3f3f",
           padding: "1rem 0.5rem",
-          width: "21rem",
           color: "#eee",
           borderRadius: "0px 0px 5px 5px",
           boxShadow: "0px 5px 6px #f9f9f9",
@@ -54,10 +50,9 @@ const BioComp = () => {
   return (
     <>
       <BioContainer ref={elementRef}>
-        <Bio text="const who_I_am" person={person} />
-        <Bio text="const personal_skills" person={personal_skills} />
+        <Bio text="const person" person={person} />
+        <Bio text="const personalSkills" person={personal_skills} />
         <Bio text="const hobbies" person={hobbies} />
-        <Bio text="const who_I_am" person={person} />
       </BioContainer>
     </>
   );
@@ -73,10 +68,10 @@ const BioContainer = styled.div`
   /* border: 1px solid red; */
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   /* grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.7rem; */
-  height: 100rem;
+  height: 100vh;
 `;
 
 const StyledObjBox = styled.div`

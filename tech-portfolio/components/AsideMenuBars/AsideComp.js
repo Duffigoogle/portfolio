@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import Icon from "../common/icons/icons";
 import styled from "styled-components";
 import ExplorerComp from "../../components/Explorerbar/ExplorerComp";
@@ -7,20 +7,31 @@ import {
   CodeBaseComp,
   GithubComp,
 } from "../SidebarComps/SidebarComp";
-import ModalComp from "../Form/Modal";
-import { ColorThemeDisplay } from "../Form/CustomModal";
-import { CustomModal, Modal } from "../Form/CustomModal";
-// import ColorTheme from "../Form/ColorTheme";
+import { ModalManager } from "../Form/CustomModal";
 
 const AsideComp = ({
   toggleState,
   toggleTab,
   toggleSideTab,
   isExpanded,
-  toggleModal,
-  modalState,
-  isModalPopUp,
+  // toggleModal,
+  // modalState,
+  // isModalPopUp,
 }) => {
+
+  const [modalOne, setModalOne] = useState(false);
+  const [modalTwo, setModalTwo] = useState(false);
+  const [toggleDiv, setToggleDiv] = useState(0);
+  
+
+  const ToggleModals = (ind) => {
+    setToggleDiv(ind);
+  };
+
+  // const closeModal = () => {
+  //   setModal('');
+  // };
+
   return (
     <>
       <SideBarContainer>
@@ -100,20 +111,45 @@ const AsideComp = ({
             </div>
           </TopSideBarTabs>
           <BottomSideBarTabs>
-            <div className="tabs" onClick={() => toggleModal(1)}>
+            <div
+              className="tabs"
+                onClick={()=> {
+                  setModalOne(!modalOne);
+                  ToggleModals(1);
+                  console.log("tab 1");
+                  console.log(modalOne);
+                }}
+            >
               <Icon
                 name="personcircle"
                 size={23}
-                color={toggleState === 7 ? "#fff" : "#bfbfbf"}
+                // color={toggleState === 7 ? "#fff" : "#bfbfbf"}
                 className="icon"
               />
             </div>
-            <div className="tabs" onClick={() => toggleModal(2)}>
+      
+            <div className="tabs" 
+                  onClick={()=> {
+                  setModalTwo(!modalTwo);
+                  ToggleModals(2); 
+                  console.log("tab 2");
+                  console.log(modalTwo);
+
+                }}
+              >
               <Icon
                 name="SettingsIcon"
                 size={23}
-                color={toggleState === 8 ? "#fff" : "#bfbfbf"}
+                // color={toggleState === 8 ? "#fff" : "#bfbfbf"}
                 className="icon"
+              />
+            </div>
+            <div>
+             <ModalManager 
+                modalOne={modalOne}
+                modalTwo={modalTwo}
+                setModalTwo={setModalTwo}
+                toggleDiv={toggleDiv}
               />
             </div>
           </BottomSideBarTabs>
@@ -150,11 +186,7 @@ const AsideComp = ({
           >
             Pluralsight
           </div>
-          <ColorThemeDisplay />
-
-          <Modal />
         </SideBarContents>
-        <ModalComp isModalPopUp={isModalPopUp} />
       </SideBarContainer>
     </>
   );
@@ -165,6 +197,7 @@ export default AsideComp;
 // styled components for AsideComp;
 const SideBarContainer = styled.aside`
   display: flex;
+  background-color: #848484;
   /* max-width: calc(14vw + 3vw); */
   /* min-width: calc(11.953rem + 2.561rem); */
   min-height: calc(100vh - 1.875rem - 1.4rem);

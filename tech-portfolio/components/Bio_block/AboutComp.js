@@ -4,6 +4,7 @@ import SocialsComp from "../Socials/socialComp";
 import Icon from "../common/icons/icons";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
+import { CustomButton } from "../common/Button";
 
 const AboutComp = () => {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -35,6 +36,14 @@ const AboutComp = () => {
             <SocialsComp />
           </BioDetails>
           <BioButtonContainer>
+            {/* <CustomButton
+              type="primary"
+              size="large"
+              rounded="button-rounded"
+              link="/bio"
+              name="twitter"
+              text="Say Hi"
+            /> */}
             <Link href="/about">
               <WelcomeButton>
                 Check me out &nbsp;{" "}
@@ -56,7 +65,7 @@ const BioContainer = styled.div`
   justify-content: center;
   padding-top: 7rem;
   /* border: 1px solid red; */
-  height: 100rem;
+  height: 100vh;
 `;
 
 const BioStack = styled.div`
@@ -84,13 +93,13 @@ const BioStackText = styled.h3`
 `;
 
 const BioContent = styled.div`
-  width: 65vw;
-  margin-left: 2rem;
+  /* width: 60rem; */
+  margin-left: 2.5rem;
 `;
 
 const BioDetails = styled.div`
   padding-top: 1rem;
-  /* border: 1px solid red; */
+  width: 43rem;
 `;
 
 const BioHeading1 = styled.h1`
@@ -119,6 +128,7 @@ const BioPSmall = styled.p`
   font-size: 1rem;
   font-style: italic;
   margin-top: 6px;
+  color: #cec;
 `;
 
 const BioButtonContainer = styled.div`
@@ -144,7 +154,7 @@ const WelcomeButton = styled.button`
   margin: 35px auto;
   outline: none;
   border: none;
-  border-radius: 45px;
+  border-radius: 8px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
