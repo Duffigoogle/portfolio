@@ -8,11 +8,15 @@ const StyledInput = styled.input`
   margin-bottom: 0.85rem;
   width: 100%;
   outline: none;
+
+  ::placeholder {
+    font-size: 0.7rem;
+  }
 `;
 
 const StyledForm = styled.form`
   width: 20vw;
-  margin: 4rem auto;
+  margin: 2rem auto;
 
   & ${StyledInput}:invalid {
     border-color: ${(props) => {
@@ -49,6 +53,7 @@ const StyledButton = styled.button`
   margin-top: 1.5rem;
   text-transform: uppercase;
   width: 100%;
+  border-radius: 8px;
 
   &:hover,
   &:focus {

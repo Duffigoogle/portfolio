@@ -160,7 +160,6 @@ export default SidebarTopComp;
 //styled-components for SIDEBARTOPCOMP
 
 const SidebarTopContainer = styled.div`
-    /* border: 1px solid red; */
     margin: 0 auto;
 `
 
@@ -168,8 +167,7 @@ const SidebarTopIconsContainer = styled.div`
     cursor: pointer;
     width: 100%;
     margin-top: 15px;
-    /* display: inline-block; */
-    /* border: 1px solid #fff; */
+
 
     &:hover {
         color: #fff;

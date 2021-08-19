@@ -5,6 +5,7 @@ import { CalculateHeightContext } from "../../context/index";
 const CodeLinesComp = () => {
   const pageHeight = useContext(CalculateHeightContext);
 
+  // const pageHeightValue = pageHeight.pageHeight;
   const pageHeightValue = pageHeight.pageHeight;
   console.log(pageHeightValue);
 

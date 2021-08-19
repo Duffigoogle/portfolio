@@ -17,9 +17,6 @@ export default TitleBarWindowsButton;
 
 
 //styled components for the TitleBarWindowsButton.
-// const TitleBarWindowIconsContainer = styled.div`
-//     flex: 1;
-// `
 
 const TitleBarWindowIcons = styled.div`
      display: flex;

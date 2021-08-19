@@ -8,9 +8,9 @@ import { useState } from "react";
 const LayoutComp = ({ children }) => {
   // Logic for toggling between the Tabs on the SideBar
   const [toggleState, setToggleState] = useState(1);
-  const [modalState, setModalState] = useState(0);
   const [isExpanded, setIsExpanded] = useState(+true);
-  const [isModalPopUp, setIsModalPopUp] = useState(false);
+  // const [modalState, setModalState] = useState(null);
+  // const [isModalPopUp, setIsModalPopUp] = useState(false);
 
   const toggleTab = (ind) => {
     setToggleState(ind);
@@ -24,12 +24,13 @@ const LayoutComp = ({ children }) => {
   //     setIsModalPopUp(!isModalPopUp);
   // };
 
-  const toggleModal = (ind) => {
-    setModalState(ind);
-    setIsModalPopUp(!isModalPopUp);
-    // console.log("clicking");
-    // console.log(setIsModalPopUp());
-  };
+  // const toggleModal = (num) => {
+  //   setModalState(num);
+  //   setIsModalPopUp(!isModalPopUp);
+  //   // console.log("clicking");
+  //   console.log(isModalPopUp);
+  //   console.log(modalState);
+  // };
 
   return (
     <>
@@ -41,8 +42,9 @@ const LayoutComp = ({ children }) => {
             toggleTab={toggleTab}
             toggleSideTab={toggleSideTab}
             isExpanded={isExpanded}
-            toggleModal={toggleModal}
-            isModalPopUp={isModalPopUp}
+            // modalState={modalState}
+            // toggleModal={toggleModal}
+            // isModalPopUp={isModalPopUp}
           />
           <DisplayAreaContainer isExpanded={isExpanded}>
             {children}
@@ -59,12 +61,13 @@ export default LayoutComp;
 const LayoutAsideBars = styled.aside`
   display: flex;
   /* display: ${({ isOpen }) => (isOpen ? "flex" : "none")}; */
+  height: calc(100vh - 1.875rem - 1.478rem);
   flex-direction: row;
   width: 100%;
 `;
 
 const DisplayAreaContainer = styled.div`
-  height: calc(100vh - 1.875rem - 1.3rem);
+  height: calc(100vh - 1.875rem - 1.4rem);
   overflow: hidden;
   /* width: ${({ isExpanded }) =>
     isExpanded == true

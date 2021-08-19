@@ -7,13 +7,13 @@ const FooterComp = () => {
     <FooterContainer>
       <LeftContent>
         <div>
-          <Icon name="GitCompareIcon" size={14} />
+          <Icon name="GitCompareIcon" size={14} color="#fff" />
           <p>main*</p>
         </div>
         <div>
-          <Icon name="ErrorIcon" size={14} />
+          <Icon name="ErrorIcon" size={14} color="#fff" />
           <p>0</p> &nbsp;&nbsp;
-          <Icon name="WarningIcon" size={14} />
+          <Icon name="WarningIcon" size={14} color="#fff" />
           <p>0</p>
         </div>
       </LeftContent>
@@ -43,11 +43,11 @@ const FooterComp = () => {
           {/* <Icon name="WatchIcon" size={14} /> */}
         </div>
         <div>
-          <Icon name="CheckIcon" size={14} />
+          <Icon name="CheckIcon" size={14} color="#fff" />
           <p>Prettier</p>
         </div>
         <div>
-          <Icon name="BellIcon" size={14} />
+          <Icon name="BellIcon" size={14} color="#fff" />
         </div>
       </RightContent>
     </FooterContainer>
@@ -58,11 +58,13 @@ export default FooterComp;
 
 const FooterContainer = styled.footer`
   width: 100%;
-  height: 1.1rem;
+  min-height: 1.458rem;
   /* border-top: 1px solid #8f2626; */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #3f3f3f;
+  color: #fff;
 `;
 
 const FooterLink = styled.a`
@@ -75,7 +77,7 @@ const FooterLink = styled.a`
 
 const FooterLogoSpan = styled.span`
   margin-left: 0.4rem;
-  color: red;
+  color: orange;
   font-weight: bold;
 `;
 
