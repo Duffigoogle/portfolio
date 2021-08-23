@@ -48,6 +48,7 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #000;
   /* height: 100%; */
   height: 80vh;
 `;

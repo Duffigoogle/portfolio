@@ -9,19 +9,21 @@ export const PageLayout = ({ children }) => {
   //   window.innerHeight ||
   //   document.documentElement.clientHeight ||
   //   document.body.clientHeight
-  return <StyledPageLayout className="box">{children}</StyledPageLayout>;
+  return <StyledPageLayout>{children}</StyledPageLayout>;
+  // return <StyledPageLayout className="box">{children}</StyledPageLayout>;
 };
 
-export const StyledPageLayout = styled.main.attrs((props) => ({
-  className: props.className,
-}))`
+// .attrs((props) => ({
+//   className: props.className,
+// }))
+
+export const StyledPageLayout = styled.main`
   width: 100%;
   display: flex;
-  /* height: 100vh; // make the height dynamic wrt to page i.e pathname */
-  height: auto;
+  height: 100vh; // make the height dynamic wrt to page i.e pathname */
+  /* height: auto; */
   overflow-y: auto;
   background-color: #616161;
-  /* border: 1px solid #fff; */
 
   /* width */ //the scrollbar
   ::-webkit-scrollbar {
@@ -35,7 +37,7 @@ export const StyledPageLayout = styled.main.attrs((props) => ({
   /* Track */ // the track (progress bar) of the scrollbar NOT covered by the handle.
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
-    box-shadow: inset 0 0 5px grey;
+    box-shadow: inset 0 0 5px gray;
     border-radius: 15px;
   }
 

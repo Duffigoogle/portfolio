@@ -30,9 +30,6 @@ export default function Home() {
         <StyledDiv ref={elementRef}>
           <CodeLinesComp />
           <WelcomeComp />
-
-          {/* <FilepathComp rootpath='tech-portfolio' pagepath='pages'filename='contact.js' filename_icon='javaScriptIcon' icon_name='ChevronRight' icon_size='15' />
-          <FilepathComp rootpath='tech-portfolio' stylepath='styles' filename='bio.css' filename_icon='cssIcon' icon_name='ChevronRight'  icon_size='15' /> */}
         </StyledDiv>
       </HomePageLayout>
     </div>

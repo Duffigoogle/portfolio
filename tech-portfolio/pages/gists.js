@@ -39,7 +39,7 @@ export default function GistsPage() {
 }
 
 const GistsContainer = styled.main`
-    background-color: #bfbfbf;
+    background-color: #000;
     height: 85vh;
     width: 100%;
     display: flex;
@@ -49,11 +49,12 @@ const GistsContainer = styled.main`
       h1 {
         font-size: 6rem;
         font-weight: 500;
+        color: #bfbfbf;
       }
       p {
         font-size: 2rem;
         text-align: center;
-        color: orange;
+        color: #942727;
       }
     }
 `

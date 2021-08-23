@@ -64,6 +64,7 @@ const BioContainer = styled.div`
   width: 100%;
   padding-left: 1rem;
   margin: 1rem auto;
+  background-color: #000;
   /* display: flex; */
   /* border: 1px solid red; */
   display: flex;
