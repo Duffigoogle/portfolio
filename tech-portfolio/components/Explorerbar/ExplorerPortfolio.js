@@ -61,9 +61,6 @@ const ExplorerPortfolioItem = styled.div`
   }
   &.active {
     background-color: red;
-    /* background-color: ${router.pathname === "/"
-      ? "#fff"
-      : "rgb(106, 115, 125)"}; */
   }
 `;
 

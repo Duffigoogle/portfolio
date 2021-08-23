@@ -151,19 +151,13 @@ const ExplorerTopSectionLabel = styled.label`
   background-color: #3f3f3f;
 
   .icon_chevron_right {
-    /* display: inline-block; */
     border: 1px solid #fff;
-    /* transform: rotate(90deg); */
     transform: ${({ rotateChevron }) =>
       !rotateChevron ? "rotate(90deg)" : ""};
-    //transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "")};
     transition: transform 0.2s;
-    /* display: ${({ rotateChevron }) =>
-      rotateChevron ? "inline-block" : "none"}; */
   }
 `;
 const StyledSpan = styled.span`
-  /* border: 1px solid #fff; */
   transform: ${({ isOpen, isOpenWorkSpace, isOpenPortfolio }) =>
     isOpen || isOpenWorkSpace || isOpenPortfolio ? "rotate(90deg)" : ""};
   transition: transform 0.01s;
@@ -187,13 +181,11 @@ const ExplorerPortfolioLabel = styled.label`
 
 const ExplorerPortfolioMenu = styled.section`
   height: 30vh;
-  /* border: 1px solid #fff; */
   display: ${({ isOpenWorkSpace }) => (isOpenWorkSpace ? "block" : "none")};
   transition: transform 0.05s;
 `;
 
 const ExplorerPortfolioContent = styled.div`
-  /* border: 1px solid purple; */
   display: ${({ isOpenPortfolio }) => (isOpenPortfolio ? "block" : "none")};
   transition: transform 0.05s;
 `;

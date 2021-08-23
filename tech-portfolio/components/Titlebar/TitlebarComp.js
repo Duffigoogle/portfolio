@@ -17,6 +17,7 @@ const TitlebarComp = () => {
 export default TitlebarComp;
 
 //styled components for the SIDEBARMENU.
+
 const TitleBarMenu = styled.div`
   width: cal(100vw - 0.1rem);
   background: #3f3f3f;
@@ -24,9 +25,7 @@ const TitleBarMenu = styled.div`
   padding: 0 0.5rem;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   color: #fff;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.85rem;
-  /* border-bottom: 1px solid #191d20; */
 `;

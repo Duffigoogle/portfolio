@@ -59,7 +59,6 @@ export default FooterComp;
 const FooterContainer = styled.footer`
   width: 100%;
   min-height: 1.458rem;
-  /* border-top: 1px solid #8f2626; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +70,6 @@ const FooterLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex-grow: 1; */
   font-size: 0.8rem;
 `;
 

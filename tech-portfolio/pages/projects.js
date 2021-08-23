@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import ProjectComp from '../components/Project/ProjectComp';
+// import ProjectComp from '../components/Project/ProjectComp';
+import { ProjectCollectionTwo, ProjectCollectionOne } from '../components/Project/ProjectComp';
 import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import CodeLinesComp from '../components/codelines/CodeLinesComp';
 import {PageLayout} from '../components/Layout/PageLayout';
@@ -19,12 +20,14 @@ export default function ProjectPage() {
           <StyledMain>
             <PageLayout>
               <CodeLinesComp />
-              <ProjectComp />
+              {/* <ProjectComp /> */}
+              <ProjectCollectionOne />
             </PageLayout>
     
             <PageLayout>
               <CodeLinesComp />
-              <ProjectComp />
+              {/* <ProjectComp /> */}
+              <ProjectCollectionTwo />
             </PageLayout>
           </StyledMain>
       </DisplayAreaLayoutComp>
