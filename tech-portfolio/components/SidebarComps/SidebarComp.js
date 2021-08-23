@@ -1,73 +1,153 @@
 // import FormComp from "../Form/FormComp";
-import SideBarTitleComp from '../SidebarComps/SideBarTitle';
-import styled from 'styled-components';
-import Icon from '../common/icons/icons';
-import useSWR from 'swr';
-
-
+import SideBarTitleComp from "../SidebarComps/SideBarTitle";
+import styled from "styled-components";
+import Icon from "../common/icons/icons";
+import useSWR from "swr";
 
 export const SearchComp = () => {
-    return (
-        <>
-           <SearchInput>
-                <input placeholder='Search'/>
-                <div>
-                    <Icon name='' size={20} color='#fff' />
-                    <Icon name='' size={20} color='#fff' />
-                    <Icon name='' size={20} color='#fff' />
-                </div>
-            </SearchInput> 
+  return (
+    <>
+      <SideBarTitleComp text="SEARCH" />
+      <SearchContainer>
+        <SearchInput>
+          <input placeholder="Search" />
+          <div>
+            <Icon name="facebook" size={15} color="#fff" />
+            <Icon name="twitter" size={15} color="#fff" />
+            <Icon name="instagram" size={15} color="#fff" />
+          </div>
+        </SearchInput>
 
-            <SearchReplace>
-                <div>
-                    <input placeholder='Replace'/>
-                    <Icon name='' size={20} color='#fff' />
-                </div>
-                    <Icon name='' size={20} color='#fff' />
-            </SearchReplace>
-        </>
-    )
-}; 
+        <SearchReplace>
+          <div>
+            <input placeholder="Replace" />
+            <Icon name="facebook" size={15} color="#fff" />
+          </div>
+          <Icon name="twitter" size={15} color="#fff" />
+        </SearchReplace>
+      </SearchContainer>
+    </>
+  );
+};
 
+const SearchContainer = styled.div`
+  margin-top: 11px;
+`;
+
+const SearchInput = styled.div`
+  justify-content: space-between;
+  background-color: #9e9e9e;
+  margin-right: 7px;
+  max-width: 12rem;
+  display: flex;
+
+  input {
+    background-color: inherit;
+    max-width: 7rem;
+    padding-left: 2px;
+    outline: none;
+    ::placeholder {
+      font-size: 0.9rem;
+      color: #fff;
+    }
+  }
+  div {
+    width: 4rem;
+    display: flex;
+    padding-right: 4px;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+  }
+`;
+const SearchReplace = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 12rem;
+  margin-right: 7px;
+  margin-top: 8px;
+
+  div {
+    display: flex;
+    max-width: 10rem;
+    padding-right: 4px;
+    align-items: center;
+    background-color: #9e9e9e;
+    justify-content: space-between;
+    /* background-color: red; */
+
+    input {
+      background-color: inherit;
+      max-width: 9rem;
+      padding-left: 2px;
+      outline: none;
+
+      ::placeholder {
+        font-size: 0.9rem;
+        color: #fff;
+      }
+    }
+  }
+`;
 
 const StyledUL = styled.ul`
-    margin: 1rem 1.4rem;
-`
+  margin: 1rem 1.4rem;
+`;
 
 const StyledLI = styled.li`
-    color: orange;
-    letter-spacing: 0.12rem;
-    /* font-style: underline; */
+  color: orange;
+  letter-spacing: 0.12rem;
+  /* font-style: underline; */
 
-    span {
-        color: #fff;
-        padding-right: 0.2rem;
-    } 
+  span {
+    color: #fff;
+    padding-right: 0.2rem;
+  }
+`;
 
-`
- 
 export const CodeBaseComp = () => {
-    return (
-        <>
-            <SideBarTitleComp text='CODEBASE' />
-            <StyledUL>
-                <StyledLI><span>-</span>JAVASCRIPT</StyledLI>
-                <StyledLI><span>-</span>HTML5</StyledLI>
-                <StyledLI><span>-</span>CSS3</StyledLI>
-                <StyledLI><span>-</span>SASS</StyledLI>
-                <StyledLI><span>-</span>BOOTSTRAP</StyledLI>
-                <StyledLI><span>-</span>REACT</StyledLI>
-                <StyledLI><span>-</span>NEXTjs</StyledLI>
-                <StyledLI><span>-</span>CSS-in-JS</StyledLI>
-                <StyledLI><span>-</span>MATERIAL UI</StyledLI>
-                <StyledLI><span>-</span>TAILWINDCSS</StyledLI>
-                <StyledLI><span>-</span>FIREBASE</StyledLI>
-            </StyledUL>
-        </>
-    )
-}; 
-
-
+  return (
+    <>
+      <SideBarTitleComp text="CODEBASE" />
+      <StyledUL>
+        <StyledLI>
+          <span>-</span>JAVASCRIPT
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>HTML5
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>CSS3
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>SASS
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>BOOTSTRAP
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>REACT
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>NEXTjs
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>CSS-in-JS
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>MATERIAL UI
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>TAILWINDCSS
+        </StyledLI>
+        <StyledLI>
+          <span>-</span>FIREBASE
+        </StyledLI>
+      </StyledUL>
+    </>
+  );
+};
 
 // function Profile() {
 //   const { data, error } = useSWR('/api/user', fetch)
@@ -78,105 +158,98 @@ export const CodeBaseComp = () => {
 // }
 
 export const GithubComp = () => {
+  // const baseURL = 'https://api.github.com/duffigoogle';
 
-    // const baseURL = 'https://api.github.com/duffigoogle';
+  // const fetcher = baseURL => {
+  //     fetch(baseURL, {
+  //         headers: {
+  //             'Authorization': 'token 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',
+  //              'Accept' : 'application/vnd.github.v3+json'
+  //          }})
+  //     .then(response => response.json())
+  //     .then(data => console.log(data))
+  //     .catch(error => console.log(error));
+  // }
 
-    // const fetcher = baseURL => {
-    //     fetch(baseURL, { 
-    //         headers: {
-    //             'Authorization': 'token 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',
-    //              'Accept' : 'application/vnd.github.v3+json'
-    //          }})
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    //     .catch(error => console.log(error));
-    // }
-    
-    // const { data, error } = useSWR(baseURL, fetcher)
-    // // const { data, error } = useSWR('/api/user', fetch)
+  // const { data, error } = useSWR(baseURL, fetcher)
+  // // const { data, error } = useSWR('/api/user', fetch)
 
-    // if (error) return <div>Failed to load</div>
-    // if (!data) return <div>Loading...</div>
+  // if (error) return <div>Failed to load</div>
+  // if (!data) return <div>Loading...</div>
 
-    return (
-        <>
-           <div>
-                {/* <p>Git Username: @{data.login}</p>
+  return (
+    <>
+      <SideBarTitleComp text="GITHUB" />
+      <div>
+        {/* <p>Git Username: @{data.login}</p>
                 <p>Name: {data.name}</p>
                 <p>Location: {data.location}</p> 
                 <p>Followers: {data.followers}</p> 
                 <p>following: {data.following}</p> 
                 <p>Public Repos: {data.public_repos}</p>
                 <p>Organizations: {data.organizations_url}</p> */}
-
-            </div> 
-        </>
-    )
-}; 
-
+      </div>
+    </>
+  );
+};
 
 const StyledSection = styled.div`
-    margin: 1.2rem 0.45rem;
-`
+  margin: 1.2rem 0.45rem;
+`;
 
 const StyledBox = styled.div`
-    display: flex;
-    margin-top: 1.5rem;
+  display: flex;
+  margin-top: 1.5rem;
 
-    p {
-        color: orange;
-        margin-left: 7px;
-        font-size: 1.02rem;
-        /* outline: 1; */
-    }
-`
+  p {
+    color: orange;
+    margin-left: 7px;
+    font-size: 1.02rem;
+    /* outline: 1; */
+  }
+`;
 
 export const MailComp = () => {
-
-    return (
-        <>
-            <SideBarTitleComp text='CONTACT' />
-            <StyledSection>
-                <StyledBox>
-                    <Icon name='mailIcon' size={22} color='orange' />
-                    <p>Duffdev001@gmail</p>
-                </StyledBox>
-                <StyledBox>
-                    <Icon name='twitter' size={22} color='orange' />
-                    <p>@Duffygoogle</p>
-                </StyledBox>
-                <StyledBox>
-                    <Icon name='GithubIcon' size={22} color='orange' />
-                    <p>@Duffigoogle</p>
-                </StyledBox>
-                <StyledBox>
-                    <Icon name='instagram' size={22} color='orange' />
-                    <p>@thelastgoodman</p>
-                </StyledBox>
-                <StyledBox>
-                    <Icon name='StackoverflowIcon' size={22} color='orange' />
-                    <p>StackOverFlow:</p>
-                </StyledBox>
-                <StyledBox>
-                    <Icon name='StackoverflowIcon' size={22} color='orange' />
-                    <p>Hashnode</p>
-                </StyledBox>
-
-            </StyledSection>
-        </>
-                
-    )
-}; 
- 
+  return (
+    <>
+      <SideBarTitleComp text="CONTACT" />
+      <StyledSection>
+        <StyledBox>
+          <Icon name="mailIcon" size={22} color="orange" />
+          <p>Duffdev001@gmail</p>
+        </StyledBox>
+        <StyledBox>
+          <Icon name="twitter" size={22} color="orange" />
+          <p>@Duffygoogle</p>
+        </StyledBox>
+        <StyledBox>
+          <Icon name="GithubIcon" size={22} color="orange" />
+          <p>@Duffigoogle</p>
+        </StyledBox>
+        <StyledBox>
+          <Icon name="instagram" size={22} color="orange" />
+          <p>@thelastgoodman</p>
+        </StyledBox>
+        <StyledBox>
+          <Icon name="StackoverflowIcon" size={22} color="orange" />
+          <p>StackOverFlow:</p>
+        </StyledBox>
+        <StyledBox>
+          <Icon name="StackoverflowIcon" size={22} color="orange" />
+          <p>Hashnode</p>
+        </StyledBox>
+      </StyledSection>
+    </>
+  );
+};
 
 export const PluralSightComp = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}; 
-
+  return (
+    <div>
+      <SideBarTitleComp text="PLURALSIGHT" />
+    </div>
+  );
+};
 
 // const searchQueryURL = 'https://api.github.com';
 
@@ -186,7 +259,6 @@ export const PluralSightComp = () => {
 //       .then(response => console.log(response))
 //       .catch(err => console.log(err))
 //     });
-
 
 // {
 //     "current_user_url": "https://api.github.com/user",
@@ -222,7 +294,6 @@ export const PluralSightComp = () => {
 //     "user_repositories_url": "https://api.github.com/users/{user}/repos{?type,page,per_page,sort}",
 //     "user_search_url": "https://api.github.com/search/users?q={query}{&page,per_page,sort,order}"
 //   }
-
 
 // {
 //     "login": "Duffigoogle",

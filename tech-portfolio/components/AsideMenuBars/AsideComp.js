@@ -6,23 +6,15 @@ import {
   MailComp,
   CodeBaseComp,
   GithubComp,
+  PluralSightComp,
+  SearchComp,
 } from "../SidebarComps/SidebarComp";
 import { ModalManager } from "../Form/CustomModal";
 
-const AsideComp = ({
-  toggleState,
-  toggleTab,
-  toggleSideTab,
-  isExpanded,
-  // toggleModal,
-  // modalState,
-  // isModalPopUp,
-}) => {
-
+const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
   const [modalOne, setModalOne] = useState(false);
   const [modalTwo, setModalTwo] = useState(false);
   const [toggleDiv, setToggleDiv] = useState(0);
-  
 
   const ToggleModals = (ind) => {
     setToggleDiv(ind);
@@ -45,7 +37,7 @@ const AsideComp = ({
               <Icon
                 name="FilesIcon"
                 size={23}
-                color={toggleState === 1 ? "#fff" : "#bfbfbf"}
+                color={toggleState === 1 ? "#fff" : "#eeeeee"}
                 className="icon"
               />
             </div>
@@ -57,7 +49,7 @@ const AsideComp = ({
               <Icon
                 name="SearchRightIcon"
                 size={23}
-                color={toggleState === 2 ? "#fff" : "#bfbfbf"}
+                color={toggleState === 2 ? "#fff" : "#eeeeee"}
                 className="icon"
               />
             </div>
@@ -69,7 +61,7 @@ const AsideComp = ({
               <Icon
                 name="CodeIcon"
                 size={23}
-                color={toggleState === 3 ? "#fff" : "#bfbfbf"}
+                color={toggleState === 3 ? "#fff" : "#eeeeee"}
                 className="icon"
               />
             </div>
@@ -81,7 +73,7 @@ const AsideComp = ({
               <Icon
                 name="GithubIcon"
                 size={23}
-                color={toggleState === 4 ? "#fff" : "#bfbfbf"}
+                color={toggleState === 4 ? "#fff" : "#eeeeee"}
                 className="icon"
               />
             </div>
@@ -93,7 +85,7 @@ const AsideComp = ({
               <Icon
                 name="MailIcon"
                 size={23}
-                color={toggleState === 5 ? "#fff" : "#bfbfbf"}
+                color={toggleState === 5 ? "#fff" : "#eeeeee"}
                 className="icon"
               />
             </div>
@@ -105,7 +97,7 @@ const AsideComp = ({
               <Icon
                 name="PluralsightIcon"
                 size={23}
-                color={toggleState === 6 ? "#fff" : "#bfbfbf"}
+                color={toggleState === 6 ? "#fff" : "#eeeeee"}
                 className="icon"
               />
             </div>
@@ -113,41 +105,42 @@ const AsideComp = ({
           <BottomSideBarTabs>
             <div
               className="tabs"
-                onClick={()=> {
-                  setModalOne(!modalOne);
-                  ToggleModals(1);
-                  console.log("tab 1");
-                  console.log(modalOne);
-                }}
+              onClick={() => {
+                setModalOne(!modalOne);
+                ToggleModals(1);
+                console.log("tab 1");
+                console.log(modalOne);
+              }}
             >
               <Icon
                 name="personcircle"
                 size={23}
-                // color={toggleState === 7 ? "#fff" : "#bfbfbf"}
+                color={toggleState === 7 ? "#fff" : "#eeeeee"}
                 className="icon"
               />
             </div>
-      
-            <div className="tabs" 
-                  onClick={()=> {
-                  setModalTwo(!modalTwo);
-                  ToggleModals(2); 
-                  console.log("tab 2");
-                  console.log(modalTwo);
 
-                }}
-              >
+            <div
+              className="tabs"
+              onClick={() => {
+                setModalTwo(!modalTwo);
+                ToggleModals(2);
+                console.log("tab 2");
+                console.log(modalTwo);
+              }}
+            >
               <Icon
                 name="SettingsIcon"
                 size={23}
-                // color={toggleState === 8 ? "#fff" : "#bfbfbf"}
+                color={toggleState === 8 ? "#fff" : "#eeeeee"}
                 className="icon"
               />
             </div>
             <div>
-             <ModalManager 
+              <ModalManager
                 modalOne={modalOne}
                 modalTwo={modalTwo}
+                setModalOne={setModalOne}
                 setModalTwo={setModalTwo}
                 toggleDiv={toggleDiv}
               />
@@ -163,8 +156,7 @@ const AsideComp = ({
           <div
             className={toggleState === 2 ? "content active-content" : "content"}
           >
-            {/* <SearchComp /> */}
-            SearchComp
+            <SearchComp />
           </div>
           <div
             className={toggleState === 3 ? "content active-content" : "content"}
@@ -184,7 +176,7 @@ const AsideComp = ({
           <div
             className={toggleState === 6 ? "content active-content" : "content"}
           >
-            Pluralsight
+            <PluralSightComp />
           </div>
         </SideBarContents>
       </SideBarContainer>
