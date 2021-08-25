@@ -48,7 +48,7 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
             >
               <Icon
                 name="SearchRightIcon"
-                size={23}
+                size={21}
                 color={toggleState === 2 ? "#fff" : "#eeeeee"}
                 className="icon"
               />

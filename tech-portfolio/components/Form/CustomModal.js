@@ -41,29 +41,35 @@ const ThemeInfo = styled.div`
 `;
 
 export const Modal = ({ modalTwo, setModalTwo }) => {
+  const myRef = useRef();
+
   const [showSecondModal, setShowSecondModal] = useState(false);
 
-     const closeModal = () => {
-        setModalTwo(!modalTwo);
-        console.log("closed Modal 2")
-      };
-    
-    const toggleSecondModal = () => {
-      setShowSecondModal(!showSecondModal);
-      console.log("closed Modal");
-      // closeModal();
-    };
-  // const toggleSecondModal = () => {
-  //   setShowSecondModal(!showSecondModal);
-  //   console.log("closed Modal")
-  // };
+  const closeModal = () => {
+    setModalTwo(!modalTwo);
+    console.log("closed Modal 2");
+  };
 
- 
+  const toggleSecondModal = () => {
+    setShowSecondModal(!showSecondModal);
+    console.log("closed Modal");
+    // closeModal();
+  };
+
+  // If user clicks outside the modal window, then close modal.
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalTwo === true && !myRef.current.contains(e.target)) {
+        setModalTwo(false);
+        console.log("I clicked outside");
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [modalTwo]);
 
   return (
-    <StyledDivModal 
-      modalTwo={modalTwo}
-      >
+    <StyledDivModal modalTwo={modalTwo} ref={myRef}>
       <ModalItem itemName="settings" shortcut="CRTL+," />
       <ModalItem
         itemName="color theme"
@@ -79,11 +85,9 @@ export const Modal = ({ modalTwo, setModalTwo }) => {
   );
 };
 
-
 // onClick={(evt) => evt.stopPropagation()}
 
 const StyledDivModal = styled.div`
-  /* display: ${(isModalPopUp) => (isModalPopUp ? "block" : "none")}; */
   display: ${(modalTwo) => {
     modalTwo ? "block" : "none";
   }};
@@ -101,11 +105,23 @@ const StyledDivModal = styled.div`
   }
 `;
 
+const ModalComp = ({ modalOne, setModalOne }) => {
+  const myRef = useRef();
 
-const ModalComp = ({ modalOne }) => {
+  // If user clicks outside the modal window, then close modal.
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalOne === true && !myRef.current.contains(e.target)) {
+        setModalOne(false);
+        console.log("I clicked outside");
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [modalOne]);
+
   return (
-    <StyledModal modalOne={modalOne}
-    >
+    <StyledModal modalOne={modalOne} ref={myRef}>
       <StyledModalContent>
         <p> Duffigoogle (Github)</p>
         {/* ArrowRight */}
@@ -121,15 +137,11 @@ const ModalComp = ({ modalOne }) => {
 
 export default ModalComp;
 
-
 // styled components for AsideComp;
 
 const StyledModal = styled.div`
   /* display: ${(modalOpen, modal) => {
-    (modalOpen = true && modal === 'modal-one') ? "block" : "none";
-  }}; */
-  /* display: ${(isModalPopUp) => {
-    isModalPopUp ? "block" : "none";
+    (modalOpen = true && modal === "modal-one") ? "block" : "none";
   }}; */
   display: ${(modalOne) => {
     modalOne ? "block" : "none";
@@ -200,7 +212,7 @@ export const ColorThemeDisplay = ({ showSecondModal, setShowSecondModal }) => {
   return (
     <>
       {showSecondModal ? (
-        <SettingsContainer showSecondModal={showSecondModal} ref={myRef}>
+        <ThemesContainer showSecondModal={showSecondModal} ref={myRef}>
           <h2>Manage Themes</h2>
           <ThemeSchemaComp
             name="GitHub Dark"
@@ -232,13 +244,13 @@ export const ColorThemeDisplay = ({ showSecondModal, setShowSecondModal }) => {
             theme="Moonlight calls"
             description="An arctic, north-bluish clean and elegant Visual Studio Code theme."
           />
-        </SettingsContainer>
+        </ThemesContainer>
       ) : null}
     </>
   );
 };
 
-const SettingsContainer = styled.main`
+const ThemesContainer = styled.main`
   display: ${({ showSecondModal }) => (showSecondModal ? "block" : "none")};
   margin: 1rem 0;
   padding: 0.6rem 0;
@@ -256,17 +268,25 @@ const SettingsContainer = styled.main`
   }
 `;
 
-export const ModalManager = ({ modalOne, modalTwo, setModalTwo, toggleDiv}) => {
+export const ModalManager = ({
+  modalOne,
+  modalTwo,
+  setModalOne,
+  setModalTwo,
+  toggleDiv,
+}) => {
   return (
     <>
       <div>
-          {(modalOne === true && toggleDiv === 1) ? <ModalComp modalOne={modalOne}/> : null}
+        {modalOne === true && toggleDiv === 1 ? (
+          <ModalComp modalOne={modalOne} setModalOne={setModalOne} />
+        ) : null}
       </div>
       <div>
-          {(modalTwo === true && toggleDiv === 2) ? <Modal modalTwo={modalTwo} setModalTwo={setModalTwo} /> : null}
+        {modalTwo === true && toggleDiv === 2 ? (
+          <Modal modalTwo={modalTwo} setModalTwo={setModalTwo} />
+        ) : null}
       </div>
     </>
-  )
-}
-
-
+  );
+};
