@@ -11,31 +11,32 @@ const AboutComp = () => {
 
   return (
     <>
-      <BioContainer ref={elementRef}>
-        <BioStack>
-          <BioStackText>Frontend Developer</BioStackText>
-        </BioStack>
-        <BioContent>
-          <BioDetails>
-            <BioHeading1>
-              Hello,<span> I'm Duffigoogle.</span>{" "}
-            </BioHeading1>
-            <BioP>
+      <AboutContainer ref={elementRef}>
+        <AboutStack>
+          <AboutStackText>Frontend Developer</AboutStackText>
+        </AboutStack>
+        <AboutContent>
+          <AboutDetails>
+            <AboutHeading4>Hello there, I'm</AboutHeading4>
+            <AboutHeading1>
+              <span> Duffigoogle.</span>{" "}
+            </AboutHeading1>
+            <AboutP>
               I <span>build value</span> through code. I like making{" "}
               <span>fun</span> and <span>interactive things</span> for the web.
-            </BioP>
-            <BioP>
+            </AboutP>
+            <AboutP>
               {" "}
               I'm an <span>aesthetics custodian</span> for the web user's
               interface and I love <span>building digital products</span>.
-            </BioP>
-            <BioPSmall>
+            </AboutP>
+            <AboutPSmall>
               I also <span>Talk</span>, <span>Teach</span>, <span>Write </span>{" "}
               about Codes and <span>Tech</span>.
-            </BioPSmall>
+            </AboutPSmall>
             <SocialsComp />
-          </BioDetails>
-          <BioButtonContainer>
+          </AboutDetails>
+          <AboutButtonContainer>
             {/* <CustomButton
               type="primary"
               size="large"
@@ -46,34 +47,36 @@ const AboutComp = () => {
             /> */}
             <Link href="/about">
               <WelcomeButton>
-                Check me out &nbsp;{" "}
+                Click to discover &nbsp;{" "}
                 <Icon name="Arrowrightcircle" size={25} color="#fff" />
               </WelcomeButton>
             </Link>
-          </BioButtonContainer>
-        </BioContent>
-      </BioContainer>
+          </AboutButtonContainer>
+        </AboutContent>
+      </AboutContainer>
     </>
   );
 };
 
 export default AboutComp;
 
-const BioContainer = styled.div`
+const AboutContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 7rem;
+  padding-top: 6rem;
   /* border: 1px solid red; */
-  height: 100vh;
+  background-color: #000;
+  color: #339989;
+  /* height: 90vh; */
 `;
 
-const BioStack = styled.div`
+const AboutStack = styled.div`
   width: 35px;
-  height: 300px;
-  background-color: orange;
+  height: 350px;
+  background-color: #8a9b68;
   border: none;
-  box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 0px 5px rgba(255, 255, 255, 0.4);
   padding-top: 10px;
   &:hover {
     background-color: whitesmoke;
@@ -82,56 +85,65 @@ const BioStack = styled.div`
   }
 `;
 
-const BioStackText = styled.h3`
+const AboutStackText = styled.h3`
   font-size: 1.3rem;
-  color: white;
+  color: #fff;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 5.5px;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
   transition: transform 0.2s;
 `;
 
-const BioContent = styled.div`
+const AboutContent = styled.div`
   /* width: 60rem; */
   margin-left: 2.5rem;
 `;
 
-const BioDetails = styled.div`
-  padding-top: 1rem;
+const AboutDetails = styled.div`
+  padding-top: 0.5rem;
   width: 43rem;
 `;
 
-const BioHeading1 = styled.h1`
+const AboutHeading4 = styled.h4`
   margin-bottom: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fff;
+`;
+const AboutHeading1 = styled.h1`
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 4rem;
+  color: #09f755;
+
   span {
-    color: yellowgreen;
+    /* color: #942727; */
   }
 `;
 
-const BioP = styled.p`
-  font-size: 1.6rem;
-  padding-bottom: 0.4rem;
+const AboutP = styled.p`
+  font-size: 1.3rem;
+  /* padding-bottom: 0.1rem; */
 
   span {
     font-size: 1.4rem;
-    color: orange;
+    color: #9b7d50;
     font-style: italic;
     letter-spacing: 0.3rem;
     // underline
   }
 `;
 
-const BioPSmall = styled.p`
+const AboutPSmall = styled.p`
   font-size: 1rem;
   font-style: italic;
   margin-top: 6px;
   color: #cec;
 `;
 
-const BioButtonContainer = styled.div`
+const AboutButtonContainer = styled.div`
   margin-top: 5rem;
 `;
 
@@ -151,7 +163,7 @@ const WelcomeButton = styled.button`
   align-items: center;
   justify-content: center;
   /* box-shadow: ; */
-  margin: 35px auto;
+  margin: 25px auto;
   outline: none;
   border: none;
   border-radius: 8px;

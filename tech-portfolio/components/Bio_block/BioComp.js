@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
+import Image from "next/image";
 
 const person = {
   First_Name: "Caleb Ini.",
@@ -11,30 +12,41 @@ const person = {
 };
 
 const hobbies = {
-  Sport: ["Football", "Tennis", "Chess"],
+  Sport: ["Chess", "Tennis", "Football"],
   Lifestyle: "Traveler",
   Creativity_Quotient: 10,
 };
 
 const personal_skills = {
-  i: "Time Management",
-  ii: "Excellent Communication",
-  iii: "Best Team Player",
-  iv: "Good Sense of Humuor",
-  v: "Sense of Responsibility",
-  vi: "Problem Solving Initiative",
+  i: "Problem Solver",
+  ii: "Excellent Communicator",
+  iii: "Team Player",
+  iv: "High attention to details",
+  v: "Time Management",
+  vi: "Good Sense of Humuor",
 };
 
-const Bio = ({ text, person, replacer = null, space = 2 }) => {
+const Bio = ({
+  style,
+  text,
+  person,
+  replacer = null,
+  space = 4,
+  textColor,
+}) => {
   return (
-    <StyledObjBox>
+    <StyledObjBox style={style}>
       <pre
         style={{
-          backgroundColor: "#3f3f3f",
-          padding: "1rem 0.5rem",
-          color: "#eee",
-          borderRadius: "0px 0px 5px 5px",
-          boxShadow: "0px 5px 6px #f9f9f9",
+          backgroundColor: "#1d1d1d",
+          padding: "0rem 0.3rem",
+          color: `${textColor}`,
+          borderRadius: "5px 5px 5px 5px",
+          // boxShadow: "3px 5px 6px #f9f9f9",
+          boxShadow: "0 8px 8px -4px lightblue",
+          margin: "0 auto",
+          // maxHeight: "11rem",
+          // overflowY: "scroll",
         }}
       >
         <span>{text} = </span>
@@ -50,9 +62,33 @@ const BioComp = () => {
   return (
     <>
       <BioContainer ref={elementRef}>
-        <Bio text="const person" person={person} />
-        <Bio text="const personalSkills" person={personal_skills} />
-        <Bio text="const hobbies" person={hobbies} />
+        <BioImage>
+          <Image
+            src={require("../../public/img/potrait.png")}
+            alt="sketch coloured portrait"
+            intrinsic
+          />
+        </BioImage>
+        <BioContent>
+          <Bio
+            style={{ top: "0", right: "0", zIndex: "4" }}
+            text="const person"
+            person={person}
+            textColor="#c93339"
+          />
+          <Bio
+            style={{ top: "160px", left: "5", zIndex: "6" }}
+            text="const personalSkills"
+            person={personal_skills}
+            textColor="#cf99c2"
+          />
+          <Bio
+            style={{ bottom: "110px", right: "0", zIndex: "8" }}
+            text="const hobbies"
+            person={hobbies}
+            textColor="#66c5e0"
+          />
+        </BioContent>
       </BioContainer>
     </>
   );
@@ -60,27 +96,40 @@ const BioComp = () => {
 
 export default BioComp;
 
-const BioContainer = styled.div`
-  width: 100%;
-  padding-left: 1rem;
-  margin: 1rem auto;
-  background-color: #000;
-  /* display: flex; */
-  /* border: 1px solid red; */
+const BioContainer = styled.main`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  /* grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.7rem; */
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1.2rem;
+  /* margin: 1rem auto; */
+  background-color: #000;
   height: 100vh;
+`;
+const BioContent = styled.div`
+  width: 50%;
+  height: 100vh;
+  /* border: 1px solid red; */
+  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  align-items: baseline; */
+  overflow: hidden;
+`;
+
+const BioImage = styled.div`
+  width: 50%;
+  margin-top: -15px;
+  /* border: 1px solid red; */
+  position: relative;
 `;
 
 const StyledObjBox = styled.div`
-  margin: 1rem 0;
+  position: absolute;
 
   span {
     font-weight: bold;
     font-size: 1.3rem;
-    color: orange;
+    /* color: orange; */
+    color: #ccc;
   }
 `;

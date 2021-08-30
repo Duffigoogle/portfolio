@@ -28,18 +28,16 @@ const StyledForm = styled.form`
 
 const StyledLabel = styled.label`
   display: block;
-  color: #222021;
+  color: #e0e0e0;
   font-weight: bold;
   padding-left: 0.25rem;
   letter-spacing: 1px;
 `;
 
 const StyledTextArea = styled.textarea`
-  /* border: 1px solid #5d5d5d;  */
   padding: 0.2rem;
   width: 100%;
   overflow: hidden;
-  /* resize: none; */
   outline: none;
 `;
 

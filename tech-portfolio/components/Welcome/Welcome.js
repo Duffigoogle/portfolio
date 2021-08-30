@@ -26,9 +26,10 @@ export default WelcomeComp;
 // styled components for WelcomeComp
 
 const WelcomeCompContainer = styled.div`
+  background-color: #000;
   width: 100%;
-  margin-top: 7rem;
-  height: 75vh;
+  padding-top: 7rem;
+  height: 100rem;
 `;
 
 const WeclomeHeading1 = styled.h2`
