@@ -1,25 +1,24 @@
-import Link from 'next/link';
-import styled from 'styled-components';
+import Link from "next/link";
+import styled from "styled-components";
 // import {useRouter} from 'next/router';
-import Icon from '../common/icons/icons';
+import Icon from "../common/icons/icons";
 
 const SidebarBottomComp = () => {
-    // const router = useRouter();
+  // const router = useRouter();
 
-    return (
-
-        <SidebarBottomContainer>
-                <Link href="/">
-                    <SIdebarBottomIconContainer>
-                        <Icon name='AccountIcon' width={15} height={15} />
-                    </SIdebarBottomIconContainer>
-                </Link>
-                <Link href="/">
-                    <SIdebarBottomIconContainer>
-                        <Icon name='SettingsIcon' width={15} height={15} />
-                    </SIdebarBottomIconContainer>
-                </Link>
-        </SidebarBottomContainer>
+  return (
+    <SidebarBottomContainer>
+      <Link href="/" passHref>
+        <SIdebarBottomIconContainer>
+          <Icon name="AccountIcon" width={15} height={15} />
+        </SIdebarBottomIconContainer>
+      </Link>
+      <Link href="/" passHref>
+        <SIdebarBottomIconContainer>
+          <Icon name="SettingsIcon" width={15} height={15} />
+        </SIdebarBottomIconContainer>
+      </Link>
+    </SidebarBottomContainer>
     //     <div className={styles.sidebarBottom}>
     //         <div className={styles.iconContainer}>
     //             <Link href="/about">
@@ -43,19 +42,18 @@ const SidebarBottomComp = () => {
     //       </Link>
     //     </div>
     //   </div>
-    )
-}
+  );
+};
 
 export default SidebarBottomComp;
 
-
 //styled components for the SIDEBARBOTTOMCOMPONENT
 const SidebarBottomContainer = styled.div`
-    border: 1px solid red;
-    margin: 0 auto;
-`
+  border: 1px solid red;
+  margin: 0 auto;
+`;
 const SIdebarBottomIconContainer = styled.div`
-     cursor: pointer;
-     width: 100%;
-     margin: 10px auto;
-`
+  cursor: pointer;
+  width: 100%;
+  margin: 10px auto;
+`;

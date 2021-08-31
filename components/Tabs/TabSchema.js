@@ -10,7 +10,7 @@ const TabSchema = ({ filepath, Icon_name, file_name }) => {
     router.pathname === filepath || router.asPath === filepath;
 
   return (
-    <Link href={filepath}>
+    <Link href={filepath} passHref>
       <TabBox isCurrentPath={isCurrentPath}>
         <Icon name={Icon_name} size={15} />
         <TabFileName isCurrentPath={isCurrentPath}>{file_name}</TabFileName>

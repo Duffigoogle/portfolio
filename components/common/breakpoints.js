@@ -9,7 +9,7 @@ const device = {
   sm: `(min-width: ${size.sm})`,
   lg: `(min-width: ${size.lg})`,
 };
-export default { size, device };
+export { size, device };
 
 // import breakpoint from 'Commons/breakpoints';
 

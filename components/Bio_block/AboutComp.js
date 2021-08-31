@@ -27,8 +27,9 @@ const AboutComp = () => {
             </AboutP>
             <AboutP>
               {" "}
-              I&apos;m an <span>aesthetics custodian</span> for the web user&apos;s
-              interface and I love <span>building digital products</span>.
+              I&apos;m an <span>aesthetics custodian</span> for the web
+              user&apos;s interface and I love{" "}
+              <span>building digital products</span>.
             </AboutP>
             <AboutPSmall>
               I also <span>Talk</span>, <span>Teach</span>, <span>Write </span>{" "}
@@ -45,8 +46,8 @@ const AboutComp = () => {
               name="twitter"
               text="Say Hi"
             /> */}
-            <Link href="/about">
-              <WelcomeButton passHref>
+            <Link href="/about" passHref>
+              <WelcomeButton>
                 Click to discover &nbsp;{" "}
                 <Icon name="Arrowrightcircle" size={25} color="#fff" />
               </WelcomeButton>

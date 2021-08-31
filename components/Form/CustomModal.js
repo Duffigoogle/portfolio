@@ -66,7 +66,7 @@ export const Modal = ({ modalTwo, setModalTwo }) => {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [modalTwo]);
+  }, [modalTwo, setModalTwo]);
 
   return (
     <StyledDivModal modalTwo={modalTwo} ref={myRef}>
@@ -118,7 +118,7 @@ const ModalComp = ({ modalOne, setModalOne }) => {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [modalOne]);
+  }, [modalOne, setModalOne]);
 
   return (
     <StyledModal modalOne={modalOne} ref={myRef}>
@@ -207,7 +207,7 @@ export const ColorThemeDisplay = ({ showSecondModal, setShowSecondModal }) => {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showSecondModal]);
+  }, [showSecondModal, setShowSecondModal]);
 
   return (
     <>

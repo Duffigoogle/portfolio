@@ -41,7 +41,7 @@ const ExplorerComp = () => {
             </ExplorerTopSectionLabel>
 
             <ExplorerEditorSection isOpen={isOpen}>
-              <Link href="/">
+              <Link href="/" passHref>
                 <ExplorerPortfolioItem isCurrentPath={isCurrentPath}>
                   <Image
                     src="/vscode_icon.svg"

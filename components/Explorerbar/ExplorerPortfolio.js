@@ -16,7 +16,7 @@ const PortfolioFilesSchema = ({
     router.pathname === link_path || router.asPath === link_path;
 
   return (
-    <Link href={link_path}>
+    <Link href={link_path} passHref>
       <ExplorerPortfolioItem isCurrentPath={isCurrentPath}>
         <ExplorerSpan />
         <Image

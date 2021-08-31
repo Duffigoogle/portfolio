@@ -12,7 +12,7 @@ const WelcomeTaskbarComp = () => {
     <>
       <TabsTaskbarContainer>
         <TabsCollection>
-          <Link href="/">
+          <Link href="/" passHref>
             <TabBox isCurrentPath={isCurrentPath}>
               <Icon name="VSCodeIcon" size={15} />
               <TabFileName>Welcome</TabFileName>
@@ -20,22 +20,22 @@ const WelcomeTaskbarComp = () => {
           </Link>
         </TabsCollection>
         <TabsTaskbarIcons>
-          <Link href="#">
+          <Link href="#" passHref>
             <TabsIconBox>
               <Icon name="PlayButtonOutline" size={15} color="#e0e0e0" />
             </TabsIconBox>
           </Link>
-          <Link href="#">
+          <Link href="#" passHref>
             <TabsIconBox>
               <Icon name="GitCompareIcon" size={15} color="#e0e0e0" />
             </TabsIconBox>
           </Link>
-          <Link href="#">
+          <Link href="#" passHref>
             <TabsIconBox>
               <Icon name="TwoColumns" size={15} color="#e0e0e0" />
             </TabsIconBox>
           </Link>
-          <Link href="#">
+          <Link href="#" passHref>
             <TabsIconBox>
               <Icon name="ThreeDots" size={15} color="#e0e0e0" />
             </TabsIconBox>

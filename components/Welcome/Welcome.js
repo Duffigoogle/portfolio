@@ -10,7 +10,7 @@ const WelcomeComp = () => {
           Welcome <br /> to my <br />
           <span>Tech-Portfolio</span>
         </WeclomeHeading1>
-        <Link href="/bio">
+        <Link href="/bio" passHref>
           <WelcomeButton>
             Explore with joy &nbsp;{" "}
             <Icon name="ArrowRightCircleFill" size={25} color="#fff" />
