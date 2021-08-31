@@ -98,6 +98,8 @@ const StyledUL = styled.ul`
 const StyledLI = styled.li`
   color: orange;
   letter-spacing: 0.12rem;
+  display: flex;
+  align-items: center;
   /* font-style: underline; */
 
   span {
@@ -112,36 +114,47 @@ export const CodeBaseComp = () => {
       <SideBarTitleComp text="CODEBASE" />
       <StyledUL>
         <StyledLI>
-          <span>-</span>JAVASCRIPT
+          <Icon name="javaScriptIcon" size={15} color="#fff" />
+          <span>- JAVASCRIPT</span>
         </StyledLI>
         <StyledLI>
-          <span>-</span>HTML5
+          <Icon name="htmlIcon" size={15} color="#fff" />
+          <span>- HTML5</span>
         </StyledLI>
         <StyledLI>
+          <Icon name="cssIcon" size={15} color="#fff" />
           <span>-</span>CSS3
         </StyledLI>
         <StyledLI>
+          <Icon name="sassIcon" size={15} color="#fff" />
           <span>-</span>SASS
         </StyledLI>
         <StyledLI>
+          <Icon name="htmlIcon" size={15} color="#fff" />
           <span>-</span>BOOTSTRAP
         </StyledLI>
         <StyledLI>
+          <Icon name="reactIcon" size={15} color="#fff" />
           <span>-</span>REACT
         </StyledLI>
         <StyledLI>
+          <Icon name="nextjsIcon" size={15} color="#fff" />
           <span>-</span>NEXTjs
         </StyledLI>
         <StyledLI>
+          <Icon name="styledComponentIcon" size={15} color="#fff" />
           <span>-</span>CSS-in-JS
         </StyledLI>
         <StyledLI>
+          <Icon name="materialUIIcon" size={15} color="#fff" />
           <span>-</span>MATERIAL UI
         </StyledLI>
         <StyledLI>
+          <Icon name="tailwindCSSIcon" size={15} color="#fff" />
           <span>-</span>TAILWINDCSS
         </StyledLI>
         <StyledLI>
+          <Icon name="firebaseIcon" size={15} color="#fff" />
           <span>-</span>FIREBASE
         </StyledLI>
       </StyledUL>
@@ -169,6 +182,7 @@ export const GithubComp = () => {
   //     .then(response => response.json())
   //     .then(data => console.log(data))
   //     .catch(error => console.log(error));
+  //     console.log(data);
   // }
 
   // const { data, error } = useSWR(baseURL, fetcher)
@@ -180,15 +194,15 @@ export const GithubComp = () => {
   return (
     <>
       <SideBarTitleComp text="GITHUB" />
-      <div>
-        {/* <p>Git Username: @{data.login}</p>
-                <p>Name: {data.name}</p>
-                <p>Location: {data.location}</p> 
-                <p>Followers: {data.followers}</p> 
-                <p>following: {data.following}</p> 
-                <p>Public Repos: {data.public_repos}</p>
-                <p>Organizations: {data.organizations_url}</p> */}
-      </div>
+      <StyledSection>
+        {/* <p>Git Username: <span>@{data.login}</span></p>
+        <p>Name: <span>{data.name}</span></p>
+        <p>Location: <span>{data.location}</span></p> 
+        <p>Followers: <span>{data.followers}</span></p> 
+        <p>following: <span>{data.following}</span></p> 
+        <p>Public Repos: <span>{data.public_repos}</span></p>
+        <p>Organizations: <span>{data.organizations_url}</span></p> */}
+      </StyledSection>
     </>
   );
 };

@@ -12,7 +12,7 @@ const person = {
 };
 
 const hobbies = {
-  Sport: ["Chess", "Tennis", "Football"],
+  Sports: ["Chess", "Tennis", "Football"],
   Lifestyle: "Traveler",
   Creativity_Quotient: 10,
 };
@@ -38,7 +38,7 @@ const Bio = ({
     <StyledObjBox style={style}>
       <pre
         style={{
-          backgroundColor: "#1d1d1d",
+          backgroundColor: "#000",
           padding: "0rem 0.3rem",
           color: `${textColor}`,
           borderRadius: "5px 5px 5px 5px",
@@ -74,13 +74,13 @@ const BioComp = () => {
             style={{ top: "0", right: "0", zIndex: "4" }}
             text="const person"
             person={person}
-            textColor="#c93339"
+            textColor="#cf99c2"
           />
           <Bio
             style={{ top: "160px", left: "5", zIndex: "6" }}
             text="const personalSkills"
             person={personal_skills}
-            textColor="#cf99c2"
+            textColor="#c93339"
           />
           <Bio
             style={{ bottom: "110px", right: "0", zIndex: "8" }}
