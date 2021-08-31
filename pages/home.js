@@ -6,10 +6,10 @@ import HomePageLayout from "../components/Layout/HomePageLayout";
 import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
-
+import Icon from "../common/icons/icons";
 
 export default function Home() {
-    const { elementRef } = useContext(CalculateHeightContext);
+  const { elementRef } = useContext(CalculateHeightContext);
 
   return (
     <div>
@@ -50,7 +50,7 @@ const StyledDiv = styled.div`
 
 // const gitHubUrl = "https://api.github.com/users/duffigoogle";
 
-const GithubPage = ({userData, repoData}) => {
+const GithubPage = ({ userData, repoData }) => {
   const [user, setUserData] = useState([]);
 
   // const getGitHubUserWithFetch = async () => {
@@ -96,28 +96,27 @@ const GithubPage = ({userData, repoData}) => {
 };
 
 export async function getStaticProps() {
-      const gitHubUrl= `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`;
-      const gitHubUserRepoUrl= `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?sort=created_at&per_page=6`;
+  const gitHubUrl = `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`;
+  const gitHubUserRepoUrl = `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?sort=created_at&per_page=6`;
 
+  const getGitHubUserWithFetch = async () => {
+    const response = await fetch(gitHubUrl);
+    const userData = await response.json();
+    setUserData(userData);
+    console.log(userData);
+  };
 
-      const getGitHubUserWithFetch = async () => {
-        const response = await fetch(gitHubUrl);
-        const userData = await response.json();
-        setUserData(userData);
-        console.log(userData);
-      };
+  const getGitHubUserRepoWithFetch = async () => {
+    const response = await fetch(gitHubUserRepoUrl);
+    const repoData = await response.json();
+    setUserData(repoData);
+    console.log(repoData);
+  };
 
-      const getGitHubUserRepoWithFetch = async () => {
-        const response = await fetch(gitHubUserRepoUrl);
-        const repoData = await response.json();
-        setUserData(repoData);
-        console.log(repoData);
-      };
-
-      useEffect(() => {
-        getGitHubUserWithFetch();
-        getGitHubUserRepoWithFetch();
-      }, []);
+  useEffect(() => {
+    getGitHubUserWithFetch();
+    getGitHubUserRepoWithFetch();
+  }, [getGitHubUserRepoWithFetch, getGitHubUserWithFetch]);
 
   return {
     props: { title: "GitHub", repoData, userData }, // will be passed to the page component as props
@@ -126,7 +125,7 @@ export async function getStaticProps() {
 }
 
 const RepoCard = ({ repoData }) => {
-    const [repo, setRepoData] = useState([]);
+  const [repo, setRepoData] = useState([]);
 
   return (
     <div>
@@ -137,13 +136,16 @@ const RepoCard = ({ repoData }) => {
       <div>
         <div>
           <div>
-            <WatchIcon /> {repoData.watchers}
+            {/* <WatchIcon /> {repoData.watchers} */}
+            <Icon name="WatchIcon" size={18} /> {repoData.watchers}
           </div>
           <div>
-            <ForkIcon /> {repoData.forks}
+            {/* <ForkIcon /> {repoData.forks} */}
+            <Icon name="ForkIcon" size={18} /> {repoData.forks}
           </div>
           <div>
-            <StarIcon /> {repoData.stargazers_count}
+            {/* <StarIcon /> {repoData.stargazers_count} */}
+            <Icon name="StartIcon" size={18} /> {repoData.forks}
           </div>
         </div>
         {/* <div>

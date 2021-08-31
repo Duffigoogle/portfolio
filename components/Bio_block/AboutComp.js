@@ -17,7 +17,7 @@ const AboutComp = () => {
         </AboutStack>
         <AboutContent>
           <AboutDetails>
-            <AboutHeading4>Hello there, I'm</AboutHeading4>
+            <AboutHeading4>Hello there, I&apos;m</AboutHeading4>
             <AboutHeading1>
               <span> Duffigoogle.</span>{" "}
             </AboutHeading1>
@@ -27,7 +27,7 @@ const AboutComp = () => {
             </AboutP>
             <AboutP>
               {" "}
-              I'm an <span>aesthetics custodian</span> for the web user's
+              I&apos;m an <span>aesthetics custodian</span> for the web user&apos;s
               interface and I love <span>building digital products</span>.
             </AboutP>
             <AboutPSmall>
@@ -46,7 +46,7 @@ const AboutComp = () => {
               text="Say Hi"
             /> */}
             <Link href="/about">
-              <WelcomeButton>
+              <WelcomeButton passHref>
                 Click to discover &nbsp;{" "}
                 <Icon name="Arrowrightcircle" size={25} color="#fff" />
               </WelcomeButton>
