@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import styled from "styled-components";
 // import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import HomePageLayout from "../components/Layout/HomePageLayout";

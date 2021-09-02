@@ -1,6 +1,6 @@
-import Head from 'next/head'
+import Head from "next/head";
 // import WelcomeComp from '../components/Welcome/Welcome'
-// import styled from 'styled-components';
+import styled from "styled-components";
 
 export default function PluralsightPage() {
   return (
@@ -14,22 +14,16 @@ export default function PluralsightPage() {
       <HomePageContainer>
         <h1> Pluralsight Page </h1>
       </HomePageContainer>
-
-      
     </div>
-  )
-};
-
+  );
+}
 
 //styled components for Pluralsight Page
 
 const HomePageContainer = styled.main`
-    max-height: 100vh;
-    padding: 0 0.5rem;
-    width: 100%;
-    margin: 20px auto;
-    overflow: hidden;
-`
-
-
-
+  max-height: 100vh;
+  padding: 0 0.5rem;
+  width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+`;
