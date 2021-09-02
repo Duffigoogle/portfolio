@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import TitleBarLeftTabs from "../Titlebar/TitleBarLeft";
 import TitleBarTitle from "./TitleBarTitle";
-import TitleBarWindowsButton from "./TitlebarWindowsButton";
+// import TitleBarWindowsButton from "./TitlebarWindowsButton";
+import TitleBarWindowsButton from "./TitleBarWindowsButton";
 
 const TitlebarComp = () => {
   return (
