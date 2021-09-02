@@ -57,7 +57,7 @@ const ProjectContainer = styled.div`
   margin: 1% auto 1.8%;
   position: relative;
   transition: all 0.2s;
-  box-shadow: 0px 2px 7px #e0e0e0;
+  box-shadow: 0px 2px 7px lightblue;
 `;
 
 const ProjectBox = styled.div`
@@ -74,13 +74,14 @@ const ProjectDetails = styled.div``;
 const ProjectTitle = styled.h3`
   margin: 0;
   font-size: 1.5rem;
+  /* color: #cf99c2; */
   color: #e0e0e0;
 `;
 
 const ProjectStackSmall = styled.small`
   margin-bottom: 13px;
   font-size: smaller;
-  color: gray;
+  color: #cf99c2;
 `;
 
 const ProjectTextDescription = styled.p`
@@ -97,7 +98,7 @@ const ProjectLink = styled.a`
 
   text-decoration: none;
   margin-right: 0.8rem;
-  color: gray;
+  color: #66c5e0;
 
   .icon {
     margin-left: 8px;
@@ -105,4 +106,6 @@ const ProjectLink = styled.a`
 `;
 const ProjectLinks = styled.div`
   display: flex;
+  /* align-items: center; */
+  /* border: 1px solid red; */
 `;
