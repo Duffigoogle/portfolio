@@ -4,7 +4,7 @@ import SocialsComp from "../Socials/socialComp";
 import Icon from "../common/icons/icons";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
-import { CustomButton } from "../common/Button";
+// import { CustomButton } from "../common/Button";
 
 const AboutComp = () => {
   const { elementRef } = useContext(CalculateHeightContext);
