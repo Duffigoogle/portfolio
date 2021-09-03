@@ -10,12 +10,13 @@ class App extends Component {
             <FlipCardInner className="element">
               <FlipcardFrontandBack>
                 <FlipcardFront>
-                  {
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfvslSVQuzPcCLmMOW4iGsaieZbqM7nXwr8BbI4BiHVQ9XvMb5"
-                      alt="Avatar"
-                    ></img>
-                  }
+                  {/* {
+                    // <img
+                    //   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfvslSVQuzPcCLmMOW4iGsaieZbqM7nXwr8BbI4BiHVQ9XvMb5"
+                    //   alt="Avatar"
+                    // ></img>
+                    // <Image src='' />
+                  } */}
                 </FlipcardFront>
               </FlipcardFrontandBack>
               <FlipcardFrontandBack>
