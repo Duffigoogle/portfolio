@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
 import Image from "next/image";
+import { mediaQueries } from "../common/breakpoints";
 
 const person = {
   First_Name: "Caleb Ini.",
@@ -45,6 +46,7 @@ const Bio = ({
           // boxShadow: "3px 5px 6px #f9f9f9",
           boxShadow: "0 8px 8px -4px lightblue",
           margin: "0 auto",
+
           // maxHeight: "11rem",
           // overflowY: "scroll",
         }}
@@ -83,7 +85,11 @@ const BioComp = () => {
             textColor="#c93339"
           />
           <Bio
-            style={{ bottom: "110px", right: "0", zIndex: "8" }}
+            style={{
+              bottom: "110px",
+              right: "0",
+              zIndex: "8",
+            }}
             text="const hobbies"
             person={hobbies}
             textColor="#66c5e0"
@@ -98,22 +104,29 @@ export default BioComp;
 
 const BioContainer = styled.main`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 100%;
-  padding: 0 1.2rem;
+  /* padding: 0 1rem; */
   /* margin: 1rem auto; */
   background-color: #000;
   height: 100vh;
+
+  ${mediaQueries("laptop")`
+      flex-direction: row-reverse;
+  `}
 `;
+
 const BioContent = styled.div`
   width: 50%;
   height: 100vh;
-  /* border: 1px solid red; */
+  /* border: 1px solid blue; */
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  align-items: baseline; */
   overflow: hidden;
+
+  ${mediaQueries("laptop")`
+      width: 100%;
+      margin: 10px;
+  `}
 `;
 
 const BioImage = styled.div`
@@ -121,6 +134,12 @@ const BioImage = styled.div`
   margin-top: -15px;
   /* border: 1px solid red; */
   position: relative;
+
+  ${mediaQueries("laptop")`
+      // margin-right: -180px;
+      display: none;
+
+  `}
 `;
 
 const StyledObjBox = styled.div`
@@ -131,5 +150,8 @@ const StyledObjBox = styled.div`
     font-size: 1.3rem;
     /* color: orange; */
     color: #ccc;
+  }
+  &:hover {
+    transform: scale(1.1);
   }
 `;

@@ -168,7 +168,7 @@ const AboutHeading1 = styled.h1`
 
 const AboutP = styled.p`
   font-size: 1.3rem;
-  padding-top: 0.2rem;
+  /* padding-top: 0.2rem; */
 
   span {
     font-size: 1.4rem;
@@ -179,8 +179,14 @@ const AboutP = styled.p`
     ${mediaQueries("tablet")`
       font-size: 1rem;
   `}
+    ${mediaQueries("laptop")`
+      font-size: 1.2rem;
+  `}
   }
   ${mediaQueries("tablet")`
+      font-size: 1rem;
+  `}
+  ${mediaQueries("laptop")`
       font-size: 1rem;
   `}
 `;
@@ -197,7 +203,7 @@ const AboutPSmall = styled.p`
 `;
 
 const AboutButtonContainer = styled.div`
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 `;
 
 const WelcomeButton = styled.button`
@@ -216,7 +222,7 @@ const WelcomeButton = styled.button`
   align-items: center;
   justify-content: center;
   /* box-shadow: ; */
-  margin: 5px auto;
+  margin: 0px auto 35px;
   outline: none;
   border: none;
   border-radius: 8px;
