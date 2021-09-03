@@ -4,7 +4,8 @@ import SocialsComp from "../Socials/socialComp";
 import Icon from "../common/icons/icons";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
-// import { CustomButton } from "../common/Button";
+// import { size, device } from "../common/breakpoints";
+import { mediaQueries } from "../common/breakpoints";
 
 const AboutComp = () => {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -12,10 +13,10 @@ const AboutComp = () => {
   return (
     <>
       <AboutContainer ref={elementRef}>
-        <AboutStack>
-          <AboutStackText>Frontend Developer</AboutStackText>
-        </AboutStack>
         <AboutContent>
+          <AboutStack>
+            <AboutStackText>Frontend Developer</AboutStackText>
+          </AboutStack>
           <AboutDetails>
             <AboutHeading4>Hello there, I&apos;m</AboutHeading4>
             <AboutHeading1>
@@ -27,8 +28,8 @@ const AboutComp = () => {
             </AboutP>
             <AboutP>
               {" "}
-              I&apos;m an <span>aesthetics custodian</span> for the web
-              user&apos;s interface and I love{" "}
+              I&apos;m an <span>aesthetics custodian</span> for the
+              web-user&apos;s interface and I love{" "}
               <span>building digital products</span>.
             </AboutP>
             <AboutPSmall>
@@ -37,23 +38,15 @@ const AboutComp = () => {
             </AboutPSmall>
             <SocialsComp />
           </AboutDetails>
-          <AboutButtonContainer>
-            {/* <CustomButton
-              type="primary"
-              size="large"
-              rounded="button-rounded"
-              link="/bio"
-              name="twitter"
-              text="Say Hi"
-            /> */}
-            <Link href="/about" passHref>
-              <WelcomeButton>
-                Click to discover &nbsp;{" "}
-                <Icon name="Arrowrightcircle" size={25} color="#fff" />
-              </WelcomeButton>
-            </Link>
-          </AboutButtonContainer>
         </AboutContent>
+        <AboutButtonContainer>
+          <Link href="/about" passHref>
+            <WelcomeButton>
+              Click to discover &nbsp;{" "}
+              <Icon name="Arrowrightcircle" size={25} color="#fff" />
+            </WelcomeButton>
+          </Link>
+        </AboutButtonContainer>
       </AboutContainer>
     </>
   );
@@ -63,27 +56,40 @@ export default AboutComp;
 
 const AboutContainer = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 6rem;
-  /* border: 1px solid red; */
+  height: calc(100vh - 30px - 39px);
+  border: 1px solid red;
   background-color: #000;
   color: #339989;
-  /* height: 90vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* @media only screen and (${device.tablet}) {
+    margin: 0 10px;
+    background-color: red;
+  } */
 `;
 
 const AboutStack = styled.div`
   width: 35px;
-  height: 350px;
+  height: 345px;
   background-color: #8a9b68;
   border: none;
   box-shadow: 5px 0px 5px rgba(255, 255, 255, 0.4);
-  padding-top: 10px;
+  padding-top: 5px;
   &:hover {
     background-color: whitesmoke;
-    /* border: 1px solid orange; */
     cursor: pointer;
   }
+
+  ${mediaQueries("tablet")`
+      height: 300px;
+  `}
+
+  ${mediaQueries("laptop")`
+      height: 300px;
+  `}
 `;
 
 const AboutStackText = styled.h3`
@@ -94,25 +100,55 @@ const AboutStackText = styled.h3`
   writing-mode: vertical-lr;
   transform: rotate(180deg);
   transition: transform 0.2s;
+
+  ${mediaQueries("tablet")`
+      font-size: 1rem;
+  `}
+  ${mediaQueries("laptop")`
+      font-size: 1rem;
+      letter-spacing: 4px;
+  `}
 `;
 
 const AboutContent = styled.div`
-  /* width: 60rem; */
-  margin-left: 2.5rem;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40rem;
+
+  ${mediaQueries("tablet")`
+      max-width: 28rem;
+  `}
 `;
 
 const AboutDetails = styled.div`
   padding-top: 0.5rem;
-  width: 43rem;
+  border: 1px solid green;
+  margin-left: 30px;
+
+  ${mediaQueries("tablet")`
+      margin-left: 20px;
+  `}
 `;
 
 const AboutHeading4 = styled.h4`
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 3px;
   color: #fff;
+
+  ${mediaQueries("tablet")`
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+  `}
+
+  ${mediaQueries("laptop")`
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+  `}
 `;
 const AboutHeading1 = styled.h1`
   font-weight: 800;
@@ -122,19 +158,29 @@ const AboutHeading1 = styled.h1`
   span {
     /* color: #942727; */
   }
+
+  ${mediaQueries("tablet")`
+      font-size: 3rem;
+  `}
 `;
 
 const AboutP = styled.p`
   font-size: 1.3rem;
-  /* padding-bottom: 0.1rem; */
+  padding-top: 0.2rem;
 
   span {
     font-size: 1.4rem;
     color: #9b7d50;
     font-style: italic;
     letter-spacing: 0.3rem;
-    // underline
+
+    ${mediaQueries("tablet")`
+      font-size: 1rem;
+  `}
   }
+  ${mediaQueries("tablet")`
+      font-size: 1rem;
+  `}
 `;
 
 const AboutPSmall = styled.p`
@@ -142,10 +188,14 @@ const AboutPSmall = styled.p`
   font-style: italic;
   margin-top: 6px;
   color: #cec;
+
+  ${mediaQueries("tablet")`
+      font-size: 0.8rem;
+  `}
 `;
 
 const AboutButtonContainer = styled.div`
-  margin-top: 5rem;
+  margin-top: 1rem;
 `;
 
 const WelcomeButton = styled.button`
@@ -164,7 +214,7 @@ const WelcomeButton = styled.button`
   align-items: center;
   justify-content: center;
   /* box-shadow: ; */
-  margin: 25px auto;
+  margin: 5px auto;
   outline: none;
   border: none;
   border-radius: 8px;
@@ -177,4 +227,11 @@ const WelcomeButton = styled.button`
     color: #fff;
     transform: translateY(-7px);
   }
+
+  ${mediaQueries("tablet")`
+      width: 250px;
+      height: 40px;
+      font-size: 0.9rem;
+      margin: 0;
+  `}
 `;

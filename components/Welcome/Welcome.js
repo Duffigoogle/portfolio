@@ -1,21 +1,24 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Icon from "../common/icons/icons";
+import { device } from "../common/breakpoints";
 
 const WelcomeComp = () => {
   return (
     <>
       <WelcomeCompContainer>
-        <WeclomeHeading1>
-          Welcome <br /> to my <br />
-          <span>Tech-Portfolio</span>
-        </WeclomeHeading1>
-        <Link href="/bio" passHref>
-          <WelcomeButton>
-            Explore with joy &nbsp;{" "}
-            <Icon name="ArrowRightCircleFill" size={25} color="#fff" />
-          </WelcomeButton>
-        </Link>
+        <WelcomeContent>
+          <WeclomeHeading1>
+            Welcome <br /> to my <br />
+            <span>Tech-folio</span>
+          </WeclomeHeading1>
+          <Link href="/bio" passHref>
+            <WelcomeButton>
+              Explore with joy &nbsp;{" "}
+              <Icon name="ArrowRightCircleFill" size={25} color="#fff" />
+            </WelcomeButton>
+          </Link>
+        </WelcomeContent>
       </WelcomeCompContainer>
     </>
   );
@@ -25,11 +28,26 @@ export default WelcomeComp;
 
 // styled components for WelcomeComp
 
-const WelcomeCompContainer = styled.div`
+const WelcomeCompContainer = styled.main`
   background-color: #000;
   width: 100%;
-  padding-top: 7rem;
-  height: 100rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 7rem; */
+  height: calc(100vh - 30px - 39px);
+
+  /* @media ${device.laptop} {
+    max-width: 800px;
+  } */
+`;
+
+const WelcomeContent = styled.div`
+  border: 1px solid red;
+
+  @media only screen and (${device.tablet}) {
+    max-width: 80%;
+  }
 `;
 
 const WeclomeHeading1 = styled.h2`
@@ -62,7 +80,7 @@ const WelcomeButton = styled.button`
   align-items: center;
   justify-content: center;
   /* box-shadow: ; */
-  margin: 60px auto 25px;
+  margin: 40px auto 25px;
   outline: none;
   border: none;
   border-radius: 8px;
