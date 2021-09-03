@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Icon from "../common/icons/icons";
-import { device } from "../common/breakpoints";
+// import { device } from "../common/breakpoints";
 
 const WelcomeComp = () => {
   return (
@@ -44,10 +44,6 @@ const WelcomeCompContainer = styled.main`
 
 const WelcomeContent = styled.div`
   border: 1px solid red;
-
-  @media only screen and (${device.tablet}) {
-    max-width: 80%;
-  }
 `;
 
 const WeclomeHeading1 = styled.h2`
