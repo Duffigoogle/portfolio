@@ -65,10 +65,11 @@ const AboutContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  /* @media only screen and (${device.tablet}) {
-    margin: 0 10px;
-    background-color: red;
-  } */
+  ${mediaQueries("laptop")`
+      display: flex;
+      justify-content: center;
+      // margin-top: 1rem;
+  `}
 `;
 
 const AboutStack = styled.div`
@@ -88,7 +89,7 @@ const AboutStack = styled.div`
   `}
 
   ${mediaQueries("laptop")`
-      height: 300px;
+      height: 265px;
   `}
 `;
 
@@ -116,6 +117,7 @@ const AboutContent = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 40rem;
+  margin-left: 10px;
 
   ${mediaQueries("tablet")`
       max-width: 28rem;
@@ -133,7 +135,7 @@ const AboutDetails = styled.div`
 `;
 
 const AboutHeading4 = styled.h4`
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
