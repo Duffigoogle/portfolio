@@ -10,6 +10,7 @@ import {
   SearchComp,
 } from "../SidebarComps/SidebarComp";
 import { ModalManager } from "../Form/CustomModal";
+import { mediaQueries } from "../common/breakpoints";
 
 const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
   const [modalOne, setModalOne] = useState(false);
@@ -224,4 +225,8 @@ const SideBarContents = styled.div`
   min-width: 11.953rem;
   /* display: ${({ isHidden }) => (isOpenSideBar ? "block" : "none")}; */
   display: ${(props) => (props.visibility ? "block" : "none")};
+
+  ${mediaQueries("mobileM")`
+      display: none;
+  `}
 `;

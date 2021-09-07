@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Icon from "../common/icons/icons";
-// import { device } from "../common/breakpoints";
+import { mediaQueries } from "../common/breakpoints";
 
 const WelcomeComp = () => {
   return (
@@ -51,10 +51,21 @@ const WeclomeHeading1 = styled.h2`
   font-weight: 800;
   font-size: 3rem;
   text-align: center;
+
+  ${mediaQueries("mobileM")`
+      font-weight: 500;
+      font-size: 1.7rem;
+  `}
   span {
     color: orangered;
     font-size: 5rem;
     letter-spacing: 0.4rem;
+
+    ${mediaQueries("mobileM")`
+      font-weight: 600;
+      font-size: 3rem;
+      letter-spacing: 0.2rem;
+  `}
     &:hover {
       color: orangered;
     }
@@ -83,6 +94,14 @@ const WelcomeButton = styled.button`
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
+
+  ${mediaQueries("mobileM")`
+      width: 180px;
+      height: 30px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      margin: 15px 0px;
+  `}
   &:hover {
     background-color: #2ee59d;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);

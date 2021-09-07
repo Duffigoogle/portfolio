@@ -91,6 +91,9 @@ const AboutStack = styled.div`
   ${mediaQueries("laptop")`
       height: 265px;
   `}
+  ${mediaQueries("mobileM")`
+      height: 220px;
+  `}
 `;
 
 const AboutStackText = styled.h3`
@@ -108,6 +111,10 @@ const AboutStackText = styled.h3`
   ${mediaQueries("laptop")`
       font-size: 1rem;
       letter-spacing: 4px;
+  `}
+  ${mediaQueries("mobileM")`
+      font-size: 0.8rem;
+      letter-spacing: 3px;
   `}
 `;
 
@@ -151,18 +158,24 @@ const AboutHeading4 = styled.h4`
       font-size: 0.8rem;
       letter-spacing: 1px;
   `}
+
+  ${mediaQueries("mobileM")`
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+  `}
 `;
 const AboutHeading1 = styled.h1`
   font-weight: 800;
   font-size: 4rem;
   color: #09f755;
 
-  span {
-    /* color: #942727; */
-  }
-
   ${mediaQueries("tablet")`
       font-size: 3rem;
+  `}
+
+  ${mediaQueries("mobileM")`
+      font-size: 1.5rem;
+      font-weight: 800;
   `}
 `;
 
@@ -178,16 +191,22 @@ const AboutP = styled.p`
 
     ${mediaQueries("tablet")`
       font-size: 1rem;
-  `}
+    `}
     ${mediaQueries("laptop")`
       font-size: 1.2rem;
-  `}
+    `}
+    ${mediaQueries("mobileM")`
+      font-size: 0.8rem;
+    `}
   }
   ${mediaQueries("tablet")`
       font-size: 1rem;
   `}
   ${mediaQueries("laptop")`
       font-size: 1rem;
+  `}
+  ${mediaQueries("mobileM")`
+      font-size: 0.8rem;
   `}
 `;
 
@@ -199,6 +218,10 @@ const AboutPSmall = styled.p`
 
   ${mediaQueries("tablet")`
       font-size: 0.8rem;
+  `}
+  ${mediaQueries("mobileM")`
+     font-size: 0.6rem;
+     margin-bottom: 5px;
   `}
 `;
 
@@ -241,5 +264,13 @@ const WelcomeButton = styled.button`
       height: 40px;
       font-size: 0.9rem;
       margin: 0;
+  `}
+
+  ${mediaQueries("mobileM")`
+      width: 180px;
+      height: 30px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      margin: 15px 0px;
   `}
 `;

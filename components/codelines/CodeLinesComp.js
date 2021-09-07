@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
+import { mediaQueries } from "../common/breakpoints";
 
 const CodeLinesComp = () => {
   const pageHeight = useContext(CalculateHeightContext);
@@ -57,6 +58,10 @@ const CodeLinesContainer = styled.aside`
   /* min-height: 55rem; */
   /* height: 100%; */
   height: ${({ pageHeightValue }) => pageHeightValue};
+
+  ${mediaQueries("mobileM")`
+     min-width: 1.8rem;
+  `}
 `;
 
 const TabShowcaseUl = styled.ul`
