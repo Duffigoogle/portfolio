@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Icon from "../common/icons/icons";
+import { mediaQueries } from "../common/breakpoints";
 
 const FooterComp = () => {
   return (
@@ -38,8 +39,8 @@ const FooterComp = () => {
       </FooterLink>
       <RightContent>
         <div>
-          <p>UTF-8</p>&nbsp;&nbsp;&nbsp;&nbsp;
-          <p>CRLF</p>
+          <p>UTF-8</p>&nbsp;&nbsp;&nbsp;
+          {/* <p>CRLF</p> */}
           {/* <Icon name="WatchIcon" size={14} /> */}
         </div>
         <div>
@@ -71,6 +72,11 @@ const FooterLink = styled.a`
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
+  flex-wrap: wrap;
+
+  ${mediaQueries("tablet")`
+      font-size: 0.65rem;
+  `}
 `;
 
 const FooterLogoSpan = styled.span`
@@ -84,11 +90,19 @@ const LeftContent = styled.div`
   align-items: center;
   margin-left: 0.7rem;
 
+  ${mediaQueries("tablet")`
+      margin-left: 0.4rem;
+  `}
+
   div {
     display: flex;
     align-items: center;
     margin-right: 0.9rem;
     padding: 0px 0.5rem;
+
+    ${mediaQueries("tablet")`
+      margin-right: 0.3rem;
+  `}
 
     :hover {
       background-color: rgba(255, 255, 255, 0.5);

@@ -20,13 +20,15 @@
 // };
 
 export const breakpoints = {
-  mobileS: 320,
-  mobileM: 375,
-  mobileL: 425,
-  tablet: 768,
-  laptop: 1024,
-  laptopL: 1440,
-  desktop: 2560,
+  mobileS: 320,   // 320px — Mobile devices
+  mobileM: 375,   // 375px — Mobile devices
+  mobileL: 425,   // 425px - Mobile devices
+  mobileLX: 480,  // 480px Mobile devices
+  tablet: 768,    // 769px — 1024px: Small screens, laptops
+  laptop: 1024,   // 1025px — 1200px: Desktops, large screens
+  laptop: 1201,   // 1201px and more —  Extra large.
+  laptopL: 1440,  //  Extra large screens.
+  desktop: 2560,  // —  Extra large screens, TV.
 };
 
 export const mediaQueries = (key) => {

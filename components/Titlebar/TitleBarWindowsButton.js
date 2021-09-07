@@ -18,7 +18,7 @@ export default TitleBarWindowsButton;
 
 const TitleBarWindowIcons = styled.div`
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   align-items: center;
   justify-content: flex-end;
   height: 30px;

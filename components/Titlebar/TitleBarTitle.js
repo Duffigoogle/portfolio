@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { mediaQueries } from "../common/breakpoints";
 
 const TitleBarTitle = () => {
   return (
     <TitleBarCenter>
-      <TitleBarText>Caleb D. Duff - Visual Studio Code</TitleBarText>
+      <TitleBarText>Visual Studio Code</TitleBarText>
     </TitleBarCenter>
   );
 };
@@ -12,10 +13,14 @@ export default TitleBarTitle;
 
 //styled-components for TITLEBARTITLE
 const TitleBarCenter = styled.div`
-  flex: 1;
+  /* flex: 1; */
   text-align: center;
 `;
 
 const TitleBarText = styled.p`
   font-size: 0.8rem;
+
+  ${mediaQueries("tablet")`
+      font-size: 0.7rem;
+  `}
 `;
