@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { mediaQueries } from "../common/breakpoints";
 
 const StyledInput = styled.input`
   /* border: 1px solid #5d5d5d;  */
@@ -12,6 +13,11 @@ const StyledInput = styled.input`
   ::placeholder {
     font-size: 0.7rem;
   }
+
+  ${mediaQueries("mobileM")`
+    padding: 0.30rem;
+    margin-bottom: 0.60rem;
+  `}
 `;
 
 const StyledForm = styled.form`
@@ -24,6 +30,12 @@ const StyledForm = styled.form`
       return props.error ? "red" : "none";
     }};
   }
+
+  ${mediaQueries("mobileM")`
+        width: 15rem;
+        margin: 0.7rem auto;
+        border: 1px solid green;
+  `}
 `;
 
 const StyledLabel = styled.label`
@@ -32,6 +44,10 @@ const StyledLabel = styled.label`
   font-weight: bold;
   padding-left: 0.25rem;
   letter-spacing: 1px;
+
+  ${mediaQueries("mobileM")`
+    padding-left: 0.35rem;
+  `}
 `;
 
 const StyledTextArea = styled.textarea`

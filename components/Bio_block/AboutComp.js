@@ -92,7 +92,7 @@ const AboutStack = styled.div`
       height: 265px;
   `}
   ${mediaQueries("mobileM")`
-      height: 220px;
+      height: 210px;
   `}
 `;
 
@@ -128,6 +128,9 @@ const AboutContent = styled.div`
 
   ${mediaQueries("tablet")`
       max-width: 28rem;
+  `}
+  ${mediaQueries("mobileM")`
+      margin: 0px 5px;
   `}
 `;
 
@@ -196,7 +199,7 @@ const AboutP = styled.p`
       font-size: 1.2rem;
     `}
     ${mediaQueries("mobileM")`
-      font-size: 0.8rem;
+      font-size: 0.7rem;
     `}
   }
   ${mediaQueries("tablet")`

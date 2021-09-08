@@ -6,6 +6,7 @@ import { PageLayout } from "../components/Layout/PageLayout";
 import styled from "styled-components";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
+import { mediaQueries } from "../components/common/breakpoints";
 
 export default function ContactPage() {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -52,6 +53,11 @@ const StyledDiv = styled.div`
   background-color: #000;
   /* height: 100%; */
   height: 80vh;
+
+  ${mediaQueries("mobileM")`
+      display: block;
+      height: 100vh;
+  `}
 `;
 
 const StyledSection = styled.section`
@@ -59,11 +65,22 @@ const StyledSection = styled.section`
   /* border: 1px solid; */
   padding: 0.7rem;
 
+  ${mediaQueries("mobileM")`
+        margin: 5px 0px;
+        text-align: center;
+  `}
+
   h2 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #d9dddc;
     letter-spacing: 3px;
+
+    ${mediaQueries("mobileM")`
+        font-size: 1.7rem;
+        color: green;
+        letter-spacing: 2px;
+  `}
   }
 
   p {

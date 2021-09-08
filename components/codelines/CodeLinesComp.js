@@ -73,5 +73,10 @@ const TabShowcaseUl = styled.ul`
     margin: 0;
     line-height: 1.2rem;
     font-size: 0.7rem;
+
+    ${mediaQueries("mobileM")`
+      line-height: 1.2rem;
+      font-size: 0.6rem;
+    `}
   }
 `;
