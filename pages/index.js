@@ -46,6 +46,6 @@ const StyledDiv = styled.div`
   background-color: #bfbfbf;
 
   ${mediaQueries("mobileM")`
-      // height: 100rem;
+      height: 100vh;
   `}
 `;

@@ -46,9 +46,6 @@ const Bio = ({
           // boxShadow: "3px 5px 6px #f9f9f9",
           boxShadow: "0 8px 8px -4px lightblue",
           margin: "0 auto",
-
-          // maxHeight: "11rem",
-          // overflowY: "scroll",
         }}
       >
         <span>{text} = </span>
@@ -101,6 +98,33 @@ const BioComp = () => {
 };
 
 export default BioComp;
+
+const BioCompMobile = () => {
+  const { elementRef } = useContext(CalculateHeightContext);
+
+  return (
+    <>
+      <BioContainer ref={elementRef}>
+        <BioImage>
+          <Image
+            src={require("../../public/img/potrait.png")}
+            alt="sketch coloured portrait"
+            intrinsic
+          />
+        </BioImage>
+        <BioContent>
+          <Bio text="const person" person={person} textColor="#cf99c2" />
+          <Bio
+            text="const personalSkills"
+            person={personal_skills}
+            textColor="#c93339"
+          />
+          <Bio text="const hobbies" person={hobbies} textColor="#66c5e0" />
+        </BioContent>
+      </BioContainer>
+    </>
+  );
+};
 
 const BioContainer = styled.main`
   display: flex;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Icon from "../common/icons/icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { mediaQueries } from "../common/breakpoints";
 
 const WelcomeTaskbarComp = () => {
   const router = useRouter();
@@ -49,7 +50,6 @@ const WelcomeTaskbarComp = () => {
 export default WelcomeTaskbarComp;
 
 const TabsTaskbarContainer = styled.nav`
-  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   background-color: #999999;
@@ -65,11 +65,20 @@ const TabBox = styled.div`
   border-bottom: ${({ isCurrentPath }) =>
     isCurrentPath ? "2px solid orange" : ""};
   color: ${({ isCurrentPath }) => (isCurrentPath ? "orange" : "#000")};
+
+  ${mediaQueries("mobileM")`
+      padding: 0.25rem 1.25rem;  
+      border-right: 1px solid #000;
+    `}
 `;
 
 const TabFileName = styled.p`
   font-size: 1rem;
   padding-left: 5px;
+
+  ${mediaQueries("mobileM")`
+      font-size: 0.7rem;
+  `}
 `;
 
 const TabsCollection = styled.label`

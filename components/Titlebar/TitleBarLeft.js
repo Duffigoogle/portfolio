@@ -68,7 +68,7 @@ const StyledBurger = styled.div`
   width: 1.5rem;
   height: 1.5rem;
   position: fixed;
-  top: 5px;
+  top: 3px;
   left: 50px;
   z-index: 23;
   display: none;
@@ -129,7 +129,7 @@ const NavMenuDiv = styled.div`
     background-color: #0D2538;
     top: 0;
     left: 0;
-    height: 65vh;
+    height: 68vh;
     width: 85px;
     padding-top: 3rem;
     padding-left: 0.5rem;
@@ -144,7 +144,14 @@ const UL = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   li {
-    padding: 6px 0px;
+    padding: 6px 5px;
+    cursor: pointer;
+    /* background-color: #000; */
+
+    :hover {
+      background-color: #cec;
+      border-bottom: 1px solid #fff;
+    }
   }
 
   ${mediaQueries("mobileLX")`

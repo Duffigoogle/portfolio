@@ -34,12 +34,11 @@ const WelcomeCompContainer = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding-top: 7rem; */
-  height: calc(100vh - 30px - 39px);
+  /* height: calc(100vh - 30px - 39px); */
 
-  /* @media ${device.laptop} {
-    max-width: 800px;
-  } */
+  /* ${mediaQueries("mobileM")`
+    height: calc(100vh - 30px - 39px);
+  `} */
 `;
 
 const WelcomeContent = styled.div`
@@ -100,7 +99,7 @@ const WelcomeButton = styled.button`
       height: 30px;
       font-size: 0.7rem;
       letter-spacing: 1px;
-      margin: 15px auto 0px;
+      margin: 25px auto 0px;
   `}
   &:hover {
     background-color: #2ee59d;

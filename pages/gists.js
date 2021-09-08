@@ -5,6 +5,7 @@ import { PageLayout } from "../components/Layout/PageLayout";
 import styled from "styled-components";
 import { CalculateHeightContext } from "../context/index";
 import { useContext } from "react";
+import { mediaQueries } from "../components/common/breakpoints";
 
 export default function GistsPage() {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -47,11 +48,20 @@ const GistsContainer = styled.main`
       font-size: 6rem;
       font-weight: 500;
       color: #bfbfbf;
+
+      ${mediaQueries("mobileM")`
+        font-size: 3.2rem;
+        font-weight: 500;
+      `}
     }
     p {
       font-size: 2rem;
       text-align: center;
       color: #942727;
+
+      ${mediaQueries("mobileM")`
+        font-size: 1.4rem;
+      `}
     }
   }
 `;

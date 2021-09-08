@@ -53,9 +53,9 @@ export default function ProjectSchema({
 //styled components for ProjectSchema
 
 const ProjectContainer = styled.div`
-  width: 70%;
+  width: 80%;
   background-color: #16161a;
-  margin: 1% auto 1.8%;
+  margin: 1% auto 5%;
   position: relative;
   transition: all 0.2s;
   box-shadow: 0px 2px 7px lightblue;
@@ -68,6 +68,8 @@ const ProjectBox = styled.div`
   flex-grow: 1;
   justify-content: space-between;
   cursor: default;
+  /* border-radius: 10px; */
+  /* background-color: red; */
 `;
 
 const ProjectDetails = styled.div``;
