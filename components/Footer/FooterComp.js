@@ -77,6 +77,9 @@ const FooterLink = styled.a`
   ${mediaQueries("tablet")`
       font-size: 0.65rem;
   `}
+  ${mediaQueries("mobileM")`
+        display: none;
+  `}
 `;
 
 const FooterLogoSpan = styled.span`
@@ -93,6 +96,9 @@ const LeftContent = styled.div`
   ${mediaQueries("tablet")`
       margin-left: 0.4rem;
   `}
+  ${mediaQueries("mobileM")`
+        margin-left: 0.1rem;
+  `}
 
   div {
     display: flex;
@@ -102,7 +108,10 @@ const LeftContent = styled.div`
 
     ${mediaQueries("tablet")`
       margin-right: 0.3rem;
-  `}
+    `}
+    ${mediaQueries("mobileM")`
+        margin-right: 0.1rem;
+    `}
 
     :hover {
       background-color: rgba(255, 255, 255, 0.5);
@@ -126,6 +135,10 @@ const RightContent = styled.div`
     display: flex;
     align-items: center;
     margin-left: 1rem;
+
+    ${mediaQueries("mobileM")`
+        margin-left: 0.5rem;
+  `}
 
     p {
       font-size: 0.7rem;

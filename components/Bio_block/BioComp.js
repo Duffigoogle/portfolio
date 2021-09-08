@@ -32,7 +32,7 @@ const Bio = ({
   text,
   person,
   replacer = null,
-  space = 4,
+  space = 2,
   textColor,
 }) => {
   return (
@@ -104,12 +104,9 @@ export default BioComp;
 
 const BioContainer = styled.main`
   display: flex;
-  /* justify-content: space-between; */
   width: 100%;
-  /* padding: 0 1rem; */
-  /* margin: 1rem auto; */
   background-color: #000;
-  height: 100vh;
+  /* height: 100vh; */
 
   ${mediaQueries("laptop")`
       flex-direction: row-reverse;
@@ -119,13 +116,18 @@ const BioContainer = styled.main`
 const BioContent = styled.div`
   width: 50%;
   height: 100vh;
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 
   ${mediaQueries("laptop")`
       width: 100%;
       margin: 10px;
+  `}
+  ${mediaQueries("mobileM")`
+      min-height: 100vh;
+      margin: 5px;
+
   `}
 `;
 
@@ -150,6 +152,11 @@ const StyledObjBox = styled.div`
     font-size: 1.3rem;
     /* color: orange; */
     color: #ccc;
+
+    ${mediaQueries("mobileM")`
+      font-size: 1rem;
+      margin-top: 8px;
+  `}
   }
   &:hover {
     transform: scale(1.1);

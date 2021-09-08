@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "../common/icons/icons";
 import styled from "styled-components";
+import { mediaQueries } from "../common/breakpoints";
 
 export default function ProjectSchema({
   id,
@@ -74,8 +75,13 @@ const ProjectDetails = styled.div``;
 const ProjectTitle = styled.h3`
   margin: 0;
   font-size: 1.5rem;
-  /* color: #cf99c2; */
   color: #e0e0e0;
+
+  ${mediaQueries("mobileM")`
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+  `}
 `;
 
 const ProjectStackSmall = styled.small`

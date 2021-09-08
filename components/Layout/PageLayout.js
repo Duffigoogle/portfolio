@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mediaQueries } from "../common/breakpoints";
 
 export const PageLayout = ({ children }) => {
   //   let box = document.getElementsByClassName(".box");
@@ -13,10 +14,6 @@ export const PageLayout = ({ children }) => {
   // return <StyledPageLayout className="box">{children}</StyledPageLayout>;
 };
 
-// .attrs((props) => ({
-//   className: props.className,
-// }))
-
 export const StyledPageLayout = styled.main`
   width: 100%;
   display: flex;
@@ -24,6 +21,10 @@ export const StyledPageLayout = styled.main`
   /* height: auto; */
   overflow-y: auto;
   background-color: #616161;
+
+  ${mediaQueries("mobileM")`
+     min-width: 300px;
+  `}
 
   /* width */ //the scrollbar
   ::-webkit-scrollbar {
