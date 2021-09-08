@@ -1,5 +1,6 @@
 import Icon from "../common/icons/icons";
 import styled from "styled-components";
+import { mediaQueries } from "../common/breakpoints";
 
 const FilepathComp = ({
   rootpath,
@@ -41,6 +42,10 @@ const StyledDiv = styled.div`
   display: flex;
   height: 3vh;
   padding-left: 15px;
+
+  ${mediaQueries("mobileM")`
+        padding: 8px 7px;
+  `}
 `;
 
 const StyledSpan = styled.span`
@@ -48,7 +53,10 @@ const StyledSpan = styled.span`
   align-items: center;
   font-size: 0.8rem;
   color: #ebe9ec;
-  /* padding-bottom: 0; */
+
+  ${mediaQueries("mobileM")`
+      font-size: 0.6rem;
+  `}
 
   span {
     padding-bottom: 3px;

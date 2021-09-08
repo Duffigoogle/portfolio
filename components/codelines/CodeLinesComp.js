@@ -20,7 +20,6 @@ const CodeLinesComp = () => {
       .map((_, idx) => start + idx);
   }
 
-  // const b = 29;
   const numbers = range(1, pageLineHeight);
 
   // const pageContainerHeight = calc((window.document.innerHeight) - 60px)
@@ -54,13 +53,13 @@ const CodeLinesContainer = styled.aside`
   /* border: 2px solid purple; */
   background-color: #757575;
   width: 3.44rem;
-  min-width: 3.44rem;
+  /* min-width: 3.44rem; */
   /* min-height: 55rem; */
   /* height: 100%; */
   height: ${({ pageHeightValue }) => pageHeightValue};
 
   ${mediaQueries("mobileM")`
-     min-width: 1.8rem;
+     width: 2rem;
   `}
 `;
 

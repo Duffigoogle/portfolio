@@ -7,7 +7,7 @@ import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import WelcomeComp from "../components/Welcome/Welcome";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
-// import FilepathComp from '../components/filepath/Filepath';
+import { mediaQueries } from "../components/common/breakpoints";
 
 export default function Home() {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -44,4 +44,8 @@ const StyledDiv = styled.div`
   width: 100%;
   display: flex;
   background-color: #bfbfbf;
+
+  ${mediaQueries("mobileM")`
+      // height: 100rem;
+  `}
 `;

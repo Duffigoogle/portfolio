@@ -191,18 +191,22 @@ export default AsideComp;
 const SideBarContainer = styled.aside`
   display: flex;
   background-color: #848484;
-  /* max-width: calc(14vw + 3vw); */
-  /* min-width: calc(11.953rem + 2.561rem); */
-  min-height: calc(100vh - 1.875rem - 1.4rem);
+  /* min-height: calc(100vh - 1.875rem - 1.4rem); */
+  /* height: calc(100vh - 1.875rem - 1.4rem); */
 `;
 
 const SideBarTabs = styled.div`
   width: 2.561rem;
-  min-width: 2.561rem;
+  /* min-width: 2.561rem; */
   height: calc(100vh - 1.875rem - 1.4rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ${mediaQueries("mobileM")`
+      width: 2rem;
+      align-items: center;
+  `}
 `;
 
 const TopSideBarTabs = styled.div`

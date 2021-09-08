@@ -68,7 +68,7 @@ const AboutContainer = styled.div`
   ${mediaQueries("laptop")`
       display: flex;
       justify-content: center;
-      // margin-top: 1rem;
+      height: 100%;
   `}
 `;
 

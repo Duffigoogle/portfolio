@@ -2,6 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import Icon from "../common/icons/icons";
 import { useRouter } from "next/router";
+import { mediaQueries } from "../common/breakpoints";
 
 const TabSchema = ({ filepath, Icon_name, file_name }) => {
   const router = useRouter();
@@ -36,12 +37,20 @@ const TabBox = styled.div`
         background-color: #5d5d5d;
         color: #fff;
     } */
+  ${mediaQueries("mobileM")`
+      padding: 0.25rem 1.25rem;  
+      border-right: 1px solid #000;
+    `}
 `;
 
 const TabFileName = styled.p`
   font-size: 1rem;
   padding-left: 5px;
   color: ${({ isCurrentPath }) => (isCurrentPath ? "orange" : "#000")};
+
+  ${mediaQueries("mobileM")`
+      font-size: 0.7rem;
+  `}
 `;
 
 // <ul>

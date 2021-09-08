@@ -100,7 +100,7 @@ const WelcomeButton = styled.button`
       height: 30px;
       font-size: 0.7rem;
       letter-spacing: 1px;
-      margin: 15px 0px;
+      margin: 15px auto 0px;
   `}
   &:hover {
     background-color: #2ee59d;

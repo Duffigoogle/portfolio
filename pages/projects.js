@@ -8,6 +8,7 @@ import DisplayAreaLayoutComp from "../components/Layout/DisplayAreaLayout";
 import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import { PageLayout } from "../components/Layout/PageLayout";
 import styled from "styled-components";
+import { mediaQueries } from "../components/common/breakpoints";
 
 export default function ProjectPage() {
   return (
@@ -27,13 +28,11 @@ export default function ProjectPage() {
         <StyledMain>
           <PageLayout>
             <CodeLinesComp />
-            {/* <ProjectComp /> */}
             <ProjectCollectionOne />
           </PageLayout>
 
           <PageLayout>
             <CodeLinesComp />
-            {/* <ProjectComp /> */}
             <ProjectCollectionTwo />
           </PageLayout>
         </StyledMain>
@@ -44,4 +43,11 @@ export default function ProjectPage() {
 
 const StyledMain = styled.main`
   display: flex;
+
+  ${mediaQueries("mobileL")`
+      flex-direction: column;
+  `}
+  ${mediaQueries("mobileM")`
+      flex-direction: column;
+  `}
 `;
