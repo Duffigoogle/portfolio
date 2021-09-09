@@ -124,13 +124,15 @@ const BioMobileContainer = styled.main`
   /* align-items: space-between; */
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
   border: 1px solid purple;
+
+  ${mediaQueries("mobileM")`
+      flex-direction: column;
+  `}
 
   ${mediaQueries("mobileS")`
       flex-direction: column;
-      background-color: #000;
-
   `}
 `;
 const BioContainer = styled.main`
@@ -141,6 +143,9 @@ const BioContainer = styled.main`
 
   ${mediaQueries("laptop")`
       flex-direction: row-reverse;
+  `}
+  ${mediaQueries("mobileM")`
+      display: none;
   `}
   ${mediaQueries("mobileS")`
       display: none;
@@ -161,7 +166,6 @@ const BioContent = styled.div`
   ${mediaQueries("mobileM")`
       min-height: 100vh;
       margin: 5px;
-
   `}
 `;
 
@@ -182,12 +186,19 @@ const StyledObjBox = styled.div`
   position: absolute;
 
   pre {
+    ${mediaQueries("mobileM")`
+      font-size: 0.8rem;
+      width: 16rem;
+  `}
     ${mediaQueries("mobileS")`
       font-size: 0.7rem;
       width: 14.5rem;
   `}
   }
 
+  ${mediaQueries("mobileM")`
+      position: static;
+  `}
   ${mediaQueries("mobileS")`
       position: static;
   `}
@@ -198,9 +209,9 @@ const StyledObjBox = styled.div`
     color: #ccc;
 
     ${mediaQueries("mobileM")`
-      font-size: 1rem;
-      margin-top: 8px;
+      font-size: 0.9rem;
     `}
+
     ${mediaQueries("mobileS")`
         font-weight: bold;
         font-size: 0.8rem;
