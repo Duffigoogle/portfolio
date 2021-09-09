@@ -53,7 +53,7 @@ export default function ProjectSchema({
 //styled components for ProjectSchema
 
 const ProjectContainer = styled.div`
-  width: 80%;
+  width: 78%;
   background-color: #16161a;
   margin: 1% auto 5%;
   position: relative;

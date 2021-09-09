@@ -56,7 +56,8 @@ export default AboutComp;
 
 const AboutContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 30px - 39px);
+  /* height: calc(100vh - 30px - 39px); */
+  height: 100%;
   border: 1px solid red;
   background-color: #000;
   color: #339989;
@@ -93,6 +94,9 @@ const AboutStack = styled.div`
   `}
   ${mediaQueries("mobileM")`
       height: 210px;
+  `}
+  ${mediaQueries("mobileS")`
+      box-shadow: 3px 0px 5px rgba(255, 255, 255, 0.4);
   `}
 `;
 
@@ -132,6 +136,9 @@ const AboutContent = styled.div`
   ${mediaQueries("mobileM")`
       margin: 0px 5px;
   `}
+  ${mediaQueries("mobileS")`
+      margin: 0px 2px;
+  `}
 `;
 
 const AboutDetails = styled.div`
@@ -141,6 +148,9 @@ const AboutDetails = styled.div`
 
   ${mediaQueries("tablet")`
       margin-left: 20px;
+  `}
+  ${mediaQueries("mobileS")`
+      margin-left: 12px;
   `}
 `;
 
@@ -275,5 +285,9 @@ const WelcomeButton = styled.button`
       font-size: 0.7rem;
       letter-spacing: 1px;
       margin: 15px 0px;
+  `}
+
+  ${mediaQueries("mobileS")`
+      margin: 10px 0px;
   `}
 `;

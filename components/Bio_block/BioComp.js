@@ -45,7 +45,7 @@ const Bio = ({
           borderRadius: "5px 5px 5px 5px",
           // boxShadow: "3px 5px 6px #f9f9f9",
           boxShadow: "0 8px 8px -4px lightblue",
-          margin: "0 auto",
+          margin: "5px auto",
         }}
       >
         <span>{text} = </span>
@@ -93,6 +93,7 @@ const BioComp = () => {
           />
         </BioContent>
       </BioContainer>
+      <BioCompMobile />
     </>
   );
 };
@@ -104,28 +105,34 @@ const BioCompMobile = () => {
 
   return (
     <>
-      <BioContainer ref={elementRef}>
-        <BioImage>
-          <Image
-            src={require("../../public/img/potrait.png")}
-            alt="sketch coloured portrait"
-            intrinsic
-          />
-        </BioImage>
-        <BioContent>
-          <Bio text="const person" person={person} textColor="#cf99c2" />
-          <Bio
-            text="const personalSkills"
-            person={personal_skills}
-            textColor="#c93339"
-          />
-          <Bio text="const hobbies" person={hobbies} textColor="#66c5e0" />
-        </BioContent>
-      </BioContainer>
+      <BioMobileContainer ref={elementRef}>
+        <Bio text="const person" person={person} textColor="#cf99c2" />
+        <Bio
+          text="const personalSkills"
+          person={personal_skills}
+          textColor="#c93339"
+        />
+        <Bio text="const hobbies" person={hobbies} textColor="#66c5e0" />
+      </BioMobileContainer>
     </>
   );
 };
 
+const BioMobileContainer = styled.main`
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: space-between; */
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid purple;
+
+  ${mediaQueries("mobileS")`
+      flex-direction: column;
+      background-color: #000;
+
+  `}
+`;
 const BioContainer = styled.main`
   display: flex;
   width: 100%;
@@ -134,6 +141,9 @@ const BioContainer = styled.main`
 
   ${mediaQueries("laptop")`
       flex-direction: row-reverse;
+  `}
+  ${mediaQueries("mobileS")`
+      display: none;
   `}
 `;
 
@@ -171,6 +181,16 @@ const BioImage = styled.div`
 const StyledObjBox = styled.div`
   position: absolute;
 
+  pre {
+    ${mediaQueries("mobileS")`
+      font-size: 0.7rem;
+      width: 14.5rem;
+  `}
+  }
+
+  ${mediaQueries("mobileS")`
+      position: static;
+  `}
   span {
     font-weight: bold;
     font-size: 1.3rem;
@@ -180,7 +200,11 @@ const StyledObjBox = styled.div`
     ${mediaQueries("mobileM")`
       font-size: 1rem;
       margin-top: 8px;
-  `}
+    `}
+    ${mediaQueries("mobileS")`
+        font-weight: bold;
+        font-size: 0.8rem;
+    `}
   }
   &:hover {
     transform: scale(1.1);

@@ -80,7 +80,10 @@ const StyledSection = styled.section`
         font-size: 1.7rem;
         color: green;
         letter-spacing: 2px;
-  `}
+    `}
+    ${mediaQueries("mobileS")`
+        font-size: 1.5rem;
+    `}
   }
 
   p {
@@ -88,5 +91,9 @@ const StyledSection = styled.section`
     letter-spacing: 1.3px;
     color: #eee;
     padding-left: 5px;
+
+    ${mediaQueries("mobileS")`
+        font-size: 0.8rem;
+    `}
   }
 `;

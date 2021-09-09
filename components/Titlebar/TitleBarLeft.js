@@ -69,7 +69,7 @@ const StyledBurger = styled.div`
   height: 1.5rem;
   position: fixed;
   top: 3px;
-  left: 50px;
+  left: 45px;
   z-index: 23;
   display: none;
 
@@ -77,6 +77,10 @@ const StyledBurger = styled.div`
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
+  `}
+
+  ${mediaQueries("mobileS")`
+     left: 32px;
   `}
 
   div {

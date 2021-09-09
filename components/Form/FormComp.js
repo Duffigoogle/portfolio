@@ -36,6 +36,10 @@ const StyledForm = styled.form`
         margin: 0.7rem auto;
         border: 1px solid green;
   `}
+  ${mediaQueries("mobileS")`
+        width: 14rem;
+        margin: 0.7rem auto;
+  `}
 `;
 
 const StyledLabel = styled.label`
@@ -47,6 +51,9 @@ const StyledLabel = styled.label`
 
   ${mediaQueries("mobileM")`
     padding-left: 0.35rem;
+  `}
+  ${mediaQueries("mobileS")`
+    font-size: 0.87rem;
   `}
 `;
 

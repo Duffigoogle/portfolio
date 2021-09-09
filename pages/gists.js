@@ -53,6 +53,10 @@ const GistsContainer = styled.main`
         font-size: 3.2rem;
         font-weight: 500;
       `}
+
+      ${mediaQueries("mobileS")`
+        font-size: 2.7rem;
+      `}
     }
     p {
       font-size: 2rem;
@@ -61,6 +65,10 @@ const GistsContainer = styled.main`
 
       ${mediaQueries("mobileM")`
         font-size: 1.4rem;
+      `}
+
+      ${mediaQueries("mobileS")`
+        font-size: 1.2rem;
       `}
     }
   }
