@@ -37,6 +37,10 @@ const TabBox = styled.div`
         background-color: #5d5d5d;
         color: #fff;
     } */
+  ${mediaQueries("mobileLX")`
+      padding: 0.25rem 1.28rem;  
+      border-right: 1px solid #000;
+    `}
   ${mediaQueries("mobileM")`
       padding: 0.25rem 1.25rem;  
       border-right: 1px solid #000;
@@ -48,16 +52,10 @@ const TabFileName = styled.p`
   padding-left: 5px;
   color: ${({ isCurrentPath }) => (isCurrentPath ? "orange" : "#000")};
 
+  ${mediaQueries("mobileLX")`
+      font-size: 0.8rem;
+  `}
   ${mediaQueries("mobileM")`
       font-size: 0.7rem;
   `}
 `;
-
-// <ul>
-//       <li className={router.pathname == "/" ? "active" : ""}>
-//         <Link href="/">home</Link>
-//       </li>
-//       <li className={router.pathname == "/about" ? "active" : ""}>
-//         <Link href="/about">about</Link>
-//       </li>
-// </ul>

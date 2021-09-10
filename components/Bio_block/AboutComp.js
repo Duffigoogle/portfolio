@@ -85,12 +85,16 @@ const AboutStack = styled.div`
     cursor: pointer;
   }
 
+  ${mediaQueries("laptop")`
+      height: 265px;
+  `}
+
   ${mediaQueries("tablet")`
       height: 300px;
   `}
 
-  ${mediaQueries("laptop")`
-      height: 265px;
+  ${mediaQueries("mobileLX")`
+      height: 250px;
   `}
   ${mediaQueries("mobileM")`
       height: 210px;
@@ -109,12 +113,15 @@ const AboutStackText = styled.h3`
   transform: rotate(180deg);
   transition: transform 0.2s;
 
-  ${mediaQueries("tablet")`
-      font-size: 1rem;
-  `}
   ${mediaQueries("laptop")`
       font-size: 1rem;
       letter-spacing: 4px;
+  `}
+  ${mediaQueries("tablet")`
+      font-size: 1rem;
+  `}
+  ${mediaQueries("mobileLX")`
+      font-size: 0.9rem;
   `}
   ${mediaQueries("mobileM")`
       font-size: 0.8rem;
@@ -128,7 +135,7 @@ const AboutContent = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 40rem;
-  margin-left: 10px;
+  margin: 0 10px;
 
   ${mediaQueries("tablet")`
       max-width: 28rem;
@@ -162,12 +169,12 @@ const AboutHeading4 = styled.h4`
   letter-spacing: 3px;
   color: #fff;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries("laptop")`
       font-size: 0.8rem;
       letter-spacing: 1px;
   `}
 
-  ${mediaQueries("laptop")`
+  ${mediaQueries("tablet")`
       font-size: 0.8rem;
       letter-spacing: 1px;
   `}
@@ -186,41 +193,50 @@ const AboutHeading1 = styled.h1`
       font-size: 3rem;
   `}
 
+  ${mediaQueries("mobileLX")`
+      font-size: 2.2rem;
+  `}
+
   ${mediaQueries("mobileM")`
       font-size: 1.5rem;
-      font-weight: 800;
   `}
 `;
 
 const AboutP = styled.p`
   font-size: 1.3rem;
-  /* padding-top: 0.2rem; */
+  margin-bottom: 8px;
 
+  ${mediaQueries("laptop")`
+      font-size: 1rem;
+  `}
+  ${mediaQueries("tablet")`
+      font-size: 1rem;
+  `}
+  ${mediaQueries("mobileM")`
+      font-size: 0.8rem;
+  `}
+  
   span {
     font-size: 1.4rem;
     color: #9b7d50;
     font-style: italic;
     letter-spacing: 0.3rem;
 
+    ${mediaQueries("laptop")`
+      font-size: 1.2rem;
+    `}
+
     ${mediaQueries("tablet")`
       font-size: 1rem;
     `}
-    ${mediaQueries("laptop")`
-      font-size: 1.2rem;
+    
+    ${mediaQueries("mobileLX")`
+      font-size: 0.85rem;
     `}
     ${mediaQueries("mobileM")`
       font-size: 0.7rem;
     `}
   }
-  ${mediaQueries("tablet")`
-      font-size: 1rem;
-  `}
-  ${mediaQueries("laptop")`
-      font-size: 1rem;
-  `}
-  ${mediaQueries("mobileM")`
-      font-size: 0.8rem;
-  `}
 `;
 
 const AboutPSmall = styled.p`
@@ -231,6 +247,9 @@ const AboutPSmall = styled.p`
 
   ${mediaQueries("tablet")`
       font-size: 0.8rem;
+  `}
+  ${mediaQueries("mobileLX")`
+     font-size: 0.7rem;
   `}
   ${mediaQueries("mobileM")`
      font-size: 0.6rem;
@@ -279,6 +298,13 @@ const WelcomeButton = styled.button`
       margin: 0;
   `}
 
+  ${mediaQueries("mobileLX")`
+      width: 200px;
+      height: 35px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      margin: 15px 0px;
+  `}
   ${mediaQueries("mobileM")`
       width: 180px;
       height: 30px;

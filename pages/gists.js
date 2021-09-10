@@ -49,9 +49,13 @@ const GistsContainer = styled.main`
       font-weight: 500;
       color: #bfbfbf;
 
+      ${mediaQueries("mobileLX")`
+        font-size: 3.5rem;
+       
+      `}
       ${mediaQueries("mobileM")`
         font-size: 3.2rem;
-        font-weight: 500;
+       
       `}
 
       ${mediaQueries("mobileS")`
@@ -63,6 +67,9 @@ const GistsContainer = styled.main`
       text-align: center;
       color: #942727;
 
+      ${mediaQueries("mobileLX")`
+        font-size: 1.6rem;
+      `}
       ${mediaQueries("mobileM")`
         font-size: 1.4rem;
       `}

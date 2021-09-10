@@ -31,11 +31,7 @@ const FooterComp = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by{" "}
-        <FooterLogoSpan>
-          NEXTjs
-          {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={15} /> */}
-        </FooterLogoSpan>
+        Powered by <FooterLogoSpan>NEXTjs</FooterLogoSpan>
       </FooterLink>
       <RightContent>
         <div>
@@ -77,6 +73,9 @@ const FooterLink = styled.a`
   ${mediaQueries("tablet")`
       font-size: 0.65rem;
   `}
+  ${mediaQueries("mobileLX")`
+      display: none;
+  `}
   ${mediaQueries("mobileM")`
         display: none;
   `}
@@ -96,6 +95,7 @@ const LeftContent = styled.div`
   ${mediaQueries("tablet")`
       margin-left: 0.4rem;
   `}
+
   ${mediaQueries("mobileM")`
         margin-left: 0.1rem;
   `}

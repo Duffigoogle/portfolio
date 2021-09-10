@@ -43,6 +43,9 @@ const StyledDiv = styled.div`
   height: 3vh;
   padding-left: 15px;
 
+  ${mediaQueries("mobileLX")`
+        padding: 8px 13px;
+  `}
   ${mediaQueries("mobileM")`
         padding: 8px 7px;
   `}
@@ -54,6 +57,9 @@ const StyledSpan = styled.span`
   font-size: 0.8rem;
   color: #ebe9ec;
 
+  ${mediaQueries("mobileLX")`
+      font-size: 0.63rem;
+  `}
   ${mediaQueries("mobileM")`
       font-size: 0.6rem;
   `}

@@ -11,7 +11,7 @@ const StyledInput = styled.input`
   outline: none;
 
   ::placeholder {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   ${mediaQueries("mobileM")`
@@ -31,6 +31,11 @@ const StyledForm = styled.form`
     }};
   }
 
+  ${mediaQueries("mobileLX")`
+        width: 17rem;
+        margin: 0.7rem auto;
+        border: 1px solid green;
+  `}
   ${mediaQueries("mobileM")`
         width: 15rem;
         margin: 0.7rem auto;
@@ -49,6 +54,10 @@ const StyledLabel = styled.label`
   padding-left: 0.25rem;
   letter-spacing: 1px;
 
+  ${mediaQueries("mobileLX")`
+    padding-left: 0.45rem;
+    font-size: 0.95rem;
+  `}
   ${mediaQueries("mobileM")`
     padding-left: 0.35rem;
   `}

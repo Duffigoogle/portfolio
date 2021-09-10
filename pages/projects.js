@@ -44,6 +44,12 @@ export default function ProjectPage() {
 const StyledMain = styled.main`
   display: flex;
 
+  ${mediaQueries("mobileLX")`
+      flex-direction: row;
+      overflow-x: scroll;
+
+
+  `}
   ${mediaQueries("mobileL")`
       flex-direction: column;
   `}
@@ -85,5 +91,5 @@ const StyledMain = styled.main`
         ::-webkit-scrollbar-thumb:hover {
           background: #555;
         }
-        `}
+      `}
 `;

@@ -44,7 +44,6 @@ const CodeLinesComp = () => {
 export default CodeLinesComp;
 
 // ListItem(li) component
-
 function ListItem(props) {
   return <li> {props.value} </li>;
 }
@@ -52,14 +51,16 @@ function ListItem(props) {
 const CodeLinesContainer = styled.aside`
   /* border: 2px solid purple; */
   background-color: #757575;
-  width: 3.44rem;
+  min-width: 3.44rem;
   /* min-width: 3.44rem; */
-  /* min-height: 55rem; */
   /* height: 100%; */
   height: ${({ pageHeightValue }) => pageHeightValue};
 
+  ${mediaQueries("mobileLX")`
+     min-width: 2.3rem;
+  `}
   ${mediaQueries("mobileM")`
-     width: 2rem;
+     min-width: 2rem;
   `}
 `;
 

@@ -59,6 +59,7 @@ const ProjectContainer = styled.div`
   position: relative;
   transition: all 0.2s;
   box-shadow: 0px 2px 7px lightblue;
+  margin-top: 0.6rem;
 `;
 
 const ProjectBox = styled.div`
@@ -68,8 +69,11 @@ const ProjectBox = styled.div`
   flex-grow: 1;
   justify-content: space-between;
   cursor: default;
-  /* border-radius: 10px; */
-  /* background-color: red; */
+
+  ${mediaQueries("mobileLX")`
+      border: 1px solid green;
+      // min-width: 18rem;
+  `}
 `;
 
 const ProjectDetails = styled.div``;

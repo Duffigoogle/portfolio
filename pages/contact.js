@@ -54,6 +54,9 @@ const StyledDiv = styled.div`
   /* height: 100%; */
   height: 80vh;
 
+  ${mediaQueries("mobileLX")`
+      display: block;
+  `}
   ${mediaQueries("mobileM")`
       display: block;
       height: 100vh;
@@ -62,9 +65,12 @@ const StyledDiv = styled.div`
 
 const StyledSection = styled.section`
   margin-right: 4rem;
-  /* border: 1px solid; */
   padding: 0.7rem;
 
+  ${mediaQueries("mobileLX")`
+        margin: 7px 0px;
+        text-align: center;
+  `}
   ${mediaQueries("mobileM")`
         margin: 5px 0px;
         text-align: center;
@@ -76,6 +82,11 @@ const StyledSection = styled.section`
     color: #d9dddc;
     letter-spacing: 3px;
 
+    ${mediaQueries("mobileLX")`
+        font-size: 1.9rem;
+        color: green;
+        letter-spacing: 2px;
+    `}
     ${mediaQueries("mobileM")`
         font-size: 1.7rem;
         color: green;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CalculateHeightContext } from "../../context/index";
 import Image from "next/image";
 import { mediaQueries } from "../common/breakpoints";
@@ -22,7 +22,7 @@ const personal_skills = {
   i: "Problem Solver",
   ii: "Excellent Communicator",
   iii: "Team Player",
-  iv: "High attention to details",
+  iv: "Attention to details",
   v: "Time Management",
   vi: "Good Sense of Humuor",
 };
@@ -40,7 +40,7 @@ const Bio = ({
       <pre
         style={{
           backgroundColor: "#000",
-          padding: "0rem 0.3rem",
+          padding: "0.5rem",
           color: `${textColor}`,
           borderRadius: "5px 5px 5px 5px",
           // boxShadow: "3px 5px 6px #f9f9f9",
@@ -103,6 +103,14 @@ export default BioComp;
 const BioCompMobile = () => {
   const { elementRef } = useContext(CalculateHeightContext);
 
+  useEffect(() => {
+    const screenWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    console.log(screenWidth);
+  });
+
   return (
     <>
       <BioMobileContainer ref={elementRef}>
@@ -119,13 +127,17 @@ const BioCompMobile = () => {
 };
 
 const BioMobileContainer = styled.main`
-  display: flex;
-  /* flex-direction: column; */
-  /* align-items: space-between; */
+  /* display: flex; */
+  flex-direction: column;
+  display: ${({ screenWidth }) => (screenWidth >= 513 ? "none" : "flex")};
   width: 100%;
   height: 100%;
   background-color: #000;
   border: 1px solid purple;
+
+  /* ${mediaQueries("mobileLX")`
+      flex-direction: column;
+  `}
 
   ${mediaQueries("mobileM")`
       flex-direction: column;
@@ -133,8 +145,9 @@ const BioMobileContainer = styled.main`
 
   ${mediaQueries("mobileS")`
       flex-direction: column;
-  `}
+  `} */
 `;
+
 const BioContainer = styled.main`
   display: flex;
   width: 100%;
@@ -143,6 +156,9 @@ const BioContainer = styled.main`
 
   ${mediaQueries("laptop")`
       flex-direction: row-reverse;
+  `}
+  ${mediaQueries("mobileLX")`
+      display: none;
   `}
   ${mediaQueries("mobileM")`
       display: none;
@@ -184,36 +200,48 @@ const BioImage = styled.div`
 
 const StyledObjBox = styled.div`
   position: absolute;
+  margin-top: 0.7rem;
 
-  pre {
-    ${mediaQueries("mobileM")`
-      font-size: 0.8rem;
-      width: 16rem;
+  ${mediaQueries("mobileLX")`
+      position: static;
   `}
-    ${mediaQueries("mobileS")`
-      font-size: 0.7rem;
-      width: 14.5rem;
-  `}
-  }
-
   ${mediaQueries("mobileM")`
       position: static;
   `}
   ${mediaQueries("mobileS")`
       position: static;
   `}
+
+  pre {
+    ${mediaQueries("mobileLX")`
+      font-size: 1rem;
+      width: 19rem;
+    `}
+    ${mediaQueries("mobileM")`
+      font-size: 0.8rem;
+      width: 16rem;
+    `}
+    ${mediaQueries("mobileS")`
+      font-size: 0.7rem;
+      width: 14.5rem;
+      padding: 0 0.5rem;
+    `}
+  }
+
   span {
     font-weight: bold;
     font-size: 1.3rem;
     /* color: orange; */
     color: #ccc;
 
+    ${mediaQueries("mobileLX")`
+      font-size: 1rem;
+    `}
     ${mediaQueries("mobileM")`
       font-size: 0.9rem;
     `}
 
     ${mediaQueries("mobileS")`
-        font-weight: bold;
         font-size: 0.8rem;
     `}
   }
