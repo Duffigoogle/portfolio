@@ -230,6 +230,9 @@ const SideBarContents = styled.div`
   /* display: ${({ isHidden }) => (isOpenSideBar ? "block" : "none")}; */
   display: ${(props) => (props.visibility ? "block" : "none")};
 
+  ${mediaQueries("mobileLXX")`
+      display: none;
+  `}
   ${mediaQueries("mobileLX")`
       display: none;
   `}

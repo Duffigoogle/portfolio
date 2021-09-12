@@ -56,7 +56,10 @@ const CodeLinesContainer = styled.aside`
   /* height: 100%; */
   height: ${({ pageHeightValue }) => pageHeightValue};
 
-  ${mediaQueries("mobileLX")`
+  ${mediaQueries("tabletMax")`
+        min-width: 2.9rem;
+  `}
+  ${mediaQueries("mobileLXX")`
      min-width: 2.3rem;
   `}
   ${mediaQueries("mobileM")`

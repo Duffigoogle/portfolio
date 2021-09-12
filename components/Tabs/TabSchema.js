@@ -27,7 +27,7 @@ export default TabSchema;
 const TabBox = styled.div`
   display: flex;
   align-items: center;
-  border-right: 1px solid transparent;
+  border-right: 1px solid #000;
   padding: 0.33rem 1.55rem;
   background-color: ${({ isCurrentPath }) => (isCurrentPath ? "#1d1d1d" : "")};
   border-bottom: ${({ isCurrentPath }) =>
@@ -37,14 +37,16 @@ const TabBox = styled.div`
         background-color: #5d5d5d;
         color: #fff;
     } */
-  ${mediaQueries("mobileLX")`
+
+  ${mediaQueries("tabletMax")`
+      padding: 0.21rem 1.32rem;  
+  `}
+  ${mediaQueries("mobileLXX")`
       padding: 0.25rem 1.28rem;  
-      border-right: 1px solid #000;
-    `}
+  `}
   ${mediaQueries("mobileM")`
       padding: 0.25rem 1.25rem;  
-      border-right: 1px solid #000;
-    `}
+  `}
 `;
 
 const TabFileName = styled.p`
@@ -52,7 +54,10 @@ const TabFileName = styled.p`
   padding-left: 5px;
   color: ${({ isCurrentPath }) => (isCurrentPath ? "orange" : "#000")};
 
-  ${mediaQueries("mobileLX")`
+  ${mediaQueries("tabletMax")`
+      font-size: 0.9rem;
+  `}
+  ${mediaQueries("mobileLXX")`
       font-size: 0.8rem;
   `}
   ${mediaQueries("mobileM")`

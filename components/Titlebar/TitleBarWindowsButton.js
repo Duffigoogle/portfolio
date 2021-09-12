@@ -33,9 +33,14 @@ const TitleBarCloseWindow = styled.div`
   margin-left: 1.5rem;
   cursor: pointer;
 
-  ${mediaQueries("mobileM")`
+  ${mediaQueries("mobileLXX")`
       height: 0.70rem;
       width: 0.70rem;
+      margin-left: 0.5rem;
+  `}
+  ${mediaQueries("mobileM")`
+      // height: 0.70rem;
+      // width: 0.70rem;
       margin-left: 1rem;
   `}
 
@@ -53,9 +58,14 @@ const TitleBarMaximiseWindow = styled.div`
   margin-left: 1.5rem;
   cursor: pointer;
 
-  ${mediaQueries("mobileM")`
+  ${mediaQueries("mobileLXX")`
       height: 0.70rem;
       width: 0.70rem;
+      margin-left: 0.5rem;
+  `}
+  ${mediaQueries("mobileM")`
+      // height: 0.70rem;
+      // width: 0.70rem;
       margin-left: 1rem;
   `}
 
@@ -73,9 +83,14 @@ const TitleBarMinimiseWindow = styled.div`
   margin-left: 1.5rem;
   cursor: pointer;
 
-  ${mediaQueries("mobileM")`
+  ${mediaQueries("mobileLXX")`
       height: 0.70rem;
       width: 0.70rem;
+      margin-left: 0.5rem;
+  `}
+  ${mediaQueries("mobileM")`
+      // height: 0.70rem;
+      // width: 0.70rem;
       margin-left: 1rem;
   `}
 

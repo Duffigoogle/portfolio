@@ -54,7 +54,7 @@ const StyledDiv = styled.div`
   /* height: 100%; */
   height: 80vh;
 
-  ${mediaQueries("mobileLX")`
+  ${mediaQueries("mobileLXX")`
       display: block;
   `}
   ${mediaQueries("mobileM")`
@@ -67,7 +67,7 @@ const StyledSection = styled.section`
   margin-right: 4rem;
   padding: 0.7rem;
 
-  ${mediaQueries("mobileLX")`
+  ${mediaQueries("mobileLXX")`
         margin: 7px 0px;
         text-align: center;
   `}

@@ -63,14 +63,15 @@ const AboutContainer = styled.div`
   color: #339989;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 
   ${mediaQueries("laptop")`
-      display: flex;
       justify-content: center;
       height: 100%;
-  `}
+  `}/* ${mediaQueries("tebletMax")`
+      justify-content: center
+  `} */
 `;
 
 const AboutStack = styled.div`
@@ -93,6 +94,9 @@ const AboutStack = styled.div`
       height: 300px;
   `}
 
+  ${mediaQueries("mobileLXX")`
+      height: 270px;
+  `}
   ${mediaQueries("mobileLX")`
       height: 250px;
   `}
@@ -189,11 +193,11 @@ const AboutHeading1 = styled.h1`
   font-size: 4rem;
   color: #09f755;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries("tabletMax")`
       font-size: 3rem;
   `}
 
-  ${mediaQueries("mobileLX")`
+  ${mediaQueries("mobileLXX")`
       font-size: 2.2rem;
   `}
 
@@ -245,7 +249,7 @@ const AboutPSmall = styled.p`
   margin-top: 6px;
   color: #cec;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries("tabletMax")`
       font-size: 0.8rem;
   `}
   ${mediaQueries("mobileLX")`
@@ -291,7 +295,7 @@ const WelcomeButton = styled.button`
     transform: translateY(-7px);
   }
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries("tabletMax")`
       width: 250px;
       height: 40px;
       font-size: 0.9rem;
