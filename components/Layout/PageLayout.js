@@ -21,7 +21,6 @@ export const StyledPageLayout = styled.main`
   /* height: auto; */
   overflow-y: auto;
   background-color: #616161;
-  border: 1px solid purple;
 
   /* ${mediaQueries("tabletMax")`
      width: 100%;

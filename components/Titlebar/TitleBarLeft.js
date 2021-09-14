@@ -69,7 +69,7 @@ const StyledBurger = styled.div`
   height: 1.5rem;
   position: fixed;
   top: 3px;
-  left: 10px;
+  left: ${({ openMenu }) => (openMenu ? "75px" : "10px")};
   z-index: 23;
   display: none;
 
@@ -79,9 +79,9 @@ const StyledBurger = styled.div`
     flex-flow: column nowrap;
   `}
 
-  ${mediaQueries("mobileS")`
+  /* ${mediaQueries("mobileS")`
      left: 32px;
-  `}
+  `} */
 
   div {
     width: 1.5rem;
@@ -108,49 +108,63 @@ const StyledBurger = styled.div`
 
 const NavMenu = ({ openMenu }) => {
   return (
-    <NavMenuDiv openMenu={openMenu}>
-      <Image src="/vscode_icon.svg" alt="vs code icon" width={18} height={18} />
-      <UL>
-        <li>File</li>
-        <li>Edit</li>
-        <li>Selection</li>
-        <li>View</li>
-        <li>Go</li>
-        <li>Run</li>
-        <li>Terminal</li>
-        <li>Help</li>
-      </UL>
-    </NavMenuDiv>
+    <NavMenuOverlay openMenu={openMenu}>
+      <NavMenuBox>
+        <Image
+          src="/vscode_icon.svg"
+          alt="vs code icon"
+          width={18}
+          height={18}
+        />
+        <UL>
+          <li>File</li>
+          <li>Edit</li>
+          <li>Selection</li>
+          <li>View</li>
+          <li>Go</li>
+          <li>Run</li>
+          <li>Terminal</li>
+          <li>Help</li>
+        </UL>
+      </NavMenuBox>
+    </NavMenuOverlay>
   );
 };
 
-const NavMenuDiv = styled.div`
-  /* display: none; */
+const NavMenuOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
   display: ${({ openMenu }) => (openMenu ? "block" : "none")};
+
   ${mediaQueries("mobileLX")`
     transform: ${({ openMenu }) =>
       openMenu ? "translateX(0)" : "translateX(100%)"};
-    background-color: #0D2538;
     top: 0;
     left: 0;
-    height: 68vh;
-    width: 85px;
-    padding-top: 3rem;
-    padding-left: 0.5rem;
     transition: transform 0.3s ease-in-out;
     position: fixed;
     z-index: 20;
   `}
 `;
 
+const NavMenuBox = styled.div`
+  width: 100px;
+  height: 100%;
+  background-color: #0d2538;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+`;
+
 const UL = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  margin-top: 1.3rem;
   li {
-    padding: 6px 5px;
+    padding: 5px;
     cursor: pointer;
-    /* background-color: #000; */
+    margin-bottom: 4px;
 
     :hover {
       background-color: #cec;

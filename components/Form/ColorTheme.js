@@ -65,7 +65,10 @@ const SettingsContainer = styled.main`
   width: 25rem;
   position: fixed;
   z-index: 8;
-  left: 36rem h2 {
+  left: 36rem;
+
+  h2 {
     font-weight: 700;
+    color: red;
   }
 `;

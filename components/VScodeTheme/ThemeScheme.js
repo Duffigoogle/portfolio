@@ -1,21 +1,36 @@
 import styled from "styled-components";
+import { mediaQueries } from "../common/breakpoints";
 
-const ThemeSchemaComp = ({ name, publisher, theme }) => {
+const ThemeSchemaComp = ({
+  name,
+  publisher,
+  theme,
+  closeModally,
+  setShowSecondModal,
+}) => {
   // function to set a given theme/color-scheme
   const setTheme = (theme) => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   };
 
+  const setThemeAndCloseModals = () => {
+    setTheme(theme);
+    setTimeout(() => {
+      // close the two modals
+      setShowSecondModal(false);
+      closeModally();
+    }, 5000);
+  };
+
   return (
-    <ThemeSchemaContainer>
-      <button onClick={() => setTheme(theme)} title="set color theme">
+    <ThemeSchemaContainer setShowSecondModal={setShowSecondModal}>
+      <button onClick={() => setThemeAndCloseModals} title="set color theme">
         <ThemeInfo>
           <h3>{name}</h3>
           <p>{publisher}</p>
         </ThemeInfo>
       </button>
-      {/* <button>Set Color Theme</button> */}
     </ThemeSchemaContainer>
   );
 };
@@ -49,7 +64,16 @@ const ThemeInfo = styled.section`
   align-items: center;
   padding: 0 0.9rem;
   width: 25rem;
-  /* background-color: skyblue; */
+
+  ${mediaQueries("tabletMax")`
+      width: 21rem;
+  `}
+  ${mediaQueries("mobileLX")`
+      width: 18rem;
+  `}
+  ${mediaQueries("mobileS")`
+      width: 15rem;
+  `}
 
   :hover {
     background-color: rgba(255, 255, 255, 0.3);

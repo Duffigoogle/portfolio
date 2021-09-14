@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useState, useRef, useEffect, useCallback } from "react";
 import ThemeSchemaComp from "../VScodeTheme/ThemeScheme";
 import Icon from "../common/icons/icons";
+import themesData from "../VScodeTheme/theme_data";
+import { mediaQueries } from "../common/breakpoints";
 // import ModalComp from "./Modal";
 
 export const ModalItem = ({ itemName, shortcut, onClick }) => {
@@ -45,7 +47,9 @@ export const Modal = ({ modalTwo, setModalTwo }) => {
 
   const [showSecondModal, setShowSecondModal] = useState(false);
 
-  const closeModal = () => {
+  // const [clickedOutside, setClickedOutside] = useState(false);
+
+  const closeModally = () => {
     setModalTwo(!modalTwo);
     console.log("closed Modal 2");
   };
@@ -56,11 +60,14 @@ export const Modal = ({ modalTwo, setModalTwo }) => {
     // closeModal();
   };
 
+  // const handleClickInside = () => setClickedOutside(false);
+
   // If user clicks outside the modal window, then close modal.
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (modalTwo === true && !myRef.current.contains(e.target)) {
         setModalTwo(false);
+        // setClickedOutside(true);
         console.log("I clicked outside");
       }
     };
@@ -79,6 +86,7 @@ export const Modal = ({ modalTwo, setModalTwo }) => {
       <ColorThemeDisplay
         showSecondModal={showSecondModal}
         setShowSecondModal={setShowSecondModal}
+        closeModally={closeModally}
       />
       <ModalItem itemName="check for updates" shortcut="" />
     </StyledDivModal>
@@ -104,6 +112,16 @@ const StyledDivModal = styled.div`
     display: none;
   }
 `;
+
+// custom function to handleClickOutside
+// const handleClickOutside = (e, modalNum, modalFunc) => {
+//   if ({modalNum} === true && !myRef.current.contains(e.target)) {
+//     {modalFunc}(false);
+//     console.log("I clicked outside");
+//   }
+// };
+
+// handleClickOutside(modalOne, setModalOne)
 
 const ModalComp = ({ modalOne, setModalOne }) => {
   const myRef = useRef();
@@ -178,8 +196,31 @@ const StyledModalContent = styled.div`
   }
 `;
 
-export const ColorThemeDisplay = ({ showSecondModal, setShowSecondModal }) => {
+export const ColorThemeDisplay = ({
+  showSecondModal,
+  setShowSecondModal,
+  closeModal,
+}) => {
   const myRef = useRef();
+
+  // search input codes
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchThemes, setSearchThemes] = useState(themesData);
+  // const [searchParam] = useState(["name", "publisher"]);
+
+  const handleChange = (e) => {
+    const keywords = e.target.value;
+    setSearchTerm(keywords);
+
+    const results = !searchTerm
+      ? setSearchThemes(themesData)
+      : themesData.filter((theme) => {
+          theme.name.toLowerCase().includes(searchTerm.toLowerCase());
+          // .startsWith(keywords.toLowerCase())
+          // .includes(searchTerm.trim());
+        });
+    setSearchThemes(results);
+  };
 
   const keyPress = useCallback(
     (e) => {
@@ -214,36 +255,60 @@ export const ColorThemeDisplay = ({ showSecondModal, setShowSecondModal }) => {
       {showSecondModal ? (
         <ThemesContainer showSecondModal={showSecondModal} ref={myRef}>
           <h2>Manage Themes</h2>
-          <ThemeSchemaComp
+          <SearchTheme
+            type="search"
+            placeholder="Select Color Theme (Up/Down Keys to Preview)"
+            autofocus
+            onChange={handleChange}
+            value={searchTerm}
+            hh
+          />
+          <ThemeUL>
+            {searchThemes && searchThemes.length > 0 ? (
+              searchThemes.map((theme, index) => (
+                // <ThemeLI key={index}>
+                <ThemeSchemaComp key={index} {...theme} id={index} />
+                // </ThemeLI>
+              ))
+            ) : (
+              <ThemeLI> No results found!</ThemeLI>
+            )}
+          </ThemeUL>
+          {/* <ThemeSchemaComp
             name="GitHub Dark"
             publisher="GitHub"
             theme="github-dark"
             description="GitHub theme for VS Code"
+            setShowSecondModal={setShowSecondModal}
           />
           <ThemeSchemaComp
             name="Mood Blink"
             publisher="Inem-Studio"
             theme="Mood blink"
             description="A dark theme for many editors, shells, and more."
+            setShowSecondModal={setShowSecondModal}
           />
           <ThemeSchemaComp
             name="Color Splash"
             publisher="Ekom-Studio"
             theme="Color splash"
             description="A simple kiddy theme with bright colors."
+            setShowSecondModal={setShowSecondModal}
           />
           <ThemeSchemaComp
             name="Glow Shades"
             publisher="UtomStudio"
             theme="Glow shades"
             description="A simple theme with Glow shades."
+            setShowSecondModal={setShowSecondModal}
           />
           <ThemeSchemaComp
             name="Moonlight Call"
             publisher="Ima-Studio"
             theme="Moonlight calls"
             description="An arctic, north-bluish clean and elegant Visual Studio Code theme."
-          />
+            setShowSecondModal={setShowSecondModal}
+          /> */}
         </ThemesContainer>
       ) : null}
     </>
@@ -260,13 +325,39 @@ const ThemesContainer = styled.main`
   width: 25rem;
   position: fixed;
   z-index: 8;
-  left: 36rem;
-  top: 20px;
+  left: 50%;
+  /* left: 36rem; */
+  top: 3%;
+
+  ${mediaQueries("tabletMax")`
+        width: 21rem;
+  `}
+  ${mediaQueries("mobileLX")`
+        width: 18rem;
+  `}
+  ${mediaQueries("mobileS")`
+      width: 15rem;
+  `}
 
   h2 {
     font-weight: 700;
   }
 `;
+
+const SearchTheme = styled.input`
+  width: 94%;
+  margin: 5px;
+  background-color: inherit;
+  border: 1px solid #cec;
+  padding: 3px 5px;
+  border-radius: 4px;
+  ::placeholder {
+    font-size: 0.7rem;
+  }
+`;
+
+const ThemeUL = styled.div``;
+const ThemeLI = styled.li``;
 
 export const ModalManager = ({
   modalOne,

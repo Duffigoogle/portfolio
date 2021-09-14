@@ -71,7 +71,6 @@ const ProjectBox = styled.div`
   cursor: default;
 
   ${mediaQueries("mobileLX")`
-      border: 1px solid green;
       // min-width: 18rem;
   `}
 `;
