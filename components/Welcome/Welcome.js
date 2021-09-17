@@ -34,6 +34,7 @@ const WelcomeCompContainer = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: calc(100vh - 59px);
   /* height: calc(100vh - 30px - 39px); */
 
   /* ${mediaQueries("mobileM")`

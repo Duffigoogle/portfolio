@@ -1,63 +1,77 @@
 import React from "react";
 import Icon from "../common/icons/icons";
+
 // import Image from "next/image";
 
-const GithubPage = ({ userData, repoData }) => {
-  console.log(userData);
-  // const [userData, setUserData] = useState([]);
+// async function fetcher(...arg) {
+//   const res = await fetch(...arg);
 
-  return (
-    <>
-      <h1>Loading</h1>
-      <div>
-        <div>
-          {/* <Image src={user.avatar_url}
-            className=""
-            alt={userData.login}
-            width={50}
-            height={50}
-          /> */}
-          <h3>{userData.login}</h3>
-        </div>
-        <div>
-          <h3>{userData.public_repos} repos</h3>
-        </div>
-        <div>
-          <h3>{userData.followers} followers</h3>
-        </div>
-      </div>
+//   return res.json();
+// }
 
-      <h2>6 Latest Updated Repositories</h2>
-      <div>
-        {repoData.map((repData) => (
-          <RepoCard key={repData.id} repData={repData} />
-        ))}
-      </div>
-    </>
-  );
-};
+// const GithubPage = ({ userData, repoData }) => {
 
-export default GithubPage;
+//   const { userData } = useSWR('/api/github', fetcher);
 
-const RepoCard = ({ repoData }) => {
-  // const [repoData, setRepoData] = useState([]);
+//   if (error) return <div>failed to load</div>
+//   if (!userData || !repoData) return <div>loading...</div>
 
+//   console.log(userData);
+//   // const [userData, setUserData] = useState([]);
+
+//   return (
+//     <>
+//       <h1>Loading</h1>
+//       <div>
+//         <div>
+//           {/* <Image src={user.avatar_url}
+//             className=""
+//             alt={userData.login}
+//             width={50}
+//             height={50}
+//           /> */}
+//           <h3>{userData.login}</h3>
+//         </div>
+//         <div>
+//           <h3>{userData.public_repos} repos</h3>
+//         </div>
+//         <div>
+//           <h3>{userData.followers} followers</h3>
+//         </div>
+//       </div>
+
+//       <h2>6 Latest Updated Repositories</h2>
+//       <div>
+//         {repoData.map((repData) => (
+//           <RepoCard key={repData.id} repData={repData} />
+//         ))}
+//       </div>
+//     </>
+//   );
+// };
+
+// export default GithubPage;
+
+const RepoCard = ({ repData }) => {
   return (
     <div>
       <div>
-        <h3>{repoData.name}</h3>
-        <p>{repoData.description}</p>
+        <h3>{repData ? repData.name : "loading"}</h3>
+        <p>{repData ? repData.description : "loading"}</p>
       </div>
       <div>
         <div>
           <div>
-            <Icon name="WatchIcon" size={18} /> {repoData.watchers}
+            <Icon name="WatchIcon" size={18} />{" "}
+            {repData ? repData.watchers : "loading"}
           </div>
           <div>
-            <Icon name="ForkIcon" size={18} /> {repoData.forks}
+            <Icon name="ForkIcon" size={18} />{" "}
+            {repData ? repData.forks : "loading"}
           </div>
           <div>
-            <Icon name="StartIcon" size={18} /> {repoData.forks}
+            <Icon name="StartIcon" size={18} />{" "}
+            {repData ? repData.stars : "loading"}
           </div>
         </div>
         {/* <div>
@@ -74,3 +88,5 @@ const RepoCard = ({ repoData }) => {
     </div>
   );
 };
+
+export default RepoCard;

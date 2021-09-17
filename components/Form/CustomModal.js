@@ -1,6 +1,6 @@
 // import Icon from "../common/icons/icons";
 import styled from "styled-components";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import ThemeSchemaComp from "../VScodeTheme/ThemeScheme";
 import Icon from "../common/icons/icons";
 import themesData from "../VScodeTheme/theme_data";
@@ -205,22 +205,22 @@ export const ColorThemeDisplay = ({
 
   // search input codes
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchThemes, setSearchThemes] = useState(themesData);
-  // const [searchParam] = useState(["name", "publisher"]);
+  const [searchThemes, setSearchThemes] = useState("");
 
   const handleChange = (e) => {
-    const keywords = e.target.value;
-    setSearchTerm(keywords);
-
-    const results = !searchTerm
-      ? setSearchThemes(themesData)
-      : themesData.filter((theme) => {
-          theme.name.toLowerCase().includes(searchTerm.toLowerCase());
-          // .startsWith(keywords.toLowerCase())
-          // .includes(searchTerm.trim());
-        });
-    setSearchThemes(results);
+    setSearchTerm(e.target.value);
   };
+
+  const themes = useMemo(() => {
+    if (!searchTerm) return themesData;
+
+    return themesData.filter((theme) => {
+      return (
+        theme.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        theme.publisher.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    });
+  }, [searchTerm, themesData]);
 
   const keyPress = useCallback(
     (e) => {
@@ -249,7 +249,6 @@ export const ColorThemeDisplay = ({
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showSecondModal, setShowSecondModal]);
-
   return (
     <>
       {showSecondModal ? (
@@ -264,51 +263,16 @@ export const ColorThemeDisplay = ({
             hh
           />
           <ThemeUL>
-            {searchThemes && searchThemes.length > 0 ? (
-              searchThemes.map((theme, index) => (
+            {themes && themes.length > 0 ? (
+              themes.map((theme, index) => (
                 // <ThemeLI key={index}>
-                <ThemeSchemaComp key={index} {...theme} id={index} />
+                <ThemeSchemaComp key={index} {...theme} />
                 // </ThemeLI>
               ))
             ) : (
               <ThemeLI> No results found!</ThemeLI>
             )}
           </ThemeUL>
-          {/* <ThemeSchemaComp
-            name="GitHub Dark"
-            publisher="GitHub"
-            theme="github-dark"
-            description="GitHub theme for VS Code"
-            setShowSecondModal={setShowSecondModal}
-          />
-          <ThemeSchemaComp
-            name="Mood Blink"
-            publisher="Inem-Studio"
-            theme="Mood blink"
-            description="A dark theme for many editors, shells, and more."
-            setShowSecondModal={setShowSecondModal}
-          />
-          <ThemeSchemaComp
-            name="Color Splash"
-            publisher="Ekom-Studio"
-            theme="Color splash"
-            description="A simple kiddy theme with bright colors."
-            setShowSecondModal={setShowSecondModal}
-          />
-          <ThemeSchemaComp
-            name="Glow Shades"
-            publisher="UtomStudio"
-            theme="Glow shades"
-            description="A simple theme with Glow shades."
-            setShowSecondModal={setShowSecondModal}
-          />
-          <ThemeSchemaComp
-            name="Moonlight Call"
-            publisher="Ima-Studio"
-            theme="Moonlight calls"
-            description="An arctic, north-bluish clean and elegant Visual Studio Code theme."
-            setShowSecondModal={setShowSecondModal}
-          /> */}
         </ThemesContainer>
       ) : null}
     </>
