@@ -203,7 +203,7 @@ export const ColorThemeDisplay = ({
 }) => {
   const myRef = useRef();
 
-  // search input codes
+// Search & Filter Themes
   const [searchTerm, setSearchTerm] = useState("");
   const [searchThemes, setSearchThemes] = useState("");
 
@@ -222,6 +222,8 @@ export const ColorThemeDisplay = ({
     });
   }, [searchTerm, themesData]);
 
+
+// If user presses the ESC button.
   const keyPress = useCallback(
     (e) => {
       if (e.key === "Escape" && showSecondModal) {
@@ -232,13 +234,13 @@ export const ColorThemeDisplay = ({
     [setShowSecondModal, showSecondModal]
   );
 
-  // If user presses the ESC button.
+  
   useEffect(() => {
     document.addEventListener("keydown", keyPress);
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
-  // If user clicks outside the modal window, then close modal.
+// If user clicks outside the modal window, then close modal.
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (showSecondModal === true && !myRef.current.contains(e.target)) {
@@ -265,9 +267,7 @@ export const ColorThemeDisplay = ({
           <ThemeUL>
             {themes && themes.length > 0 ? (
               themes.map((theme, index) => (
-                // <ThemeLI key={index}>
                 <ThemeSchemaComp key={index} {...theme} />
-                // </ThemeLI>
               ))
             ) : (
               <ThemeLI> No results found!</ThemeLI>
@@ -323,6 +323,7 @@ const SearchTheme = styled.input`
 const ThemeUL = styled.div``;
 const ThemeLI = styled.li``;
 
+//ModalManager Component
 export const ModalManager = ({
   modalOne,
   modalTwo,
