@@ -19,13 +19,13 @@ import Image from "next/image";
 
 // // const fetcher = (url) => fetch(url).then((res) => res.json());
 
-// export default function Home() {
-//   const { elementRef } = useContext(CalculateHeightContext);
+export default function Home() {
+  const { elementRef } = useContext(CalculateHeightContext);
 
-//   const { data, error } = useSWR("/api/github-fetcher", fetcher);
+  // const { data, error } = useSWR("/api/github-fetcher", fetcher);
 
-//   if (error) return <div>An error has occurred.</div>;
-//   if (!data) return <div>Loading...</div>;
+  // if (error) return <div>An error has occurred.</div>;
+  // if (!data) return <div>Loading...</div>;
 
   return (
     <div>

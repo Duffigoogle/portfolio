@@ -46,6 +46,7 @@ const Bio = ({
           // boxShadow: "3px 5px 6px #f9f9f9",
           boxShadow: "0 8px 8px -4px lightblue",
           margin: "5px auto",
+          // minWidth: "5rem",
         }}
       >
         <span>{text} = </span>
@@ -70,117 +71,55 @@ const BioComp = () => {
         </BioImage>
         <BioContent>
           <Bio
-            style={{ top: "0", right: "0", zIndex: "4" }}
             text="const person"
             person={person}
             textColor="#cf99c2"
+            style={{ alignItems: "center", alignSelf: "flex-end" }}
           />
           <Bio
-            style={{ top: "160px", left: "5", zIndex: "6" }}
             text="const personalSkills"
             person={personal_skills}
             textColor="#c93339"
+            style={{ alignItems: "center", alignSelf: "flex-start" }}
           />
           <Bio
-            style={{
-              bottom: "110px",
-              right: "0",
-              zIndex: "8",
-            }}
             text="const hobbies"
             person={hobbies}
             textColor="#66c5e0"
+            style={{ alignItems: "center", alignSelf: "flex-end" }}
           />
         </BioContent>
       </BioContainer>
-      <BioCompMobile />
     </>
   );
 };
 
 export default BioComp;
 
-const BioCompMobile = () => {
-  const { elementRef } = useContext(CalculateHeightContext);
-
-  useEffect(() => {
-    const screenWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-    console.log(screenWidth);
-  });
-
-  return (
-    <>
-      <BioMobileContainer ref={elementRef}>
-        <Bio text="const person" person={person} textColor="#cf99c2" />
-        <Bio
-          text="const personalSkills"
-          person={personal_skills}
-          textColor="#c93339"
-        />
-        <Bio text="const hobbies" person={hobbies} textColor="#66c5e0" />
-      </BioMobileContainer>
-    </>
-  );
-};
-
-const BioMobileContainer = styled.main`
-  /* display: flex; */
-  flex-direction: column;
-  display: ${({ screenWidth }) => (screenWidth >= 513 ? "none" : "flex")};
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  border: 1px solid purple;
-
-  /* ${mediaQueries("mobileLX")`
-      flex-direction: column;
-  `}
-
-  ${mediaQueries("mobileM")`
-      flex-direction: column;
-  `}
-
-  ${mediaQueries("mobileS")`
-      flex-direction: column;
-  `} */
-`;
-
 const BioContainer = styled.main`
   display: flex;
   width: 100%;
+  min-height: 120vh;
   background-color: #000;
-  /* height: 100vh; */
-
-  ${mediaQueries("laptop")`
-      flex-direction: row-reverse;
-  `}
-  ${mediaQueries("mobileLX")`
-      display: none;
-  `}
-  ${mediaQueries("mobileM")`
-      display: none;
-  `}
-  ${mediaQueries("mobileS")`
-      display: none;
-  `}
 `;
 
 const BioContent = styled.div`
-  width: 50%;
-  height: 100vh;
-  border: 1px solid blue;
-  position: relative;
-  /* overflow: hidden; */
+  /* width: 50%; */
+  width: 30rem;
+  display: flex;
+  flex-flow: column nowrap;
 
   ${mediaQueries("laptop")`
-      width: 100%;
-      margin: 10px;
+      // width: 100%;
+      margin: 10px auto;
+      padding: 0px 8px;
+  `}
+  ${mediaQueries("tabletMax")`
+      // width: 100%;
+      margin: 10px auto;
   `}
   ${mediaQueries("mobileM")`
-      min-height: 100vh;
+      // min-height: 100vh;
       margin: 5px;
   `}
 `;
@@ -188,8 +127,6 @@ const BioContent = styled.div`
 const BioImage = styled.div`
   width: 50%;
   margin-top: -15px;
-  /* border: 1px solid red; */
-  position: relative;
 
   ${mediaQueries("laptop")`
       // margin-right: -180px;
@@ -199,20 +136,15 @@ const BioImage = styled.div`
 `;
 
 const StyledObjBox = styled.div`
-  position: absolute;
-  margin-top: 0.7rem;
-
-  ${mediaQueries("mobileLX")`
-      position: static;
-  `}
-  ${mediaQueries("mobileM")`
-      position: static;
-  `}
-  ${mediaQueries("mobileS")`
-      position: static;
-  `}
+  /* margin-top: 0.7rem; */
+  /* border: 1px solid red; */
+  /* max-width: 20rem; */
 
   pre {
+    ${mediaQueries("tabletMax")`
+     font-size: 0.9rem;
+      width: 17rem;
+  `}
     ${mediaQueries("mobileLX")`
       font-size: 1rem;
       width: 19rem;
