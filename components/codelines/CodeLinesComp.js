@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CalculateHeightContext } from "../../context/index";
 import { mediaQueries } from "../common/breakpoints";
 
 const CodeLinesComp = () => {
   const pageHeight = useContext(CalculateHeightContext);
+
+  // const [codeLine, setCodeLine] = useState(pageHeight);
 
   // const pageHeightValue = pageHeight.pageHeight;
   const pageHeightValue = pageHeight.pageHeight;
@@ -14,6 +16,7 @@ const CodeLinesComp = () => {
   const pageLineHeight = Math.round(pageHeightValue / 19.2) + 2;
   console.log(pageLineHeight);
 
+  // rendered number range
   function range(start, end) {
     return Array(end - start + 1)
       .fill()
@@ -27,7 +30,7 @@ const CodeLinesComp = () => {
 
   return (
     <>
-      <CodeLinesContainer>
+      <CodeLinesContainer pageHeightValue={pageHeightValue}>
         <TabShowcaseUl>
           {numbers.map((number, index) => (
             // <li key={index}> {number} </li>

@@ -78,8 +78,8 @@ const TabsCollection = styled.label`
 `;
 
 const TabsTaskbarIcons = styled.div`
-  width: 8.538rem;
-  min-width: 8.538rem;
+  /* width: 8.538rem; */
+  min-width: 7.3rem;
   display: flex;
   align-items: center;
   justify-content: space-around;

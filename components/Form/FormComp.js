@@ -34,12 +34,10 @@ const StyledForm = styled.form`
   ${mediaQueries("mobileLXX")`
         width: 17rem;
         margin: 0.7rem auto;
-        border: 1px solid green;
   `}
   ${mediaQueries("mobileM")`
         width: 15rem;
         margin: 0.7rem auto;
-        border: 1px solid green;
   `}
   ${mediaQueries("mobileS")`
         width: 14rem;

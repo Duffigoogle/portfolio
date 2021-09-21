@@ -198,7 +198,7 @@ const SideBarContainer = styled.aside`
 const SideBarTabs = styled.div`
   width: 2.561rem;
   /* min-width: 2.561rem; */
-  height: calc(100vh - 1.875rem - 1.4rem);
+  min-height: calc(100vh - 1.875rem - 1.4rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

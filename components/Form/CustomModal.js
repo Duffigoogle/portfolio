@@ -203,7 +203,7 @@ export const ColorThemeDisplay = ({
 }) => {
   const myRef = useRef();
 
-// Search & Filter Themes
+  // Search & Filter Themes
   const [searchTerm, setSearchTerm] = useState("");
   const [searchThemes, setSearchThemes] = useState("");
 
@@ -222,8 +222,7 @@ export const ColorThemeDisplay = ({
     });
   }, [searchTerm, themesData]);
 
-
-// If user presses the ESC button.
+  // If user presses the ESC button.
   const keyPress = useCallback(
     (e) => {
       if (e.key === "Escape" && showSecondModal) {
@@ -234,13 +233,12 @@ export const ColorThemeDisplay = ({
     [setShowSecondModal, showSecondModal]
   );
 
-  
   useEffect(() => {
     document.addEventListener("keydown", keyPress);
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
-// If user clicks outside the modal window, then close modal.
+  // If user clicks outside the modal window, then close modal.
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (showSecondModal === true && !myRef.current.contains(e.target)) {
@@ -298,9 +296,11 @@ const ThemesContainer = styled.main`
   `}
   ${mediaQueries("mobileLX")`
         width: 18rem;
+        left: 20%;
   `}
   ${mediaQueries("mobileS")`
-      width: 15rem;
+      width: 15.5rem;
+      left: 18%;
   `}
 
   h2 {

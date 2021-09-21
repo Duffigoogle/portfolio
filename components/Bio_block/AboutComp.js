@@ -58,7 +58,7 @@ const AboutContainer = styled.div`
   width: 100%;
   /* height: calc(100vh - 30px - 39px); */
   height: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: #000;
   color: #339989;
   display: flex;
@@ -134,13 +134,16 @@ const AboutStackText = styled.h3`
 `;
 
 const AboutContent = styled.div`
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 40rem;
-  margin: 0 10px;
+  margin: 60px 0 0;
 
+  ${mediaQueries("tabletMax")`
+      margin: 0px 0 0;
+  `}
   ${mediaQueries("tablet")`
       max-width: 28rem;
   `}
@@ -154,7 +157,7 @@ const AboutContent = styled.div`
 
 const AboutDetails = styled.div`
   padding-top: 0.5rem;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   margin-left: 30px;
 
   ${mediaQueries("tablet")`
