@@ -10,10 +10,33 @@
 
 
 /*===== IMPORTING FONTS =====*/
+
+// Menlo Fonts
+@font-face {
+  font-family: 'menlo-regular';
+  src: url('../public/fonts/Menlo-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+@font-face {
+  font-family: 'menlo-bold';
+  src: url('../public/fonts/Menlo-Bold.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+@font-face {
+  font-family: 'menlo-bold-italic';
+  src: url('../public/fonts/Menlo-Bold-Italic.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+@font-face {
+  font-family: 'menlo-italic';
+  src: url('../public/fonts/Menlo-Italic.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+// AirbnbCereal Fonts
 @font-face {
   font-family: 'air-regular';
   src: url('../public/fonts/AirbnbCereal-Book.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
-}  
+} 
 
 @font-face {
   font-family: 'air-semibold';
@@ -56,8 +79,7 @@ a {
 }
 
 * {
-  box-sizing: border-box;
-  font-family: 'air-regular';
+  font-family: 'menlo-regular';
 }
 
 
