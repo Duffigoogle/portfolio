@@ -52,7 +52,7 @@ const StyledDiv = styled.div`
   justify-content: center;
   background-color: #000;
   /* height: 100%; */
-  height: 80vh;
+  height: calc(100vh - 80px);
 
   ${mediaQueries("mobileLXX")`
       display: block;

@@ -12,7 +12,7 @@ const HeightProvider = ({ children }) => {
         setpageHeight(elementRef.current.scrollHeight);
       }, 1000);
     }
-  }, [elementRef]); //empty dependency array so it only runs once at render
+  }, [children]); //empty dependency array so it only runs once at render
 
   // console.log({ pageHeight });
   //   console.log(pageHeight);

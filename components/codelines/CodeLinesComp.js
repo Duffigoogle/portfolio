@@ -12,9 +12,20 @@ const CodeLinesComp = () => {
   const pageHeightValue = pageHeight.pageHeight;
   console.log(pageHeightValue);
 
+  const pageHeightPx = pageHeightValue + "px";
+  console.log(pageHeightPx);
+
+  const gh = typeof pageHeightPx;
+  console.log(gh);
+
   // const pageLineHeight = parseInt(pageHeightValue / 19.2, 10);
-  const pageLineHeight = Math.round(pageHeightValue / 19.2) + 2;
+  const pageLineHeight = Math.round(pageHeightValue / 19.2) + 1;
   console.log(pageLineHeight);
+
+  // const pageLineHeight = (pageHeightValue) => {
+  //   Math.round(pageHeightValue / 19.2) + 2;
+  // };
+  // console.log(pageLineHeight);
 
   // rendered number range
   function range(start, end) {
@@ -24,9 +35,6 @@ const CodeLinesComp = () => {
   }
 
   const numbers = range(1, pageLineHeight);
-
-  // const pageContainerHeight = calc((window.document.innerHeight) - 60px)
-  // const pageHeight = parse.int(pageContainerHeight)
 
   return (
     <>

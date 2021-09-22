@@ -287,7 +287,7 @@ const ThemesContainer = styled.main`
   width: 25rem;
   position: fixed;
   z-index: 8;
-  left: 50%;
+  left: 30%;
   /* left: 36rem; */
   top: 3%;
 

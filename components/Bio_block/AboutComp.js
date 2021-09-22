@@ -56,8 +56,8 @@ export default AboutComp;
 
 const AboutContainer = styled.div`
   width: 100%;
-  /* height: calc(100vh - 30px - 39px); */
-  height: 100%;
+  height: calc(100vh - 80px);
+  /* height: 100%; */
   /* border: 1px solid red; */
   background-color: #000;
   color: #339989;

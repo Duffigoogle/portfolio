@@ -43,7 +43,7 @@ const WelcomeCompContainer = styled.main`
 `;
 
 const WelcomeContent = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 
 const WeclomeHeading1 = styled.h2`
