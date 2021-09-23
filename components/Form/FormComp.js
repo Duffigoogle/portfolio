@@ -31,17 +31,19 @@ const StyledForm = styled.form`
     }};
   }
 
+  ${mediaQueries("tablet")`
+        width: 13rem;
+        margin: 0.5rem auto;
+  `}
   ${mediaQueries("mobileLXX")`
         width: 17rem;
         margin: 0.7rem auto;
   `}
   ${mediaQueries("mobileM")`
         width: 15rem;
-        margin: 0.7rem auto;
   `}
   ${mediaQueries("mobileS")`
         width: 14rem;
-        margin: 0.7rem auto;
   `}
 `;
 

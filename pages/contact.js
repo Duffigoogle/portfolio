@@ -54,12 +54,14 @@ const StyledDiv = styled.div`
   /* height: 100%; */
   min-height: calc(100vh - 80px);
 
+  ${mediaQueries("tablet")`
+      padding: 0 6px 70px;
+  `}
   ${mediaQueries("mobileLXX")`
       display: block;
       height: 130vh;
   `}
   ${mediaQueries("mobileM")`
-      display: block;
       height: 140vh;
   `}
 `;
@@ -83,6 +85,10 @@ const StyledSection = styled.section`
     color: #d9dddc;
     letter-spacing: 3px;
 
+    ${mediaQueries("tablet")`
+        font-size: 2.1rem;
+        letter-spacing: 1px;
+    `}
     ${mediaQueries("mobileLX")`
         font-size: 1.9rem;
         color: green;
