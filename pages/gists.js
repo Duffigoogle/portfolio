@@ -49,10 +49,14 @@ const GistsContainer = styled.main`
       font-weight: 500;
       color: #bfbfbf;
 
+      ${mediaQueries("tablet")`
+        font-size: 3.8rem;
+      `}
+
       ${mediaQueries("mobileLXX")`
         font-size: 3.5rem;
-       
       `}
+
       ${mediaQueries("mobileM")`
         font-size: 3.2rem;
        

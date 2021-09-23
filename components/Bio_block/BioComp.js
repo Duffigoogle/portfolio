@@ -99,7 +99,7 @@ export default BioComp;
 const BioContainer = styled.main`
   display: flex;
   width: 100%;
-  min-height: 120vh;
+  min-height: 125vh;
   background-color: #000;
 `;
 
@@ -126,7 +126,7 @@ const BioContent = styled.div`
 
 const BioImage = styled.div`
   width: 50%;
-  margin-top: -15px;
+  margin-top: -7px;
 
   ${mediaQueries("laptop")`
       // margin-right: -180px;
@@ -139,6 +139,7 @@ const StyledObjBox = styled.div`
   /* margin-top: 0.7rem; */
   /* border: 1px solid red; */
   /* max-width: 20rem; */
+  margin-bottom: 0.7rem;
 
   pre {
     ${mediaQueries("tabletMax")`

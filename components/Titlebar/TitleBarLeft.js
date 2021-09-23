@@ -181,6 +181,7 @@ const UL = styled.ul`
 `;
 
 const TitleBarLeft = styled.div`
+  font-family: "menlo-regular";
   /* flex: 2; */
   align-items: center;
   /* background: blue; */

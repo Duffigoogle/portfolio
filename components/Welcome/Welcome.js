@@ -52,6 +52,14 @@ const WeclomeHeading1 = styled.h2`
   font-size: 3rem;
   text-align: center;
 
+  ${mediaQueries("tablet")`
+      font-weight: 600;
+      font-size: 2.4rem;
+  `}
+  ${mediaQueries("mobileLX")`
+      font-weight: 600;
+      font-size: 1.9rem;
+  `}
   ${mediaQueries("mobileM")`
       font-weight: 500;
       font-size: 1.7rem;
@@ -61,10 +69,19 @@ const WeclomeHeading1 = styled.h2`
     font-size: 5rem;
     letter-spacing: 0.4rem;
 
+    ${mediaQueries("tablet")`
+      font-weight: 600;
+      font-size: 4.1rem;
+      letter-spacing: 0.2rem;
+  `}
+    ${mediaQueries("mobileLX")`
+      font-weight: 600;
+      font-size: 3.2rem;
+  `}
+
     ${mediaQueries("mobileM")`
       font-weight: 600;
       font-size: 3rem;
-      letter-spacing: 0.2rem;
   `}
     &:hover {
       color: orangered;
@@ -95,12 +112,22 @@ const WelcomeButton = styled.button`
   transition: all 0.3s ease 0s;
   cursor: pointer;
 
+  ${mediaQueries("tablet")`
+      width: 240px;
+      height: 40px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin: 25px auto 0px;
+  `}
+  ${mediaQueries("mobileLX")`
+      width: 200px;
+      height: 35px;
+      font-size: 0.7rem;
+  `}
   ${mediaQueries("mobileM")`
       width: 180px;
       height: 30px;
       font-size: 0.7rem;
-      letter-spacing: 1px;
-      margin: 25px auto 0px;
   `}
   &:hover {
     background-color: #2ee59d;

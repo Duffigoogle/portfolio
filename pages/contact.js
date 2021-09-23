@@ -52,14 +52,15 @@ const StyledDiv = styled.div`
   justify-content: center;
   background-color: #000;
   /* height: 100%; */
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 
   ${mediaQueries("mobileLXX")`
       display: block;
+      height: 130vh;
   `}
   ${mediaQueries("mobileM")`
       display: block;
-      height: 100vh;
+      height: 140vh;
   `}
 `;
 

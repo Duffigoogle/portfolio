@@ -168,7 +168,7 @@ const StyledModal = styled.div`
   z-index: 5;
   left: 40px;
   bottom: 70px;
-  width: 200px;
+  width: 240px;
   height: 50px;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
@@ -190,7 +190,7 @@ const StyledModalContent = styled.div`
 
   p {
     font-size: 0.8rem;
-    padding: 0px 15px;
+    padding: 0px 10px;
     color: #fefefe;
     margin-right: 1.25rem;
   }

@@ -120,7 +120,7 @@ const LeftContent = styled.div`
     }
 
     p {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       margin-left: 0.1rem;
     }
   }
@@ -141,7 +141,7 @@ const RightContent = styled.div`
   `}
 
     p {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
   }
 `;

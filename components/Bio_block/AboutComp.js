@@ -4,11 +4,12 @@ import SocialsComp from "../Socials/socialComp";
 import Icon from "../common/icons/icons";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
-// import { size, device } from "../common/breakpoints";
+import { RoughNotation } from "react-rough-notation";
 import { mediaQueries } from "../common/breakpoints";
 
 const AboutComp = () => {
   const { elementRef } = useContext(CalculateHeightContext);
+  // const colors = ["#F59E0B", "#84CC16", "#10B981", "#3B82F6"];
 
   return (
     <>
@@ -19,8 +20,21 @@ const AboutComp = () => {
           </AboutStack>
           <AboutDetails>
             <AboutHeading4>Hello there, I&apos;m</AboutHeading4>
+
             <AboutHeading1>
-              <span> Duffigoogle.</span>{" "}
+              <RoughNotation
+                show={true}
+                type="underline"
+                padding={[0, 2]}
+                iterations={2}
+                animate={true}
+                animationDuration={5000}
+                animationDelay={2000}
+                color="#F59E0B"
+                strokeWidth={3}
+              >
+                <span> Duffigoogle.</span>{" "}
+              </RoughNotation>
             </AboutHeading1>
             <AboutP>
               I <span>build value</span> through code. I like making{" "}
@@ -194,6 +208,7 @@ const AboutHeading4 = styled.h4`
 const AboutHeading1 = styled.h1`
   font-weight: 800;
   font-size: 4rem;
+  /* font-family: "air-regular"; */
   color: #09f755;
 
   ${mediaQueries("tabletMax")`
