@@ -151,7 +151,7 @@ const NavMenuOverlay = styled.div`
 const NavMenuBox = styled.div`
   width: 100px;
   height: 100%;
-  background-color: #0d2538;
+  background-color: #424242;
   padding-top: 0.3rem;
   padding-left: 0.5rem;
 `;
@@ -168,6 +168,7 @@ const UL = styled.ul`
 
     :hover {
       background-color: #cec;
+      color: #000;
       border-bottom: 1px solid #fff;
     }
   }
