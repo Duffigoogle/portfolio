@@ -25,7 +25,9 @@ const PortfolioFilesSchema = ({
           height={img_size}
           width={img_size}
         />{" "}
-        <ExplorerPortfolioP>{file_name}</ExplorerPortfolioP>
+        <ExplorerPortfolioP isCurrentPath={isCurrentPath}>
+          {file_name}
+        </ExplorerPortfolioP>
       </ExplorerPortfolioItem>
     </Link>
   );
@@ -67,13 +69,14 @@ const ExplorerPortfolioItem = styled.div`
 const ExplorerSpan = styled.span`
   width: 1px;
   height: 100%;
-  background-color: gray;
+  background-color: #bfbfbf;
   margin-right: 5px;
 `;
 
 const ExplorerPortfolioP = styled.p`
   font-size: 0.8rem;
   padding-left: 5px;
+  color: ${({ isCurrentPath }) => (isCurrentPath ? "orangered" : "#f5f5f5")};
 `;
 
 const portfolioItems = [
