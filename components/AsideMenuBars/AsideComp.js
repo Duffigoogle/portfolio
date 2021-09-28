@@ -16,9 +16,15 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
   const [modalOne, setModalOne] = useState(false);
   const [modalTwo, setModalTwo] = useState(false);
   const [toggleDiv, setToggleDiv] = useState(0);
+  const [sliderOpen, setSliderOpen] = useState(true);
 
   const ToggleModals = (ind) => {
     setToggleDiv(ind);
+  };
+
+  const expandSlider = () => {
+    setSliderOpen(!sliderOpen);
+    console.log("slide");
   };
 
   // const closeModal = () => {
@@ -180,6 +186,13 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
             <PluralSightComp />
           </div>
         </SideBarContents>
+        <StyledSlider
+          sliderOpen={sliderOpen}
+          onClick={() => {
+            toggleSideTab();
+            expandSlider();
+          }}
+        ></StyledSlider>
       </SideBarContainer>
     </>
   );
@@ -191,6 +204,7 @@ export default AsideComp;
 const SideBarContainer = styled.aside`
   display: flex;
   background-color: #848484;
+  position: relative;
   /* min-height: calc(100vh - 1.875rem - 1.4rem); */
   /* height: calc(100vh - 1.875rem - 1.4rem); */
 `;
@@ -204,7 +218,7 @@ const SideBarTabs = styled.div`
   justify-content: space-between;
 
   ${mediaQueries("mobileM")`
-      width: 2rem;
+      width: 2.5rem;
       align-items: center;
   `}
 `;
@@ -225,18 +239,50 @@ const BottomSideBarTabs = styled.div`
 
 const SideBarContents = styled.div`
   /* width: 14vw; */
+  /* position: relative; */
   width: 11.953rem;
   min-width: 11.953rem;
   /* display: ${({ isHidden }) => (isOpenSideBar ? "block" : "none")}; */
   display: ${(props) => (props.visibility ? "block" : "none")};
 
   ${mediaQueries("mobileLXX")`
-      display: none;
+      // display: none;
+      // display: ${(props) => (props.visibility ? "none" : "block")};
+      position: absolute;
+      top: 0;
+      left: 2.561rem;
+      z-index: 8;
+
   `}
   ${mediaQueries("mobileLX")`
-      display: none;
+      // display: none;
   `}
   ${mediaQueries("mobileM")`
-      display: none;
+      // display: none;
+      left: 2.5rem;
+  `}
+`;
+
+const StyledSlider = styled.div`
+  display: none;
+  background-color: gray;
+  width: 25px;
+  height: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: 3px solid orange;
+  border-left: transparent;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  right: ${({ sliderOpen }) => (sliderOpen ? "-215px" : "-25px")};
+  transition: all 10ms ease;
+
+  ${mediaQueries("mobileLXX")`
+      display: block;
+
+  `}
+  ${mediaQueries("mobileM")`
+    left: ${({ sliderOpen }) => (sliderOpen ? "14rem" : "2.5rem")};
   `}
 `;

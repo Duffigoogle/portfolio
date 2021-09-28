@@ -36,6 +36,7 @@ const DisplayAreaLayoutComp = ({
 export default DisplayAreaLayoutComp;
 
 const PageContainer = styled.div`
+  /* position: relative; */
   /* margin-left: 0px; */
   /* position: absolute; */
   /* left: 100px; */
