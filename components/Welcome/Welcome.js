@@ -12,7 +12,7 @@ const WelcomeComp = () => {
             Welcome <br /> to my <br />
             <span>Tech-folio</span>
           </WeclomeHeading1>
-          <Link href="/bio" passHref>
+          <Link href="/about" passHref>
             <WelcomeButton>
               Explore with joy &nbsp;{" "}
               <Icon name="ArrowRightCircleFill" size={25} color="#fff" />

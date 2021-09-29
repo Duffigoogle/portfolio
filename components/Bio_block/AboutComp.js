@@ -55,7 +55,7 @@ const AboutComp = () => {
           </AboutDetails>
         </AboutContent>
         <AboutButtonContainer>
-          <Link href="/about" passHref>
+          <Link href="/bio" passHref>
             <WelcomeButton>
               Click to discover &nbsp;{" "}
               <Icon name="Arrowrightcircle" size={25} color="#fff" />
@@ -71,7 +71,8 @@ export default AboutComp;
 
 const AboutContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 80px);
+  /* height: calc(100vh - 80px); */
+  height: calc(100vh - 3vh - 1.875rem - 1.478rem);
   /* height: 100%; */
   /* border: 1px solid red; */
   background-color: #000;
@@ -179,7 +180,8 @@ const AboutDetails = styled.div`
       margin-left: 20px;
   `}
   ${mediaQueries("mobileS")`
-      margin-left: 12px;
+      margin-left: 9px;
+      margin-right: 7px;
   `}
 `;
 

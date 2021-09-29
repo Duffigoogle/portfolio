@@ -125,11 +125,11 @@ export const CodeBaseComp = () => {
         <StyledUL>
           <StyledLI>
             <Icon name="javaScriptIcon" size={15} color="#fff" />
-            <span>- JAVASCRIPT</span>
+            <span>- </span> JAVASCRIPT
           </StyledLI>
           <StyledLI>
             <Icon name="htmlIcon" size={15} color="#fff" />
-            <span>- HTML5</span>
+            <span>- </span> HTML5
           </StyledLI>
           <StyledLI>
             <Icon name="cssIcon" size={15} />
@@ -304,7 +304,11 @@ const PluralsightContainer = styled.aside`
 
   div {
     color: #fff;
-    padding: 5px;
+
+    h6 {
+      padding: 10px 5px;
+      font-size: 0.8rem;
+    }
   }
 `;
 

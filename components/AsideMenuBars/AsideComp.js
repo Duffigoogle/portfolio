@@ -16,21 +16,10 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
   const [modalOne, setModalOne] = useState(false);
   const [modalTwo, setModalTwo] = useState(false);
   const [toggleDiv, setToggleDiv] = useState(0);
-  // const [sliderOpen, setSliderOpen] = useState(true);
 
   const ToggleModals = (ind) => {
     setToggleDiv(ind);
   };
-
-  // const expandSlider = () => {
-  //   setSliderOpen(!sliderOpen);
-  //   console.log("slide");
-  // };
-
-  // const expandSlider = () => {
-  //   toggleSideTab();
-  //   console.log("slide");
-  // };
 
   // const closeModal = () => {
   //   setModal('');
@@ -190,13 +179,15 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
           </div>
         </SideBarContents>
         <StyledSlider
-          // sliderOpen={sliderOpen}
           isExpanded={isExpanded}
           onClick={() => {
             toggleSideTab();
-            // expandSlider();
           }}
-        ></StyledSlider>
+        >
+          <SliderSpan isExpanded={isExpanded}>
+            <Icon name="ChevronRight" size={40} color="#fff" />
+          </SliderSpan>
+        </StyledSlider>
       </SideBarContainer>
     </>
   );
@@ -291,9 +282,20 @@ const StyledSlider = styled.div`
 
   ${mediaQueries("mobileLXX")`
       display: block;
+      
 
   `}
   ${mediaQueries("mobileM")`
     left: ${({ isExpanded }) => (isExpanded ? "14rem" : "2.5rem")};
   `}
+`;
+
+const SliderSpan = styled.div`
+  /* background-color: blue; */
+  margin: 2px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: ${({ isExpanded }) => (isExpanded ? "rotate(180deg)" : "")};
+  transition: transform 0.01s;
 `;
