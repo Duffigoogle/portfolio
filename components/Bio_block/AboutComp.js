@@ -25,7 +25,7 @@ const AboutComp = () => {
               <RoughNotation
                 show={true}
                 type="underline"
-                padding={[0, 2]}
+                // padding={[0, 2]}
                 iterations={2}
                 animate={true}
                 animationDuration={5000}
@@ -33,7 +33,8 @@ const AboutComp = () => {
                 color="#F59E0B"
                 strokeWidth={3}
               >
-                <span> Duffigoogle.</span>{" "}
+                {/* <span> Duffigoogle.</span>{" "} */}
+                Duffigoogle.{" "}
               </RoughNotation>
             </AboutHeading1>
             <AboutP>
