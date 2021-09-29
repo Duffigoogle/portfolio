@@ -7,8 +7,8 @@ import useSWR from "swr";
 export const SearchComp = () => {
   return (
     <>
-      <SideBarTitleComp text="SEARCH" />
       <SearchContainer>
+        <SideBarTitleComp text="SEARCH" />
         <SearchInput>
           <input placeholder="Search" />
           <div>
@@ -31,14 +31,17 @@ export const SearchComp = () => {
 };
 
 const SearchContainer = styled.div`
-  margin-top: 11px;
+  background-color: #444444;
+  height: calc(100vh - 1.875rem - 1.3rem);
+  min-height: calc(100vh - 1.875rem - 1.3rem);
 `;
 
 const SearchInput = styled.div`
   justify-content: space-between;
   background-color: #9e9e9e;
-  margin-right: 7px;
-  max-width: 12rem;
+  margin: 0 7px;
+  margin-top: 11px;
+  max-width: 11rem;
   display: flex;
 
   input {
@@ -65,7 +68,7 @@ const SearchReplace = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 12rem;
-  margin-right: 7px;
+  margin: 0 7px;
   margin-top: 8px;
 
   div {
@@ -91,8 +94,14 @@ const SearchReplace = styled.div`
   }
 `;
 
+const CodeBaseContainer = styled.aside`
+  background-color: #444444;
+  height: calc(100vh - 1.875rem - 1.3rem);
+  min-height: calc(100vh - 1.875rem - 1.3rem);
+`;
+
 const StyledUL = styled.ul`
-  margin: 1rem 1.4rem;
+  margin: 0.9rem 1rem;
 `;
 
 const StyledLI = styled.li`
@@ -111,53 +120,55 @@ const StyledLI = styled.li`
 export const CodeBaseComp = () => {
   return (
     <>
-      <SideBarTitleComp text="CODEBASE" />
-      <StyledUL>
-        <StyledLI>
-          <Icon name="javaScriptIcon" size={15} color="#fff" />
-          <span>- JAVASCRIPT</span>
-        </StyledLI>
-        <StyledLI>
-          <Icon name="htmlIcon" size={15} color="#fff" />
-          <span>- HTML5</span>
-        </StyledLI>
-        <StyledLI>
-          <Icon name="cssIcon" size={15} color="#fff" />
-          <span>-</span>CSS3
-        </StyledLI>
-        <StyledLI>
-          <Icon name="sassIcon" size={15} color="#fff" />
-          <span>-</span>SASS
-        </StyledLI>
-        <StyledLI>
-          <Icon name="htmlIcon" size={15} color="#fff" />
-          <span>-</span>BOOTSTRAP
-        </StyledLI>
-        <StyledLI>
-          <Icon name="reactIcon" size={15} color="#fff" />
-          <span>-</span>REACT
-        </StyledLI>
-        <StyledLI>
-          <Icon name="nextjsIcon" size={15} color="#fff" />
-          <span>-</span>NEXTjs
-        </StyledLI>
-        <StyledLI>
-          <Icon name="styledComponentIcon" size={15} color="#fff" />
-          <span>-</span>CSS-in-JS
-        </StyledLI>
-        <StyledLI>
-          <Icon name="materialUIIcon" size={15} color="#fff" />
-          <span>-</span>MATERIAL UI
-        </StyledLI>
-        <StyledLI>
-          <Icon name="tailwindCSSIcon" size={15} color="#fff" />
-          <span>-</span>TAILWINDCSS
-        </StyledLI>
-        <StyledLI>
-          <Icon name="firebaseIcon" size={15} color="#fff" />
-          <span>-</span>FIREBASE
-        </StyledLI>
-      </StyledUL>
+      <CodeBaseContainer>
+        <SideBarTitleComp text="CODEBASE" />
+        <StyledUL>
+          <StyledLI>
+            <Icon name="javaScriptIcon" size={15} color="#fff" />
+            <span>- JAVASCRIPT</span>
+          </StyledLI>
+          <StyledLI>
+            <Icon name="htmlIcon" size={15} color="#fff" />
+            <span>- HTML5</span>
+          </StyledLI>
+          <StyledLI>
+            <Icon name="cssIcon" size={15} color="#fff" />
+            <span>-</span>CSS3
+          </StyledLI>
+          <StyledLI>
+            <Icon name="sassIcon" size={15} color="#fff" />
+            <span>-</span>SASS
+          </StyledLI>
+          <StyledLI>
+            <Icon name="htmlIcon" size={15} color="#fff" />
+            <span>-</span>BOOTSTRAP
+          </StyledLI>
+          <StyledLI>
+            <Icon name="reactIcon" size={15} color="#fff" />
+            <span>-</span>REACT
+          </StyledLI>
+          <StyledLI>
+            <Icon name="nextjsIcon" size={15} color="#fff" />
+            <span>-</span>NEXTjs
+          </StyledLI>
+          <StyledLI>
+            <Icon name="styledComponentIcon" size={15} color="#fff" />
+            <span>-</span>CSS-in-JS
+          </StyledLI>
+          <StyledLI>
+            <Icon name="materialUIIcon" size={15} color="#fff" />
+            <span>-</span>MATERIAL UI
+          </StyledLI>
+          <StyledLI>
+            <Icon name="tailwindCSSIcon" size={15} color="#fff" />
+            <span>-</span>TAILWINDCSS
+          </StyledLI>
+          <StyledLI>
+            <Icon name="firebaseIcon" size={15} color="#fff" />
+            <span>-</span>FIREBASE
+          </StyledLI>
+        </StyledUL>
+      </CodeBaseContainer>
     </>
   );
 };
@@ -193,19 +204,27 @@ export const GithubComp = () => {
 
   return (
     <>
-      <SideBarTitleComp text="GITHUB" />
-      <StyledSection>
-        {/* <p>Git Username: <span>@{data.login}</span></p>
-        <p>Name: <span>{data.name}</span></p>
-        <p>Location: <span>{data.location}</span></p> 
-        <p>Followers: <span>{data.followers}</span></p> 
-        <p>following: <span>{data.following}</span></p> 
-        <p>Public Repos: <span>{data.public_repos}</span></p>
-        <p>Organizations: <span>{data.organizations_url}</span></p> */}
-      </StyledSection>
+      <GitContainer>
+        <SideBarTitleComp text="GITHUB" />
+        <StyledSection>
+          {/* <p>Git Username: <span>@{data.login}</span></p>
+          <p>Name: <span>{data.name}</span></p>
+          <p>Location: <span>{data.location}</span></p> 
+          <p>Followers: <span>{data.followers}</span></p> 
+          <p>following: <span>{data.following}</span></p> 
+          <p>Public Repos: <span>{data.public_repos}</span></p>
+          <p>Organizations: <span>{data.organizations_url}</span></p> */}
+        </StyledSection>
+      </GitContainer>
     </>
   );
 };
+
+const GitContainer = styled.aside`
+  background-color: #444444;
+  height: calc(100vh - 1.875rem - 1.3rem);
+  min-height: calc(100vh - 1.875rem - 1.3rem);
+`;
 
 const StyledSection = styled.div`
   margin: 1.2rem 0.45rem;
@@ -226,36 +245,44 @@ const StyledBox = styled.div`
 export const MailComp = () => {
   return (
     <>
-      <SideBarTitleComp text="CONTACT" />
-      <StyledSection>
-        <StyledBox>
-          <Icon name="mailIcon" size={22} color="orange" />
-          <p>Duffdev001@gmail</p>
-        </StyledBox>
-        <StyledBox>
-          <Icon name="twitter" size={22} color="orange" />
-          <p>@Duffygoogle</p>
-        </StyledBox>
-        <StyledBox>
-          <Icon name="GithubIcon" size={22} color="orange" />
-          <p>@Duffigoogle</p>
-        </StyledBox>
-        <StyledBox>
-          <Icon name="instagram" size={22} color="orange" />
-          <p>@thelastgoodman</p>
-        </StyledBox>
-        <StyledBox>
-          <Icon name="StackoverflowIcon" size={22} color="orange" />
-          <p>StackOverFlow:</p>
-        </StyledBox>
-        <StyledBox>
-          <Icon name="StackoverflowIcon" size={22} color="orange" />
-          <p>Hashnode</p>
-        </StyledBox>
-      </StyledSection>
+      <ContactContainer>
+        <SideBarTitleComp text="CONTACT" />
+        <StyledSection>
+          <StyledBox>
+            <Icon name="mailIcon" size={22} color="orange" />
+            <p>Duffdev001@gmail</p>
+          </StyledBox>
+          <StyledBox>
+            <Icon name="twitter" size={22} color="orange" />
+            <p>@Duffygoogle</p>
+          </StyledBox>
+          <StyledBox>
+            <Icon name="GithubIcon" size={22} color="orange" />
+            <p>@Duffigoogle</p>
+          </StyledBox>
+          <StyledBox>
+            <Icon name="instagram" size={22} color="orange" />
+            <p>@thelastgoodman</p>
+          </StyledBox>
+          {/* <StyledBox>
+            <Icon name="StackoverflowIcon" size={22} color="orange" />
+            <p>StackOverFlow:</p>
+          </StyledBox>
+          <StyledBox>
+            <Icon name="StackoverflowIcon" size={22} color="orange" />
+            <p>Hashnode</p>
+          </StyledBox> */}
+        </StyledSection>
+      </ContactContainer>
     </>
   );
 };
+
+const ContactContainer = styled.aside`
+  background-color: #444444;
+  height: calc(100vh - 1.875rem - 1.3rem);
+  min-height: calc(100vh - 1.875rem - 1.3rem);
+`;
 
 export const PluralSightComp = () => {
   return (

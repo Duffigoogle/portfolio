@@ -89,8 +89,8 @@ const ExplorerMenu = styled.div`
   width: 11.953rem;
   /* min-width: 14vw; */
   min-width: 11.953rem;
-  background-color: #616161;
-  /* background-color: red; */
+  /* background-color: #616161; */
+  background-color: #444444;
   height: calc(100vh - 1.875rem - 1.3rem);
   min-height: calc(100vh - 1.875rem - 1.3rem);
 `;
@@ -137,6 +137,7 @@ const ExplorerPortfolioItem = styled.div`
 const ExplorerPortfolioP = styled.p`
   font-size: 0.8rem;
   padding-left: 5px;
+  color: #fff;
 `;
 
 const ExplorerTopSectionLabel = styled.label`
@@ -148,7 +149,8 @@ const ExplorerTopSectionLabel = styled.label`
   cursor: pointer;
   color: whitesmoke;
   padding: 3.8px 0;
-  background-color: #3f3f3f;
+  background-color: #1d1d1d;
+  /* background-color: #3f3f3f; */
 
   .icon_chevron_right {
     border: 1px solid #fff;

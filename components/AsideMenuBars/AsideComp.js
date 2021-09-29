@@ -265,7 +265,7 @@ const SideBarContents = styled.div`
 
 const StyledSlider = styled.div`
   display: none;
-  background-color: gray;
+  background-color: #444444;
   width: 25px;
   height: 50px;
   border-top-right-radius: 50px;
@@ -277,6 +277,13 @@ const StyledSlider = styled.div`
   top: 50%;
   right: ${({ sliderOpen }) => (sliderOpen ? "-215px" : "-25px")};
   transition: all 10ms ease;
+  outline: none !important;
+  user-select: none;
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
 
   ${mediaQueries("mobileLXX")`
       display: block;

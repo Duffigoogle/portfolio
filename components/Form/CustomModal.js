@@ -100,13 +100,14 @@ const StyledDivModal = styled.div`
     modalTwo ? "block" : "none";
   }};
   position: fixed;
-  z-index: 5;
+  z-index: 9;
   left: 40px;
   bottom: 20px;
   width: 240px;
   padding: 0.5rem 0;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #616161;
+  box-shadow: 0.2rem -0.2rem 5px #fff;
+  /* background-color: rgba(0, 0, 0, 0.4); */
 
   span {
     display: none;
@@ -165,7 +166,7 @@ const StyledModal = styled.div`
     modalOne ? "block" : "none";
   }};
   position: fixed;
-  z-index: 5;
+  z-index: 9;
   left: 40px;
   bottom: 70px;
   width: 240px;
