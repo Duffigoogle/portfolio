@@ -132,23 +132,23 @@ export const CodeBaseComp = () => {
             <span>- HTML5</span>
           </StyledLI>
           <StyledLI>
-            <Icon name="cssIcon" size={15} color="#fff" />
+            <Icon name="cssIcon" size={15} />
             <span>-</span>CSS3
           </StyledLI>
           <StyledLI>
-            <Icon name="sassIcon" size={15} color="#fff" />
+            <Icon name="sassIcon" size={15} />
             <span>-</span>SASS
           </StyledLI>
           <StyledLI>
-            <Icon name="htmlIcon" size={15} color="#fff" />
+            <Icon name="BootstrapIcon" size={15} />
             <span>-</span>BOOTSTRAP
           </StyledLI>
           <StyledLI>
-            <Icon name="reactIcon" size={15} color="#fff" />
+            <Icon name="reactIcon" size={15} />
             <span>-</span>REACT
           </StyledLI>
           <StyledLI>
-            <Icon name="nextjsIcon" size={15} color="#fff" />
+            <Icon name="NextJSIcon" size={15} />
             <span>-</span>NEXTjs
           </StyledLI>
           <StyledLI>
@@ -156,15 +156,15 @@ export const CodeBaseComp = () => {
             <span>-</span>CSS-in-JS
           </StyledLI>
           <StyledLI>
-            <Icon name="materialUIIcon" size={15} color="#fff" />
+            <Icon name="MaterialUIIcon" size={15} />
             <span>-</span>MATERIAL UI
           </StyledLI>
           <StyledLI>
-            <Icon name="tailwindCSSIcon" size={15} color="#fff" />
+            <Icon name="TailwindCSSIcon" size={15} />
             <span>-</span>TAILWINDCSS
           </StyledLI>
           <StyledLI>
-            <Icon name="firebaseIcon" size={15} color="#fff" />
+            <Icon name="FireBaseIcon" size={15} />
             <span>-</span>FIREBASE
           </StyledLI>
         </StyledUL>
@@ -286,11 +286,27 @@ const ContactContainer = styled.aside`
 
 export const PluralSightComp = () => {
   return (
-    <div>
-      <SideBarTitleComp text="PLURALSIGHT" />
-    </div>
+    <>
+      <PluralsightContainer>
+        <SideBarTitleComp text="PLURALSIGHT" />
+        <div>
+          <h6>Loading content...</h6>
+        </div>
+      </PluralsightContainer>
+    </>
   );
 };
+
+const PluralsightContainer = styled.aside`
+  background-color: #444444;
+  height: calc(100vh - 1.875rem - 1.3rem);
+  min-height: calc(100vh - 1.875rem - 1.3rem);
+
+  div {
+    color: #fff;
+    padding: 5px;
+  }
+`;
 
 // const searchQueryURL = 'https://api.github.com';
 

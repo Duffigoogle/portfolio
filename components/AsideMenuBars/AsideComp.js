@@ -16,16 +16,21 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
   const [modalOne, setModalOne] = useState(false);
   const [modalTwo, setModalTwo] = useState(false);
   const [toggleDiv, setToggleDiv] = useState(0);
-  const [sliderOpen, setSliderOpen] = useState(true);
+  // const [sliderOpen, setSliderOpen] = useState(true);
 
   const ToggleModals = (ind) => {
     setToggleDiv(ind);
   };
 
-  const expandSlider = () => {
-    setSliderOpen(!sliderOpen);
-    console.log("slide");
-  };
+  // const expandSlider = () => {
+  //   setSliderOpen(!sliderOpen);
+  //   console.log("slide");
+  // };
+
+  // const expandSlider = () => {
+  //   toggleSideTab();
+  //   console.log("slide");
+  // };
 
   // const closeModal = () => {
   //   setModal('');
@@ -116,7 +121,6 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
                 setModalOne(!modalOne);
                 ToggleModals(1);
                 console.log("tab 1");
-                console.log(modalOne);
               }}
             >
               <Icon
@@ -133,7 +137,6 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
                 setModalTwo(!modalTwo);
                 ToggleModals(2);
                 console.log("tab 2");
-                console.log(modalTwo);
               }}
             >
               <Icon
@@ -187,10 +190,11 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
           </div>
         </SideBarContents>
         <StyledSlider
-          sliderOpen={sliderOpen}
+          // sliderOpen={sliderOpen}
+          isExpanded={isExpanded}
           onClick={() => {
             toggleSideTab();
-            expandSlider();
+            // expandSlider();
           }}
         ></StyledSlider>
       </SideBarContainer>
@@ -274,8 +278,8 @@ const StyledSlider = styled.div`
   border-left: transparent;
   position: absolute;
   cursor: pointer;
-  top: 50%;
-  right: ${({ sliderOpen }) => (sliderOpen ? "-215px" : "-25px")};
+  top: 54%;
+  right: ${({ isExpanded }) => (isExpanded ? "-215px" : "-25px")};
   transition: all 10ms ease;
   outline: none !important;
   user-select: none;
@@ -290,6 +294,6 @@ const StyledSlider = styled.div`
 
   `}
   ${mediaQueries("mobileM")`
-    left: ${({ sliderOpen }) => (sliderOpen ? "14rem" : "2.5rem")};
+    left: ${({ isExpanded }) => (isExpanded ? "14rem" : "2.5rem")};
   `}
 `;
