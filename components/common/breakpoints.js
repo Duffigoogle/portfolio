@@ -28,7 +28,7 @@ export const breakpoints = {
   tablet: 768, // 769px — 1024px: Small screens, laptops
   tabletMax: 991, // 769px — 1024px: Small screens, laptops
   laptop: 1024, // 1025px — 1200px: Desktops, large screens
-  laptop: 1201, // 1201px and more —  Extra large.
+  laptopM: 1201, // 1201px and more —  Extra large.
   laptopL: 1440, //  Extra large screens.
   desktop: 2560, // —  Extra large screens, TV.
 };

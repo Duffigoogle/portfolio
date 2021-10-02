@@ -98,8 +98,12 @@ const StyledDiv = styled.div`
       margin: 10px auto;
       padding: 0px 8px;
   `} */
-  ${mediaQueries("tabletLXX")`
-      
+  ${mediaQueries("tablet")`
+      height: 270vh;
+  `}
+  ${mediaQueries("mobileLX")`
+        height: 350vh;
+        padding: 10px 0px;
   `}
   ${mediaQueries("mobileM")`
         height: 350vh;
@@ -123,9 +127,12 @@ const GitProfile = styled.section`
       span {
         color: orangered;
         font-size: 1.1rem;
+        ${mediaQueries("mobileLX")`
+            font-size: 1rem;
+            font-weight: 800;
+       `}
         ${mediaQueries("mobileM")`
             font-size: 0.9rem;
-            font-weight: 800;
       `}
       }
     }
@@ -133,9 +140,20 @@ const GitProfile = styled.section`
 `;
 const GithubDetails = styled.section`
   margin: 20px auto;
+  padding: 0px 10px;
   /* background-color: #9e9e9e; */
   color: #fff;
   display: flex;
+
+  ${mediaQueries("laptop")`
+         padding: 0px 15px;
+  `}
+  ${mediaQueries("mobileLX")`
+         padding: 0px 10px;
+  `}
+  ${mediaQueries("mobileM")`
+         padding: 0px 5px;
+  `}
 
   div {
     width: 50%;
@@ -157,8 +175,8 @@ const GithubDetails = styled.section`
 `;
 
 const RepoCardSection = styled.section`
-  ${mediaQueries("tabletLXX")`
-      
+  ${mediaQueries("tablet")`
+      // border: 1px solid red;
     `}
   ${mediaQueries("mobileM")`
         
@@ -167,6 +185,13 @@ const RepoCardSection = styled.section`
     color: orangered;
     font-size: 1.3rem;
 
+    ${mediaQueries("tablet")`
+      font-size: 1.1rem;
+   `}
+    ${mediaQueries("mobileLX")`
+      font-size: 1rem;
+
+    `}
     ${mediaQueries("mobileM")`
       font-size: 1rem;
 
@@ -180,11 +205,15 @@ const RepoCollection = styled.section`
   width: 52rem;
   margin: 5px auto;
 
-  ${mediaQueries("tabletLXX")`
-      
+  ${mediaQueries("tablet")`
+      width: 28.5rem;
+  `}
+  ${mediaQueries("mobileLX")`
+      width: 20rem;
+      // border: 1px solid yellow;
   `}
   ${mediaQueries("mobileM")`
-      width: 14rem;
+      width: 18.5rem;
   `}
 `;
 

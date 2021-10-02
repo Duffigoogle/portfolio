@@ -34,6 +34,16 @@ const RepoCardContainer = styled.main`
   box-shadow: 0.2rem -0.2rem 5px #848484;
   border-radius: 4px;
   color: #000;
+
+  ${mediaQueries("laptop")`
+    width: 13rem;
+    `}
+  ${mediaQueries("mobileLX")`
+      width: 8.5rem;
+    `}
+  ${mediaQueries("mobileM")`
+      width: 8rem;
+    `}
 `;
 const RepoDetails = styled.section`
   text-align: center;
@@ -41,13 +51,19 @@ const RepoDetails = styled.section`
     font-weight: 800;
     color: #1d1d1d;
 
-    ${mediaQueries("mobileM")`
+    ${mediaQueries("laptop")`
     font-weight: 900;
+    font-size: 1rem;
+    `}
+    ${mediaQueries("mobileM")`
     font-size: 0.8rem;
     `}
   }
   p {
     font-size: 0.9rem;
+    ${mediaQueries("laptop")`
+      font-size: 0.8rem;
+    `}
     ${mediaQueries("mobileM")`
       font-size: 0.7rem;
     `}
