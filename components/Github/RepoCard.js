@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Icon from "../common/icons/icons";
+import { mediaQueries } from "../common/breakpoints";
 
 const RepoCard = ({ repo }) => {
   return (
@@ -27,7 +28,7 @@ const RepoCard = ({ repo }) => {
 export default RepoCard;
 
 const RepoCardContainer = styled.main`
-  width: 15 rem;
+  width: 15rem;
   margin: 10px;
   background-color: #cec;
   box-shadow: 0.2rem -0.2rem 5px #848484;
@@ -39,6 +40,17 @@ const RepoDetails = styled.section`
   h3 {
     font-weight: 800;
     color: #1d1d1d;
+
+    ${mediaQueries("mobileM")`
+    font-weight: 900;
+    font-size: 0.8rem;
+    `}
+  }
+  p {
+    font-size: 0.9rem;
+    ${mediaQueries("mobileM")`
+      font-size: 0.7rem;
+    `}
   }
 `;
 const RepoLinks = styled.section`

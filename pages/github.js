@@ -9,6 +9,7 @@ import RepoCard from "../components/Github/RepoCard";
 import styled from "styled-components";
 import Icon from "../components/common/icons/icons";
 import GitHubCalendar from "react-github-calendar";
+import { mediaQueries } from "../components/common/breakpoints";
 import { GithubSideComp } from "../components/SidebarComps/SidebarComp";
 // import styles from '../styles/GithubPage.module.css';
 
@@ -18,8 +19,6 @@ const GithubPage = ({ repos, user }) => {
   const contributionsTheme = {
     text: "red",
   };
-
-  // let SomeRepos = repos.splice(0, 10)
 
   return (
     <div>
@@ -65,13 +64,14 @@ const GithubPage = ({ repos, user }) => {
                 </GithubDetails>
               </div>
 
-              <h2>Updated Repositories</h2>
-
-              <RepoCollection>
-                {repos.slice(10, 37).map((repo) => (
-                  <RepoCard key={repo.id} repo={repo} />
-                ))}
-              </RepoCollection>
+              <RepoCardSection>
+                <h2>Updated Repositories</h2>
+                <RepoCollection>
+                  {repos.slice(10, 25).map((repo) => (
+                    <RepoCard key={repo.id} repo={repo} />
+                  ))}
+                </RepoCollection>
+              </RepoCardSection>
               <GitHubCalendar
                 username={process.env.NEXT_PUBLIC_GITHUB_USERNAME}
                 theme={contributionsTheme}
@@ -87,11 +87,23 @@ const GithubPage = ({ repos, user }) => {
 };
 
 const StyledDiv = styled.div`
-  height: 140vh;
+  height: 170vh;
   width: 100%;
   padding: 10px;
   background-color: #000;
   color: #e8e9ec;
+
+  /* ${mediaQueries("laptop")`
+      // width: 100%;
+      margin: 10px auto;
+      padding: 0px 8px;
+  `} */
+  ${mediaQueries("tabletLXX")`
+      
+  `}
+  ${mediaQueries("mobileM")`
+        height: 350vh;
+  `}
 `;
 
 const GitProfile = styled.section`
@@ -107,9 +119,14 @@ const GitProfile = styled.section`
     h3 {
       font-size: 0.9rem;
       margin-right: 15px;
+
       span {
         color: orangered;
         font-size: 1.1rem;
+        ${mediaQueries("mobileM")`
+            font-size: 0.9rem;
+            font-weight: 800;
+      `}
       }
     }
   }
@@ -128,6 +145,10 @@ const GithubDetails = styled.section`
       display: flex;
       margin-left: 10px;
 
+      ${mediaQueries("mobileM")`
+         font-size: 0.8rem;
+     `}
+
       span {
         color: "orangered";
       }
@@ -135,11 +156,36 @@ const GithubDetails = styled.section`
   }
 `;
 
+const RepoCardSection = styled.section`
+  ${mediaQueries("tabletLXX")`
+      
+    `}
+  ${mediaQueries("mobileM")`
+        
+    `}
+  h2 {
+    color: orangered;
+    font-size: 1.3rem;
+
+    ${mediaQueries("mobileM")`
+      font-size: 1rem;
+
+    `}
+  }
+`;
+
 const RepoCollection = styled.section`
   display: flex;
   flex-wrap: wrap;
-  min-width: 52rem;
+  width: 52rem;
   margin: 5px auto;
+
+  ${mediaQueries("tabletLXX")`
+      
+  `}
+  ${mediaQueries("mobileM")`
+      width: 14rem;
+  `}
 `;
 
 export async function getStaticProps() {
