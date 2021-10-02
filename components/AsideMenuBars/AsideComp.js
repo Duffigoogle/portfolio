@@ -5,7 +5,7 @@ import ExplorerComp from "../../components/Explorerbar/ExplorerComp";
 import {
   MailComp,
   CodeBaseComp,
-  GithubComp,
+  GithubCompt,
   PluralSightComp,
   SearchComp,
 } from "../SidebarComps/SidebarComp";
@@ -165,7 +165,7 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
           <div
             className={toggleState === 4 ? "content active-content" : "content"}
           >
-            <GithubComp />
+            <GithubCompt />
           </div>
           <div
             className={toggleState === 5 ? "content active-content" : "content"}
@@ -273,7 +273,7 @@ const StyledSlider = styled.div`
   right: ${({ isExpanded }) => (isExpanded ? "-215px" : "-25px")};
   transition: all 10ms ease;
   outline: none !important;
-  user-select: none;
+  z-index: 8;
 
   :focus {
     outline: 0;

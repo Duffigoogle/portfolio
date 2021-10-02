@@ -2,6 +2,7 @@
 import SideBarTitleComp from "../SidebarComps/SideBarTitle";
 import styled from "styled-components";
 import Icon from "../common/icons/icons";
+import Image from "next/image";
 import useSWR from "swr";
 
 export const SearchComp = () => {
@@ -173,47 +174,52 @@ export const CodeBaseComp = () => {
   );
 };
 
-// function Profile() {
-//   const { data, error } = useSWR('/api/user', fetch)
+export const GithubSideComp = ({ user }) => {
+  return (
+    <>
+      <div>
+        <h5>No previews... </h5>
+        {/* <GitProfile>
+          <Image
+            src={user.avatar_url}
+            alt={user.login}
+            width={50}
+            height={50}
+          />
+          <h3>
+            Hello <span>@{user.login},</span>{" "}
+          </h3>
+        </GitProfile> */}
 
-//   if (error) return <div>failed to load</div>
-//   if (!data) return <div>loading...</div>
-//   return <div>hello {data.name}!</div>
-// }
+        {/* <GithubDetails>
+          <div>
+            <h3>
+              <Icon name="personcircle" size={17} /> {user.name}
+            </h3>
+            <h3>
+              {" "}
+              <Icon name="location" size={17} /> {user.location}
+            </h3>
+          </div>
+          <div>
+            <h3>{user.followers} followers</h3>
+            <h3>{user.following} following</h3>
+            <h3>{user.public_repos} repos</h3>
+            <h3> Org: {user.organizations_url} </h3>
+          </div>
+        </GithubDetails> */}
+      </div>
+    </>
+  );
+};
 
-export const GithubComp = () => {
-  // const baseURL = 'https://api.github.com/duffigoogle';
-
-  // const fetcher = baseURL => {
-  //     fetch(baseURL, {
-  //         headers: {
-  //             'Authorization': 'token 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',
-  //              'Accept' : 'application/vnd.github.v3+json'
-  //          }})
-  //     .then(response => response.json())
-  //     .then(data => console.log(data))
-  //     .catch(error => console.log(error));
-  //     console.log(data);
-  // }
-
-  // const { data, error } = useSWR(baseURL, fetcher)
-  // // const { data, error } = useSWR('/api/user', fetch)
-
-  // if (error) return <div>Failed to load</div>
-  // if (!data) return <div>Loading...</div>
-
+export const GithubCompt = () => {
   return (
     <>
       <GitContainer>
         <SideBarTitleComp text="GITHUB" />
         <StyledSection>
-          {/* <p>Git Username: <span>@{data.login}</span></p>
-          <p>Name: <span>{data.name}</span></p>
-          <p>Location: <span>{data.location}</span></p> 
-          <p>Followers: <span>{data.followers}</span></p> 
-          <p>following: <span>{data.following}</span></p> 
-          <p>Public Repos: <span>{data.public_repos}</span></p>
-          <p>Organizations: <span>{data.organizations_url}</span></p> */}
+          <GithubSideComp />
         </StyledSection>
       </GitContainer>
     </>
