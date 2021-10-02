@@ -43,7 +43,7 @@ export default function HeadBlock({ ...customMeta }) {
           content="I'm a design oriented front-end developer based in Nigeria."
         />
         <meta property="og:title" content="Caleb Duff Techfolio" />
-        <meta property="og:image" itemprop="image" content={meta.image} />
+        <meta property="og:image" content={meta.image} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@duffygoogle" />

@@ -10,11 +10,11 @@ const RepoCard = ({ repo }) => {
       </RepoDetails>
       <RepoLinks>
         <div>
-          <a href={repo.html_url} target="_blank" rel="noopener">
+          <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
             <Icon name="GithubIcon" size={17} color="orange" />
           </a>
           {repo.homepage && (
-            <a href={repo.homepage} target="_blank" rel="noopener">
+            <a href={repo.homepage} target="_blank" rel="noopener noreferrer">
               <Icon name="LinkIcon" size={17} color="red" />
             </a>
           )}
@@ -27,7 +27,7 @@ const RepoCard = ({ repo }) => {
 export default RepoCard;
 
 const RepoCardContainer = styled.main`
-  width: 15rem;
+  width: 15 rem;
   margin: 10px;
   background-color: #cec;
   box-shadow: 0.2rem -0.2rem 5px #848484;
