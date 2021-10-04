@@ -7,7 +7,7 @@ import Image from "next/image";
 import ExplorerPortfolioComp from "../Explorerbar/ExplorerPortfolio";
 import SideBarTitleComp from "../SidebarComps/SideBarTitle";
 
-const ExplorerComp = () => {
+const ExplorerComp = ({ toggleSideTab, isExpanded }) => {
   const router = useRouter();
 
   const isCurrentPath = router.pathname === "/" || router.asPath === "/";
@@ -72,7 +72,10 @@ const ExplorerComp = () => {
               </ExplorerPortfolioLabel>
 
               <ExplorerPortfolioContent isOpenPortfolio={isOpenPortfolio}>
-                <ExplorerPortfolioComp />
+                <ExplorerPortfolioComp
+                  toggleSideTab={toggleSideTab}
+                  isExpanded={isExpanded}
+                />
               </ExplorerPortfolioContent>
             </ExplorerPortfolioMenu>
           </ExplorerWorkspaceMenu>

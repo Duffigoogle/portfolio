@@ -32,8 +32,11 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
           <TopSideBarTabs>
             <div
               className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(1)}
-              onDoubleClick={toggleSideTab}
+              // onClick={() => toggleTab(1)}
+              // onDoubleClick={toggleSideTab}
+              onClick={() => {
+                toggleState === 1 ? toggleSideTab() : toggleTab(1);
+              }}
             >
               <Icon
                 name="FilesIcon"
@@ -44,8 +47,11 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
             </div>
             <div
               className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(2)}
-              onDoubleClick={toggleSideTab}
+              // onClick={() => toggleTab(2)}
+              // onDoubleClick={toggleSideTab}
+              onClick={() => {
+                toggleState === 2 ? toggleSideTab() : toggleTab(2);
+              }}
             >
               <Icon
                 name="SearchRightIcon"
@@ -56,8 +62,11 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
             </div>
             <div
               className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(3)}
-              onDoubleClick={toggleSideTab}
+              // onClick={() => toggleTab(3)}
+              // onDoubleClick={toggleSideTab}
+              onClick={() => {
+                toggleState === 3 ? toggleSideTab() : toggleTab(3);
+              }}
             >
               <Icon
                 name="CodeIcon"
@@ -68,8 +77,11 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
             </div>
             <div
               className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(4)}
-              onDoubleClick={toggleSideTab}
+              // onClick={() => toggleTab(4)}
+              // onDoubleClick={toggleSideTab}
+              onClick={() => {
+                toggleState === 4 ? toggleSideTab() : toggleTab(4);
+              }}
             >
               <Icon
                 name="GithubIcon"
@@ -80,8 +92,11 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
             </div>
             <div
               className={toggleState === 5 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(5)}
-              onDoubleClick={toggleSideTab}
+              // onClick={() => toggleTab(5)}
+              // onDoubleClick={toggleSideTab}
+              onClick={() => {
+                toggleState === 5 ? toggleSideTab() : toggleTab(5);
+              }}
             >
               <Icon
                 name="MailIcon"
@@ -92,8 +107,11 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
             </div>
             <div
               className={toggleState === 6 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(6)}
-              onDoubleClick={toggleSideTab}
+              // onClick={() => toggleTab(6)}
+              // onDoubleClick={toggleSideTab}
+              onClick={() => {
+                toggleState === 6 ? toggleSideTab() : toggleTab(6);
+              }}
             >
               <Icon
                 name="PluralsightIcon"
@@ -150,7 +168,10 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
           <div
             className={toggleState === 1 ? "content active-content" : "content"}
           >
-            <ExplorerComp />
+            <ExplorerComp
+              toggleSideTab={toggleSideTab}
+              isExpanded={isExpanded}
+            />
           </div>
           <div
             className={toggleState === 2 ? "content active-content" : "content"}
@@ -242,7 +263,7 @@ const SideBarContents = styled.div`
 
   ${mediaQueries("mobileLXX")`
       // display: none;
-      // display: ${(props) => (props.visibility ? "none" : "block")};
+      // display: ${(isExpanded) => (isExpanded ? "none" : "block")};
       position: absolute;
       top: 0;
       left: 2.561rem;

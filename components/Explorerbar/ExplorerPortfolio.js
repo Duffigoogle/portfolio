@@ -2,6 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { mediaQueries } from "../common/breakpoints";
 
 const PortfolioFilesSchema = ({
   link_path,
@@ -9,14 +10,39 @@ const PortfolioFilesSchema = ({
   img_alt,
   img_size,
   file_name,
+  toggleSideTab,
+  isExpanded,
 }) => {
   const router = useRouter();
 
   const isCurrentPath =
     router.pathname === link_path || router.asPath === link_path;
 
+  const CloseSideBarOnMobile = () => {
+    if (isExpanded === true) {
+      if (mediaQueries("mobileLXX")) {
+        toggleSideTab();
+      } else {
+        null;
+      }
+    } else {
+      null;
+    }
+  };
+  // const CloseSideBarOnMobile = () => {
+  //   if (isExpanded === true) {
+  //     if (mediaQueries("mobileLXX")) {
+  //       toggleSideTab();
+  //     } else {
+  //       null;
+  //     }
+  //   } else {
+  //     null;
+  //   }
+  // };
+
   return (
-    <Link href={link_path} passHref>
+    <Link href={link_path} passHref onClick={() => CloseSideBarOnMobile}>
       <ExplorerPortfolioItem isCurrentPath={isCurrentPath}>
         <ExplorerSpan />
         <Image
@@ -33,13 +59,19 @@ const PortfolioFilesSchema = ({
   );
 };
 
-const ExplorerPortfolioComp = () => {
+const ExplorerPortfolioComp = ({ toggleSideTab, isExpanded }) => {
   const router = useRouter();
 
   return (
     <>
       {portfolioItems.map((portfolioItem, index) => (
-        <PortfolioFilesSchema key={index} {...portfolioItem} id={index} />
+        <PortfolioFilesSchema
+          key={index}
+          {...portfolioItem}
+          id={index}
+          toggleSideTab={toggleSideTab}
+          isExpanded={isExpanded}
+        />
       ))}
     </>
   );
