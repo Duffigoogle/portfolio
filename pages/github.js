@@ -32,52 +32,64 @@ const GithubPage = ({ repos, user }) => {
               <div>
                 {/* <GithubSideComp user={user} /> */}
                 <GitProfile>
-                  <div>
-                    <h3>
-                      Hello <span>@{user.login},</span>{" "}
-                    </h3>
+                  <ImageBox>
                     <Image
                       src={user.avatar_url}
                       alt={user.login}
-                      width={50}
-                      height={50}
+                      width={110}
+                      height={110}
                     />
+                  </ImageBox>
+                  <div>
+                    <h2>{user.name}</h2>
+                    <h3>
+                      Hello &nbsp; <span>@{user.login},</span>
+                    </h3>
+                    <h3>
+                      <Icon name="location" size={19} />
+                      NG, {user.location}.
+                    </h3>
                   </div>
                 </GitProfile>
 
                 <GithubDetails>
                   <div>
                     <h3>
+                      Git Bio: <span>{user.bio}</span>
+                    </h3>
+                  </div>
+                  <GitDetails>
+                    {/* <h3>
                       <Icon name="personcircle" size={17} /> {user.name}
-                    </h3>
-                    <h3>
-                      <Icon name="location" size={17} /> {user.location}
-                    </h3>
-                    <h3>{user.followers} followers</h3>
-                    <h3>{user.following} following</h3>
-                    <h3>{user.public_repos} repos</h3>
+                    </h3> */}
+                    <div>
+                      <h3>{user.followers} followers</h3>
+                    </div>
+                    <div>
+                      <h3>{user.following} following</h3>
+                    </div>
+                    <div>
+                      <h3>{user.public_repos} repositories</h3>
+                    </div>
                     {/* <h3> Org: {user.organizations_url} </h3> */}
-                  </div>
-                  <div>
-                    <h3>Git Bio: {user.bio}</h3>
-                  </div>
+                  </GitDetails>
                 </GithubDetails>
               </div>
 
               <RepoCardSection>
-                <h2>Updated Repositories</h2>
+                <h2>Some Repositories</h2>
                 <RepoCollection>
                   {repos.slice(10, 25).map((repo) => (
                     <RepoCard key={repo.id} repo={repo} />
                   ))}
                 </RepoCollection>
+                <GitHubCalendar
+                  username={process.env.NEXT_PUBLIC_GITHUB_USERNAME}
+                  theme={contributionsTheme}
+                  blockMargin={2}
+                  blockSize={20}
+                />
               </RepoCardSection>
-              <GitHubCalendar
-                username={process.env.NEXT_PUBLIC_GITHUB_USERNAME}
-                theme={contributionsTheme}
-                blockMargin={2}
-                blockSize={20}
-              />
             </StyledDiv>
           </PageLayout>
         </>
@@ -87,42 +99,59 @@ const GithubPage = ({ repos, user }) => {
 };
 
 const StyledDiv = styled.div`
-  height: 170vh;
+  height: 130rem;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   background-color: #000;
   color: #e8e9ec;
 
-  /* ${mediaQueries("laptop")`
-      // width: 100%;
-      margin: 10px auto;
-      padding: 0px 8px;
-  `} */
-  ${mediaQueries("tablet")`
-      height: 270vh;
+  ${mediaQueries("laptop")`
+      width: 100%;
+      height: 130vh;
   `}
-  ${mediaQueries("mobileLX")`
+  ${mediaQueries("tablet")`
+      height: 240vh;
+      padding: 20px 10px;
+  `}
+  ${mediaQueries("mobileLXX")`
         height: 350vh;
         padding: 10px 0px;
   `}
   ${mediaQueries("mobileM")`
         height: 350vh;
   `}
+  ${mediaQueries("mobileS")`
+        height: 240vh;
+        padding: 0px;
+  `}
 `;
 
 const GitProfile = styled.section`
   display: flex;
-  justify-content: flex-end;
-  background-color: #444444;
-  margin: 10px 10px;
-  /* color: #fff; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
 
   div {
-    display: flex;
-    align-items: flex-end;
+    text-align: center;
+    h2 {
+      font-size: 1rem;
+      ${mediaQueries("mobileS")`
+            font-size: 0.8rem;
+      `}
+    }
     h3 {
       font-size: 0.9rem;
-      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      /* margin-right: 15px; */
+      ${mediaQueries("mobileS")`
+            font-size: 0.8rem;
+      `}
+      ${mediaQueries("mobileS")`
+            // font-size: 0.8rem;
+      `}
 
       span {
         color: orangered;
@@ -134,67 +163,142 @@ const GitProfile = styled.section`
         ${mediaQueries("mobileM")`
             font-size: 0.9rem;
       `}
+        ${mediaQueries("mobileS")`
+            font-size: 0.7rem;
+      `}
       }
     }
   }
 `;
+
+const ImageBox = styled.div`
+  border-radius: 50%;
+  border: 4px solid #000;
+  overflow: hidden;
+`;
+
 const GithubDetails = styled.section`
-  margin: 20px auto;
-  padding: 0px 10px;
-  /* background-color: #9e9e9e; */
   color: #fff;
-  display: flex;
+  margin: 15px auto 55px;
+  width: 40rem;
+  /* border: 1px solid green; */
 
   ${mediaQueries("laptop")`
-         padding: 0px 15px;
+        //  padding: 0px 15px;
+  `}
+  ${mediaQueries("tablet")`
+         width: 28rem;
+  `}
+  ${mediaQueries("mobileLXX")`
+        //  padding: 0px 10px;
   `}
   ${mediaQueries("mobileLX")`
-         padding: 0px 10px;
+         width: 20rem;
   `}
   ${mediaQueries("mobileM")`
-         padding: 0px 5px;
+         width: 15rem;
+  `}
+  ${mediaQueries("mobileS")`
+         width: 14.5rem;
+         margin: 8px auto 40px;
   `}
 
   div {
-    width: 50%;
+    width: 100%;
 
     h3 {
       font-size: 1rem;
-      display: flex;
       margin-left: 10px;
+      color: orangered;
 
       ${mediaQueries("mobileM")`
          font-size: 0.8rem;
      `}
+      ${mediaQueries("mobileS")`
+         font-size: 0.6rem;
+     `}
 
       span {
-        color: "orangered";
+        color: #fff;
+        font-size: 0.8rem;
       }
+    }
+  }
+`;
+
+const GitDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid skyblue;
+    border-radius: 6px;
+    width: 12rem;
+    height: 3rem;
+
+    h3 {
+      font-size: 0.9rem;
+      color: orange;
+      text-align: center;
+      /* margin: auto; */
+
+      ${mediaQueries("mobileM")`
+         font-size: 0.7rem;
+     `}
+      ${mediaQueries("mobileS")`
+         font-size: 0.6rem;
+     `}
     }
   }
 `;
 
 const RepoCardSection = styled.section`
+  width: 66rem;
+  margin: 0px auto;
+  /* border: 1px solid red; */
+
+  ${mediaQueries("laptop")`
+      width: 43rem;
+    `}
   ${mediaQueries("tablet")`
-      // border: 1px solid red;
+      width: 28rem;
     `}
+  ${mediaQueries("mobileLXX")`
+        width: 28rem;
+  `}
+  ${mediaQueries("mobileLX")`
+        width: 22rem;
+  `}
   ${mediaQueries("mobileM")`
-        
-    `}
+        width: 16rem;
+  `}
+  ${mediaQueries("mobileS")`
+        width: 14rem;
+  `}
+
   h2 {
     color: orangered;
     font-size: 1.3rem;
+    margin-left: 15px;
+    text-decoration: underline;
 
     ${mediaQueries("tablet")`
       font-size: 1.1rem;
    `}
-    ${mediaQueries("mobileLX")`
+    ${mediaQueries("mobileLXX")`
       font-size: 1rem;
 
     `}
     ${mediaQueries("mobileM")`
-      font-size: 1rem;
-
+      font-size: 0.9rem;
+    `}
+    ${mediaQueries("mobileS")`
+      font-size: 0.7rem;
+      font-weight: 800;
     `}
   }
 `;
@@ -202,18 +306,28 @@ const RepoCardSection = styled.section`
 const RepoCollection = styled.section`
   display: flex;
   flex-wrap: wrap;
-  width: 52rem;
   margin: 5px auto;
+  /* border: 1px solid blue; */
 
+  ${mediaQueries("laptop")`
+      width: 50rem;
+  `}
   ${mediaQueries("tablet")`
       width: 28.5rem;
+  `}
+  ${mediaQueries("mobileLXX")`
+      width: 21rem;
+      // border: 1px solid yellow;
   `}
   ${mediaQueries("mobileLX")`
       width: 20rem;
       // border: 1px solid yellow;
   `}
   ${mediaQueries("mobileM")`
-      width: 18.5rem;
+      width: 15.5rem;
+  `}
+  ${mediaQueries("mobileS")`
+      width: 14rem;
   `}
 `;
 
