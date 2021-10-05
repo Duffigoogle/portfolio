@@ -10,7 +10,7 @@ import styled from "styled-components";
 import Icon from "../components/common/icons/icons";
 import GitHubCalendar from "react-github-calendar";
 import { mediaQueries } from "../components/common/breakpoints";
-import { GithubSideComp } from "../components/SidebarComps/SidebarComp";
+// import { GithubSideComp } from "../components/SidebarComps/SidebarComp";
 // import styles from '../styles/GithubPage.module.css';
 
 const GithubPage = ({ repos, user }) => {
