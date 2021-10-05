@@ -4,7 +4,7 @@ import SocialsComp from "../Socials/socialComp";
 import Icon from "../common/icons/icons";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
-import { RoughNotation } from "react-rough-notation";
+// import { RoughNotation } from "react-rough-notation";
 import { mediaQueries } from "../common/breakpoints";
 
 const AboutComp = () => {
@@ -22,7 +22,7 @@ const AboutComp = () => {
             <AboutHeading4>Hello there, I&apos;m</AboutHeading4>
 
             <AboutHeading1>
-              <RoughNotation
+              {/* <RoughNotation
                 show={true}
                 type="underline"
                 // padding={[0, 2]}
@@ -32,10 +32,9 @@ const AboutComp = () => {
                 animationDelay={2000}
                 color="#F59E0B"
                 strokeWidth={3}
-              >
-                {/* <span> Duffigoogle.</span>{" "} */}
-                Duffigoogle.{" "}
-              </RoughNotation>
+              > */}
+              {/* <span> Duffigoogle.</span>{" "} */}
+              Duffigoogle. {/* </RoughNotation> */}
             </AboutHeading1>
             <AboutP>
               I <span>build value</span> through code. I like making{" "}

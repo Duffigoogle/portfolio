@@ -38,11 +38,19 @@ const RepoCardContainer = styled.main`
   ${mediaQueries("laptop")`
     width: 13rem;
     `}
+  ${mediaQueries("mobileLXX")`
+      width: 9.5rem;
+      margin: 6px;
+    `}
   ${mediaQueries("mobileLX")`
-      width: 8.5rem;
+      width: 9rem;
+      margin: 5px;
     `}
   ${mediaQueries("mobileM")`
-      width: 8rem;
+      width: 7rem;
+    `}
+  ${mediaQueries("mobileS")`
+      width: 6.3rem;
     `}
 `;
 const RepoDetails = styled.section`
