@@ -258,6 +258,7 @@ const SideBarContents = styled.div`
   /* position: relative; */
   width: 11.953rem;
   min-width: 11.953rem;
+  /* position: absolute; */
   /* display: ${({ isHidden }) => (isOpenSideBar ? "block" : "none")}; */
   display: ${(props) => (props.visibility ? "block" : "none")};
 

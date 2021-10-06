@@ -28,7 +28,7 @@ const RepoCard = ({ repo }) => {
 export default RepoCard;
 
 const RepoCardContainer = styled.main`
-  width: 15rem;
+  width: 14rem;
   margin: 10px;
   background-color: #cec;
   box-shadow: 0.2rem -0.2rem 5px #848484;
@@ -38,6 +38,9 @@ const RepoCardContainer = styled.main`
   ${mediaQueries("laptop")`
     width: 13rem;
     `}
+  ${mediaQueries("tabletMax")`
+      width: 10rem;
+  `}
   ${mediaQueries("mobileLXX")`
       width: 9.5rem;
       margin: 6px;

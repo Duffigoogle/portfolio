@@ -53,11 +53,11 @@ const GithubPage = ({ repos, user }) => {
                 </GitProfile>
 
                 <GithubDetails>
-                  <div>
+                  <section>
                     <h3>
                       Git Bio: <span>{user.bio}</span>
                     </h3>
-                  </div>
+                  </section>
                   <GitDetails>
                     {/* <h3>
                       <Icon name="personcircle" size={17} /> {user.name}
@@ -99,29 +99,31 @@ const GithubPage = ({ repos, user }) => {
 };
 
 const StyledDiv = styled.div`
-  height: 130rem;
+  height: 260vh;
   width: 100%;
   padding: 20px;
   background-color: #000;
   color: #e8e9ec;
 
-  ${mediaQueries("laptop")`
-      width: 100%;
-      height: 130vh;
+  ${mediaQueries("tabletMax")`
+      height: 350vh;
   `}
   ${mediaQueries("tablet")`
-      height: 240vh;
+      height: 350vh;
       padding: 20px 10px;
   `}
   ${mediaQueries("mobileLXX")`
         height: 350vh;
         padding: 10px 0px;
   `}
+  ${mediaQueries("mobileLX")`
+        height: 360vh;
+  `}
   ${mediaQueries("mobileM")`
         height: 350vh;
   `}
   ${mediaQueries("mobileS")`
-        height: 240vh;
+        height: 360vh;
         padding: 0px;
   `}
 `;
@@ -180,35 +182,18 @@ const ImageBox = styled.div`
 const GithubDetails = styled.section`
   color: #fff;
   margin: 15px auto 55px;
-  width: 40rem;
+  padding: 5px 8px;
   /* border: 1px solid green; */
 
-  ${mediaQueries("laptop")`
-        //  padding: 0px 15px;
-  `}
-  ${mediaQueries("tablet")`
-         width: 28rem;
-  `}
-  ${mediaQueries("mobileLXX")`
-        //  padding: 0px 10px;
-  `}
-  ${mediaQueries("mobileLX")`
-         width: 20rem;
-  `}
-  ${mediaQueries("mobileM")`
-         width: 15rem;
-  `}
-  ${mediaQueries("mobileS")`
-         width: 14.5rem;
-         margin: 8px auto 40px;
-  `}
-
-  div {
+  section {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 35rem;
+    margin: 0 auto;
 
     h3 {
       font-size: 1rem;
-      margin-left: 10px;
       color: orangered;
 
       ${mediaQueries("mobileM")`
@@ -228,7 +213,8 @@ const GithubDetails = styled.section`
 
 const GitDetails = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-top: 20px;
 
   div {
@@ -257,28 +243,8 @@ const GitDetails = styled.div`
 `;
 
 const RepoCardSection = styled.section`
-  width: 66rem;
   margin: 0px auto;
   /* border: 1px solid red; */
-
-  ${mediaQueries("laptop")`
-      width: 43rem;
-    `}
-  ${mediaQueries("tablet")`
-      width: 28rem;
-    `}
-  ${mediaQueries("mobileLXX")`
-        width: 28rem;
-  `}
-  ${mediaQueries("mobileLX")`
-        width: 22rem;
-  `}
-  ${mediaQueries("mobileM")`
-        width: 16rem;
-  `}
-  ${mediaQueries("mobileS")`
-        width: 14rem;
-  `}
 
   h2 {
     color: orangered;
@@ -308,15 +274,16 @@ const RepoCollection = styled.section`
   flex-wrap: wrap;
   margin: 5px auto;
   /* border: 1px solid blue; */
+  justify-content: center;
 
   ${mediaQueries("laptop")`
-      width: 50rem;
+      // width: 50rem;
   `}
   ${mediaQueries("tablet")`
-      width: 28.5rem;
+      // width: 28.5rem;
   `}
   ${mediaQueries("mobileLXX")`
-      width: 21rem;
+      // width: 21rem;
       // border: 1px solid yellow;
   `}
   ${mediaQueries("mobileLX")`
