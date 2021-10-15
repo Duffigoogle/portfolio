@@ -155,10 +155,10 @@ const portfolioItems = [
     file_name: "Github.json",
   },
   {
-    link_path: "/gists",
+    link_path: "/game",
     img_path: "/markdown.svg",
     img_alt: "Markdown Icon",
     img_size: 18,
-    file_name: "Gist.md",
+    file_name: "Game.md",
   },
 ];

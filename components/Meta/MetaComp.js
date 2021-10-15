@@ -2,11 +2,16 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-export default function HeadBlock({ ...customMeta }) {
+export default function HeadBlock({ page_title, ...customMeta }) {
   const router = useRouter();
 
   const meta = {
-    title: "Caleb Duff - Developer, Program Lead, Writer, Creator",
+    title:
+      `${page_title}` +
+      " " +
+      "|" +
+      " " +
+      "Caleb Duff - Developer, Program Lead, Writer, Creator",
     description: `I've been developing, teaching & writing codes for 3 years now. Get in touch with me to know more.`,
     image: "/favicon.ico",
     type: "website",
@@ -28,6 +33,7 @@ export default function HeadBlock({ ...customMeta }) {
           property="og:url"
           content={`https://duffigoogle-techfolio.vercel.app${router.asPath}`}
         />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
         <link
           rel="canonical"

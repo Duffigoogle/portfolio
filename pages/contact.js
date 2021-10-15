@@ -14,7 +14,7 @@ export default function ContactPage() {
 
   return (
     <div>
-      <HeadBlock />
+      <HeadBlock page_title="Contact" />
 
       <DisplayAreaLayoutComp
         pagepath="pages"

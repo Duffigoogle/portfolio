@@ -7,13 +7,14 @@ import { CalculateHeightContext } from "../context/index";
 import { useContext } from "react";
 import { mediaQueries } from "../components/common/breakpoints";
 import HeadBlock from "../components/Meta/MetaComp";
+import DateTimeComp from "../components/DateTime/DateTimeComp";
 
 export default function GistsPage() {
   const { elementRef } = useContext(CalculateHeightContext);
 
   return (
     <div>
-      <HeadBlock />
+      <HeadBlock page_title="Gists" />
 
       <DisplayAreaLayoutComp filename="gists.md" filename_icon="markdownIcon">
         <>
@@ -21,8 +22,9 @@ export default function GistsPage() {
             <CodeLinesComp />
             <GistsContainer ref={elementRef}>
               <div>
-                <h1>Gists Page</h1>
-                <p>coming soon...</p>
+                {/* <h1>Gists Page</h1>
+                <p>coming soon...</p> */}
+                <DateTimeComp />
               </div>
             </GistsContainer>
           </PageLayout>

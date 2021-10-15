@@ -15,14 +15,7 @@ export default function Home() {
 
   return (
     <div>
-      <HeadBlock />
-
-      {/* <DisplayAreaLayoutComp>
-        <>
-          <CodeLinesComp />
-          <h1>Home Page</h1>
-        </>
-      </DisplayAreaLayoutComp> */}
+      <HeadBlock page_title="Welcome" />
       <HomePageLayout>
         <StyledDiv ref={elementRef}>
           <CodeLinesComp />

@@ -11,6 +11,7 @@ import {
 } from "../SidebarComps/SidebarComp";
 import { ModalManager } from "../Form/CustomModal";
 import { mediaQueries } from "../common/breakpoints";
+import { GithubDetailComp } from "../../pages/github";
 
 const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
   const [modalOne, setModalOne] = useState(false);
@@ -265,10 +266,12 @@ const SideBarContents = styled.div`
   ${mediaQueries("mobileLXX")`
       // display: none;
       // display: ${(isExpanded) => (isExpanded ? "none" : "block")};
+      display: ${(props) => (props.visibility ? "none" : "block")};
       position: absolute;
       top: 0;
       left: 2.561rem;
       z-index: 8;
+      transition: .8s ease;
 
   `}
   ${mediaQueries("mobileLX")`

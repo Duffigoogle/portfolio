@@ -14,7 +14,7 @@ import HeadBlock from "../components/Meta/MetaComp";
 export default function ProjectPage() {
   return (
     <div>
-      <HeadBlock />
+      <HeadBlock page_title="Projects" />
 
       <DisplayAreaLayoutComp
         pagepath="pages"

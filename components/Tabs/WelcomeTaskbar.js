@@ -89,7 +89,7 @@ const TabsCollection = styled.label`
 `;
 
 const TabsTaskbarIcons = styled.div`
-  width: 10vw;
+  width: 14vw;
   display: flex;
   align-items: center;
   justify-content: space-around;

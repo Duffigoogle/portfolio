@@ -2,8 +2,6 @@
 import SideBarTitleComp from "../SidebarComps/SideBarTitle";
 import styled from "styled-components";
 import Icon from "../common/icons/icons";
-import Image from "next/image";
-import useSWR from "swr";
 
 export const SearchComp = () => {
   return (

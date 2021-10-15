@@ -12,11 +12,12 @@ export default function ArticlePage() {
 
   return (
     <div>
-      <HeadBlock />
+      <HeadBlock page_title="Articles" />
       <DisplayAreaLayoutComp
         stylepath="styles"
         filename="articles.scss"
-        filename_icon="sassIcon"> 
+        filename_icon="sassIcon"
+      >
         <>
           <PageLayout>
             <CodeLinesComp />

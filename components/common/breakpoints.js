@@ -22,7 +22,7 @@
 export const breakpoints = {
   mobileS: 320, // 320px — Mobile devices
   mobileM: 375, // 375px — Mobile devices
-  // mobileL: 425, // 425px - Mobile devices
+  mobileL: 425, // 425px - Mobile devices
   mobileLX: 480, // 480px Mobile devices
   mobileLXX: 766, // 480px Mobile devices
   tablet: 768, // 769px — 1024px: Small screens, laptops

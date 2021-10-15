@@ -10,8 +10,6 @@ import styled from "styled-components";
 import Icon from "../components/common/icons/icons";
 import GitHubCalendar from "react-github-calendar";
 import { mediaQueries } from "../components/common/breakpoints";
-// import { GithubSideComp } from "../components/SidebarComps/SidebarComp";
-// import styles from '../styles/GithubPage.module.css';
 
 const GithubPage = ({ repos, user }) => {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -22,7 +20,7 @@ const GithubPage = ({ repos, user }) => {
 
   return (
     <div>
-      <HeadBlock />
+      <HeadBlock page_title="Github" />
 
       <DisplayAreaLayoutComp filename="github.json" filename_icon="jsonIcon">
         <>
@@ -59,9 +57,6 @@ const GithubPage = ({ repos, user }) => {
                     </h3>
                   </section>
                   <GitDetails>
-                    {/* <h3>
-                      <Icon name="personcircle" size={17} /> {user.name}
-                    </h3> */}
                     <div>
                       <h3>{user.followers} followers</h3>
                     </div>
@@ -71,7 +66,6 @@ const GithubPage = ({ repos, user }) => {
                     <div>
                       <h3>{user.public_repos} repositories</h3>
                     </div>
-                    {/* <h3> Org: {user.organizations_url} </h3> */}
                   </GitDetails>
                 </GithubDetails>
               </div>
@@ -99,14 +93,14 @@ const GithubPage = ({ repos, user }) => {
 };
 
 const StyledDiv = styled.div`
-  height: 260vh;
+  height: 240vh;
   width: 100%;
   padding: 20px;
   background-color: #000;
   color: #e8e9ec;
 
   ${mediaQueries("tabletMax")`
-      height: 350vh;
+      height: 300vh;
   `}
   ${mediaQueries("tablet")`
       height: 350vh;
@@ -133,7 +127,7 @@ const GitProfile = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 17px;
+  margin: 15px 0px 17px;
 
   div {
     text-align: center;
@@ -225,6 +219,7 @@ const GitDetails = styled.div`
     border-radius: 6px;
     width: 12rem;
     height: 3rem;
+    margin-bottom: 10px;
 
     h3 {
       font-size: 0.9rem;
