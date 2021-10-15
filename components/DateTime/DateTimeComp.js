@@ -47,7 +47,7 @@ const DateTimeComp = () => {
 
       <p>
         {" "}
-        It's a new day, a beautiful {date.format(Date.now())}. in PH City,
+        It&apos;s a new day, a beautiful {date.format(Date.now())}. in PH City,
         Nigeria, right in the middle of Africa.
       </p>
       <br />
