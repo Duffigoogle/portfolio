@@ -35,16 +35,28 @@ const Wrapper = styled.div`
   align-items: center;
   background: rgba(0, 0, 0, 0.8);
   height: 100vh;
+  /* width: 78%; */
   width: 100%;
-  /* height: 100vh;
-  width: 100vw; */
+
+  ${mediaQueries("tablet")`
+    max-width: calc(766px - 5rem);
+
+  `}
 
   ${mediaQueries("mobileLXX")`
      width: 100%;
   `}
-  /* border: 1px solid yellow; */
+
+ ${mediaQueries("mobileLXL")`
+    max-width: calc(37.5rem - 5rem);
+  `}
+
   ${mediaQueries("mobileM")`
-      width: 100%;
+     width: calc(23.4375rem - 2.5rem - 2rem);
+     height: 100vh;
+  `}
+  ${mediaQueries("mobileS")`
+     width: calc(320px - 4.7rem);
   `}
 `;
 
@@ -52,21 +64,41 @@ const Login = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin: 0 auto; */
   height: 60vh;
-  width: 40vw;
+  width: 23rem;
   box-shadow: 6px 6px 6px gray;
   text-align: center;
   background: #fff;
   color: #000;
 
+  ${mediaQueries("tabletMax")`
+      width: 18rem;
+      height: 50vh;
+      // margin-top: 5rem;
+      // margin-left: 3rem;
+  `}
+
   ${mediaQueries("mobileLXX")`
-      width: 60vw;
+      width: 19rem;
+      height: 50vh;
+      margin-top: 5rem;
+      margin: 0 auto;
+  `}
+
+${mediaQueries("mobileLXL")`
+      width: 14rem;
       height: 50vh;
   `}
 
   ${mediaQueries("mobileM")`
-      width: 70vw;
-      height: 50vh;
+      width: 15.6rem;
+      height: 15.6rem;
+  `}
+  ${mediaQueries("mobileS")`
+     width: calc(320px - 7rem);
+      height: 15.6rem;
+      
   `}
 
   div {
@@ -74,7 +106,11 @@ const Login = styled.div`
     flex-direction: column;
 
     ${mediaQueries("mobileM")`
-            width: 65vw;
+            width: 14rem;
+    `}
+
+    ${mediaQueries("mobileS")`
+            width: 12rem;
     `}
 
     label {
@@ -90,6 +126,8 @@ const Login = styled.div`
     input {
       border: 1px solid #00a68c;
       outline: none;
+      width: 90%;
+      margin: 0 auto;
 
       &::placeholder {
         font-size: 0.8rem;

@@ -1,15 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSpring, to, animated as ani } from "react-spring";
 import styled from "styled-components";
+import Image from "next/image";
+import Icon from "../common/icons/icons";
 import LoginGame from "./Login";
 import EndGame from "./Endgame";
 import { mediaQueries } from "../common/breakpoints";
+// import Img1 from '/public/bootstrap5.svg';
+// import Img2 from '/public/css.svg';
+// import img3 from '/public/sass.svg';
+// import img4 from '/public/react.svg';
+// import img5 from '/public/material-ui.svg';
+// import img6 from '/public/Nextjs-logo.svg';
+// import img7 from '/public/tailwindcss-icon.svg';
+// import img8 from '/public/less.svg';
+// import img9 from '/public/backbone-js.svg';
+// import img10 from '/public/angular.svg';
+// import img11 from '/public/svelte.svg';
+// import img12 from '/public/vue-js.svg';
+
+
 
 export default function GameApp() {
   const [options, setOptions] = useState(null);
   const [highScore, setHighScore] = useState(0);
   const [name, setName] = useState(""); // LoginGame input states
-
+  const [displayGame, setDisplayGame] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
   const [showEndGame, setShowEndGame] = useState(false);
   const [score, setScore] = useState(0);
@@ -22,7 +38,10 @@ export default function GameApp() {
 
   //LoginGame Form handleClick
   const handleClick = (e) => {
-    e.preventDefault(), setName(name), setShowLogin(!showLogin);
+    e.preventDefault();
+    setName(name);
+    setShowLogin(!showLogin);
+    setDisplayGame(true);
   };
 
   // const handleLogin = (name, boolean) => {
@@ -47,7 +66,7 @@ export default function GameApp() {
   }, []);
 
   return (
-    <GameContainer>
+    <>
       {showLogin ? (
         <LoginGame
           handleChange={handleChange}
@@ -62,192 +81,238 @@ export default function GameApp() {
           setShowEndGame={setShowEndGame}
         />
       ) : null}
-      {/* <div className="Game_container"> */}
-      <GameHeaderContent>
-        <p>Hello {name}!</p>
-        <h1>
-          Welcome to the FlipCard <br /> Frontend Memory Game{" "}
-        </h1>
-        <GameRightTopContent>
-          {options === null ? (
-            <>
-              <Button onClick={() => setOptions(12)}> Easy</Button>
-              <Button onClick={() => setOptions(18)}> Medium</Button>
-              <Button onClick={() => setOptions(24)}> Hard</Button>
-            </>
-          ) : (
-            <>
-              <Button
-                onClick={() => {
-                  const prevOptions = options;
-                  setOptions(null);
-                  setFlippedCount(0);
-                  localStorage.clear();
-                  setTimeout(() => {
-                    setScore(0), setOptions(prevOptions);
-                  }, 5);
-                }}
-              >
-                Start Over!
-              </Button>
-              <Button onClick={() => setOptions(null)}> Main Menu</Button>
-            </>
-          )}
-        </GameRightTopContent>
-        {/* </div> */}
-      </GameHeaderContent>
-      <GameScoreBoard>
-        {" "}
-        <p>
-          Score: <span>{score}</span>
-        </p>
-        <p>
-          Moves: <span>{flippedCount}</span>
-        </p>
-        <p>
-          High Score: <span>{highScore}</span>
-        </p>
-      </GameScoreBoard>
+      <GameBox displayGame={displayGame}>
+        <GameHeaderContent>
+          <GameHeader>
+            <p>Hello {name}!</p>
+            <h1>Welcome to the FlipCard </h1>
+            <h1>Frontend Memory Game</h1>
+          </GameHeader>
+          <GameButtonsSection>
+            {options === null ? (
+              <>
+                <Button onClick={() => setOptions(12)}> Easy</Button>
+                <Button onClick={() => setOptions(18)}> Medium</Button>
+                <Button onClick={() => setOptions(24)}> Hard</Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  onClick={() => {
+                    const prevOptions = options;
+                    setOptions(null);
+                    setFlippedCount(0);
+                    localStorage.clear();
+                    setTimeout(() => {
+                      setScore(0), setOptions(prevOptions);
+                    }, 5);
+                  }}
+                >
+                  Start Over!
+                </Button>
+                <Button onClick={() => setOptions(null)}> Main Menu</Button>
+              </>
+            )}
+          </GameButtonsSection>
+          <GameScoreBoard>
+            {" "}
+            <div>
+              Score: <span>{score}</span>
+            </div>
+            <div>
+              Moves: <span>{flippedCount}</span>
+            </div>
+            <div>
+              High Score: <span>{highScore}</span>
+            </div>
+          </GameScoreBoard>
+        </GameHeaderContent>
 
-      {options ? (
-        <MemoryGame
-          options={options}
-          name={name}
-          score={score}
-          setScore={setScore}
-          setOptions={setOptions}
-          highScore={highScore}
-          setHighScore={setHighScore}
-          flippedCount={flippedCount}
-          setFlippedCount={setFlippedCount}
-          showEndGame={showEndGame}
-          setShowEndGame={setShowEndGame}
-          endGame={handleEndGame}
-        />
-      ) : (
-        <h2>
-          {" "}
-          Hey EggHead, <br />
-          <br /> Choose a level of difficulty to begin
-        </h2>
-      )}
-    </GameContainer>
+        {options ? (
+          <GameBoard>
+            <span>Hint</span>: select two cards with same content consequently to make them vanish.
+          
+          <MemoryGame
+            options={options}
+            name={name}
+            score={score}
+            setScore={setScore}
+            setOptions={setOptions}
+            highScore={highScore}
+            setHighScore={setHighScore}
+            flippedCount={flippedCount}
+            setFlippedCount={setFlippedCount}
+            showEndGame={showEndGame}
+            setShowEndGame={setShowEndGame}
+            endGame={handleEndGame}
+          />
+          </GameBoard>
+        ) : (
+          <h2>
+            {" "}
+            Hey EggHead, <br />
+            <br /> Choose a level of difficulty to begin
+          </h2>
+        )}
+      </GameBox>
+    </>
   );
 }
 
-const GameContainer = styled.main`
+const GameBox = styled.section`
+  display: ${({ displayGame }) => (displayGame ? "block" : "none")};
+  width: 65rem;
   margin: 0 auto;
-  /* border: 1px solid red; */
-  color: #fff;
+  border: 1px solid yellow;
 
-  h1 {
-    font-weight: 900;
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
   h2 {
-    text-align: center;
-    margin-top: 80px;
-    font-weight: 700;
+    font-size: 1.1rem;
   }
-  ${mediaQueries("laptop")`
-      
-  `}
 
+  ${mediaQueries("laptop")`
+    max-width: calc(1024px - 20.5rem);
+  `}
   ${mediaQueries("tabletMax")`
-      width: 33rem;
+    max-width: calc(991px - 20.5rem);
   `}
 
   ${mediaQueries("mobileLXX")`
-      width: 25rem;
+    max-width: calc(766px - 16rem);
+  `}
+  ${mediaQueries("mobileLXL")`
+    max-width: calc(600px - 13rem);
   `}
   ${mediaQueries("mobileLX")`
-      width: 25rem;
+    max-width: calc(480px - 9rem);
   `}
   ${mediaQueries("mobileL")`
-      width: 21rem;
+    max-width: calc(425px - 9rem);
   `}
   ${mediaQueries("mobileM")`
-      
+    max-width: calc(375px - 9rem);
+
+    h2 {
+      font-size: 0.8rem;
+    }
   `}
   ${mediaQueries("mobileS")`
-      overflow-y: auto;
+    max-width: calc(320px - 5rem);
   `}
 `;
 
 const GameHeaderContent = styled.div`
-  width: 1000px;
-  margin: 10px auto 20px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid green; */
+  margin: 19px auto;
+  border: 1px solid green;
+
+  ${mediaQueries("tabletMax")`
+      width: 34rem;
+  `}
+
+  ${mediaQueries("mobileLXX")`
+      width: 28rem;    
+  `}
+ 
+  ${mediaQueries("mobileLXL")`
+      width: 24rem;
+      
+  `}
+  ${mediaQueries("mobileLX")`
+      width: 20rem;
+      
+  `}
+
+  ${mediaQueries("mobileL")`
+      width: 17rem;
+  `}
+
+  ${mediaQueries("mobileM")`
+      width: 14rem;
+      margin-bottom: 8px;
+
+  `}
+
+  ${mediaQueries("mobileS")`
+      max-width: 230px;
+      margin: 10px auto;
+    
+  `}
+`;
+
+const GameHeader = styled.section`
+  width: 34rem;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid blue;
 
   p {
     color: orange;
     margin-bottom: 15px;
   }
+  h1 {
+    font-size: 2.6rem;
+  }
 
-  ${mediaQueries("tabletMax")`
-      width: 30rem;
-  `}
-
-  ${mediaQueries("mobileLXX")`
-      max-width: 23rem;    
-      
-  `}
-  ${mediaQueries("mobileLX")`
-      width: 23rem;
-
-      p {
-        font-size: 0.9rem;
-      }
+  ${mediaQueries("laptop")`
+      width: 32rem;
 
       h1 {
-        font-size: 1.1rem;
-        text-align: center;
+        font-size: 2.2rem;
       }
+  `}
+  ${mediaQueries("tabletMax")`
+      width: 32rem;
+  `}
+  ${mediaQueries("mobileLXX")`
+      width: 26rem;
+  `}
+  ${mediaQueries("mobileLXL")`
+      width: 23rem;
+  `}
+
+  ${mediaQueries("mobileLX")`
+      width: 18rem;
+            p {
+            font-size: 0.9rem;
+          }
+
+          h1 {
+            font-size: 1.1rem;
+          }
+      
   `}
 
   ${mediaQueries("mobileL")`
-      width: 18rem;
+      width: 16rem;
   `}
 
   ${mediaQueries("mobileM")`
-      width: 300px;
+      width: 14rem;
       margin-bottom: 8px;
 
-      p {
-        font-size: 0.9rem;
-      }
-
-      h1 {
-        font-size: 1.1rem;
-        text-align: center;
-      }
   `}
 
   ${mediaQueries("mobileS")`
-      width: 240px;
+      width: 220px;
       margin: 10px auto;
-      
+      border: 1px solid #fff;
 
-      p {
-        font-size: 0.7rem;
-      }
 
-      h1 {
-        font-size: 1.1rem;
-        text-align: center;
-      }
+          p {
+            font-size: 0.7rem;
+          }
+
+          h1 {
+            font-size: 1rem;
+            text-align: center;
+          }
   `}
 `;
 
-const GameRightTopContent = styled.div`
+const GameButtonsSection = styled.section`
   /* width: 100%; */
   margin-top: 15px;
 `;
@@ -256,7 +321,7 @@ export const Button = styled.button`
   background-color: orangered;
   border-radius: 4px;
   font-weight: 700;
-  color: #fff;
+  color: #000;
   border: none;
   padding: 7px 15px;
   margin-left: 8px;
@@ -264,6 +329,7 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #008378;
+    color: #fff;
   }
   &:focus {
     outline: 0;
@@ -281,103 +347,120 @@ export const Button = styled.button`
 `;
 
 const GameScoreBoard = styled.section`
+  margin-top: 13px;
+  border: 1px solid red;
   display: flex;
-  justify-content: space-between;
-  margin: 0 10px;
-  /* border: 1px solid red; */
+  font-size: 1.3rem;
 
+  div {
+    margin: 10px 20px;
+  }
+
+  ${mediaQueries("laptop")`
+      
+  `}
   ${mediaQueries("tabletMax")`
-      // width: 29rem;
-      // margin: 0 auto;
+      margin: 0 auto;
+      font-size: 1.5rem;
   `}
 
   ${mediaQueries("mobileLXX")`
-      justify-content: space-between;
-
-      p {
-        font-size: 1.1rem;
-        }
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.3rem;
   `}
   ${mediaQueries("mobileLX")`
-      flex-direction: column;
-      align-items: center;
 
-      p {
-        font-size: 1rem;
-        }
+      
   `}
 
   ${mediaQueries("mobileM")`
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-
-      p {
-        font-size: 0.9rem;
-        margin-right: 20px;
-
-      }
+      font-size: 1.1rem;
   `}
 `;
 
+const GameBoard = styled.section`
+    text-align: center;
+    padding-top: 20px;
+
+    span {
+      color: #f59e8b;
+      font-style: italic;
+      font-weight: 600;
+    }
+`
+
 const CardDiv = styled.div`
   position: relative;
-  width: 1060px;
-  margin: 0 auto;
+  width: 960px;
+  margin: 18px auto 5px;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   border: 2px solid #fff;
+  background: #1a1110;
+  box-shadow: 2px 2px 6px 2px #cec;
+  border-radius: 10px;
 
-  ${mediaQueries("tabletMax")`
-       width: 33rem;
+  ${mediaQueries("laptop")`
+       width: 41rem;
        padding: 5px;
+  `}
+  ${mediaQueries("tabletMax")`
+       width: 39rem;
   `}
 
   ${mediaQueries("mobileLXX")`
-       width: 23rem;
-       padding: 5px;
+       width: 30rem;
   `}
-   /* ${mediaQueries("mobileLX")`
-       width: 23rem;
-  `} */
-   ${mediaQueries("mobileL")`
+   ${mediaQueries("mobileLXL")`
+       width: 24rem;
+  `}
+   ${mediaQueries("mobileLX")`
        width: 20rem;
+       padding: 0;
+  `}
+   ${mediaQueries("mobileL")`
+       width: 16.5rem;
   `}
   ${mediaQueries("mobileM")`
-      width: 240px;
-      // height: 600px;
-      padding: 0;
+      width: 13.5rem;
+
+  `}
+  ${mediaQueries("S")`
+      width: 200px;
 
   `}
 
   .card {
-    width: 150px;
-    height: 150px;
+    width: 9.38rem;
+    height: 9.38rem;
     margin-bottom: 15px;
     /* border: 1px solid red; */
 
+    ${mediaQueries("laptop")`
+       width: 7.5rem;
+       height: 7.5rem;
+       margin-bottom: 35px;
+    `}
     ${mediaQueries("tabletMax")`
-       width: 100px;
-       height: 100px;
+       width: 6.25rem;
+       height: 6.25rem;
        margin-bottom: 10px;
     `}
 
     ${mediaQueries("mobileLXX")`
        width: 80px;
        height: 80px;
-       margin-bottom: 10px;
     `}
     ${mediaQueries("mobileLX")`
        width: 60px;
        height: 60px;
-       margin-bottom: 10px;
     `}
     ${mediaQueries("mobileM")`
       width: 50px;
       height: 50px;
-      margin-bottom: 10px;
     `}
   }
 
@@ -394,7 +477,7 @@ const CardDiv = styled.div`
 `;
 
 const CardsContainer = styled.div`
-  /* border: 1px solid red; */
+  /* border: 1px solid blue; */
   .c {
     position: absolute;
     max-width: 150px;
@@ -435,7 +518,10 @@ const CardsContainer = styled.div`
   }
 
   .front {
-    /* background-image: url("/public/react.svg"); */
+      .card_icon {
+        width: 150px;
+        height: 150px;
+      }
   }
 `;
 
@@ -471,20 +557,93 @@ const MemoryGame = ({
     "#bfd833",
   ];
 
+  const images = [
+    "SemantiIcon",
+    "VueIcon",
+    "SvelteIcon",
+    "NuxtIcon",
+    "LessIcon",
+    "JqueryIcon",
+    "BackboneIcon",
+    "AngularIcon",
+    "sassIcon",
+    "cssIcon",
+    "reactIcon",
+    "htmlIcon",
+  ];
+  
+
+const imagesh = [
+   {
+     type: "BOOTSTRAP",
+     image_url: require(`/public/bootstrap5.svg`),
+   },
+   {
+     type: "CSS",
+     image_url: require(`/public/css.svg`),
+   },
+   {
+     type: "SASS",
+     image_url: require(`/public/sass.svg`),
+   },
+   {
+     type: "REACT",
+     image_url: require(`/public/react.svg`),
+   },
+   {
+     type: "MATERIAL-UI",
+     image_url: require(`/public/material-ui.svg`),
+   },
+   {
+     type: "NEXT",
+     image_url: require(`/public/Nextjs-logo.svg`),
+   },
+   {
+     type: "TAILWIND-CSS",
+     image_url: require(`/public/tailwindcss-icon.svg`),
+   },
+   {
+     type: "NUXT",
+     image_url: require(`/public/less.svg`),
+   },
+   {
+     type: "BACKBONE",
+     image_url: require(`/public/backbone-js.svg`),
+   },
+   {
+     type: "ANGULAR",
+     image_url: require(`/public/angular.svg`),
+   },
+   {
+     type: "SVELTE",
+     image_url: require(`/public/svelte.svg`),
+   },
+   {
+     type: "VUE",
+     image_url: require(`/public/vue-js.svg`),
+   },
+
+]; 
+
+
   useEffect(() => {
     const newGame = [];
     for (let i = 0; i < options / 2; i++) {
       const firstOption = {
         id: 2 * i,
-        colorId: i,
-        color: colors[i],
+        /* colorId: i, */
+        imageId: i,
+        /* color: colors[i], */
+        image: images[i],
         flipped: false,
       };
 
       const secondOption = {
         id: 2 * i + 1,
-        colorId: i,
-        color: colors[i],
+        /* colorId: i, */
+        imageId: i,
+        /* color: colors[i], */
+        image: images[i],
         flipped: false,
       };
 
@@ -515,6 +674,7 @@ const MemoryGame = ({
         }
 
         const pointsLost = multiplier * (0.66 * flippedCount - bestPossible);
+        console.log("pointsLost");
 
         let score;
         if (pointsLost < 100) {
@@ -557,7 +717,8 @@ const MemoryGame = ({
   if (flippedIndexes.length === 2) {
     // Runs if two cards have been flipped
     const match =
-      game[flippedIndexes[0]].colorId === game[flippedIndexes[1]].colorId;
+      /* game[flippedIndexes[0]].colorId === game[flippedIndexes[1]].colorId; */
+      game[flippedIndexes[0]].imageId === game[flippedIndexes[1]].imageId;
 
     if (match) {
       const newGame = [...game];
@@ -583,7 +744,8 @@ const MemoryGame = ({
           <div className="card" key={ind}>
             <Cards
               id={ind}
-              color={card.color}
+              /* color={card.color} */
+              image={card.image}
               game={game}
               flippedCount={flippedCount}
               setFlippedCount={setFlippedCount}
@@ -600,6 +762,7 @@ const MemoryGame = ({
 const Cards = ({
   id,
   color,
+  image,
   game,
   flippedCount,
   setFlippedCount,
@@ -655,7 +818,6 @@ const Cards = ({
         style={{
           opacity: opacity.to((o) => 1 - o),
           transform,
-          // backgroundImage: `url(${backImage})`,
         }}
       />
       <ani.div
@@ -663,9 +825,13 @@ const Cards = ({
         style={{
           opacity,
           transform: transform.to((t) => `${t} rotateX(180deg)`),
-          background: color,
+          /* background: color, */
+          /* backgroundImage: `url(${image})`, */
+
         }}
-      />
+      >
+        <Icon name={image} className='card_icon' size="100%" />
+      </ani.div>
     </CardsContainer>
   );
 };
@@ -674,44 +840,7 @@ const Cards = ({
 // import FlashCard from "./FlashCards";
 // import styled from "styled-components";
 
-// const cardContentsArray = [
-//   {
-//     type: "BOOTSTRAP",
-//     image: require(`../../public/img/bootstrap5.svg`),
-//   },
-//   {
-//     type: "CSS",
-//     image: require(`/public/img/css.svg`),
-//   },
-//   {
-//     type: "SASS",
-//     image: require(`/public/img/sass.svg`),
-//   },
-//   {
-//     type: "REACT",
-//     image: require(`/public/img/react.svg`),
-//   },
-//   {
-//     type: "MATERIAL-UI",
-//     image: require(`/public/img/material-ui.svg`),
-//   },
-//   {
-//     type: "NEXT",
-//     image: require(`/public/img/Nextjs-logo.svg`),
-//   },
-//   {
-//     type: "TAILWIND",
-//     image: require(`/public/img/tailwindcss-icon.svg`),
-//   },
-//   {
-//     type: "NEXT",
-//     image: require(`/public/img/portrait.png`),
-//   },
-//   {
-//     type: "STYLED-COMP",
-//     image: require(`/public/img/styled-components.svg`),
-//   },
-// ];
+
 
 // function shuffleCards(array) {
 //   const length = array.length;

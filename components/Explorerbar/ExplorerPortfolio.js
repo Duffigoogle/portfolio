@@ -2,65 +2,10 @@ import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { mediaQueries } from "../common/breakpoints";
-
-const PortfolioFilesSchema = ({
-  link_path,
-  img_path,
-  img_alt,
-  img_size,
-  file_name,
-  toggleSideTab,
-  isExpanded,
-}) => {
-  const router = useRouter();
-
-  const isCurrentPath =
-    router.pathname === link_path || router.asPath === link_path;
-
-  const CloseSideBarOnMobile = () => {
-    if (isExpanded === true) {
-      if (mediaQueries("mobileLXX")) {
-        toggleSideTab();
-      } else {
-        null;
-      }
-    } else {
-      null;
-    }
-  };
-  // const CloseSideBarOnMobile = () => {
-  //   if (isExpanded === true) {
-  //     if (mediaQueries("mobileLXX")) {
-  //       toggleSideTab();
-  //     } else {
-  //       null;
-  //     }
-  //   } else {
-  //     null;
-  //   }
-  // };
-
-  return (
-    <Link href={link_path} passHref onClick={() => CloseSideBarOnMobile}>
-      <ExplorerPortfolioItem isCurrentPath={isCurrentPath}>
-        <ExplorerSpan />
-        <Image
-          src={img_path}
-          alt={img_alt}
-          height={img_size}
-          width={img_size}
-        />{" "}
-        <ExplorerPortfolioP isCurrentPath={isCurrentPath}>
-          {file_name}
-        </ExplorerPortfolioP>
-      </ExplorerPortfolioItem>
-    </Link>
-  );
-};
+// import { mediaQueries } from "../common/breakpoints";
 
 const ExplorerPortfolioComp = ({ toggleSideTab, isExpanded }) => {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <>
@@ -78,6 +23,38 @@ const ExplorerPortfolioComp = ({ toggleSideTab, isExpanded }) => {
 };
 
 export default ExplorerPortfolioComp;
+
+const PortfolioFilesSchema = ({
+  link_path,
+  img_path,
+  img_alt,
+  img_size,
+  file_name,
+  toggleSideTab,
+  isExpanded,
+}) => {
+  const router = useRouter();
+
+  const isCurrentPath =
+    router.pathname === link_path || router.asPath === link_path;
+
+  return (
+    <Link href={link_path} passHref>
+      <ExplorerPortfolioItem isCurrentPath={isCurrentPath}>
+        <ExplorerSpan />
+        <Image
+          src={img_path}
+          alt={img_alt}
+          height={img_size}
+          width={img_size}
+        />{" "}
+        <ExplorerPortfolioP isCurrentPath={isCurrentPath}>
+          {file_name}
+        </ExplorerPortfolioP>
+      </ExplorerPortfolioItem>
+    </Link>
+  );
+};
 
 const ExplorerPortfolioItem = styled.div`
   display: flex;

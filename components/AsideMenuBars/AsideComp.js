@@ -22,10 +22,6 @@ const AsideComp = ({ toggleState, toggleTab, toggleSideTab, isExpanded }) => {
     setToggleDiv(ind);
   };
 
-  // const closeModal = () => {
-  //   setModal('');
-  // };
-
   return (
     <>
       <SideBarContainer>
@@ -256,21 +252,17 @@ const BottomSideBarTabs = styled.div`
 
 const SideBarContents = styled.div`
   /* width: 14vw; */
-  /* position: relative; */
   width: 11.953rem;
   min-width: 11.953rem;
-  /* position: absolute; */
-  /* display: ${({ isHidden }) => (isOpenSideBar ? "block" : "none")}; */
   display: ${(props) => (props.visibility ? "block" : "none")};
+  /* display: ${(isExpanded) => (isExpanded ? "block" : "none")}; */
 
   ${mediaQueries("mobileLXX")`
-      // display: none;
-      // display: ${(isExpanded) => (isExpanded ? "none" : "block")};
       display: ${(props) => (props.visibility ? "none" : "block")};
       position: absolute;
       top: 0;
       left: 2.561rem;
-      z-index: 8;
+      z-index: 15;
       transition: .8s ease;
 
   `}
@@ -298,7 +290,7 @@ const StyledSlider = styled.div`
   right: ${({ isExpanded }) => (isExpanded ? "-215px" : "-25px")};
   transition: all 10ms ease;
   outline: none !important;
-  z-index: 8;
+  z-index: 15;
 
   :focus {
     outline: 0;

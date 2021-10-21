@@ -18,15 +18,15 @@ export const StyledPageLayout = styled.main`
   width: 100%;
   display: flex;
   height: 100vh; // make the height dynamic wrt to page i.e pathname */
-  /* height: auto; */
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  /* overflow-x: auto; */
   background-color: #616161;
 
   /* ${mediaQueries("tabletMax")`
      width: 100%;
   `} */
   ${mediaQueries("mobileM")`
-     min-width: 300px;
+     min-width: 18.75rem;
   `}
 
   /* width */ //the scrollbar

@@ -4,11 +4,13 @@ import FooterComp from "../Footer/FooterComp";
 import styles from "../../styles/Home.module.scss";
 import styled from "styled-components";
 import { useState } from "react";
+// import { mediaQueries } from "../common/breakpoints";
 
 const LayoutComp = ({ children }) => {
   // Logic for toggling between the Tabs on the SideBar
   const [toggleState, setToggleState] = useState(1);
   const [isExpanded, setIsExpanded] = useState(+true);
+  // const [isExpanded, setIsExpanded] = useState(true);
 
   const toggleTab = (ind) => {
     setToggleState(ind);
@@ -54,4 +56,9 @@ const DisplayAreaContainer = styled.div`
   overflow: hidden;
   width: ${({ isExpanded }) => (isExpanded == true ? "100vw" : "100vw")};
   /* margin-left: ${({ isExpanded }) => (isExpanded == true ? "0" : "")}; */
+
+  /* ${mediaQueries("mobileM")`
+    //  min-width: 18.75rem;
+    min-width: calc(23.4375rem - 2.5rem - 2rem);
+  `} */
 `;
