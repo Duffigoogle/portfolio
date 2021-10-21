@@ -19,8 +19,6 @@ import { mediaQueries } from "../common/breakpoints";
 // import img11 from '/public/svelte.svg';
 // import img12 from '/public/vue-js.svg';
 
-
-
 export default function GameApp() {
   const [options, setOptions] = useState(null);
   const [highScore, setHighScore] = useState(0);
@@ -130,22 +128,22 @@ export default function GameApp() {
 
         {options ? (
           <GameBoard>
-            <span>Hint</span>: select two cards with same content consequently to make them vanish.
-          
-          <MemoryGame
-            options={options}
-            name={name}
-            score={score}
-            setScore={setScore}
-            setOptions={setOptions}
-            highScore={highScore}
-            setHighScore={setHighScore}
-            flippedCount={flippedCount}
-            setFlippedCount={setFlippedCount}
-            showEndGame={showEndGame}
-            setShowEndGame={setShowEndGame}
-            endGame={handleEndGame}
-          />
+            <span>Hint</span>: select two cards with same content consequently
+            to make them vanish.
+            <MemoryGame
+              options={options}
+              name={name}
+              score={score}
+              setScore={setScore}
+              setOptions={setOptions}
+              highScore={highScore}
+              setHighScore={setHighScore}
+              flippedCount={flippedCount}
+              setFlippedCount={setFlippedCount}
+              showEndGame={showEndGame}
+              setShowEndGame={setShowEndGame}
+              endGame={handleEndGame}
+            />
           </GameBoard>
         ) : (
           <h2>
@@ -380,15 +378,15 @@ const GameScoreBoard = styled.section`
 `;
 
 const GameBoard = styled.section`
-    text-align: center;
-    padding-top: 20px;
+  text-align: center;
+  padding-top: 20px;
 
-    span {
-      color: #f59e8b;
-      font-style: italic;
-      font-weight: 600;
-    }
-`
+  span {
+    color: #f59e8b;
+    font-style: italic;
+    font-weight: 600;
+  }
+`;
 
 const CardDiv = styled.div`
   position: relative;
@@ -518,10 +516,10 @@ const CardsContainer = styled.div`
   }
 
   .front {
-      .card_icon {
-        width: 150px;
-        height: 150px;
-      }
+    .card_icon {
+      width: 150px;
+      height: 150px;
+    }
   }
 `;
 
@@ -571,9 +569,8 @@ const MemoryGame = ({
     "reactIcon",
     "htmlIcon",
   ];
-  
 
-const imagesh = [
+  /* const imagesh = [
    {
      type: "BOOTSTRAP",
      image_url: require(`/public/bootstrap5.svg`),
@@ -623,8 +620,7 @@ const imagesh = [
      image_url: require(`/public/vue-js.svg`),
    },
 
-]; 
-
+];  */
 
   useEffect(() => {
     const newGame = [];
@@ -826,11 +822,9 @@ const Cards = ({
           opacity,
           transform: transform.to((t) => `${t} rotateX(180deg)`),
           /* background: color, */
-          /* backgroundImage: `url(${image})`, */
-
         }}
       >
-        <Icon name={image} className='card_icon' size="100%" />
+        <Icon name={image} className="card_icon" size="100%" />
       </ani.div>
     </CardsContainer>
   );
@@ -839,8 +833,6 @@ const Cards = ({
 // import "../../styles/game.scss";
 // import FlashCard from "./FlashCards";
 // import styled from "styled-components";
-
-
 
 // function shuffleCards(array) {
 //   const length = array.length;
