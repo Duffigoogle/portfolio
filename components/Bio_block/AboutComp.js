@@ -83,7 +83,8 @@ const AboutContainer = styled.div`
 
   ${mediaQueries("laptop")`
       justify-content: center;
-      height: 100%;
+      // height: 100%;
+      height: 100vh;
   `}/* ${mediaQueries("tebletMax")`
       justify-content: center
   `} */

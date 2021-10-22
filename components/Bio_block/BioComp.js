@@ -66,7 +66,7 @@ const BioComp = () => {
           <Image
             src={require("../../public/img/potrait.png")}
             alt="sketch coloured portrait"
-            intrinsic
+            intrinsic="true"
           />
         </BioImage>
         <BioContent>
@@ -99,8 +99,44 @@ export default BioComp;
 const BioContainer = styled.main`
   display: flex;
   width: 100%;
-  min-height: 125vh;
+  height: 125vh;
   background-color: #000;
+  overflow-y: auto;
+
+  /* width */ //the scrollbar
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  // the buttons on the scrollbar (arrows pointing upwards and downwards).
+  ::-webkit-scrollbar-button {
+  }
+
+  /* Track */ // the track (progress bar) of the scrollbar NOT covered by the handle.
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    box-shadow: inset 0 0 5px gray;
+    border-radius: 15px;
+  }
+
+  /* Track */ // the track (progress bar) NOT covered by the handle.
+  ::-webkit-scrollbar-track-piece {
+  }
+
+  // the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+  ::-webkit-scrollbar-corner {
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 15px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;
 
 const BioContent = styled.div`
@@ -126,7 +162,7 @@ const BioContent = styled.div`
 
 const BioImage = styled.div`
   width: 50%;
-  margin-top: -7px;
+  margin-top: 15px;
 
   ${mediaQueries("laptop")`
       // margin-right: -180px;

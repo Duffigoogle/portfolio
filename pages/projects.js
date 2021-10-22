@@ -22,12 +22,12 @@ export default function ProjectPage() {
         filename_icon="reactIcon"
       >
         <StyledMain>
-          <PageLayout>
+          <PageLayout height="100vh">
             <CodeLinesComp />
             <ProjectCollectionOne />
           </PageLayout>
 
-          <PageLayout>
+          <PageLayout height="90vh">
             <CodeLinesComp />
             <ProjectCollectionTwo />
           </PageLayout>

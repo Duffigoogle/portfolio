@@ -16,7 +16,7 @@ export default function BioPage() {
         filename="bio.css"
         filename_icon="cssIcon"
       >
-        <PageLayout>
+        <PageLayout height="100vh">
           <CodeLinesComp />
           <BioComp />
         </PageLayout>

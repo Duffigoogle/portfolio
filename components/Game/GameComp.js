@@ -128,8 +128,8 @@ export default function GameApp() {
 
         {options ? (
           <GameBoard>
-            <span>Hint</span>: select two cards with same content consequently
-            to make them vanish.
+            <span>Hint</span>: select two cards with same content consequently,
+            to match them.
             <MemoryGame
               options={options}
               name={name}
@@ -160,8 +160,9 @@ export default function GameApp() {
 const GameBox = styled.section`
   display: ${({ displayGame }) => (displayGame ? "block" : "none")};
   width: 65rem;
+  height: 200vh;
   margin: 0 auto;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 
   h2 {
     font-size: 1.1rem;
@@ -204,7 +205,7 @@ const GameHeaderContent = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 19px auto;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 
   ${mediaQueries("tabletMax")`
       width: 34rem;
@@ -244,7 +245,7 @@ const GameHeader = styled.section`
   width: 34rem;
   margin: 0 auto;
   text-align: center;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 
   p {
     color: orange;
@@ -296,7 +297,7 @@ const GameHeader = styled.section`
   ${mediaQueries("mobileS")`
       width: 220px;
       margin: 10px auto;
-      border: 1px solid #fff;
+      // border: 1px solid #fff;
 
 
           p {
@@ -346,7 +347,7 @@ export const Button = styled.button`
 
 const GameScoreBoard = styled.section`
   margin-top: 13px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   font-size: 1.3rem;
 
@@ -379,12 +380,14 @@ const GameScoreBoard = styled.section`
 
 const GameBoard = styled.section`
   text-align: center;
-  padding-top: 20px;
+  padding: 20px 10px;
+  /* height: 100vh; */
 
   span {
     color: #f59e8b;
     font-style: italic;
     font-weight: 600;
+    font-size: 0.9rem;
   }
 `;
 
@@ -396,7 +399,7 @@ const CardDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
   background: #1a1110;
   box-shadow: 2px 2px 6px 2px #cec;
   border-radius: 10px;
@@ -435,6 +438,7 @@ const CardDiv = styled.div`
     width: 9.38rem;
     height: 9.38rem;
     margin-bottom: 15px;
+    /* position: relative; */
     /* border: 1px solid red; */
 
     ${mediaQueries("laptop")`
@@ -516,10 +520,6 @@ const CardsContainer = styled.div`
   }
 
   .front {
-    .card_icon {
-      width: 150px;
-      height: 150px;
-    }
   }
 `;
 
@@ -569,58 +569,6 @@ const MemoryGame = ({
     "reactIcon",
     "htmlIcon",
   ];
-
-  /* const imagesh = [
-   {
-     type: "BOOTSTRAP",
-     image_url: require(`/public/bootstrap5.svg`),
-   },
-   {
-     type: "CSS",
-     image_url: require(`/public/css.svg`),
-   },
-   {
-     type: "SASS",
-     image_url: require(`/public/sass.svg`),
-   },
-   {
-     type: "REACT",
-     image_url: require(`/public/react.svg`),
-   },
-   {
-     type: "MATERIAL-UI",
-     image_url: require(`/public/material-ui.svg`),
-   },
-   {
-     type: "NEXT",
-     image_url: require(`/public/Nextjs-logo.svg`),
-   },
-   {
-     type: "TAILWIND-CSS",
-     image_url: require(`/public/tailwindcss-icon.svg`),
-   },
-   {
-     type: "NUXT",
-     image_url: require(`/public/less.svg`),
-   },
-   {
-     type: "BACKBONE",
-     image_url: require(`/public/backbone-js.svg`),
-   },
-   {
-     type: "ANGULAR",
-     image_url: require(`/public/angular.svg`),
-   },
-   {
-     type: "SVELTE",
-     image_url: require(`/public/svelte.svg`),
-   },
-   {
-     type: "VUE",
-     image_url: require(`/public/vue-js.svg`),
-   },
-
-];  */
 
   useEffect(() => {
     const newGame = [];

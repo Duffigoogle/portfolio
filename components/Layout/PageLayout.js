@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { mediaQueries } from "../common/breakpoints";
 
-export const PageLayout = ({ children }) => {
+export const PageLayout = ({ children, height }) => {
   //   let box = document.getElementsByClassName(".box");
   //   //   let pageHeightPx = box.innerHeight;
   //   let pageHeightPx = document.body.clientHeight;
@@ -10,15 +10,16 @@ export const PageLayout = ({ children }) => {
   //   window.innerHeight ||
   //   document.documentElement.clientHeight ||
   //   document.body.clientHeight
-  return <StyledPageLayout>{children}</StyledPageLayout>;
+  return <StyledPageLayout height={height}>{children}</StyledPageLayout>;
   // return <StyledPageLayout className="box">{children}</StyledPageLayout>;
 };
 
 export const StyledPageLayout = styled.main`
   width: 100%;
   display: flex;
-  height: 100vh; // make the height dynamic wrt to page i.e pathname */
-  /* overflow-y: auto; */
+  //height: 100vh; // make the height dynamic wrt to page i.e pathname */
+  height: ${(props) => props.height};
+  overflow-y: auto;
   /* overflow-x: auto; */
   background-color: #616161;
 

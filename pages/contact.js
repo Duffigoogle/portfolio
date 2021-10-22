@@ -22,7 +22,7 @@ export default function ContactPage() {
         filename_icon="javaScriptIcon"
       >
         <>
-          <PageLayout>
+          <PageLayout height="100vh">
             <CodeLinesComp />
             <StyledDiv ref={elementRef}>
               <StyledSection>

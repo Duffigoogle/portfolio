@@ -40,7 +40,7 @@ const EndGameCont = styled.div`
   height: 100vh;
   width: 90%;
   background: rgba(0, 0, 0, 0.8);
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   ${mediaQueries("laptop")`
       width: 90%;
