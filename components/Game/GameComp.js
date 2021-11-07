@@ -6,18 +6,6 @@ import Icon from "../common/icons/icons";
 import LoginGame from "./Login";
 import EndGame from "./Endgame";
 import { mediaQueries } from "../common/breakpoints";
-// import Img1 from '/public/bootstrap5.svg';
-// import Img2 from '/public/css.svg';
-// import img3 from '/public/sass.svg';
-// import img4 from '/public/react.svg';
-// import img5 from '/public/material-ui.svg';
-// import img6 from '/public/Nextjs-logo.svg';
-// import img7 from '/public/tailwindcss-icon.svg';
-// import img8 from '/public/less.svg';
-// import img9 from '/public/backbone-js.svg';
-// import img10 from '/public/angular.svg';
-// import img11 from '/public/svelte.svg';
-// import img12 from '/public/vue-js.svg';
 
 export default function GameApp() {
   const [options, setOptions] = useState(null);
@@ -42,10 +30,6 @@ export default function GameApp() {
     setDisplayGame(true);
   };
 
-  // const handleLogin = (name, boolean) => {
-  //   setShowLogin({ showLogin: boolean }), setName({ name: name });
-  // };
-
   const handleEndGame = (boolean) => {
     if (boolean) {
       setShowEndGame({ showEndGame: boolean }), setScore(score + 1);
@@ -55,7 +39,7 @@ export default function GameApp() {
   };
 
   useEffect(() => {
-    //Loads when thr Game starts
+    //Loads when the Game starts
     const json = localStorage.getItem("memorygamehighscore");
     const savedScore = JSON.parse(json);
     if (savedScore) {
@@ -540,21 +524,6 @@ const MemoryGame = ({
   const [flippedIndexes, setFlippedIndexes] = useState([]);
   const [multiplier, setMultiplier] = useState(0);
 
-  const colors = [
-    "#ecdb54",
-    "#e34132",
-    "#6ca0dc",
-    "#944743",
-    "#dbb2d1",
-    "#ec9787",
-    "#00a68c",
-    "#645394",
-    "#6c4f3d",
-    "#ebe1df",
-    "#bc6ca7",
-    "#bfd833",
-  ];
-
   const images = [
     "SemantiIcon",
     "VueIcon",
@@ -575,18 +544,14 @@ const MemoryGame = ({
     for (let i = 0; i < options / 2; i++) {
       const firstOption = {
         id: 2 * i,
-        /* colorId: i, */
         imageId: i,
-        /* color: colors[i], */
         image: images[i],
         flipped: false,
       };
 
       const secondOption = {
         id: 2 * i + 1,
-        /* colorId: i, */
         imageId: i,
-        /* color: colors[i], */
         image: images[i],
         flipped: false,
       };
@@ -617,32 +582,30 @@ const MemoryGame = ({
           setMultiplier(1);
         }
 
-        const pointsLost = multiplier * (0.66 * flippedCount - bestPossible);
-        console.log("pointsLost");
+        const lostPoints = multiplier * (0.66 * flippedCount - bestPossible);
+        console.log(lostPoints);
 
-        let score;
-        if (pointsLost < 100) {
-          score = 100 - pointsLost;
-          /* setScore(100 - pointsLost); */
+        let newScore;
+        if (lostPoints < 100) {
+          newScore = 100 - lostPoints;
         } else {
-          /* setScore(0); */
           score = 0;
         }
 
         // Calculating and storing HighScore
-        if (score > highScore) {
+        if (newScore > highScore) {
           const hScoreprompt = confirm(
             `"Stunning job ${name}! You got a highscore`
           );
-          setScore(score);
-          setHighScore(score);
-          const json = JSON.stringify(score);
+          setScore(newScore);
+          setHighScore(newScore);
+          const json = JSON.stringify(newScore);
 
           //Save data to local Storage
           localStorage.setItem("memorygamehighscore", json);
         }
 
-        const newGame = confirm(`You Win!, SCORE: " + ${score} + " New Game?`);
+        const newGame = confirm(`You Won!, SCORE: ${newScore}  New Game?`);
 
         if (newGame) {
           const gameLength = game.length;
@@ -688,7 +651,6 @@ const MemoryGame = ({
           <div className="card" key={ind}>
             <Cards
               id={ind}
-              /* color={card.color} */
               image={card.image}
               game={game}
               flippedCount={flippedCount}

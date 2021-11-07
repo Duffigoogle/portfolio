@@ -122,7 +122,10 @@ const FormComp = () => {
         <StyledLabel>Email</StyledLabel>
         <StyledInput placeholder="Enter Email" required></StyledInput>
 
-        <StyledLabel>Subject</StyledLabel>
+        {/* <StyledLabel>Subject</StyledLabel>
+        <StyledInput placeholder="Enter Subject" required></StyledInput> */}
+
+        <StyledLabel>Message</StyledLabel>
         <StyledTextArea placeholder="type your message" required>
           {" "}
         </StyledTextArea>

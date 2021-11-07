@@ -289,14 +289,13 @@ const ThemesContainer = styled.main`
   position: fixed;
   z-index: 8;
   left: 30%;
-  /* left: 36rem; */
   top: 3%;
 
   ${mediaQueries("tabletMax")`
         width: 21rem;
   `}
   ${mediaQueries("mobileLX")`
-        width: 18rem;
+        width: 17rem;
         left: 20%;
   `}
   ${mediaQueries("mobileS")`

@@ -20,7 +20,7 @@ export default function HeadBlock({ page_title, ...customMeta }) {
   return (
     <>
       <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta name="description" content={meta.description} />

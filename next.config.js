@@ -3,6 +3,9 @@ const runtimeCaching = require("next-pwa/cache");
 
 module.exports = {
   reactStrictMode: true,
+  // env: {
+  //   BASE_URL: process.env.BASE_URL,
+  // },
   images: {
     domains: ["avatars.githubusercontent.com"],
   },

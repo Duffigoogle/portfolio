@@ -1,12 +1,50 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Icon from "../common/icons/icons";
+import React, { useState, useEffect } from "react";
 import { mediaQueries } from "../common/breakpoints";
 
 const WelcomeComp = () => {
+
+  const [date, setDate] = useState(
+    new Intl.DateTimeFormat("en", {
+      timeStyle: "long",
+      dateStyle: "full",
+    })
+  );
+
+  useEffect(() => {
+    // const timer = setInterval(() => setDate(new Date()), 1000);
+
+    const weed = setInterval(
+      () =>
+        setDate(
+          new Intl.DateTimeFormat("en", {
+            timeStyle: "long",
+            dateStyle: "full",
+          })
+        ),
+      1000
+    );
+
+    return () => {
+      clearInterval(weed);
+    };
+  });
+
   return (
     <>
       <WelcomeCompContainer>
+        <SalutationBox>
+            <p className='salute'>
+            {" "}
+            <span> Hello Guest, </span>
+          </p>
+          <p className='greetings'>
+            {" "}
+            I believe it&apos;s a beautiful <span>{date.format(Date.now())}</span> in your City.
+          </p>
+        </SalutationBox>
         <WelcomeContent>
           <WeclomeHeading1>
             Welcome <br /> to my <br />
@@ -27,11 +65,11 @@ const WelcomeComp = () => {
 export default WelcomeComp;
 
 // styled components for WelcomeComp
-
 const WelcomeCompContainer = styled.main`
   background-color: #000;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 59px);
@@ -40,10 +78,43 @@ const WelcomeCompContainer = styled.main`
   /* ${mediaQueries("mobileM")`
     height: calc(100vh - 30px - 39px);
   `} */
+ 
+`;
+
+const SalutationBox = styled.div`
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 5px;
+
+     p {
+      color: #fff;
+      }
+      .salute {
+        padding-left: 5%;
+        font-size: 1.3rem;
+        font-style: italic;
+        /* color: #ed254eff; */
+        color: orangered;
+      }
+      .greetings {
+        padding-right: 2%;
+        font-size: 1rem;
+        padding-top: 50px;
+        width: 39%;
+        text-align: right;
+        color: #39ff14;
+
+        span {
+          /* color: #c7ea46; */
+          color: #ffe77aff;
+        }
+      }
 `;
 
 const WelcomeContent = styled.div`
   /* border: 1px solid red; */
+  margin-top: 40px;
 `;
 
 const WeclomeHeading1 = styled.h2`

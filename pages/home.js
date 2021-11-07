@@ -1,13 +1,10 @@
-import Head from "next/head";
 import styled from "styled-components";
-// import { useState, useEffect, useCallback } from "react";
 import HomePageLayout from "../components/Layout/HomePageLayout";
 import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
-// import useSWR from "swr";
 import HeadBlock from "../components/Meta/MetaComp";
-
+import DateTimeComp from "../components/DateTime/DateTimeComp";
 // import GithubPage from "../components/Github/GithubCom";
 
 // async function fetcher(...arg) {
@@ -33,33 +30,7 @@ export default function Home() {
       <HomePageLayout>
         <StyledDiv ref={elementRef}>
           <CodeLinesComp />
-
-          {/* <div>
-            <div>
-              <Image
-                src={data.avatar_url}
-                className=""
-                alt={data.login}
-                width={50}
-                height={50}
-              />
-              <h3>{data ? data.login : "loading..."}</h3>
-            </div>
-            <div>
-              <h3>{data ? data.public_repos : "loading..."} repos</h3>
-            </div>
-            <div>
-              <h3>{data ? data.followers : "loading..."} followers</h3>
-            </div>
-          </div>
-
-          <h2>6 Latest Updated Repositories</h2>
-          <div>
-            {reposData.map((repoData) => (
-              <RepoCard key={repoData.id} repData={repoData} />
-            ))}
-          </div> */}
-          {/* <GithubPage repoData={repoData} userData={userData} /> */}
+          <DateTimeComp />
         </StyledDiv>
       </HomePageLayout>
     </div>

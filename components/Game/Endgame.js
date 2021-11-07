@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { messages } from "./cardData";
 import styled from "styled-components";
 import { Button } from "./GameComp";
@@ -8,6 +8,14 @@ const EndGame = ({ name, setShowEndGame }) => {
   const handleClick = () => {
     setShowEndGame(false);
   };
+
+  // const handleGameExit = () => {
+  //   setEndGameFirstModalDisplay(!EndGameFirstModalDisplay);
+  //   setTimeout(() => {
+  //     setEndGameDisplay(!EndGameDisplay);
+  //     console.log("fish!");
+  //   }, 400);
+  // };
 
   const shuffleMessages = messages.sort(() => Math.random() - 0.5);
   console.log(shuffleMessages);
@@ -23,8 +31,23 @@ const EndGame = ({ name, setShowEndGame }) => {
           </h2>
           <p>{messages[0].message}</p>
           <Button onClick={handleClick}> Go Again!</Button>
+          {/* <Button onClick={handleGameExit}> Exit</Button> */}
         </MessageBox>
       </EndGameCont>
+      {/* {
+        EndGameDisplay ? (
+          <EndGameCont>
+            <DivBox>
+              <p>
+                Thank you <span>{name}</span>! for playing.{" "}
+              </p>
+            </DivBox>
+          </EndGameCont>
+        ) : null
+        // router.push("/game")
+        // <LoginGame />
+        // <GameComp />
+      } */}
     </>
   );
 };
@@ -32,15 +55,17 @@ const EndGame = ({ name, setShowEndGame }) => {
 export default EndGame;
 
 const EndGameCont = styled.div`
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   z-index: 11;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 90%;
+  height: 82%;
+  width: 69%;
   background: rgba(0, 0, 0, 0.8);
-  /* border: 1px solid red; */
+  top: 14%;
+  left: 22%;
 
   ${mediaQueries("laptop")`
       width: 90%;
@@ -53,6 +78,8 @@ const EndGameCont = styled.div`
   `}
   ${mediaQueries("mobileLXL")`
     width: 80%;
+    top: 16%;
+    height: 77%;
   `}
   ${mediaQueries("mobileLX")`
     width: 75%;
@@ -61,19 +88,23 @@ const EndGameCont = styled.div`
     width: 65%;
   `} 
   ${mediaQueries("mobileM")`
-
+    width: 80%;
+    top: 18%;
   `}
   ${mediaQueries("mobileS")`
+          width: 75%;
   `}
 `;
 
 const MessageBox = styled.div`
   position: absolute;
-  display: flex;
+  /* display: flex; */
+  display: ${({ EndGameFirstModalDisplay }) =>
+    EndGameFirstModalDisplay ? "flex" : "none"};
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40%;
+  height: 60%;
   width: 40%;
   background: #fff;
   box-shadow: 12px 12px 10px gray;
@@ -83,9 +114,10 @@ const MessageBox = styled.div`
   left: 20%;
 
   span {
-    color: #bfd833;
+    color: #f59e8b;
     font-weight: 800;
     font-size: 1.2rem;
+    border-bottom: 1px solid #000;
   }
 
   p {
@@ -113,6 +145,13 @@ const MessageBox = styled.div`
   ${mediaQueries("mobileM")`
     max-width: calc(375px - 9rem);
 
+    h2 {
+      font-size: 0.7rem;
+    };
+
+    p {
+      font-size: 0.5rem;
+    };
   `}
   ${mediaQueries("mobileS")`
     left: 9%;

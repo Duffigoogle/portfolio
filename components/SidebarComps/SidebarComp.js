@@ -257,15 +257,15 @@ export const MailComp = () => {
             <p>Duffdev001@gmail</p>
           </StyledBox>
           <StyledBox>
-            <Icon name="twitter" size={22} color="orange" />
+            <Icon name="twitter" size={18} color="orange" />
             <p>@Duffygoogle</p>
           </StyledBox>
           <StyledBox>
-            <Icon name="GithubIcon" size={22} color="orange" />
+            <Icon name="GithubIcon" size={19} color="orange" />
             <p>@Duffigoogle</p>
           </StyledBox>
           <StyledBox>
-            <Icon name="instagram" size={22} color="orange" />
+            <Icon name="instagram" size={18} color="orange" />
             <p>@thelastgoodman</p>
           </StyledBox>
           {/* <StyledBox>
