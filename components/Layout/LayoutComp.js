@@ -56,9 +56,4 @@ const DisplayAreaContainer = styled.div`
   overflow: hidden;
   width: ${({ isExpanded }) => (isExpanded == true ? "100vw" : "100vw")};
   /* margin-left: ${({ isExpanded }) => (isExpanded == true ? "0" : "")}; */
-
-  /* ${mediaQueries("mobileM")`
-    //  min-width: 18.75rem;
-    min-width: calc(23.4375rem - 2.5rem - 2rem);
-  `} */
 `;

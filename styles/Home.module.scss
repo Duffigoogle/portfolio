@@ -1,8 +1,11 @@
 .container {
-  // min-height: 100vh;
-  // padding: 0 0.5rem;
-  min-height: 100vh;
+  min-height: 64.75vh;
+  height: 100vh;
+  overflow-y: auto;
+  border: 1px solid yellow;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 

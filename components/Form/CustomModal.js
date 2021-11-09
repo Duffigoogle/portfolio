@@ -221,7 +221,7 @@ export const ColorThemeDisplay = ({
         theme.publisher.toLowerCase().includes(searchTerm.toLowerCase())
       );
     });
-  }, [searchTerm, themesData]);
+  }, [searchTerm]);
 
   // If user presses the ESC button.
   const keyPress = useCallback(

@@ -42,7 +42,7 @@ const WelcomeComp = () => {
           </p>
           <p className='greetings'>
             {" "}
-            I believe it&apos;s a beautiful <span>{date.format(Date.now())}</span> in your City.
+            I believe its a beautiful <span>{date.format(Date.now())}</span> in your modern city.
           </p>
         </SalutationBox>
         <WelcomeContent>
@@ -72,8 +72,8 @@ const WelcomeCompContainer = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 59px);
-  /* height: calc(100vh - 30px - 39px); */
+  /* height: calc(100vh - 59px); */
+  height: 100vh;
 
   /* ${mediaQueries("mobileM")`
     height: calc(100vh - 30px - 39px);
@@ -91,7 +91,7 @@ const SalutationBox = styled.div`
       color: #fff;
       }
       .salute {
-        padding-left: 5%;
+        padding-left: 3%;
         font-size: 1.3rem;
         font-style: italic;
         /* color: #ed254eff; */
