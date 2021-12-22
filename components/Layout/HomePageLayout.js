@@ -15,7 +15,7 @@ const HomePageLayout = ({ children }) => {
 export default HomePageLayout;
 
 const DisplayAreaContainerTop = styled.div`
-  /* border: 1px solid red; */
+  // border: 1px solid red;
 `;
 
 const PageContainer = styled.main`

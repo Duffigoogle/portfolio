@@ -46,10 +46,10 @@ const WelcomeComp = () => {
           </p>
         </SalutationBox>
         <WelcomeContent>
-          <WeclomeHeading1>
+          <WelcomeHeading1>
             Welcome <br /> to my <br />
             <span>Tech-folio</span>
-          </WeclomeHeading1>
+          </WelcomeHeading1>
           <Link href="/about" passHref>
             <WelcomeButton>
               Explore with joy &nbsp;{" "}
@@ -67,13 +67,13 @@ export default WelcomeComp;
 // styled components for WelcomeComp
 const WelcomeCompContainer = styled.main`
   background-color: #000;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  // width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
   /* height: calc(100vh - 59px); */
-  height: 100vh;
+  // height: 100vh;
 
   /* ${mediaQueries("mobileM")`
     height: calc(100vh - 30px - 39px);
@@ -91,17 +91,17 @@ const SalutationBox = styled.div`
       color: #fff;
       }
       .salute {
-        padding-left: 3%;
-        font-size: 1.3rem;
+        padding-left: 0.3rem;
+        font-size: 1rem;
         font-style: italic;
         /* color: #ed254eff; */
         color: orangered;
       }
       .greetings {
-        padding-right: 2%;
+        padding-right: 0.3rem;
         font-size: 1rem;
         padding-top: 50px;
-        width: 39%;
+        width: 50%;
         text-align: right;
         color: #39ff14;
 
@@ -114,10 +114,10 @@ const SalutationBox = styled.div`
 
 const WelcomeContent = styled.div`
   /* border: 1px solid red; */
-  margin-top: 40px;
+  margin-top: 20px;
 `;
 
-const WeclomeHeading1 = styled.h2`
+const WelcomeHeading1 = styled.h2`
   color: #444444;
   font-weight: 800;
   font-size: 3rem;
@@ -133,7 +133,7 @@ const WeclomeHeading1 = styled.h2`
   `}
   ${mediaQueries("mobileM")`
       font-weight: 500;
-      font-size: 1.7rem;
+      font-size: 1.3rem;
   `}
   span {
     color: orangered;
@@ -152,7 +152,7 @@ const WeclomeHeading1 = styled.h2`
 
     ${mediaQueries("mobileM")`
       font-weight: 600;
-      font-size: 3rem;
+      font-size: 2.6rem;
   `}
     &:hover {
       color: orangered;

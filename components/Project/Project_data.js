@@ -33,7 +33,7 @@ const projects = [
       title: "Xtend Reality",
       description: "Website for AR/VR Africa",
       github: "https://github.com/Duffigoogle/Xtend-Africa",
-      live: "#",
+      live: "https://extend.africa/",
       stack: "React + Nextjs + Tailwindcss",
       isPrivate: true,
     },
