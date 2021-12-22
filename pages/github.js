@@ -31,12 +31,13 @@ const GithubPage = ({ repos, user }) => {
                 {/* <GithubSideComp user={user} /> */}
                 <GitProfile>
                   <ImageBox>
-                    <Image
+                    {/* <Image
                       src={user.avatar_url}
                       alt={user.login}
                       width={110}
                       height={110}
-                    />
+                      priority
+                    /> */}
                   </ImageBox>
                   <div>
                     <h2>{user.name}</h2>
@@ -239,7 +240,6 @@ const GitDetails = styled.div`
 
 const RepoCardSection = styled.section`
   margin: 0px auto;
-  /* border: 1px solid red; */
 
   h2 {
     color: orangered;
@@ -268,8 +268,9 @@ const RepoCollection = styled.section`
   display: flex;
   flex-wrap: wrap;
   margin: 5px auto;
-  /* border: 1px solid blue; */
+  // border: 1px solid blue;
   justify-content: center;
+  height: 100%;
 
   ${mediaQueries("laptop")`
       // width: 50rem;
@@ -298,11 +299,14 @@ export async function getStaticProps() {
     `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`
   );
   const user = await userRes.json();
+  console.log(user)
 
   const repoRes = await fetch(
     `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos`
   );
   const repos = await repoRes.json();
+  console.log(repos)
+
 
   return {
     props: { title: "GitHub", repos, user },

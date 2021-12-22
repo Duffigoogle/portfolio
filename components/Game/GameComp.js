@@ -48,7 +48,7 @@ export default function GameApp() {
   }, []);
 
   return (
-    <>
+    <MainGameContainer>
       {showLogin ? (
         <LoginGame
           handleChange={handleChange}
@@ -112,7 +112,7 @@ export default function GameApp() {
 
         {options ? (
           <GameBoard>
-            <span>Hint</span>: select two cards with same content consequently,
+            <span>Hint</span>: Select two cards with same content consequently,
             to match them.
             <MemoryGame
               options={options}
@@ -137,10 +137,13 @@ export default function GameApp() {
           </h2>
         )}
       </GameBox>
-    </>
+    </MainGameContainer>
   );
 }
 
+const MainGameContainer = styled.main`
+  position: relative;
+`
 const GameBox = styled.section`
   display: ${({ displayGame }) => (displayGame ? "block" : "none")};
   width: 65rem;

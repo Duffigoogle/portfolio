@@ -4,7 +4,7 @@ import SocialsComp from "../Socials/socialComp";
 import Icon from "../common/icons/icons";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
-// import { RoughNotation } from "react-rough-notation";
+import { RoughNotation } from "react-rough-notation";
 import { mediaQueries } from "../common/breakpoints";
 
 const AboutComp = () => {
@@ -132,6 +132,9 @@ const AboutStackText = styled.h3`
   writing-mode: vertical-lr;
   transform: rotate(180deg);
   transition: transform 0.2s;
+  &:hover {
+    color: #000;
+  }
 
   ${mediaQueries("laptop")`
       font-size: 1rem;
