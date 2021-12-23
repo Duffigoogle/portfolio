@@ -1,7 +1,7 @@
 import Head from "next/head";
 import DisplayAreaLayoutComp from "../components/Layout/DisplayAreaLayout";
 import CodeLinesComp from "../components/codelines/CodeLinesComp";
-import FormComp from "../components/Form/FormComp";
+import ContactFormComp from "../components/Form/FormComp";
 import { PageLayout } from "../components/Layout/PageLayout";
 import styled from "styled-components";
 import { useContext } from "react";
@@ -32,7 +32,7 @@ export default function ContactPage() {
                 <p>Any question, feedback or remarks?</p>
                 <p>Feel free to drop me a message!</p>
               </StyledSection>
-              <FormComp />
+              <ContactFormComp />
             </StyledDiv>
           </PageLayout>
         </>
