@@ -1,6 +1,10 @@
+import React from 'react';
 import { useState } from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../common/breakpoints";
+import { useRouter } from 'next/router';
+import { useForm, ValidationError } from '@formspree/react';
+
 
 const StyledInput = styled.input`
   /* border: 1px solid #5d5d5d;  */
@@ -94,48 +98,63 @@ const StyledButton = styled.button`
   }
 `;
 
-const FormComp = () => {
+const ContactFormComp = () => {
   const [error, setError] = useState(false);
+  const [state, handleSubmit] = useForm("xwkykgjp");
 
-  const handleSubmit =
-    ((evt) => {
-      evt.preventDefault();
-      if (!evt.target.checkValidity()) {
-        setError(true);
-        return;
-      }
-
-      setError(false);
-      console.log("Do something");
-    },
-    [error, setError]);
+  if (state.succeeded) {
+    return <p>Thank you for reaching out, <br /> Do have a beautiful day</p>;
+  }
 
   return (
     <div>
       <StyledForm onSubmit={handleSubmit} noValidate error={error} action="">
-        <StyledLabel>Name</StyledLabel>
-        <StyledInput placeholder="Your Name" required></StyledInput>
+        <StyledLabel htmlFor='name'>Full Name</StyledLabel>
+        <StyledInput 
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Full Name" 
+        />
+         <ValidationError 
+            prefix="Full Name" 
+            field="name"
+            errors={state.errors}
+        />
 
-        <StyledLabel>Country</StyledLabel>
-        <StyledInput placeholder="Your Country" required></StyledInput>
+        {/* <StyledLabel>Country</StyledLabel>
+        <StyledInput placeholder="Your Country" required></StyledInput> */}
 
-        <StyledLabel>Email</StyledLabel>
-        <StyledInput placeholder="Enter Email" required></StyledInput>
+        <StyledLabel htmlFor="email">Email</StyledLabel>
+        <StyledInput 
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter Email"
+        />
+        <ValidationError 
+            prefix="Email" 
+            field="email"
+            errors={state.errors}
+        />   
 
-        {/* <StyledLabel>Subject</StyledLabel>
-        <StyledInput placeholder="Enter Subject" required></StyledInput> */}
-
-        <StyledLabel>Message</StyledLabel>
-        <StyledTextArea placeholder="type your message" required>
-          {" "}
-        </StyledTextArea>
-
-        <StyledButton type="submit">Send</StyledButton>
-
-        {/* <input type="submit" value="Submit!"></input> */}
+        <StyledLabel for="message">Message</StyledLabel>
+        <StyledTextArea 
+            placeholder="type your message" 
+            name="message"
+            id="message"
+        />
+        <ValidationError 
+            prefix="Message" 
+            field="message"
+            errors={state.errors}
+        />
+        <StyledButton type="submit" disabled={state.submitting}>
+            Send
+        </StyledButton>
       </StyledForm>
     </div>
   );
 };
 
-export default FormComp;
+export default ContactFormComp;
