@@ -92,24 +92,26 @@ const ProjectTitle = styled.h3`
 const ProjectStackSmall = styled.small`
   margin-bottom: 13px;
   font-size: smaller;
-  color: #cf99c2;
+  color: #df67bc;
+
 `;
 
 const ProjectTextDescription = styled.p`
   font-size: 1rem;
-  line-height: 2;
+  line-height: 1;
   color: #777778;
   height: 5rem;
   font-weight: 500;
+  margin-bottom: 20px;
 `;
 const ProjectLink = styled.a`
   display: flex;
   font-size: 0.8rem;
   line-height: 1.4rem;
-
   text-decoration: none;
   margin-right: 0.8rem;
-  color: #66c5e0;
+  color: #fff7d9;
+
 
   .icon {
     margin-left: 8px;
