@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../common/icons/icons";
+import Icon from "./icons/icons";
 import styled from "styled-components";
 
 const SocialsComp = () => {

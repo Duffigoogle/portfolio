@@ -9,7 +9,7 @@ import {
   PluralSightComp,
   SearchComp,
 } from "../SidebarComps/SidebarComp";
-import { ModalManager } from "../Form/CustomModal";
+import { ModalManager } from "../modals/CustomModal";
 import { mediaQueries } from "../common/breakpoints";
 import { GithubDetailComp } from "../../pages/github";
 

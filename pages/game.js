@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { CalculateHeightContext } from "../context/index";
 import { useContext } from "react";
 import { mediaQueries } from "../components/common/breakpoints";
-import HeadBlock from "../components/Meta/MetaComp";
+import HeadBlock from "../components/common/MetaComp";
 import GameApp from "../components/Game/GameComp";
 
 export default function GamesPage() {

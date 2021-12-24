@@ -6,8 +6,7 @@ import styled from "styled-components";
 import { CalculateHeightContext } from "../context/index";
 import { useContext } from "react";
 import { mediaQueries } from "../components/common/breakpoints";
-import HeadBlock from "../components/Meta/MetaComp";
-import DateTimeComp from "../components/DateTime/DateTimeComp";
+import HeadBlock from "../components/common/MetaComp";
 
 export default function GistsPage() {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -22,9 +21,8 @@ export default function GistsPage() {
             <CodeLinesComp />
             <GistsContainer ref={elementRef}>
               <div>
-                {/* <h1>Gists Page</h1>
-                <p>coming soon...</p> */}
-                <DateTimeComp />
+                <h1>Gists Page</h1>
+                <p>coming soon...</p>
               </div>
             </GistsContainer>
           </PageLayout>

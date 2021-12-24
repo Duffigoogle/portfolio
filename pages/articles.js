@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { CalculateHeightContext } from "../context/index";
 import { useContext } from "react";
 import { mediaQueries } from "../components/common/breakpoints";
-import HeadBlock from "../components/Meta/MetaComp";
+import HeadBlock from "../components/common/MetaComp";
 
 export default function ArticlePage() {
   const { elementRef } = useContext(CalculateHeightContext);

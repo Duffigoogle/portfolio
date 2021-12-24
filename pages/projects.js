@@ -9,7 +9,7 @@ import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import { PageLayout } from "../components/Layout/PageLayout";
 import styled from "styled-components";
 import { mediaQueries } from "../components/common/breakpoints";
-import HeadBlock from "../components/Meta/MetaComp";
+import HeadBlock from "../components/common/MetaComp";
 
 export default function ProjectPage() {
   return (
