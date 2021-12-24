@@ -8,17 +8,15 @@ const projects = [
       stack: "React + Styled Components",
       isPrivate: false,
     },
-
     {
       id: 2,
-      title: "Youtube Clone",
-      description: "A Youtube Clone",
-      github: "https://github.com/Duffigoogle/Youtube-clone",
-      live: "#",
-      stack: "Raect + Material UI",
-      isPrivate: false,
+      title: "QuikMoni",
+      description: "A web application to access quick loans without collateral",
+      github: "#",
+      live: "https://quikmoni.vercel.app",
+      stack: "Raect + Nextjs + Firebase",
+      isPrivate: true,
     },
-
     {
       id: 3,
       title: "Techrity",
@@ -26,7 +24,7 @@ const projects = [
       github: "https://github.com/Duffigoogle/Techrity",
       live: "https://techrity.org",
       stack: "React + Nextjs",
-      isPrivate: false,
+      isPrivate: true,
     },
     {
       id: 4,
@@ -37,7 +35,6 @@ const projects = [
       stack: "React + Nextjs + Tailwindcss",
       isPrivate: true,
     },
-
     {
       id: 5,
       title: "Travrity",
@@ -47,7 +44,6 @@ const projects = [
       stack: "React + Nextjs + Tailwindcss + SASS + Styled Components",
       isPrivate: false,
     },
-
     {
       id: 6,
       title: "Teckation",

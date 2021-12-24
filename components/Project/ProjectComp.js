@@ -13,19 +13,6 @@ export default function ProjectComp() {
         {projects.map((project, index) => (
           <ProjectSchema key={index} {...project} id={index} />
         ))}
-
-        {/* <div className="go_button_container">
-                    <Link to="/">
-                    <button>
-                        <span class="material-icons">arrow_left</span> Home
-                    </button>
-                    </Link>
-                    <Link to="/contact">
-                    <button>
-                        Contact <span class="material-icons">arrow_right</span>
-                    </button>
-                    </Link>
-                </div> */}
       </PortfolioWorksContainer>
     </>
   );
@@ -37,7 +24,7 @@ const PortfolioWorksContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 125vh;
+  height: 140vh;
   background-color: #000;
 `;
 

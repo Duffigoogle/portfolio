@@ -67,7 +67,7 @@ export default WelcomeComp;
 // styled components for WelcomeComp
 const WelcomeCompContainer = styled.main`
   background-color: #000;
-  // width: 100%;
+  width: 100%;
   // display: flex;
   // flex-direction: column;
   // align-items: center;
