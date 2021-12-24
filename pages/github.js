@@ -1,15 +1,36 @@
 import Image from "next/image";
 import DisplayAreaLayoutComp from "../components/Layout/DisplayAreaLayout";
 import CodeLinesComp from "../components/codelines/CodeLinesComp";
-import HeadBlock from "../components/Meta/MetaComp";
+import HeadBlock from "../components/common/MetaComp";
 import { PageLayout } from "../components/Layout/PageLayout";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
 import RepoCard from "../components/Github/RepoCard";
 import styled from "styled-components";
 import Icon from "../components/common/icons/icons";
 import GitHubCalendar from "react-github-calendar";
 import { mediaQueries } from "../components/common/breakpoints";
+import fallback from "../public/img/developer.jpg";
+
+// Optimized fallback Image 
+function OptimizedImageWithFallback({ src, alt, fallBackSrc = fallback.src }) {
+  const [imageError, setImageError] = useState(false);
+  return (
+    <ImageBox>
+      <Image
+        src={imageError ? src : fallBackSrc}
+        alt={alt}
+        width={110}
+        height={110}
+        objectFit='cover'
+        onError={() => setImageError(true)}
+        priority
+      />
+    </ImageBox>
+  );
+}
+
+
 
 const GithubPage = ({ repos, user }) => {
   const { elementRef } = useContext(CalculateHeightContext);
@@ -30,15 +51,19 @@ const GithubPage = ({ repos, user }) => {
               <div>
                 {/* <GithubSideComp user={user} /> */}
                 <GitProfile>
-                  <ImageBox>
-                    {/* <Image
+                  {/* <ImageBox>
+                    <Image
                       src={user.avatar_url}
                       alt={user.login}
                       width={110}
                       height={110}
                       priority
-                    /> */}
-                  </ImageBox>
+                    />
+                  </ImageBox> */}
+                  <OptimizedImageWithFallback 
+                    src={user.avatar_url}
+                    alt={user.login}
+                  />
                   <div>
                     <h2>{user.name}</h2>
                     <h3>
@@ -50,7 +75,6 @@ const GithubPage = ({ repos, user }) => {
                     </h3>
                   </div>
                 </GitProfile>
-
                 <GithubDetails>
                   <section>
                     <h3>
@@ -70,7 +94,6 @@ const GithubPage = ({ repos, user }) => {
                   </GitDetails>
                 </GithubDetails>
               </div>
-
               <RepoCardSection>
                 <h2>Some Repositories</h2>
                 <RepoCollection>
@@ -270,7 +293,7 @@ const RepoCollection = styled.section`
   margin: 5px auto;
   // border: 1px solid blue;
   justify-content: center;
-  height: 100%;
+  overflow-y: scroll;
 
   ${mediaQueries("laptop")`
       // width: 50rem;

@@ -1,14 +1,12 @@
 import Head from "next/head";
-// import Image from "next/image";
 import styled from "styled-components";
-// import DisplayAreaLayoutComp from '../components/Layout/DisplayAreaLayout';
 import HomePageLayout from "../components/Layout/HomePageLayout";
 import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import WelcomeComp from "../components/Welcome/Welcome";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
 import { mediaQueries } from "../components/common/breakpoints";
-import HeadBlock from "../components/Meta/MetaComp";
+import HeadBlock from "../components/common/MetaComp";
 
 export default function Home() {
   const { elementRef } = useContext(CalculateHeightContext);

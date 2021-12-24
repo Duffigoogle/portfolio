@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TabsTaskbarComp from "../Tabs/TabTaskbar";
 // import {useRouter} from 'next/router';
-import FilepathComp from "../filepath/Filepath";
+import FilepathComp from "../common/Filepath";
 
 const DisplayAreaLayoutComp = ({
   children,

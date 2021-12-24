@@ -14,7 +14,7 @@ const projects = [
       title: "Youtube Clone",
       description: "A Youtube Clone",
       github: "https://github.com/Duffigoogle/Youtube-clone",
-      live: "",
+      live: "#",
       stack: "Raect + Material UI",
       isPrivate: false,
     },
@@ -50,9 +50,9 @@ const projects = [
 
     {
       id: 6,
-      title: "Travour Stack",
-      description: "A Web App for Tours",
-      github: "https://github.com/Duffigoogle/TravourStack",
+      title: "Teckation",
+      description: "A web App for Techies that Travel ",
+      github: "https://github.com/Duffigoogle/Teckation",
       live: "#",
       stack: "Sass + React + Nextjs + Tailwindcss",
       isPrivate: true,

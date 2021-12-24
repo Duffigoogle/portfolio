@@ -1,11 +1,9 @@
-// import Icon from "../common/icons/icons";
 import styled from "styled-components";
 import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import ThemeSchemaComp from "../VScodeTheme/ThemeScheme";
 import Icon from "../common/icons/icons";
 import themesData from "../VScodeTheme/theme_data";
 import { mediaQueries } from "../common/breakpoints";
-// import ModalComp from "./Modal";
 
 export const ModalItem = ({ itemName, shortcut, onClick }) => {
   return (
@@ -60,7 +58,6 @@ export const Modal = ({ modalTwo, setModalTwo }) => {
     // closeModal();
   };
 
-  // const handleClickInside = () => setClickedOutside(false);
 
   // If user clicks outside the modal window, then close modal.
   useEffect(() => {
@@ -93,8 +90,6 @@ export const Modal = ({ modalTwo, setModalTwo }) => {
   );
 };
 
-// onClick={(evt) => evt.stopPropagation()}
-
 const StyledDivModal = styled.div`
   display: ${(modalTwo) => {
     modalTwo ? "block" : "none";
@@ -114,23 +109,13 @@ const StyledDivModal = styled.div`
   }
 `;
 
-// custom function to handleClickOutside
-// const handleClickOutside = (e, modalNum, modalFunc) => {
-//   if ({modalNum} === true && !myRef.current.contains(e.target)) {
-//     {modalFunc}(false);
-//     console.log("I clicked outside");
-//   }
-// };
-
-// handleClickOutside(modalOne, setModalOne)
-
 const ModalComp = ({ modalOne, setModalOne }) => {
   const myRef = useRef();
 
   // If user clicks outside the modal window, then close modal.
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (modalOne === true && !myRef.current.contains(e.target)) {
+      if (modalOne === true && !myRef?.current?.contains(e.target)) {
         setModalOne(false);
         console.log("I clicked outside");
       }
@@ -242,7 +227,7 @@ export const ColorThemeDisplay = ({
   // If user clicks outside the modal window, then close modal.
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (showSecondModal === true && !myRef.current.contains(e.target)) {
+      if (showSecondModal === true && !myRef?.current?.contains(e.target)) {
         setShowSecondModal(false);
         console.log("I clicked outside");
       }
@@ -258,7 +243,7 @@ export const ColorThemeDisplay = ({
           <SearchTheme
             type="search"
             placeholder="Select Color Theme (Up/Down Keys to Preview)"
-            autofocus
+            autoFocus
             onChange={handleChange}
             value={searchTerm}
             hh

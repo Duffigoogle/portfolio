@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { mediaQueries } from "../common/breakpoints";
+import { mediaQueries } from "./breakpoints";
 import useSWR from "swr";
 
 

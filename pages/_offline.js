@@ -1,5 +1,5 @@
 import Head from "next/head";
-import HeadBlock from "../components/Meta/MetaComp";
+import HeadBlock from "../components/commons/MetaComp";
 import styles from "../styles/Home.module.scss";
 
 export default function OfflinePage() {

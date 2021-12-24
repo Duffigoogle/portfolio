@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ThemeSchemaComp from "../VScodeTheme/ThemeScheme";
+import ThemeSchemaComp from "./ThemeScheme";
 import { Modal } from "./CustomModal";
 
 const ColorTheme = () => {

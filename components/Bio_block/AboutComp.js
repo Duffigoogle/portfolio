@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Link from "next/link";
-import SocialsComp from "../Socials/socialComp";
+import SocialsComp from "../common/socialComp";
 import Icon from "../common/icons/icons";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../../context/index";
-import { RoughNotation } from "react-rough-notation";
+// import { RoughNotation } from "react-rough-notation";
 import { mediaQueries } from "../common/breakpoints";
 
 const AboutComp = () => {

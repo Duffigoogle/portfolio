@@ -3,9 +3,9 @@ import HomePageLayout from "../components/Layout/HomePageLayout";
 import CodeLinesComp from "../components/codelines/CodeLinesComp";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
-import HeadBlock from "../components/Meta/MetaComp";
-import DateTimeComp from "../components/DateTime/DateTimeComp";
-// import GithubPage from "../components/Github/GithubCom";
+import HeadBlock from "../components/common/MetaComp";
+import DateTimeComp from "../components/common/DateTimeComp";
+// import ContactFormComp from "../components/Form/Form"
 
 // async function fetcher(...arg) {
 //   const res = await fetch(...arg);
@@ -31,6 +31,7 @@ export default function Home() {
         <StyledDiv ref={elementRef}>
           <CodeLinesComp />
           <DateTimeComp />
+          {/* <ContactFormComp /> */}
         </StyledDiv>
       </HomePageLayout>
     </div>
