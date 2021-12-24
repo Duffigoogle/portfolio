@@ -5,23 +5,10 @@ import { useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
 import HeadBlock from "../components/common/MetaComp";
 import DateTimeComp from "../components/common/DateTimeComp";
-// import ContactFormComp from "../components/Form/Form"
 
-// async function fetcher(...arg) {
-//   const res = await fetch(...arg);
-
-//   return res.json();
-// }
-
-// // const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Home() {
   const { elementRef } = useContext(CalculateHeightContext);
-
-  // const { data, error } = useSWR("/api/github-fetcher", fetcher);
-
-  // if (error) return <div>An error has occurred.</div>;
-  // if (!data) return <div>Loading...</div>;
 
   return (
     <div>

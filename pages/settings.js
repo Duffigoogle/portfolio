@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ThemeSchemaComp from "../components/VScodeTheme/ThemeScheme";
 import { useContext } from "react";
 import { CalculateHeightContext } from "../context/index";
-import { Modal } from "../components/Form/CustomModal";
+import { Modal } from "../components/modals/CustomModal";
 
 const SettingsPage = () => {
   const { elementRef } = useContext(CalculateHeightContext);
