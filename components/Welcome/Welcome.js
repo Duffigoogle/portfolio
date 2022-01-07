@@ -42,7 +42,7 @@ const WelcomeComp = () => {
           </p>
           <p className='greetings'>
             {" "}
-            I believe its a beautiful <span>{date.format(Date.now())}</span> in your modern city.
+            I believe it is a beautiful <span>{date.format(Date.now())}</span> in your modern city.
           </p>
         </SalutationBox>
         <WelcomeContent>
